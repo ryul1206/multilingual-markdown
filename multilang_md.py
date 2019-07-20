@@ -1,8 +1,4 @@
-#!/usr/bin python3
 # -*- coding: utf-8 -*-
-
-# [ ] auto toc
-# [x] lang tags
 
 import sys
 import os
@@ -21,7 +17,8 @@ def create_toc(_dict, _min, _max, toc_str, level=1):
     for head, child in _dict.items():
         if (_min <= level) and (level <= _max):
             # line
-            suburl = re.sub('[^A-Za-z0-9 ]+', '', head)
+            spc = "[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:\'\",./<>\?]+"
+            suburl = re.sub(spc, '', head)
             suburl = suburl.replace('  ', ' ').replace(' ', '-')
             temp = '1. [{}](#{})\n'.format(head, suburl)
             # append
@@ -38,7 +35,7 @@ class CreateMonolangualDoc(object):
         new_name = fname + ("."+lang+"." if suffix else ".") + ename
         self.full_name = os.path.join(path, new_name)
 
-        self.doc = open(self.full_name, 'w')
+        self.doc = open(self.full_name, 'w', encoding='utf-8')
 
         self.content = []
 
@@ -105,7 +102,7 @@ class MultilangualDoc(object):
 
     class SafetyRead(object):
         def __init__(self, full_name):
-            self.__doc = open(full_name, 'r')
+            self.__doc = open(full_name, 'r', encoding='utf-8')
             self.line_count = 0
             self.last_line = ""
 
@@ -187,9 +184,7 @@ class MultilangualDoc(object):
         # set the starting point
         while not self.pattern.match(self.doc.last_line):
             self.doc.readline()
-        ################
         # converting
-        ################
         signal = 'common'
         codeblock_re = re.compile('`+')
         codeblock_mark = None
@@ -242,10 +237,8 @@ class MultilangualDoc(object):
                 else:
                     self.lang_doc[signal].write(
                         self.doc.last_line, codeblock_mark)
-
-            # print(self.doc.last_line[:-1])
             # terminal conditions
-            # 1. base doc end
+            # base doc end
             if not self.doc.readline():
                 break
 
