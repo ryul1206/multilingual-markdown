@@ -39,7 +39,7 @@
     - default: `{something}.en.md`, `{something}.kr.md`, `{something}.es.md`, ...
     - no-suffix option to `en`: `{something}.md`, `{something}.kr.md`, `{something}.es.md`, ...
 
-4. Since this generator overwrites the auto-generated files each time, you do not have to delete them every time when you modify the `base`. Just run step 2 again.
+4. Since this generator overwrites the auto-generated files each time, you do not have to delete them every time when you modify the `{something}.base.md`. Just run step 2 again.
 
 ## Command Tags
 
@@ -109,9 +109,9 @@ Everything that the parser reads after the tag below is recognized as the main t
 
     - There are four ways to mark `level`. You can change the numbers below.
         - `level=2`: Make the 2nd level to table of contents.
-        - `level=2~`: Make the 2nd ~ 9th level to table of contents.
-        - `level=~4`: Make the 1st ~ 4th level to table of contents.
-        - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
+        - `level=2~`: Make the 2nd ~ 9th level to table of contents.
+        - `level=~4`: Make the 1st ~ 4th level to table of contents.
+        - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
     - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
     - **CAUTION**: If you omit this `level` or leave it as `level =`(spacing), the parser will not recognize it.
     - **CAUTION**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.

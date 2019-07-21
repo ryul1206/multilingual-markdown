@@ -67,13 +67,14 @@ class CreateMonolangualDoc(object):
             else:
                 raise NotImplementedError
 
-    def write(self, text, codeblock_mark):
-        self.content.append(text)
+    def write(self, oneline, codeblock_mark):
+        # write
+        self.content.append(oneline)
         # check header
         if not codeblock_mark:
-            result = self.header_re.match(text)
+            result = self.header_re.match(oneline)
             if result:
-                head = text[result.end():].replace('\n', '')
+                head = oneline[result.end():].replace('\n', '')
                 self.append_toc(head, result.end()-1)
 
     def append_toc(self, head, level):
