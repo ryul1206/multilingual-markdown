@@ -52,7 +52,7 @@
     사용할 언어를 선언하십시오. 다음 예제는 `en`과 `kr`을 키워드로 선언하였습니다. 이 키워드들은 접미사로 사용됩니다.
 
     ```markdown
-    <!-- multilangual suffix: en, kr  -->
+    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 2. **접미사 숨기기** (필수 아님)

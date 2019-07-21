@@ -52,10 +52,10 @@ Headers must be declared before the body begins.
     Declare the language you want to use. The following example declares `en` and `kr` as keywords. These keywords are used as suffixes.
 
     ```markdown
-    <!-- multilangual suffix: en, kr  -->
+    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
     ```
 
-2. **Hidden Suffix** (Optional)
+1. **Hidden Suffix** (Optional)
 
     The `no suffix` option can prevent the suffix from being appended when creating the file. In other words, setting `no suffix` to `en` will generate `FileName.md` instead of `FileName.en.md`. This is useful because the main `README` in **GitHub** is not recognized when it has a suffix.
 
