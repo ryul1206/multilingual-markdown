@@ -3,6 +3,7 @@
 import sys
 import os
 import re
+from collections import OrderedDict  # toc
 
 
 def search(dir_name):
@@ -39,7 +40,7 @@ class CreateMonolangualDoc(object):
 
         self.content = []
 
-        self.toc = {}
+        self.toc = OrderedDict()
         self.header_re = re.compile('#+ ')
         self.toc_stack = []
         self.prev_level = 0
@@ -90,7 +91,7 @@ class CreateMonolangualDoc(object):
         recursive = self.toc
         for x in self.toc_stack:
             recursive = recursive[x]
-        recursive[head] = {}
+        recursive[head] = OrderedDict()
         self.toc_stack.append(head)
         self.prev_level = level
 
@@ -137,9 +138,9 @@ class MultilangualDoc(object):
     def init_config(self, path, file_name):
         # re options
         options = [
-            (re.compile('<!-- multilangual suffix: ([\w]+)(, [\w]+)*'),
+            (re.compile('<!-- multilangual suffix:[ ]*([\w]+)(, [\w]+)*'),
                 self.config_setlang),
-            (re.compile('<!-- no suffix: ([\w]+)'),
+            (re.compile('<!-- no suffix:[ ]*([\w]+)'),
                 self.config_nosuffix)
         ]
         once = [False for _ in options]
@@ -173,7 +174,11 @@ class MultilangualDoc(object):
 
     def config_setlang(self, line):
         langs = line.replace(" ", "")[23:-4].split(",")
+        protected_keywords = ["common", "ignore"]
         for x in langs:
+            if x in protected_keywords:
+                print("[Error] You cannot use [common] and [ignore] as a suffix.")
+                raise NotImplementedError
             self.lang_read[x] = False
 
     def config_nosuffix(self, line):
@@ -189,7 +194,7 @@ class MultilangualDoc(object):
         codeblock_re = re.compile('`+')
         codeblock_mark = None
         toc_re = re.compile(
-            '<!-- \[\[ multilangual toc: level=([1-9]+~?|~?[1-9]+|[1-9]+~[1-9]*) \]\] -->')
+            '<!-- \[\[ multilangual toc:[ ]*level=([1-9]+~?|~?[1-9]+|[1-9]+~[1-9]*)[ ]*\]\] -->')
         while True:
             # codeblock check (`x`, ```x```)
             codeblock_all = codeblock_re.findall(self.doc.last_line)
@@ -199,10 +204,11 @@ class MultilangualDoc(object):
                 elif codeblock_mark == mark:
                     codeblock_mark = None
             # detect
-            # detect toc
-            if toc_re.match(self.doc.last_line):
-                if not codeblock_mark:
-                    detection = True
+            keyword_detected = False
+            if not codeblock_mark:
+                # detect toc
+                if toc_re.match(self.doc.last_line):
+                    keyword_detected = True
                     signal = 'common'
                     level_re = re.compile('level=[~\d]{1,3}')
                     level = level_re.search(self.doc.last_line).group()[6:]
@@ -223,12 +229,12 @@ class MultilangualDoc(object):
                         lmin, lmax = int(level)
                     for all_doc in self.lang_doc.values():
                         all_doc.set_toc(_min=lmin, _max=lmax)
-            # detect signal
-            elif self.pattern.match(self.doc.last_line):
-                if not codeblock_mark:
+                # detect signal
+                elif self.pattern.match(self.doc.last_line):
+                    keyword_detected = True
                     signal = self.doc.last_line.replace(" ", "")[5:-5]
             # write
-            else:
+            if not keyword_detected:
                 if signal == 'common':
                     for all_doc in self.lang_doc.values():
                         all_doc.write(self.doc.last_line, codeblock_mark)
