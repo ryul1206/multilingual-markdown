@@ -4,18 +4,20 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 
-[English](README.md), [한국어](README.kr.md)
+🌏 [English](README.md), [한국어](README.kr.md)
 
-**Table of contents**
+⚡️ **Table of Contents**
 
-1. [How It Works](#How-It-Works)
+1. [How It Works 🔎](#How-It-Works-)
 1. [Features](#Features)
 1. [How to Use](#How-to-Use)
 1. [Command Tags](#Command-Tags)
     1. [Headers](#Headers)
     1. [Main Text](#Main-Text)
+1. [Contributing](#Contributing)
+    1. [Contributors](#Contributors)
 
-## How It Works
+## How It Works 🔎
 ![how it works](how-it-works.png)
 
 ## Features
@@ -23,7 +25,7 @@
 - Auto table of contents
 - Auto suffix to file name
 - No suffix option (for one main language)
-- UTF-8 encoding. So *maybe* this will support almost all languages. :)
+- UTF-8 encoding. So *maybe* this will support almost all languages. :) 🍷
 
 ## How to Use
 
@@ -113,5 +115,18 @@ Everything that the parser reads after the tag below is recognized as the main t
         - `level=~4`: Make the 1st ~ 4th level to table of contents.
         - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
     - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
-    - **CAUTION**: If you omit this `level` or leave it as `level =`(spacing), the parser will not recognize it.
-    - **CAUTION**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
+    - **CAUTION💥**: If you omit this `level` or leave it as `level =`(spacing), the parser will not recognize it.
+    - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
+
+## Contributing
+
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
+
+> Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+
+### Contributors
+
+> The contributor list is available in English only.
+
+Empty... 😭
+Be my first contributor, please! 😍

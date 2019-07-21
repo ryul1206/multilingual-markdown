@@ -14,12 +14,23 @@ def search(dir_name):
                 yield (path, file_name)
 
 
+def remove_emoji(text):
+    emoji_pattern = re.compile("["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+    "]+", flags=re.UNICODE)
+    return emoji_pattern.sub(r'', text) # no emoji
+
+
 def create_toc(_dict, _min, _max, toc_str, level=1):
     for head, child in _dict.items():
         if (_min <= level) and (level <= _max):
             # line
             spc = "[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:\'\",./<>\?]+"
             suburl = re.sub(spc, '', head)
+            suburl = remove_emoji(suburl)
             suburl = suburl.replace('  ', ' ').replace(' ', '-')
             temp = '1. [{}](#{})\n'.format(head, suburl)
             # append
