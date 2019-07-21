@@ -18,7 +18,8 @@
 
 <!-- [[ multilangual toc: level=2~3 ]] -->
 
-![one-does-not-simply-speak-only-one-language](example/one-does-not-simply-speak-only-one-language.jpg)
+## How it works
+![how it works](how-it-works.png)
 
 <!-- [en] -->
 ## Features

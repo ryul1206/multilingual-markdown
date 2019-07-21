@@ -7,10 +7,12 @@
 
 **Table of contents**
 
+1. [How it works](#How-it-works)
 1. [Features](#Features)
 1. [How to use](#How-to-use)
 
-![one-does-not-simply-speak-only-one-language](example/one-does-not-simply-speak-only-one-language.jpg)
+## How it works
+![how it works](how-it-works.png)
 
 ## Features
 

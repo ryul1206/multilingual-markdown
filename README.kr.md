@@ -7,10 +7,12 @@
 
 **Table of contents**
 
+1. [How it works](#How-it-works)
 1. [기능](#기능)
 1. [사용법](#사용법)
 
-![one-does-not-simply-speak-only-one-language](example/one-does-not-simply-speak-only-one-language.jpg)
+## How it works
+![how it works](how-it-works.png)
 
 ## 기능
 
