@@ -5,6 +5,8 @@
 
 [English](example.en.md), [한국어](example.kr.md)
 
+![lets go now](lets-go-now.jpg)
+
 이 문서는 `base` 문서로 부터 생성된 결과입니다.
 
 **Table of contents**
@@ -19,5 +21,3 @@
 ```bash
 이것은 코드 블럭입니다.
 ```
-
-![lets go now](lets-go-now.jpg)

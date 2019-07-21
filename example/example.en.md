@@ -5,6 +5,8 @@
 
 [English](example.en.md), [한국어](example.kr.md)
 
+![lets go now](lets-go-now.jpg)
+
 This document is the output from the `base` document.
 
 **Table of contents**
@@ -20,4 +22,3 @@ This document is the output from the `base` document.
 This is code block.
 ```
 
-![lets go now](lets-go-now.jpg)

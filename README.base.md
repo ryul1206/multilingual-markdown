@@ -36,14 +36,14 @@
 - Auto table of contents
 - Auto suffix to file name
 - No suffix option (for one main language)
-- UTF-8 encoding
+- UTF-8 encoding. So *maybe* this will support almost all languages. :)
 <!-- [kr] -->
 ## 기능
 
 - 자동 목차
 - 파일 이름 뒤에 자동 접미사
 - 접미사 생략 옵션 (한 개 언어만 가능)
-- UTF-8 인코딩
+- UTF-8 인코딩. 따라서 *아마도* 거의 모든 언어를 지원할겁니다. :)
 <!-- [common] -->
 
 <!-- [en] -->

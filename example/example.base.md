@@ -13,6 +13,8 @@
 
 [English](example.en.md), [한국어](example.kr.md)
 
+![lets go now](lets-go-now.jpg)
+
 <!-- [en] -->
 This document is the output from the `base` document.
 <!-- [kr] -->
@@ -45,6 +47,3 @@ This is code block.
 ```bash
 이것은 코드 블럭입니다.
 ```
-
-<!-- [common] -->
-![lets go now](lets-go-now.jpg)

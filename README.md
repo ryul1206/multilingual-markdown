@@ -23,7 +23,7 @@
 - Auto table of contents
 - Auto suffix to file name
 - No suffix option (for one main language)
-- UTF-8 encoding
+- UTF-8 encoding. So *maybe* this will support almost all languages. :)
 
 ## How to Use
 
