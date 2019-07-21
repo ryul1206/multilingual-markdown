@@ -24,20 +24,24 @@ def remove_emoji(text):
     return emoji_pattern.sub(r'', text) # no emoji
 
 
-def create_toc(_dict, _min, _max, toc_str, level=1):
+def create_toc(_dict, _min, _max, enable_emoji_header, toc_str="", level=1):
     for head, child in _dict.items():
         if (_min <= level) and (level <= _max):
-            # line
+            # head
+            if not enable_emoji_header:
+                head = remove_emoji(head)
+            # suburl
             spc = "[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:\'\",./<>\?]+"
             suburl = re.sub(spc, '', head)
             suburl = remove_emoji(suburl)
             suburl = suburl.replace('  ', ' ').replace(' ', '-')
+            # toc line
             temp = '1. [{}](#{})\n'.format(head, suburl)
             # append
             toc_str += '    '*(level - _min)
             toc_str += temp
         # recursive
-        toc_str = create_toc(child, _min, _max, toc_str, level+1)
+        toc_str = create_toc(child, _min, _max, enable_emoji_header, toc_str, level+1)
     return toc_str
 
 
@@ -73,8 +77,9 @@ class CreateMonolangualDoc(object):
             if isinstance(line, str):
                 self.doc.write(line)
             elif isinstance(line, tuple):  # toc
+                # (_min, _max, enable_emoji_header)
                 self.doc.write(
-                    create_toc(self.toc, line[0], line[1], ""))
+                    create_toc(self.toc, line[0], line[1], line[2]))
             else:
                 raise NotImplementedError
 
@@ -107,8 +112,8 @@ class CreateMonolangualDoc(object):
         self.toc_stack.append(head)
         self.prev_level = level
 
-    def set_toc(self, _min=1, _max=9):
-        self.content.append((_min, _max))
+    def set_toc(self, _min=1, _max=9, enable_emoji_header=True):
+        self.content.append((_min, _max, enable_emoji_header))
 
 
 class MultilangualDoc(object):
@@ -205,8 +210,7 @@ class MultilangualDoc(object):
         signal = 'common'
         codeblock_re = re.compile('`+')
         codeblock_mark = None
-        toc_re = re.compile(
-            '<!-- \[\[ multilangual toc:[ ]*level=([1-9]+~?|~?[1-9]+|[1-9]+~[1-9]*)[ ]*\]\] -->')
+        toc_re = re.compile('<!-- \[\[ multilangual toc:[ \w=~-]+\]\] -->')
         while True:
             # codeblock check (`x`, ```x```)
             codeblock_all = codeblock_re.findall(self.doc.last_line)
@@ -222,25 +226,31 @@ class MultilangualDoc(object):
                 if toc_re.match(self.doc.last_line):
                     keyword_detected = True
                     signal = 'common'
-                    level_re = re.compile('level=[~\d]{1,3}')
+                    # toc level
+                    level_re = re.compile('level[ ]*=[ ]*([1-9]~[1-9]|~[1-9]+|[1-9]+~?)')
                     level = level_re.search(self.doc.last_line).group()[6:]
-                    if len(level) == 3:
-                        # 1~2
+                    if level is None:
+                        print("[Error] You forgot the level option on the table of contents.")
+                        raise NotImplementedError
+                    lmin, lmax = (1, 9)
+                    if len(level) == 3:  # 1~2
                         lmin, lmax = [int(x) for x in level.split('~')]
                     elif len(level) == 2:
-                        # ~2
-                        if level[0] == '~':
-                            lmin = 1
+                        if level[0] == '~':  # ~2
                             lmax = int(level[1])
-                        # 2~
-                        else:
+                        else:  # 2~
                             lmin = int(level[0])
-                            lmax = 9
-                    else:
-                        # 2
+                    else:  # 2
                         lmin, lmax = int(level)
+                    # toc emoji
+                    no_emoji_re = re.compile('no-emoji')
+                    enable_emoji = (no_emoji_re.search(self.doc.last_line) == None)
+                    # toc record
                     for all_doc in self.lang_doc.values():
-                        all_doc.set_toc(_min=lmin, _max=lmax)
+                        all_doc.set_toc(
+                            _min=lmin,
+                            _max=lmax,
+                            enable_emoji_header=enable_emoji)
                 # detect signal
                 elif self.pattern.match(self.doc.last_line):
                     keyword_detected = True

@@ -13,15 +13,18 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 
+🚀 **version 0.1**
 🌏 [English](README.md), [한국어](README.kr.md)
 
+---
+
 <!-- [en] -->
-⚡️ **Table of Contents**
+**Table of Contents** ⚡
 <!-- [kr] -->
-⚡️ **목차**
+**목차** ⚡
 <!-- [common] -->
 
-<!-- [[ multilangual toc: level=2~3 ]] -->
+<!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
 
 <!-- [en] -->
 ## How It Works 🔎
@@ -33,17 +36,21 @@
 <!-- [en] -->
 ## Features
 
-- Auto table of contents
 - Auto suffix to file name
 - No suffix option (for one main language)
 - UTF-8 encoding. So *maybe* this will support almost all languages. :) 🍷
+- Auto table of contents
+    - Table of contents level options
+    - Table of contents emoji **on-off** options
 <!-- [kr] -->
 ## 기능
 
-- 자동 목차
 - 파일 이름 뒤에 자동 접미사
 - 접미사 생략 옵션 (한 개 언어만 가능)
 - UTF-8 인코딩. 따라서 *아마도* 거의 모든 언어를 지원할겁니다. :) 🍷
+- 자동 목차
+    - 목차로 만들 제목수준 설정 가능
+    - 목차에서 이모티콘 **표시/생략** 설정 가능
 <!-- [common] -->
 
 <!-- [en] -->
@@ -207,24 +214,36 @@ Everything that the parser reads after the tag below is recognized as the main t
     ```
 
 <!-- [en] -->
-    - There are four ways to mark `level`. You can change the numbers below.
-        - `level=2`: Make the 2nd level to table of contents.
-        - `level=2~`: Make the 2nd ~ 9th level to table of contents.
-        - `level=~4`: Make the 1st ~ 4th level to table of contents.
-        - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
-    - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
-    - **CAUTION💥**: If you omit this `level` or leave it as `level =`(spacing), the parser will not recognize it.
-    - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
+    1. **`level` option**
+        - There are four ways to mark `level`. You can change the numbers below.
+            - `level=2`: Make the 2nd level to table of contents.
+            - `level=2~`: Make the 2nd ~ 9th level to table of contents.
+            - `level=~4`: Make the 1st ~ 4th level to table of contents.
+            - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
+        - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
+        - **CAUTION💥**: If you omit this `level`, the parser will not recognize it.
+        - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
 <!-- [kr] -->
-    - `level`을 표기하는 방법은 총 4가지입니다. 여러분의 필요에 따라 숫자는 바꾸시면 됩니다.
-        - `level=2`: 2수준의 제목만 목차로 만듭니다.
-        - `level=2~`: 2~9수준의 제목만 목차로 만듭니다.
-        - `level=~4`: 1~4수준의 제목만 목차로 만듭니다.
-        - `level=2~4`: 2~4수준의 제목만 목차로 만듭니다.
-    - 하나의 문서에서 `table of contents` 태그는 여러번 쓸 수 있고, 매번 다른 `level` 옵션을 줄 수도 있습니다.
-    - **주의💥**: 만약 `level`을 생략하거나 `level =`과 같이 띄어쓰면 파서가 인식하지 못합니다.
-    - **주의💥**: 목차 태그는 자동으로 현재 키워드를 `common`으로 변경합니다. 그래서 목차 태그 또한 암묵적으로 `common`에 속합니다.
+    1. **`level` 옵션**
+        - `level`을 표기하는 방법은 총 4가지입니다. 여러분의 필요에 따라 숫자는 바꾸시면 됩니다.
+            - `level=2`: 2수준의 제목만 목차로 만듭니다.
+            - `level=2~`: 2~9수준의 제목만 목차로 만듭니다.
+            - `level=~4`: 1~4수준의 제목만 목차로 만듭니다.
+            - `level=2~4`: 2~4수준의 제목만 목차로 만듭니다.
+        - 하나의 문서에서 `table of contents` 태그는 여러번 쓸 수 있고, 매번 다른 `level` 옵션을 줄 수도 있습니다.
+        - **주의💥**: 만약 `level`을 생략하면 파서가 인식하지 못합니다.
+        - **주의💥**: 목차 태그는 자동으로 현재 키워드를 `common`으로 변경합니다. 그래서 목차 태그 또한 암묵적으로 `common`에 속합니다.
+<!-- [en] -->
+    2. **`no-emoji` option**
+        - In rare cases, you may want to subtract emoji from the table of contents while inserting emoji in the title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
+<!-- [kr] -->
+    2. **`no-emoji` 옵션**
+        - 드문 경우지만 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
 <!-- [common] -->
+
+        ```markdown
+        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        ```
 
 <!-- [en] -->
 ## Contributing

@@ -4,11 +4,14 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 
+🚀 **version 0.1**
 🌏 [English](README.md), [한국어](README.kr.md)
 
-⚡️ **Table of Contents**
+---
 
-1. [How It Works 🔎](#How-It-Works-)
+**Table of Contents** ⚡
+
+1. [How It Works ](#How-It-Works-)
 1. [Features](#Features)
 1. [How to Use](#How-to-Use)
 1. [Command Tags](#Command-Tags)
@@ -22,10 +25,12 @@
 
 ## Features
 
-- Auto table of contents
 - Auto suffix to file name
 - No suffix option (for one main language)
 - UTF-8 encoding. So *maybe* this will support almost all languages. :) 🍷
+- Auto table of contents
+    - Table of contents level options
+    - Table of contents emoji **on-off** options
 
 ## How to Use
 
@@ -109,14 +114,21 @@ Everything that the parser reads after the tag below is recognized as the main t
     <!-- [[ multilangual toc: level=2~3 ]] -->
     ```
 
-    - There are four ways to mark `level`. You can change the numbers below.
-        - `level=2`: Make the 2nd level to table of contents.
-        - `level=2~`: Make the 2nd ~ 9th level to table of contents.
-        - `level=~4`: Make the 1st ~ 4th level to table of contents.
-        - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
-    - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
-    - **CAUTION💥**: If you omit this `level` or leave it as `level =`(spacing), the parser will not recognize it.
-    - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
+    1. **`level` option**
+        - There are four ways to mark `level`. You can change the numbers below.
+            - `level=2`: Make the 2nd level to table of contents.
+            - `level=2~`: Make the 2nd ~ 9th level to table of contents.
+            - `level=~4`: Make the 1st ~ 4th level to table of contents.
+            - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
+        - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
+        - **CAUTION💥**: If you omit this `level`, the parser will not recognize it.
+        - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
+    2. **`no-emoji` option**
+        - In rare cases, you may want to subtract emoji from the table of contents while inserting emoji in the title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
+
+        ```markdown
+        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        ```
 
 ## Contributing
 
