@@ -1,6 +1,6 @@
 # Multilingual Markdown Generator
 
-[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
@@ -36,11 +36,14 @@
 
 ## Badges
 
-[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-yellow-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
+...
 
 ```markdown
-[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ```
 
 ## How to Use
