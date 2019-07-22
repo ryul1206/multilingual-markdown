@@ -1,5 +1,6 @@
 # Multilingual Markdown Generator
 
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
@@ -13,6 +14,7 @@
 
 1. [How It Works ](#How-It-Works-)
 1. [Features](#Features)
+1. [Badges](#Badges)
 1. [How to Use](#How-to-Use)
 1. [Command Tags](#Command-Tags)
     1. [Headers](#Headers)
@@ -31,6 +33,15 @@
 - Auto table of contents
     - Table of contents level options
     - Table of contents emoji **on-off** options
+
+## Badges
+
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-yellow-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+
+```markdown
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+```
 
 ## How to Use
 

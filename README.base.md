@@ -9,6 +9,7 @@
 # 다국어 마크다운 생성기
 <!-- [common] -->
 
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
@@ -52,6 +53,19 @@
     - 목차로 만들 제목수준 설정 가능
     - 목차에서 이모티콘 **표시/생략** 설정 가능
 <!-- [common] -->
+
+<!-- [en] -->
+## Badges
+<!-- [kr] -->
+## 뱃지 달기
+<!-- [common] -->
+
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-yellow-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+
+```markdown
+[![Multilingual Markdown Generator](https://github.com/ryul1206/multilingual-markdown/badges/multilingual-pink-badge.svg)](https://github.com/ryul1206/multilingual-markdown)
+```
 
 <!-- [en] -->
 ## How to Use
