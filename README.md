@@ -20,7 +20,6 @@
     1. [Headers](#Headers)
     1. [Main Text](#Main-Text)
 1. [Contributing](#Contributing)
-    1. [Contributors](#Contributors)
 
 ## How It Works 🔎
 ![how it works](how-it-works.png)
@@ -150,9 +149,3 @@ I would appreciate anything you send. (e.g. translations, simple improvements, b
 
 > Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
 
-### Contributors
-
-> The contributor list is available in English only.
-
-Empty... 😭
-Be my first contributor, please! 😍

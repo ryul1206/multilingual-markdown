@@ -278,13 +278,13 @@ I would appreciate anything you send. (e.g. translations, simple improvements, b
 > 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
 <!-- [common] -->
 
+<!-- [ignore] -->
 ### Contributors
 
-<!-- [en] -->
+[en]
 > The contributor list is available in English only.
-<!-- [kr] -->
+[kr]
 > 기여자 명단은 영어로만 제공됩니다.
-<!-- [common] -->
+[common]
 
-Empty... 😭
-Be my first contributor, please! 😍
+Empty.
