@@ -1,4 +1,5 @@
-# Example Document
+# Document exemple
+
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
@@ -7,19 +8,18 @@
 
 ![lets go now](lets-go-now.jpg)
 
-This document is the output from the `base` document.
-Ce document est généré à partir du document `base`. 
 
 **Table of contents**
 
-1. [This is heading 2](#This-is-heading-2)
-    1. [This is heading 3](#This-is-heading-3)
+1. [Ceci est un titre 2](#Ceci-est-un-titre-2)
+    1. [Ceci est un titre 3](#Ceci-est-un-titre-3)
 
-## This is heading 2
+## Ceci est un titre 2
 
-### This is heading 3
+### Ceci est un titre 3
 
 ```bash
-This is code block.
+Ceci est un bloc de code.
 ```
+
 
