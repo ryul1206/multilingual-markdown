@@ -7,7 +7,7 @@ from collections import OrderedDict  # toc
 
 
 def search(dir_name):
-    base = re.compile('[.]base[.]md')
+    base = re.compile("[.]base[.]md")
     for path, folder, files in os.walk(dir_name):
         for file_name in files:
             if base.search(file_name):
@@ -15,13 +15,16 @@ def search(dir_name):
 
 
 def remove_emoji(text):
-    emoji_pattern = re.compile("["
+    emoji_pattern = re.compile(
+        "["
         u"\U0001F600-\U0001F64F"  # emoticons
         u"\U0001F300-\U0001F5FF"  # symbols & pictographs
         u"\U0001F680-\U0001F6FF"  # transport & map symbols
         u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
-    "]+", flags=re.UNICODE)
-    return emoji_pattern.sub(r'', text) # no emoji
+        "]+",
+        flags=re.UNICODE,
+    )
+    return emoji_pattern.sub(r"", text)  # no emoji
 
 
 def create_toc(_dict, _min, _max, enable_emoji_header, toc_str="", level=1):
@@ -31,32 +34,32 @@ def create_toc(_dict, _min, _max, enable_emoji_header, toc_str="", level=1):
             if not enable_emoji_header:
                 head = remove_emoji(head)
             # suburl
-            spc = "[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:\'\",./<>\?]+"
-            suburl = re.sub(spc, '', head)
+            spc = "[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:'\",./<>\?]+"
+            suburl = re.sub(spc, "", head)
             suburl = remove_emoji(suburl)
-            suburl = suburl.replace('  ', ' ').replace(' ', '-')
+            suburl = suburl.replace("  ", " ").replace(" ", "-")
             # toc line
-            temp = '1. [{}](#{})\n'.format(head, suburl)
+            temp = "1. [{}](#{})\n".format(head, suburl)
             # append
-            toc_str += '    '*(level - _min)
+            toc_str += "    " * (level - _min)
             toc_str += temp
         # recursive
-        toc_str = create_toc(child, _min, _max, enable_emoji_header, toc_str, level+1)
+        toc_str = create_toc(child, _min, _max, enable_emoji_header, toc_str, level + 1)
     return toc_str
 
 
 class CreateMonolangualDoc(object):
     def __init__(self, path, file_name, lang, suffix=True):
         fname, base, ename = file_name.split(".")
-        new_name = fname + ("."+lang+"." if suffix else ".") + ename
+        new_name = fname + ("." + lang + "." if suffix else ".") + ename
         self.full_name = os.path.join(path, new_name)
 
-        self.doc = open(self.full_name, 'w', encoding='utf-8')
+        self.doc = open(self.full_name, "w", encoding="utf-8")
 
         self.content = []
 
         self.toc = OrderedDict()
-        self.header_re = re.compile('#+ ')
+        self.header_re = re.compile("#+ ")
         self.toc_stack = []
         self.prev_level = 0
 
@@ -78,8 +81,7 @@ class CreateMonolangualDoc(object):
                 self.doc.write(line)
             elif isinstance(line, tuple):  # toc
                 # (_min, _max, enable_emoji_header)
-                self.doc.write(
-                    create_toc(self.toc, line[0], line[1], line[2]))
+                self.doc.write(create_toc(self.toc, line[0], line[1], line[2]))
             else:
                 raise NotImplementedError
 
@@ -90,8 +92,8 @@ class CreateMonolangualDoc(object):
         if not codeblock_mark:
             result = self.header_re.match(oneline)
             if result:
-                head = oneline[result.end():].replace('\n', '')
-                self.append_toc(head, result.end()-1)
+                head = oneline[result.end() :].replace("\n", "")
+                self.append_toc(head, result.end() - 1)
 
     def append_toc(self, head, level):
         if (self.prev_level + 1) == level:  # new child
@@ -99,7 +101,7 @@ class CreateMonolangualDoc(object):
         elif self.prev_level == level:  # same level
             self.toc_stack = self.toc_stack[:-1]
         elif self.prev_level > level:  # new elem
-            self.toc_stack = self.toc_stack[:(level-1)]
+            self.toc_stack = self.toc_stack[: (level - 1)]
         else:
             msg = "[Error] toc level mismatch. prev_level="
             msg += "{}, current_level={}".format(self.prev_level, level)
@@ -117,10 +119,9 @@ class CreateMonolangualDoc(object):
 
 
 class MultilangualDoc(object):
-
     class SafetyRead(object):
         def __init__(self, full_name):
-            self.__doc = open(full_name, 'r', encoding='utf-8')
+            self.__doc = open(full_name, "r", encoding="utf-8")
             self.line_count = 0
             self.last_line = ""
 
@@ -139,8 +140,8 @@ class MultilangualDoc(object):
         # Initialize configuration
         self.lang_read = {}
         self.lang_doc = {}
-        self.no_suffix = ''
-        self.pattern = re.compile('[ \t]*<!-- \[\w+\] -->')  # <!-- [oo] -->
+        self.no_suffix = ""
+        self.pattern = re.compile("[ \t]*<!-- \[\w+\] -->")  # <!-- [oo] -->
         self.init_config(path, file_name)
 
         # Main converting
@@ -155,10 +156,11 @@ class MultilangualDoc(object):
     def init_config(self, path, file_name):
         # re options
         options = [
-            (re.compile('<!-- multilangual suffix:[ ]*([\w]+)(, [\w]+)*'),
-                self.config_setlang),
-            (re.compile('<!-- no suffix:[ ]*([\w]+)'),
-                self.config_nosuffix)
+            (
+                re.compile("<!-- multilangual suffix:[ ]*([\w]+)(, [\w]+)*"),
+                self.config_setlang,
+            ),
+            (re.compile("<!-- no suffix:[ ]*([\w]+)"), self.config_nosuffix),
         ]
         once = [False for _ in options]
         # check base doc
@@ -207,10 +209,10 @@ class MultilangualDoc(object):
         while not self.pattern.match(self.doc.last_line):
             self.doc.readline()
         # converting
-        signal = 'common'
-        codeblock_re = re.compile('`+')
+        signal = "common"
+        codeblock_re = re.compile("`+")
         codeblock_mark = None
-        toc_re = re.compile('<!-- \[\[ multilangual toc:[ \w=~-]+\]\] -->')
+        toc_re = re.compile("<!-- \[\[ multilangual toc:[ \w=~-]+\]\] -->")
         while True:
             # codeblock check (`x`, ```x```)
             codeblock_all = codeblock_re.findall(self.doc.last_line)
@@ -225,46 +227,48 @@ class MultilangualDoc(object):
                 # detect toc
                 if toc_re.match(self.doc.last_line):
                     keyword_detected = True
-                    signal = 'common'
+                    signal = "common"
                     # toc level
-                    level_re = re.compile('level[ ]*=[ ]*([1-9]~[1-9]|~[1-9]+|[1-9]+~?)')
+                    level_re = re.compile(
+                        "level[ ]*=[ ]*([1-9]~[1-9]|~[1-9]+|[1-9]+~?)"
+                    )
                     level = level_re.search(self.doc.last_line).group()[6:]
                     if level is None:
-                        print("[Error] You forgot the level option on the table of contents.")
+                        print(
+                            "[Error] You forgot the level option on the table of contents."
+                        )
                         raise NotImplementedError
                     lmin, lmax = (1, 9)
                     if len(level) == 3:  # 1~2
-                        lmin, lmax = [int(x) for x in level.split('~')]
+                        lmin, lmax = [int(x) for x in level.split("~")]
                     elif len(level) == 2:
-                        if level[0] == '~':  # ~2
+                        if level[0] == "~":  # ~2
                             lmax = int(level[1])
                         else:  # 2~
                             lmin = int(level[0])
                     else:  # 2
                         lmin, lmax = int(level)
                     # toc emoji
-                    no_emoji_re = re.compile('no-emoji')
-                    enable_emoji = (no_emoji_re.search(self.doc.last_line) == None)
+                    no_emoji_re = re.compile("no-emoji")
+                    enable_emoji = no_emoji_re.search(self.doc.last_line) == None
                     # toc record
                     for all_doc in self.lang_doc.values():
                         all_doc.set_toc(
-                            _min=lmin,
-                            _max=lmax,
-                            enable_emoji_header=enable_emoji)
+                            _min=lmin, _max=lmax, enable_emoji_header=enable_emoji
+                        )
                 # detect signal
                 elif self.pattern.match(self.doc.last_line):
                     keyword_detected = True
                     signal = self.doc.last_line.replace(" ", "")[5:-5]
             # write
             if not keyword_detected:
-                if signal == 'common':
+                if signal == "common":
                     for all_doc in self.lang_doc.values():
                         all_doc.write(self.doc.last_line, codeblock_mark)
-                elif signal == 'ignore':
+                elif signal == "ignore":
                     pass
                 else:
-                    self.lang_doc[signal].write(
-                        self.doc.last_line, codeblock_mark)
+                    self.lang_doc[signal].write(self.doc.last_line, codeblock_mark)
             # terminal conditions
             # base doc end
             if not self.doc.readline():
@@ -275,7 +279,7 @@ class MultilangualDoc(object):
 
 
 if __name__ == "__main__":
-    assert(sys.version_info[0] is 3)
+    assert sys.version_info[0] == 3
     base_count = 0
     dir_name = "."
     print("----------------------")

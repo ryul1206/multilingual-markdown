@@ -136,3 +136,4 @@ photothumb.db
 # vscode
 ######################
 .vscode/*
+!.vscode/settings.json

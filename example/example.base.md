@@ -1,5 +1,5 @@
 <!---------------------------->
-<!-- multilangual suffix: en, kr, fr  -->
+<!-- multilangual suffix: en, fr, kr  -->
 <!---------------------------->
 
 <!-- [en] -->
@@ -14,7 +14,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 
-[English](example.en.md), [한국어](example.kr.md), [Français](example.fr.md)
+[English](example.en.md), [Français](example.fr.md), [한국어](example.kr.md)
 
 ![lets go now](lets-go-now.jpg)
 
@@ -42,7 +42,7 @@ Ce document est généré à partir du document `base`.
 ### This is heading 3
 
 ```bash
-This is code block.
+This is a code block.
 ```
 
 <!-- [kr] -->

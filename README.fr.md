@@ -6,7 +6,7 @@
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 
 🚀 **version 0.1**
-🌏 [English](README.md), [한국어](README.kr.md), [Français](README.fr.md)
+🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
 
@@ -19,7 +19,8 @@
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
     1. [Corps de texte](#Corps-de-texte)
-1. [Contribution](#Contribution)
+1. [Contributors](#Contributors)
+    1. [Contribution](#Contribution)
 
 ## Fonctionnement 🔎
 ![how it works](how-it-works.png)
@@ -47,20 +48,19 @@
 
 ## Mode d'emploi
 
-  1. Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
+1. Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
+2. Exécutez le script Python `multilang_md.py` à la racine de votre projet : il recherchera tous les Markdown dans les répertoires inférieurs.
 
-  2. Exécutez le script Python `multilang_md.py` à la racine de votre projet : il recherchera tous les Markdown dans les répertoires inférieurs.
+  ```bash
+  python multilang_md.py
+  ```
 
-   ```bash
-   python multilang_md.py
-   ```
-
-  3. Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
+3. Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
 
     - par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
     - option no-suffix pour `en`: `{quelquechose}.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
 
-  4. Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
+4. Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
 
 ## Marqueurs
 
@@ -68,8 +68,7 @@
 
 Les titres doivent être déclarés avant le corps de texte.
 
-
-  1. **Déclaration des suffixes**
+1. **Déclaration des suffixes**
 
     Déclarez les langues que vous souhaitez utiliser. Dans l'exemple suivant, on déclare les mots-clés `en`, `kr` et `fr` et quelque autres. Ces mots-clés seront utilisés comme suffixes des noms de fichier et comme marqueurs dans les fichiers `base.md`.
 
@@ -77,10 +76,9 @@ Les titres doivent être déclarés avant le corps de texte.
     <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
     ```
 
-  2. **Suffixe invisible** (facultatif)
+1. **Suffixe invisible** (facultatif)
 
     L'option `no suffix` évite l'ajout de l'un des suffixes lors de la création des fichiers. Ainsi, appliquer `no suffix`à la langue `en` génèrera *`fichier`*`.md` au lieu de *`fichier`*`.en.md`. Cela est utile par exemple pour le `README` obligatoire dans  **GitHub** qui n sera pas reconnu s'il a un suffixe (par exemple `README.en.md`).
-
 
     ```markdown
     <!-- no suffix: en -->
@@ -94,7 +92,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
     1. Classification de langue
 
-      Les marqueurs qui distinguent les languages sont écrits sous la forme `<!-- [marqueur] -->`. Si un marqueur est reconnu, il sera retenu jusqu'à ce qu'un autre soit reconnu.
+        Les marqueurs qui distinguent les languages sont écrits sous la forme `<!-- [marqueur] -->`. Si un marqueur est reconnu, il sera retenu jusqu'à ce qu'un autre soit reconnu.
 
         ```markdown
         <!-- [en] -->
@@ -122,7 +120,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         <!-- [ignore] -->
         ```
 
-  1. **Table des matières**
+1. **Table des matières**
 
     Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option `level`. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown `# titre` et aux tags HTML `<H1>`.
 
@@ -146,14 +144,15 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
         ```
 
-## Contribution
+## Contributors
+
+> La liste des contributeurs est en Anglais seulement.
+
+- [Francis Piérot](https://github.com/bkg2018) - French translation ([fr])
+
+### Contribution
 
 Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
 
 > Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
 
-
-> La liste des contributeurs est en Anglais seulement.
-
-
-Francis Piérot - French translation ([fr])

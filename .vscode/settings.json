@@ -1,0 +1,21 @@
+{
+    "markdownFormatter.enable": false,
+    "[markdown]": {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        // show space
+        // "editor.renderWhitespace": "boundary",
+        "editor.renderWhitespace": "none",
+        // 
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+}
