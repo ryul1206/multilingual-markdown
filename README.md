@@ -47,6 +47,7 @@
 ```
 
 ## How to Use
+(Python3 required)
 
 1. Make `{something}.base.md` files. See [README.base.md](README.base.md) and [example.base.md](example/example.base.md) for examples, and [Command Tags](#Command-Tags) for rules.
 1. Run this python file on your project root. Then, this will search all markdowns recursively.

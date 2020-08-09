@@ -94,6 +94,7 @@
 <!-- [fr] -->
 ## Mode d'emploi
 <!-- [common] -->
+(Python3 required)
 
 <!-- [en] -->
 1. Make `{something}.base.md` files. See [README.base.md](README.base.md) and [example.base.md](example/example.base.md) for examples, and [Command Tags](#Command-Tags) for rules.
