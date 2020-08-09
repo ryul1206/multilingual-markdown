@@ -88,7 +88,7 @@ Les titres doivent être déclarés avant le corps de texte.
 
 Tout ce qui suit le marqueur est interprété comme corps principal de texte, donc vous devez placer les titres avant le texte.
 
-  1. **Mots-clés**
+1. **Mots-clés**
 
     1. Classification de langue
 

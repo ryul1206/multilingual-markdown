@@ -212,11 +212,11 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [common] -->
 
 <!-- [en] -->
-  1. **Keywords**
+1. **Keywords**
 <!-- [kr] -->
-  1. **키워드**
+1. **키워드**
 <!-- [fr] -->
-  1. **Mots-clés**
+1. **Mots-clés**
 <!-- [common] -->
 
 <!-- [en] -->

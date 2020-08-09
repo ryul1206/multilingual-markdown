@@ -88,7 +88,7 @@ Headers must be declared before the body begins.
 
 Everything that the parser reads after the tag below is recognized as the main text. (So you have to write the header before main).
 
-  1. **Keywords**
+1. **Keywords**
 
     1. Language Classification
 
