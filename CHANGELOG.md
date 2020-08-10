@@ -23,6 +23,7 @@ TODO: formatting guide (README.md) Wrong format of base-file will break all.
 TODO: Install guide. -> shell script
 TODO: cli bash, zsh alias guide. -> shell script
 TODO: cli options: target-files(non-recursive), all-files(recursive)
+TODO: better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
 
 -->
 

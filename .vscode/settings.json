@@ -1,4 +1,6 @@
 {
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
     "markdownFormatter.enable": false,
     "[markdown]": {
         "editor.tabSize": 4,
@@ -14,8 +16,10 @@
             "strings": true
         },
     },
+    "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.enabled": true,
+    "python.linting.flake8Args": ["--max-line-length=88"],
     "python.formatting.provider": "black",
+    "python.pythonPath": "/usr/bin/python3",
 }
