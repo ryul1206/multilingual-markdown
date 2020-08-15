@@ -1,6 +1,6 @@
 # 다국어 마크다운 생성기
 
-🚀 **version 0.1.0**
+🚀 **version 0.2.0**
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
