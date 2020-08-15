@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Major: 기존 버전과 호환되지 않게 API가 바뀌면 “주(主) 버전”을 올리고,
 Minor: 기존 버전과 호환되면서 새로운 기능을 추가할 때는 “부(部) 버전”을 올리고,
 Patch: 기존 버전과 호환되면서 버그를 수정한 것이라면 “수(修) 버전”을 올린다.
----
++++++
 MAJOR version when you make incompatible API changes,
 MINOR version when you add functionality in a backwards compatible manner, and
 PATCH version when you make backwards compatible bug fixes.
@@ -27,14 +27,9 @@ Security 취약점이 있는 경우
 -->
 
 <!--
-## [0.2.0] - 2020-08-?
-
 TODO: formatting guide (README.md) Wrong format of base-file will break all.
-TODO: Install guide. -> shell script
-TODO: cli bash, zsh alias guide. -> shell script
-TODO: cli options: target-files(non-recursive), all-files(recursive)
+TODO: Install guide. shell script
 TODO: better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
-
 -->
 
 
@@ -42,7 +37,21 @@ TODO: better emoji detection (https://stackoverflow.com/questions/43146528/how-t
 
 ### Added
 
-- 
+- New CLI command by [Click package](https://click.palletsprojects.com/en/7.x/). `mmg --help`:
+  ```sh
+  Usage: multilang_md.py [OPTIONS] [FILENAMES]...
+
+  Options:
+    -r, --recursive  This recursive option searches all subfolders based on
+                    current directory and convert all base files.
+
+    --help           Show this message and exit.
+  ```
+
+### Changed
+
+- All Python exceptions changed to [Click exceptions](https://click.palletsprojects.com/en/7.x/api/#exceptions).
+- More detailed README. (Installation method, CLI usage, and some warnings.)
 
 ## [0.1.0] - 2020-07-26
 
