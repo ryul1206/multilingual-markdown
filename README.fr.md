@@ -1,31 +1,41 @@
 # Générateur de Markdown Multilingue
 
+🚀 **version 0.1.0**
+
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 0.1**
+</div>
+
 🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
 
 **Table des matières** ⚡
 
-1. [Fonctionnement ](#Fonctionnement-)
-1. [Fonctionnalités](#Fonctionnalités)
-1. [Badges](#Badges)
+1. [Aperçu ](#Aperçu-)
+    1. [Fonctionnement](#Fonctionnement)
+    1. [Fonctionnalités](#Fonctionnalités)
+1. [Installation](#Installation)
 1. [Mode d'emploi](#Mode-demploi)
+    1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
+    1. [(2) Option Récursive](#2-Option-Récursive)
+    1. [Plus d'explications](#Plus-dexplications)
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
+    1. [Badges](#Badges)
     1. [Corps de texte](#Corps-de-texte)
-1. [Contributors](#Contributors)
-    1. [Contribution](#Contribution)
+1. [Contribution](#Contribution)
+    1. [Contributors](#Contributors)
 
-## Fonctionnement 🔎
+## Aperçu 🔎
+
+### Fonctionnement
 ![how it works](how-it-works.png)
 
-## Fonctionnalités
+### Fonctionnalités
 
 - Suffixe automatique des noms de fichier
 - Possibilité d'omettre le suffixe (pour la langue principale)
@@ -34,34 +44,70 @@
     - Niveaux de titres au choix
     - Emojis en option
 
-## Badges
+## Installation
 
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
-...
+Tout d'abord, installez les packages Python3 requis.
 
-```markdown
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+```sh
+pip3 install click --user
+```
+
+Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
+
+```sh
+cd
+curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
+```
+
+Ensuite, enregistrez l'alias suivant dans votre shell. Ajoutez simplement ce qui suit à la fin de `~ / .bashrc` ou` ~ / .zshrc`.
+
+```sh
+# vim ~/.bashrc
+alias mmg="python3 ~/.multilang_md.py"
+```
+
+Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nouvelle commande `mmg`.
+
+```sh
+mmg --help
 ```
 
 ## Mode d'emploi
-(Python3 required)
 
-1. Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
-2. Exécutez le script Python `multilang_md.py` à la racine de votre projet : il recherchera tous les Markdown dans les répertoires inférieurs.
+Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
 
-  ```bash
-  python multilang_md.py
-  ```
+**(Remarque) Un format incorrect de fichier de base cassera le style généré.**
 
-3. Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
+### (1) Spécification du fichier cible
 
-    - par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
-    - option no-suffix pour `en`: `{quelquechose}.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
+Entrez les fichiers `* .base.md` que vous souhaitez créer dans plusieurs langues comme arguments de la commande` mmg`.
 
-4. Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
+```sh
+mmg FileName.base.md
+```
+
+Les arguments multiples sont séparés par des espaces.
+
+```sh
+mmg Foo.base.md Bar.base.md Baz.base.md
+```
+
+### (2) Option Récursive
+
+Si vous voulez convertir tous les fichiers de base dans le répertoire courant et les sous-répertoires, utilisez l'option `--recursive` ou` -r`.
+L'option récursive recherche tous les sous-dossiers en fonction de l'endroit où la commande est entrée.
+Vous ne pouvez pas encore spécifier un dossier comme argument.
+
+```sh
+mmg --recursive
+```
+
+### Plus d'explications
+
+- Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
+    - Par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
+    - Lorsque option no-suffix pour `en`: `{quelquechose}.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
+- Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
 
 ## Marqueurs
 
@@ -84,6 +130,18 @@ Les titres doivent être déclarés avant le corps de texte.
     ```markdown
     <!-- no suffix: en -->
     ```
+
+### Badges
+
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
+...
+
+```markdown
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+```
 
 ### Corps de texte
 
@@ -125,6 +183,8 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
     Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option `level`. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown `# titre` et aux tags HTML `<H1>`.
 
+    **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
+
     ```markdown
     <!-- [[ multilangual toc: level=2~3 ]] -->
     ```
@@ -145,15 +205,14 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
         ```
 
-## Contributors
-
-> La liste des contributeurs est en Anglais seulement.
-
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([fr])
-
-### Contribution
+## Contribution
 
 Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
 
 > Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
 
+### Contributors
+
+> La liste des contributeurs est en Anglais seulement.
+
+- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))

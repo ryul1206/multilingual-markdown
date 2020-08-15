@@ -9,34 +9,22 @@ import emoji
 from collections import OrderedDict  # toc
 
 
-def is_base_md(filename):
-    base = re.compile(r"[.]base[.]md")
-    return base.search(filename)
-
-
-def search(dir_name):
-    for path, folder, files in os.walk(dir_name):
-        for file_name in files:
-            if is_base_md(file_name):
-                yield (path, file_name)
-
-
 def remove_emoji(text):
     emoji_pattern = re.compile(
         "["
-        u"\U0001F600-\U0001F64F"  # emoticons
-        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
-        u"\U0001F680-\U0001F6FF"  # transport & map symbols
-        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+        "\U0001F600-\U0001F64F"  # emoticons
+        "\U0001F300-\U0001F5FF"  # symbols & pictographs
+        "\U0001F680-\U0001F6FF"  # transport & map symbols
+        "\U0001F1E0-\U0001F1FF"  # flags (iOS)
         "]+",
         flags=re.UNICODE,
     )
     return emoji_pattern.sub(r"", text)  # no emoji
 
 
-def create_toc(_dict, _min, _max, enable_emoji_header, toc_str="", level=1):
+def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
     for head, child in _dict.items():
-        if (_min <= level) and (level <= _max):
+        if (min_ <= _level) and (_level <= max_):
             # head
             if not enable_emoji_header:
                 head = remove_emoji(head)
@@ -48,16 +36,20 @@ def create_toc(_dict, _min, _max, enable_emoji_header, toc_str="", level=1):
             # toc line
             temp = f"1. [{head}](#{suburl})\n"
             # append
-            toc_str += "    " * (level - _min)
-            toc_str += temp
+            _toc_str += "    " * (_level - min_)
+            _toc_str += temp
         # recursive
-        toc_str = create_toc(child, _min, _max, enable_emoji_header, toc_str, level + 1)
-    return toc_str
+        _toc_str = create_toc(
+            child, min_, max_, enable_emoji_header, _toc_str, _level + 1
+        )
+    return _toc_str
 
 
 class CreateMonolangualDoc(object):
     def __init__(self, path, file_name, lang, suffix=True):
-        fname, base, ename = file_name.split(".")
+        self._base_file = file_name
+        fname, base, ename = self._base_file.split(".")
+
         new_name = fname + ("." + lang + "." if suffix else ".") + ename
         self.full_name = os.path.join(path, new_name)
 
@@ -84,13 +76,14 @@ class CreateMonolangualDoc(object):
 
     def __save(self):
         for line in self.content:
-            if isinstance(line, str):
-                self.doc.write(line)
-            elif isinstance(line, tuple):  # toc
-                # (_min, _max, enable_emoji_header)
-                self.doc.write(create_toc(self.toc, line[0], line[1], line[2]))
+            if isinstance(line, tuple):  # toc
+                min_, max_, enable_emoji_header = line
+                self.doc.write(create_toc(self.toc, min_, max_, enable_emoji_header))
             else:
-                raise NotImplementedError
+                self.doc.write(str(line))
+
+    def CustomException(self, message):
+        return click.ClickException(f"<{self._base_file}> {message}")
 
     def write(self, oneline, codeblock_mark):
         # write
@@ -110,10 +103,9 @@ class CreateMonolangualDoc(object):
         elif self.prev_level > level:  # new elem
             self.toc_stack = self.toc_stack[: (level - 1)]
         else:
-            msg = "[Error] toc level mismatch. prev_level="
+            msg = "'Table of Contents' level mismatch. prev_level="
             msg += f"{self.prev_level}, current_level={level}"
-            click.echo(msg)
-            raise NotImplementedError
+            raise self.CustomException(msg)
         recursive = self.toc
         for x in self.toc_stack:
             recursive = recursive[x]
@@ -141,7 +133,8 @@ class MultilangualDoc(object):
             return self.last_line
 
     def __init__(self, path, file_name):
-        self.full_name = os.path.join(path, file_name)
+        self._base_file = file_name
+        self.full_name = os.path.join(path, self._base_file)
         self.doc = self.SafetyRead(self.full_name)
 
         # Initialize configuration
@@ -149,11 +142,14 @@ class MultilangualDoc(object):
         self.lang_doc = {}
         self.no_suffix = ""
         self.pattern = re.compile(r"[ \t]*<!-- \[\w+\] -->")  # <!-- [oo] -->
-        self.init_config(path, file_name)
+        self.init_config(path, self._base_file)
 
         # Main converting
         self.converting()
         self.log()
+
+    def CustomException(self, message):
+        return click.ClickException(f"<{self._base_file}> {message}")
 
     def log(self):
         click.echo(self.full_name)
@@ -169,22 +165,21 @@ class MultilangualDoc(object):
             ),
             (re.compile(r"<!-- no suffix:[ ]*([\w]+)"), self.config_nosuffix),
         ]
-        once = [False for _ in options]
+        option_checked = [False for _ in options]
         # check base doc
         while True:
             for i in range(len(options)):
                 # if detect some option
                 if options[i][0].match(self.doc.last_line):
-                    if not once[i]:
-                        options[i][1](self.doc.last_line)
-                        once[i] = True
+                    if option_checked[i]:
+                        msg = f"Duplicate config: {self.doc.last_line}\n"
+                        raise self.CustomException(msg)
                     else:
-                        click.echo("[Error] Duplicate config:")
-                        click.echo("\t" + self.doc.last_line + "\n")
-                        raise NotImplementedError
+                        options[i][1](self.doc.last_line)
+                        option_checked[i] = True
             # terminal conditions
             # 1. all options were setted
-            if not (False in once):
+            if not (False in option_checked):
                 break
             # 2. main doc start
             if self.pattern.match(self.doc.last_line):
@@ -203,8 +198,8 @@ class MultilangualDoc(object):
         protected_keywords = ["common", "ignore"]
         for x in langs:
             if x in protected_keywords:
-                click.echo("[Error] You cannot use [common] and [ignore] as a suffix.")
-                raise NotImplementedError
+                msg = "You cannot use [common] and [ignore] as a suffix."
+                raise self.CustomException(msg)
             self.lang_read[x] = False
 
     def config_nosuffix(self, line):
@@ -239,12 +234,11 @@ class MultilangualDoc(object):
                     level_re = re.compile(
                         r"level[ ]*=[ ]*([1-9]~[1-9]|~[1-9]+|[1-9]+~?)"
                     )
-                    level = level_re.search(self.doc.last_line).group()[6:]
-                    if level is None:
-                        click.echo(
-                            "[Error] You forgot the level option on the table of contents."
-                        )
-                        raise NotImplementedError
+                    level_option = level_re.search(self.doc.last_line)
+                    if level_option is None:
+                        msg = "You forgot the level option on the table of contents."
+                        raise self.CustomException(msg)
+                    level = level_option.group()[6:]
                     lmin, lmax = (1, 9)
                     if len(level) == 3:  # 1~2
                         lmin, lmax = [int(x) for x in level.split("~")]
@@ -285,24 +279,55 @@ class MultilangualDoc(object):
             md.success = True
 
 
+def is_base_md(filename):
+    base = re.compile(r"[.]base[.]md")
+    return base.search(filename)
+
+
+def filtered_base_list(filelist):
+    for filename in filenames:
+        if is_base_md(filename):
+            yield filename
+
+
+def search(dir_name):
+    for path, folder, files in os.walk(dir_name):
+        for file_name in files:
+            if is_base_md(file_name):
+                yield (path, file_name)
+
+
 @click.command()
-@click.argument('filenames', nargs=-1, type=click.Path(exists=True))
-def cli(filenames):
-    base_count = 0
-    click.echo("----------------------")
-    if filenames:
-        for filename in filenames:
-            if is_base_md(filename):
+@click.argument("filenames", nargs=-1, type=click.Path(exists=True))
+@click.option(
+    "-r",
+    "--recursive",
+    is_flag=True,
+    help="This recursive option searches all subfolders based on current directory and convert all base files.",
+)
+def cli(filenames, recursive):
+    if recursive or filenames:
+        base_count = 0
+        click.secho("----------------------", fg="cyan")
+        if recursive:
+            for path, filename in search("."):
+                MultilangualDoc(path, filename)
+                base_count += 1
+        if filenames:
+            for filename in filtered_base_list(filenames):
                 MultilangualDoc(".", filename)
                 base_count += 1
+        click.secho("----------------------", fg="cyan")
+        click.secho(f" => {base_count} base markdowns were converted.\n", fg="cyan")
     else:
-        for path, filename in search("."):
-            MultilangualDoc(path, filename)
-            base_count += 1
-    click.echo("----------------------")
-    click.echo(f"{base_count} base markdowns were converted.\n")
+        raise click.UsageError(
+            "You have not entered anything. Do 'mmg Foo.base.md' or 'mmg --recursive'."
+        )
 
 
 if __name__ == "__main__":
     assert sys.version_info[0] == 3
-    cli()
+    try:
+        cli()
+    except Exception as e:
+        click.echo(e)

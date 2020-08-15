@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+<!-- 
+Major: 기존 버전과 호환되지 않게 API가 바뀌면 “주(主) 버전”을 올리고,
+Minor: 기존 버전과 호환되면서 새로운 기능을 추가할 때는 “부(部) 버전”을 올리고,
+Patch: 기존 버전과 호환되면서 버그를 수정한 것이라면 “수(修) 버전”을 올린다.
+---
+MAJOR version when you make incompatible API changes,
+MINOR version when you add functionality in a backwards compatible manner, and
+PATCH version when you make backwards compatible bug fixes.
+-->
+
 <!--
 Added 새로운 기능
 Changed 기존 기능의 변경사항
@@ -27,6 +37,12 @@ TODO: better emoji detection (https://stackoverflow.com/questions/43146528/how-t
 
 -->
 
+
+## [0.2.0] - 2020-08-16
+
+### Added
+
+- 
 
 ## [0.1.0] - 2020-07-26
 

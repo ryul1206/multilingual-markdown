@@ -3,6 +3,8 @@
 <!-- no suffix: en -->
 <!---------------------------->
 
+<div style="text-align:center">
+
 <!-- [en] -->
 # Multilingual Markdown Generator
 <!-- [fr] -->
@@ -11,12 +13,15 @@
 # 다국어 마크다운 생성기
 <!-- [common] -->
 
+🚀 **version 0.1.0**
+
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 0.1**
+</div>
+
 🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
@@ -32,16 +37,24 @@
 <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
 
 <!-- [en] -->
-## How It Works 🔎
-<!-- [kr] -->
-## 작동 방식 🔎
+## Overview 🔎
 <!-- [fr] -->
-## Fonctionnement 🔎
+## Aperçu 🔎
+<!-- [kr] -->
+## 개요 🔎
+<!-- [common] -->
+
+<!-- [en] -->
+### How It Works
+<!-- [fr] -->
+### Fonctionnement
+<!-- [kr] -->
+### 작동 방식
 <!-- [common] -->
 ![how it works](how-it-works.png)
 
 <!-- [en] -->
-## Features
+### Features
 
 - Auto suffix to file name
 - No suffix option (for one main language)
@@ -50,7 +63,7 @@
     - Table of contents level options
     - Table of contents emoji **on-off** options
 <!-- [kr] -->
-## 기능
+### 기능들
 
 - 파일 이름 뒤에 자동 접미사
 - 접미사 생략 옵션 (한 개 언어만 가능)
@@ -59,7 +72,7 @@
     - 목차로 만들 제목수준 설정 가능
     - 목차에서 이모티콘 **표시/생략** 설정 가능
 <!-- [fr] -->
-## Fonctionnalités
+### Fonctionnalités
 
 - Suffixe automatique des noms de fichier
 - Possibilité d'omettre le suffixe (pour la langue principale)
@@ -70,74 +83,166 @@
 <!-- [common] -->
 
 <!-- [en] -->
-## Badges
-<!-- [kr] -->
-## 뱃지 달기
+## Installation
 <!-- [fr] -->
-## Badges
+## Installation
+<!-- [kr] -->
+## 설치
 <!-- [common] -->
 
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
-...
+<!-- [en] -->
+First, install the required Python3 packages.
+<!-- [fr] -->
+Tout d'abord, installez les packages Python3 requis.
+<!-- [kr] -->
+먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다. ()
+<!-- [common] -->
 
-```markdown
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+```sh
+pip3 install click --user
+```
+
+<!-- [en] -->
+Download `multilang_md.py` as a hidden file on your home directory with the command below:
+<!-- [fr] -->
+Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
+<!-- [kr] -->
+아래 명령을 사용하여`multilang_md.py`를 홈 디렉토리에 숨겨진 파일로 다운로드합니다.
+<!-- [common] -->
+
+```sh
+cd
+curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
+```
+
+<!-- [en] -->
+Then, register the following alias in your shell. Just add the following to the end of `~/.bashrc` or `~/.zshrc`.
+<!-- [fr] -->
+Ensuite, enregistrez l'alias suivant dans votre shell. Ajoutez simplement ce qui suit à la fin de `~ / .bashrc` ou` ~ / .zshrc`.
+<!-- [kr] -->
+그 다음, 아래와 같은 alias를 당신의 shell에 등록하세요. 그저 아래 내용을 `~/.bashrc`나 `~/.zshrc`의 마지막에 추가하면 됩니다.
+<!-- [common] -->
+
+```sh
+# vim ~/.bashrc
+alias mmg="python3 ~/.multilang_md.py"
+```
+
+<!-- [en] -->
+Now when you open a new terminal you can use the new command `mmg`.
+<!-- [fr] -->
+Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nouvelle commande `mmg`.
+<!-- [kr] -->
+이제 새터미널을 열면 새로운 명령어 `mmg`를 사용할 수 있습니다.
+<!-- [common] -->
+
+```sh
+mmg --help
 ```
 
 <!-- [en] -->
 ## How to Use
-<!-- [kr] -->
-## 사용법
 <!-- [fr] -->
 ## Mode d'emploi
-<!-- [common] -->
-(Python3 required)
-
-<!-- [en] -->
-1. Make `{something}.base.md` files. See [README.base.md](README.base.md) and [example.base.md](example/example.base.md) for examples, and [Command Tags](#Command-Tags) for rules.
 <!-- [kr] -->
-1. `{파일이름}.base.md` 파일을 만듭니다. 예제는 [README.base.md](README.base.md) 와 [example.base.md](example/example.base.md) 를 참고하시고, 작성하는 규칙은 [명령어 태그](#명령어-태그)를 참고하십시오.
-<!-- [fr] -->
-1. Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
-<!-- [en] -->
-1. Run this python file on your project root. Then, this will search all markdowns recursively.
-<!-- [kr] -->
-2. 프로젝트 루트 위치에서 파이썬 파일을 실행합니다. 그러면 알아서 하위폴더의 마크다운들을 찾아낼 것입니다.
-<!-- [fr] -->
-2. Exécutez le script Python `multilang_md.py` à la racine de votre projet : il recherchera tous les Markdown dans les répertoires inférieurs.
+## 사용법
 <!-- [common] -->
 
-  ```bash
-  python multilang_md.py
-  ```
+<!-- [en] -->
+Make `{something}.base.md` files. See [README.base.md](README.base.md) and [example.base.md](example/example.base.md) for examples, and [Command Tags](#Command-Tags) for rules.
+
+**(Note) A wrong format of base-file will break generated style.**
+<!-- [fr] -->
+Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
+
+**(Remarque) Un format incorrect de fichier de base cassera le style généré.**
+<!-- [kr] -->
+`{파일이름}.base.md` 파일을 만듭니다. 예제는 [README.base.md](README.base.md) 와 [example.base.md](example/example.base.md) 를 참고하시고, 작성하는 규칙은 [명령어 태그](#명령어-태그)를 참고하십시오.
+
+**(경고) 베이스 파일 형식이 잘못되면 생성된 스타일이 깨집니다.**
+<!-- [common] -->
 
 <!-- [en] -->
-3. You can find the `{something}.{suffix}.md` files in the same directory. For example:
-
-    - default: `{something}.en.md`, `{something}.kr.md`, `{something}.es.md`, ...
-    - no-suffix option to `en`: `{something}.md`, `{something}.kr.md`, `{something}.es.md`, ...
-
-<!-- [kr] -->
-3. 각 폴더의 동일한 위치에서 `{파일이름}.{접미사}.md`으로 된 파일들을 볼 수 있습니다. 예를 들어:
-
-    - 기본: `{파일이름}.en.md`, `{파일이름}.kr.md`, `{파일이름}.es.md`, ...
-    - `en`에 접미사 생략 옵션: `{파일이름}.md`, `{파일이름}.kr.md`, `{파일이름}.es.md`, ...
-
+### (1) File Designation
 <!-- [fr] -->
-3. Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
-
-    - par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
-    - option no-suffix pour `en`: `{quelquechose}.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
+### (1) Spécification du fichier cible
+<!-- [kr] -->
+### (1) 파일 지정
+<!-- [common] -->
 
 <!-- [en] -->
-4. Since this generator overwrites the auto-generated files each time, you do not have to delete them every time when you modify the `{something}.base.md`. Just run step 2 again.
-<!-- [kr] -->
-4. 이 생성기는 자동생성된 파일을 매번 덮어쓰기 때문에, `{파일이름}.base.md` 파일을 수정하더라도 매번 지울 필요가 없습니다. 그저 방금 전 2단계를 다시 실행하면 됩니다.
+Enter the `*.base.md` files that you want to create in multiple languages as arguments to the `mmg` command.
 <!-- [fr] -->
-4. Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
+Entrez les fichiers `* .base.md` que vous souhaitez créer dans plusieurs langues comme arguments de la commande` mmg`.
+<!-- [kr] -->
+다국어로 생성하고 싶은 `*.base.md` 파일을 `mmg` 명령에 인자(arguments)로 넣어줍니다.
+<!-- [common] -->
+
+```sh
+mmg FileName.base.md
+```
+
+<!-- [en] -->
+Multiple arguments are separated by spaces.
+<!-- [fr] -->
+Les arguments multiples sont séparés par des espaces.
+<!-- [kr] -->
+여러 인자는 띄어쓰기로 구분합니다.
+<!-- [common] -->
+
+```sh
+mmg Foo.base.md Bar.base.md Baz.base.md
+```
+
+<!-- [en] -->
+### (2) Recursive Option
+<!-- [fr] -->
+### (2) Option Récursive
+<!-- [kr] -->
+### (2) 재귀 옵션 (recursive option)
+<!-- [common] -->
+
+<!-- [en] -->
+If you want to convert all base files in the current directory and subdirectories, use the `--recursive` or `-r` option.
+The recursive option searches all subfolders based on where the command is entered.
+You cannot specify a folder as an argument yet.
+<!-- [fr] -->
+Si vous voulez convertir tous les fichiers de base dans le répertoire courant et les sous-répertoires, utilisez l'option `--recursive` ou` -r`.
+L'option récursive recherche tous les sous-dossiers en fonction de l'endroit où la commande est entrée.
+Vous ne pouvez pas encore spécifier un dossier comme argument.
+<!-- [kr] -->
+현재 디렉토리와 하위 디렉토리에 있는 모든 베이스 파일을 변환하고 싶다면 `--recursive` 또는 `-r` 옵션을 사용하세요.
+recursive option은 명령어가 입력된 위치를 기준으로 모든 하위 폴더를 탐색합니다.
+아직은 인자로 폴더를 지정할 수 없습니다.
+<!-- [common] -->
+
+```sh
+mmg --recursive
+```
+
+<!-- [en] -->
+### More explanations
+<!-- [fr] -->
+### Plus d'explications
+<!-- [kr] -->
+### 부연 설명
+<!-- [common] -->
+
+<!-- [en] -->
+- You can find the `{something}.{suffix}.md` files in the same directory. For example:
+    - By default: `{something}.en.md`, `{something}.kr.md`, `{something}.es.md`, ...
+    - When no-suffix option on `en`: `{something}.md`, `{something}.kr.md`, `{something}.es.md`, ...
+- Since this generator overwrites the auto-generated files each time, you do not have to delete them every time when you modify the `{something}.base.md`. Just run step 2 again.
+<!-- [fr] -->
+- Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
+    - Par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
+    - Lorsque option no-suffix pour `en`: `{quelquechose}.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
+- Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
+<!-- [kr] -->
+- 각 폴더의 동일한 위치에서 `{파일이름}.{접미사}.md`으로 된 파일들을 볼 수 있습니다. 예를 들어:
+    - 기본일 때: `{파일이름}.en.md`, `{파일이름}.kr.md`, `{파일이름}.es.md`, ...
+    - `en`에 접미사 생략 옵션일 때: `{파일이름}.md`, `{파일이름}.kr.md`, `{파일이름}.es.md`, ...
+- 이 생성기는 자동생성된 파일을 매번 덮어쓰기 때문에, `{파일이름}.base.md` 파일을 수정하더라도 매번 지울 필요가 없습니다. 그저 방금 전 2단계를 다시 실행하면 됩니다.
 <!-- [common] -->
 
 <!-- [en] -->
@@ -197,6 +302,24 @@ Les titres doivent être déclarés avant le corps de texte.
     ```markdown
     <!-- no suffix: en -->
     ```
+
+<!-- [en] -->
+### Badges
+<!-- [kr] -->
+### 뱃지 달기
+<!-- [fr] -->
+### Badges
+<!-- [common] -->
+
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
+...
+
+```markdown
+[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+```
 
 <!-- [en] -->
 ### Main Text
@@ -284,14 +407,20 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 1. **Table of contents**
 
     The tags below are automatically replaced to the table of contents by the generator. The level of the table of contents can be determined through the `level` option. The highest-level of title(`# title`) is level 1 because it is `<h1>` in HTML.
+
+    **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.**
 <!-- [kr] -->
 1. **목차**
 
     아래 태그는 생성기에 의해 목차로 자동교체됩니다. 목차의 수준은 `level` 부분을 통해 정할 수 있습니다. 가장 큰 제목(`# 제목`)은 html에서 `<h1>`이기 때문에 `level 1`입니다.
+
+    **(주의) `#`으로 표시하는 마크다운의 제목수준을 건너뛰면 에러가 발생합니다. 다시말해, `##`의 하위 제목은 `###` 이여야 합니다.**
 <!-- [fr] -->
 1. **Table des matières**
 
     Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option `level`. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown `# titre` et aux tags HTML `<H1>`.
+
+    **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
 <!-- [common] -->
 
     ```markdown
@@ -343,8 +472,29 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
         ```
 
+<!-- [en] -->
+## Contribution
+
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
+
+> Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+
+<!-- [fr] -->
+## Contribution
+
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
+
+> Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+
+<!-- [kr] -->
+## 기여하기
+
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
+
+> 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+
 <!-- [common] -->
-## Contributors
+### Contributors
 
 <!-- [en] -->
 > The contributor list is available in English only.
@@ -354,25 +504,4 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 > La liste des contributeurs est en Anglais seulement.
 <!-- [common] -->
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([fr])
-
-<!-- [en] -->
-### Contribution
-
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
-
-> Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
-
-<!-- [fr] -->
-### Contribution
-
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
-
-> Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
-
-<!-- [kr] -->
-### 기여하기
-
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
-
-> 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
