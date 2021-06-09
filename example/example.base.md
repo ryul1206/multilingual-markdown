@@ -1,5 +1,5 @@
 <!---------------------------->
-<!-- multilangual suffix: en, fr, kr  -->
+<!-- multilingual suffix: en, fr, kr -->
 <!---------------------------->
 
 <!-- [en] -->
@@ -34,7 +34,7 @@ Ce document est généré à partir du document `base`.
 <!-- [common] -->
 **Table of contents**
 
-<!-- [[ multilangual toc: level=2~3 ]] -->
+<!-- [[ multilingual toc: level=2~3 ]] -->
 
 <!-- [en] -->
 ## This is heading 2

@@ -120,7 +120,7 @@ Les titres doivent être déclarés avant le corps de texte.
     Déclarez les langues que vous souhaitez utiliser. Dans l'exemple suivant, on déclare les mots-clés `en`, `kr` et `fr` et quelque autres. Ces mots-clés seront utilisés comme suffixes des noms de fichier et comme marqueurs dans les fichiers `base.md`.
 
     ```markdown
-    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
+    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 1. **Suffixe invisible** (facultatif)
@@ -186,7 +186,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
     **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
 
     ```markdown
-    <!-- [[ multilangual toc: level=2~3 ]] -->
+    <!-- [[ multilingual toc: level=2~3 ]] -->
     ```
 
     1. **Option `level`**
@@ -202,7 +202,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         - En de rares occasions, vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières 😱. dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
 
         ```markdown
-        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
 ## Contribution

@@ -117,7 +117,7 @@ class CreateMonolangualDoc(object):
         self.content.append((_min, _max, enable_emoji_header))
 
 
-class MultilangualDoc(object):
+class MultilingualDoc(object):
     class SafetyRead(object):
         def __init__(self, full_name):
             self.__doc = open(full_name, "r", encoding="utf-8")
@@ -160,7 +160,7 @@ class MultilangualDoc(object):
         # re options
         options = [
             (
-                re.compile(r"<!-- multilangual suffix:[ ]*([\w]+)(, [\w]+)*"),
+                re.compile(r"<!-- multilingual suffix:[ ]*([\w]+)(, [\w]+)*"),
                 self.config_setlang,
             ),
             (re.compile(r"<!-- no suffix:[ ]*([\w]+)"), self.config_nosuffix),
@@ -214,7 +214,7 @@ class MultilangualDoc(object):
         signal = "common"
         codeblock_re = re.compile("`+")
         codeblock_mark = None
-        toc_re = re.compile(r"<!-- \[\[ multilangual toc:[ \w=~-]+\]\] -->")
+        toc_re = re.compile(r"<!-- \[\[ multilingual toc:[ \w=~-]+\]\] -->")
         while True:
             # codeblock check (`x`, ```x```)
             codeblock_all = codeblock_re.findall(self.doc.last_line)
@@ -269,7 +269,13 @@ class MultilangualDoc(object):
                 elif signal == "ignore":
                     pass
                 else:
-                    self.lang_doc[signal].write(self.doc.last_line, codeblock_mark)
+                    value_lang_doc = self.lang_doc.get(signal)
+                    if value_lang_doc:
+                        value_lang_doc.write(self.doc.last_line, codeblock_mark)
+                    else:
+                        msg = f"Missing '{signal}' language. Check your " \
+                              f"header 'multilingual suffix'."
+                        raise self.CustomException(msg)
             # terminal conditions
             # base doc end
             if not self.doc.readline():
@@ -311,11 +317,11 @@ def cli(filenames, recursive):
         click.secho("----------------------", fg="cyan")
         if recursive:
             for path, filename in search("."):
-                MultilangualDoc(path, filename)
+                MultilingualDoc(path, filename)
                 base_count += 1
         if filenames:
             for filename in filtered_base_list(filenames):
-                MultilangualDoc(".", filename)
+                MultilingualDoc(".", filename)
                 base_count += 1
         click.secho("----------------------", fg="cyan")
         click.secho(f" => {base_count} base markdowns were converted.\n", fg="cyan")
