@@ -99,7 +99,7 @@ Tout d'abord, installez les packages Python3 requis.
 <!-- [common] -->
 
 ```sh
-pip3 install click --user
+pip3 install -r requirements.txt --user
 ```
 
 <!-- [en] -->
