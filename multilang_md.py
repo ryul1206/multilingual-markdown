@@ -168,15 +168,14 @@ class MultilingualDoc(object):
         option_checked = [False for _ in options]
         # check base doc
         while True:
-            for i in range(len(options)):
+            for i, _ in enumerate(options):
                 # if detect some option
                 if options[i][0].match(self.doc.last_line):
                     if option_checked[i]:
                         msg = f"Duplicate config: {self.doc.last_line}\n"
                         raise self.CustomException(msg)
-                    else:
-                        options[i][1](self.doc.last_line)
-                        option_checked[i] = True
+                    options[i][1](self.doc.last_line)
+                    option_checked[i] = True
             # terminal conditions
             # 1. all options were setted
             if not (False in option_checked):
@@ -247,8 +246,12 @@ class MultilingualDoc(object):
                             lmax = int(level[1])
                         else:  # 2~
                             lmin = int(level[0])
-                    else:  # 2
-                        lmin, lmax = int(level)
+                    elif len(level) == 1:  # 2
+                        lmin = int(level)
+                        lmax = lmin
+                    else:
+                        msg = f"Cannot parse level, value = '{level}'."
+                        raise self.CustomException(msg)
                     # toc emoji
                     no_emoji_re = re.compile("no-emoji")
                     enable_emoji = no_emoji_re.search(self.doc.last_line) is None
