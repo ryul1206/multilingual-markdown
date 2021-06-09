@@ -285,7 +285,7 @@ def is_base_md(filename):
 
 
 def filtered_base_list(filelist):
-    for filename in filenames:
+    for filename in filelist:
         if is_base_md(filename):
             yield filename
 
