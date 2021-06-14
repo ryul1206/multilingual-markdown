@@ -1,14 +1,14 @@
 # Multilingual Markdown Generator
 
-🚀 **version 0.2.0**
+This package provides a command-line interface to manage multilingual contents and generate i18n markdown from a single base file.
+
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
+🚀 **version 0.2.1**
 🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
@@ -18,11 +18,11 @@
 1. [Overview ](#Overview-)
     1. [How It Works](#How-It-Works)
     1. [Features](#Features)
-1. [Installation](#Installation)
+1. [Install](#Install)
 1. [How to Use](#How-to-Use)
     1. [(1) File Designation](#1-File-Designation)
     1. [(2) Recursive Option](#2-Recursive-Option)
-    1. [More explanations](#More-explanations)
+    1. [(3) More explanations](#3-More-explanations)
 1. [Command Tags](#Command-Tags)
     1. [Headers](#Headers)
     1. [Badges](#Badges)
@@ -44,12 +44,12 @@
     - Table of contents level options
     - Table of contents emoji **on-off** options
 
-## Installation
+## Install
 
 First, install the required Python3 packages.
 
 ```sh
-pip3 install click --user
+pip3 install -r requirements.txt --user
 ```
 
 Download `multilang_md.py` as a hidden file on your home directory with the command below:
@@ -71,6 +71,7 @@ Now when you open a new terminal you can use the new command `mmg`.
 ```sh
 mmg --help
 ```
+
 
 ## How to Use
 
@@ -102,7 +103,7 @@ You cannot specify a folder as an argument yet.
 mmg --recursive
 ```
 
-### More explanations
+### (3) More explanations
 
 - You can find the `{something}.{suffix}.md` files in the same directory. For example:
     - By default: `{something}.en.md`, `{something}.kr.md`, `{something}.es.md`, ...
@@ -199,7 +200,7 @@ Everything that the parser reads after the tag below is recognized as the main t
         - **CAUTION💥**: If you omit this `level`, the parser will not recognize it.
         - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
     2. **`no-emoji` option**
-        - In rare cases, you may want to subtract emoji from the table of contents while inserting emoji in the title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
+        - You may want to subtract emoji from the table of contents while inserting emoji in a section title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
 
         ```markdown
         <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
@@ -207,12 +208,11 @@ Everything that the parser reads after the tag below is recognized as the main t
 
 ## Contribution
 
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
-
-> Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.) Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
 
 ### Contributors
 
 > The contributor list is available in English only.
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)

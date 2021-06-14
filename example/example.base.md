@@ -22,9 +22,21 @@
 This document is the output from the `base` document.
 <!-- [kr] -->
 이 문서는 `base` 문서로 부터 생성된 결과입니다.
-<!-- [en] -->
-Ce document est généré à partir du document `base`. 
+<!-- [fr] -->
+Ce document est généré à partir du document `base`.
 <!-- [common] -->
+
+```
+$ cd example
+$ mmg example.base.md
+----------------------
+./example.base.md
+    en: ./example.en.md
+    fr: ./example.fr.md
+    kr: ./example.kr.md
+----------------------
+ => 1 base markdown was converted.
+```
 
 <!-- [ignore] -->
 - **This section will be ignored.**
@@ -61,5 +73,3 @@ This is a code block.
 ```bash
 Ceci est un bloc de code.
 ```
-
-

@@ -327,7 +327,9 @@ def cli(filenames, recursive):
                 MultilingualDoc(".", filename)
                 base_count += 1
         click.secho("----------------------", fg="cyan")
-        click.secho(f" => {base_count} base markdowns were converted.\n", fg="cyan")
+        is_plural = base_count > 1
+        message = "markdowns were" if is_plural else "markdown was"
+        click.secho(f" => {base_count} base {message} converted.\n", fg="cyan")
     else:
         raise click.UsageError(
             "You have not entered anything. Do 'mmg Foo.base.md' or 'mmg --recursive'."

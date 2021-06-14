@@ -9,6 +9,18 @@
 
 이 문서는 `base` 문서로 부터 생성된 결과입니다.
 
+```
+$ cd example
+$ mmg example.base.md
+----------------------
+./example.base.md
+    en: ./example.en.md
+    fr: ./example.fr.md
+    kr: ./example.kr.md
+----------------------
+ => 1 base markdown was converted.
+```
+
 **Table of contents**
 
 1. [제목 수준 2](#제목-수준-2)

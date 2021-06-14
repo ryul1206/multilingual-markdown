@@ -3,25 +3,27 @@
 <!-- no suffix: en -->
 <!---------------------------->
 
-<div style="text-align:center">
-
 <!-- [en] -->
 # Multilingual Markdown Generator
+
+This package provides a command-line interface to manage multilingual contents and generate i18n markdown from a single base file.
 <!-- [fr] -->
 # Générateur de Markdown Multilingue
+
+Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 <!-- [kr] -->
 # 다국어 마크다운 생성기
+
+이 패키지는 다국어 콘텐츠를 관리하고, 단일 기본 파일로부터 i18n 마크 다운을 생성하는 명령 줄 인터페이스(CLI)를 제공합니다.
 <!-- [common] -->
 
-🚀 **version 0.2.0**
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
+🚀 **version 0.2.1**
 🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
@@ -83,9 +85,9 @@
 <!-- [common] -->
 
 <!-- [en] -->
-## Installation
+## Install
 <!-- [fr] -->
-## Installation
+## Installer
 <!-- [kr] -->
 ## 설치
 <!-- [common] -->
@@ -139,6 +141,16 @@ Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nou
 ```sh
 mmg --help
 ```
+
+<!-- [ignore] -->
+## Update
+## Mises à jour
+## 업데이트
+
+## Uninstall
+## Désinstaller
+## 제거
+<!-- [common] -->
 
 <!-- [en] -->
 ## How to Use
@@ -221,11 +233,11 @@ mmg --recursive
 ```
 
 <!-- [en] -->
-### More explanations
+### (3) More explanations
 <!-- [fr] -->
-### Plus d'explications
+### (3) Plus d'explications
 <!-- [kr] -->
-### 부연 설명
+### (3) 부연 설명
 <!-- [common] -->
 
 <!-- [en] -->
@@ -459,13 +471,13 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         - **ATTENTION💥**: le marqueur `table of contents` change automatiquement le marqueur de section pour `common` donc les commandes de la table des matières concernent toutes les langues, et vous devez réindiquer un marqueur de langue par la suite.
 <!-- [en] -->
     2. **`no-emoji` option**
-        - In rare cases, you may want to subtract emoji from the table of contents while inserting emoji in the title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
+        - You may want to subtract emoji from the table of contents while inserting emoji in a section title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
 <!-- [kr] -->
     2. **`no-emoji` 옵션**
-        - 드문 경우지만 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
+        - 섹션 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
 <!-- [fr] -->
     2. **Option `no-emoji`**
-        - En de rares occasions, vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières 😱. dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
+        - Vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières.😱 dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
 <!-- [common] -->
 
         ```markdown
@@ -475,23 +487,17 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [en] -->
 ## Contribution
 
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
-
-> Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.) Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
 
 <!-- [fr] -->
 ## Contribution
 
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
-
-> Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
 
 <!-- [kr] -->
-## 기여하기
+## 기여
 
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
-
-> 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
 
 <!-- [common] -->
 ### Contributors
@@ -504,4 +510,5 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
 > La liste des contributeurs est en Anglais seulement.
 <!-- [common] -->
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)

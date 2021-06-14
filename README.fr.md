@@ -1,14 +1,14 @@
 # Générateur de Markdown Multilingue
 
-🚀 **version 0.2.0**
+Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
+
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
+🚀 **version 0.2.1**
 🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
@@ -18,11 +18,11 @@
 1. [Aperçu ](#Aperçu-)
     1. [Fonctionnement](#Fonctionnement)
     1. [Fonctionnalités](#Fonctionnalités)
-1. [Installation](#Installation)
+1. [Installer](#Installer)
 1. [Mode d'emploi](#Mode-demploi)
     1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
     1. [(2) Option Récursive](#2-Option-Récursive)
-    1. [Plus d'explications](#Plus-dexplications)
+    1. [(3) Plus d'explications](#3-Plus-dexplications)
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
     1. [Badges](#Badges)
@@ -44,12 +44,12 @@
     - Niveaux de titres au choix
     - Emojis en option
 
-## Installation
+## Installer
 
 Tout d'abord, installez les packages Python3 requis.
 
 ```sh
-pip3 install click --user
+pip3 install -r requirements.txt --user
 ```
 
 Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
@@ -71,6 +71,7 @@ Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nou
 ```sh
 mmg --help
 ```
+
 
 ## Mode d'emploi
 
@@ -102,7 +103,7 @@ Vous ne pouvez pas encore spécifier un dossier comme argument.
 mmg --recursive
 ```
 
-### Plus d'explications
+### (3) Plus d'explications
 
 - Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
     - Par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
@@ -199,7 +200,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         - **ATTENTION💥**: si vous ommettez `level` le script ignorera la commande.
         - **ATTENTION💥**: le marqueur `table of contents` change automatiquement le marqueur de section pour `common` donc les commandes de la table des matières concernent toutes les langues, et vous devez réindiquer un marqueur de langue par la suite.
     2. **Option `no-emoji`**
-        - En de rares occasions, vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières 😱. dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
+        - Vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières.😱 dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
 
         ```markdown
         <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
@@ -207,12 +208,11 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
 ## Contribution
 
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
-
-> Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
 
 ### Contributors
 
 > La liste des contributeurs est en Anglais seulement.
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)

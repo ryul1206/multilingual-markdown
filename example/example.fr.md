@@ -8,6 +8,19 @@
 
 ![lets go now](lets-go-now.jpg)
 
+Ce document est généré à partir du document `base`.
+
+```
+$ cd example
+$ mmg example.base.md
+----------------------
+./example.base.md
+    en: ./example.en.md
+    fr: ./example.fr.md
+    kr: ./example.kr.md
+----------------------
+ => 1 base markdown was converted.
+```
 
 **Table of contents**
 
@@ -21,5 +34,3 @@
 ```bash
 Ceci est un bloc de code.
 ```
-
-

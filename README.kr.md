@@ -1,14 +1,14 @@
 # 다국어 마크다운 생성기
 
-🚀 **version 0.2.0**
+이 패키지는 다국어 콘텐츠를 관리하고, 단일 기본 파일로부터 i18n 마크 다운을 생성하는 명령 줄 인터페이스(CLI)를 제공합니다.
+
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
+🚀 **version 0.2.1**
 🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
 
 ---
@@ -22,12 +22,12 @@
 1. [사용법](#사용법)
     1. [(1) 파일 지정](#1-파일-지정)
     1. [(2) 재귀 옵션 (recursive option)](#2-재귀-옵션-recursive-option)
-    1. [부연 설명](#부연-설명)
+    1. [(3) 부연 설명](#3-부연-설명)
 1. [명령어 태그](#명령어-태그)
     1. [헤더](#헤더)
     1. [뱃지 달기](#뱃지-달기)
     1. [본문](#본문)
-1. [기여하기](#기여하기)
+1. [기여](#기여)
     1. [Contributors](#Contributors)
 
 ## 개요 🔎
@@ -49,7 +49,7 @@
 먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다. ()
 
 ```sh
-pip3 install click --user
+pip3 install -r requirements.txt --user
 ```
 
 아래 명령을 사용하여`multilang_md.py`를 홈 디렉토리에 숨겨진 파일로 다운로드합니다.
@@ -71,6 +71,7 @@ alias mmg="python3 ~/.multilang_md.py"
 ```sh
 mmg --help
 ```
+
 
 ## 사용법
 
@@ -102,7 +103,7 @@ recursive option은 명령어가 입력된 위치를 기준으로 모든 하위 
 mmg --recursive
 ```
 
-### 부연 설명
+### (3) 부연 설명
 
 - 각 폴더의 동일한 위치에서 `{파일이름}.{접미사}.md`으로 된 파일들을 볼 수 있습니다. 예를 들어:
     - 기본일 때: `{파일이름}.en.md`, `{파일이름}.kr.md`, `{파일이름}.es.md`, ...
@@ -199,20 +200,19 @@ mmg --recursive
         - **주의💥**: 만약 `level`을 생략하면 파서가 인식하지 못합니다.
         - **주의💥**: 목차 태그는 자동으로 현재 키워드를 `common`으로 변경합니다. 그래서 목차 태그 또한 암묵적으로 `common`에 속합니다.
     2. **`no-emoji` 옵션**
-        - 드문 경우지만 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
+        - 섹션 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
 
         ```markdown
         <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
-## 기여하기
+## 기여
 
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
-
-> 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
 
 ### Contributors
 
 > 기여자 명단은 영어로만 제공됩니다.
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)
