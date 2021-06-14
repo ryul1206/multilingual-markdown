@@ -1,5 +1,5 @@
 <!---------------------------->
-<!-- multilangual suffix: en, fr, kr  -->
+<!-- multilingual suffix: en, fr, kr -->
 <!-- no suffix: en -->
 <!---------------------------->
 
@@ -34,7 +34,7 @@
 **Table des matières** ⚡
 <!-- [common] -->
 
-<!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+<!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
 
 <!-- [en] -->
 ## Overview 🔎
@@ -99,7 +99,7 @@ Tout d'abord, installez les packages Python3 requis.
 <!-- [common] -->
 
 ```sh
-pip3 install click --user
+pip3 install -r requirements.txt --user
 ```
 
 <!-- [en] -->
@@ -282,7 +282,7 @@ Les titres doivent être déclarés avant le corps de texte.
 <!-- [common] -->
 
     ```markdown
-    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
+    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 <!-- [en] -->
@@ -424,7 +424,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [common] -->
 
     ```markdown
-    <!-- [[ multilangual toc: level=2~3 ]] -->
+    <!-- [[ multilingual toc: level=2~3 ]] -->
     ```
 
 <!-- [en] -->
@@ -469,7 +469,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [common] -->
 
         ```markdown
-        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
 <!-- [en] -->

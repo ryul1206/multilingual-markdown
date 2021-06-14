@@ -120,7 +120,7 @@ Headers must be declared before the body begins.
     Declare the language you want to use. The following example declares `en` and `kr` and others as keywords. These keywords are used as suffixes.
 
     ```markdown
-    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
+    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 1. **Hidden Suffix** (Optional)
@@ -186,7 +186,7 @@ Everything that the parser reads after the tag below is recognized as the main t
     **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.**
 
     ```markdown
-    <!-- [[ multilangual toc: level=2~3 ]] -->
+    <!-- [[ multilingual toc: level=2~3 ]] -->
     ```
 
     1. **`level` option**
@@ -202,7 +202,7 @@ Everything that the parser reads after the tag below is recognized as the main t
         - In rare cases, you may want to subtract emoji from the table of contents while inserting emoji in the title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
 
         ```markdown
-        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
 ## Contribution

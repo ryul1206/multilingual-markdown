@@ -117,7 +117,7 @@ class CreateMonolangualDoc(object):
         self.content.append((_min, _max, enable_emoji_header))
 
 
-class MultilangualDoc(object):
+class MultilingualDoc(object):
     class SafetyRead(object):
         def __init__(self, full_name):
             self.__doc = open(full_name, "r", encoding="utf-8")
@@ -160,7 +160,7 @@ class MultilangualDoc(object):
         # re options
         options = [
             (
-                re.compile(r"<!-- multilangual suffix:[ ]*([\w]+)(, [\w]+)*"),
+                re.compile(r"<!-- multilingual suffix:[ ]*([\w]+)(, [\w]+)*"),
                 self.config_setlang,
             ),
             (re.compile(r"<!-- no suffix:[ ]*([\w]+)"), self.config_nosuffix),
@@ -168,15 +168,14 @@ class MultilangualDoc(object):
         option_checked = [False for _ in options]
         # check base doc
         while True:
-            for i in range(len(options)):
+            for i, _ in enumerate(options):
                 # if detect some option
                 if options[i][0].match(self.doc.last_line):
                     if option_checked[i]:
                         msg = f"Duplicate config: {self.doc.last_line}\n"
                         raise self.CustomException(msg)
-                    else:
-                        options[i][1](self.doc.last_line)
-                        option_checked[i] = True
+                    options[i][1](self.doc.last_line)
+                    option_checked[i] = True
             # terminal conditions
             # 1. all options were setted
             if not (False in option_checked):
@@ -214,7 +213,7 @@ class MultilangualDoc(object):
         signal = "common"
         codeblock_re = re.compile("`+")
         codeblock_mark = None
-        toc_re = re.compile(r"<!-- \[\[ multilangual toc:[ \w=~-]+\]\] -->")
+        toc_re = re.compile(r"<!-- \[\[ multilingual toc:[ \w=~-]+\]\] -->")
         while True:
             # codeblock check (`x`, ```x```)
             codeblock_all = codeblock_re.findall(self.doc.last_line)
@@ -247,8 +246,12 @@ class MultilangualDoc(object):
                             lmax = int(level[1])
                         else:  # 2~
                             lmin = int(level[0])
-                    else:  # 2
-                        lmin, lmax = int(level)
+                    elif len(level) == 1:  # 2
+                        lmin = int(level)
+                        lmax = lmin
+                    else:
+                        msg = f"Cannot parse level, value = '{level}'."
+                        raise self.CustomException(msg)
                     # toc emoji
                     no_emoji_re = re.compile("no-emoji")
                     enable_emoji = no_emoji_re.search(self.doc.last_line) is None
@@ -269,7 +272,13 @@ class MultilangualDoc(object):
                 elif signal == "ignore":
                     pass
                 else:
-                    self.lang_doc[signal].write(self.doc.last_line, codeblock_mark)
+                    value_lang_doc = self.lang_doc.get(signal)
+                    if value_lang_doc:
+                        value_lang_doc.write(self.doc.last_line, codeblock_mark)
+                    else:
+                        msg = f"Missing '{signal}' language. Check your " \
+                              f"header 'multilingual suffix'."
+                        raise self.CustomException(msg)
             # terminal conditions
             # base doc end
             if not self.doc.readline():
@@ -285,7 +294,7 @@ def is_base_md(filename):
 
 
 def filtered_base_list(filelist):
-    for filename in filenames:
+    for filename in filelist:
         if is_base_md(filename):
             yield filename
 
@@ -311,11 +320,11 @@ def cli(filenames, recursive):
         click.secho("----------------------", fg="cyan")
         if recursive:
             for path, filename in search("."):
-                MultilangualDoc(path, filename)
+                MultilingualDoc(path, filename)
                 base_count += 1
         if filenames:
             for filename in filtered_base_list(filenames):
-                MultilangualDoc(".", filename)
+                MultilingualDoc(".", filename)
                 base_count += 1
         click.secho("----------------------", fg="cyan")
         click.secho(f" => {base_count} base markdowns were converted.\n", fg="cyan")
