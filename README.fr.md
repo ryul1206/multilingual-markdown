@@ -1,15 +1,16 @@
 # Générateur de Markdown Multilingue
 
-🚀 **version 0.2.0**
+Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
-🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
+🚀 **version 1.0-alpha.1** 🌏
+[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
 
@@ -18,16 +19,21 @@
 1. [Aperçu ](#Aperçu-)
     1. [Fonctionnement](#Fonctionnement)
     1. [Fonctionnalités](#Fonctionnalités)
-1. [Installation](#Installation)
+1. [Installer](#Installer)
+1. [Mises à jour](#Mises-à-jour)
+1. [Désinstaller](#Désinstaller)
 1. [Mode d'emploi](#Mode-demploi)
     1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
     1. [(2) Option Récursive](#2-Option-Récursive)
-    1. [Plus d'explications](#Plus-dexplications)
+    1. [(3) Validation du Fichier de Base](#3-Validation-du-Fichier-de-Base)
+    1. [(4) Plus d'explications](#4-Plus-dexplications)
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
     1. [Badges](#Badges)
     1. [Corps de texte](#Corps-de-texte)
 1. [Contribution](#Contribution)
+    1. [Comment construire localement pour le développement](#Comment-construire-localement-pour-le-développement)
+    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## Aperçu 🔎
@@ -44,32 +50,40 @@
     - Niveaux de titres au choix
     - Emojis en option
 
-## Installation
-
-Tout d'abord, installez les packages Python3 requis.
+## Installer
 
 ```sh
-pip3 install click --user
-```
-
-Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
-
-```sh
-cd
-curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
-```
-
-Ensuite, enregistrez l'alias suivant dans votre shell. Ajoutez simplement ce qui suit à la fin de `~ / .bashrc` ou` ~ / .zshrc`.
-
-```sh
-# vim ~/.bashrc
-alias mmg="python3 ~/.multilang_md.py"
+pip3 install mmg --user
 ```
 
 Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nouvelle commande `mmg`.
 
 ```sh
-mmg --help
+$ mmg --help
+mmg [OPTIONS] [FILENAMES]...
+
+Options:
+  --version                 Show the current version.
+  -r, --recursive           This recursive option searches all subfolders
+                            based on current directory and converts all base
+                            files.
+  -y, --yes                 Confirm the action without prompting
+  -c, --check / -s, --skip  Check the number of language tags of each file
+                            (defualt: --check)
+  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
+  --help                    Show this message and exit.
+```
+
+## Mises à jour
+
+```sh
+pip3 install mmg --upgrade --user
+```
+
+## Désinstaller
+
+```sh
+pip3 uninstall mmg
 ```
 
 ## Mode d'emploi
@@ -102,7 +116,43 @@ Vous ne pouvez pas encore spécifier un dossier comme argument.
 mmg --recursive
 ```
 
-### Plus d'explications
+### (3) Validation du Fichier de Base
+
+Lorsque votre fichier peut avoir un problème.
+(Normal est indiqué en vert et anormal en rouge.)
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [X] 4 language(s) not translated.
+            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+        Line 28: This language reappeared before all languages appeared once.
+        Line 36: A common area appeared before all languages come out.
+        Line 57: Unknown suffix detected.
+        Line 59: This language reappeared before all languages appeared once.
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+Lorsque vos fichiers sont ok.
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+### (4) Plus d'explications
 
 - Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
     - Par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
@@ -120,7 +170,7 @@ Les titres doivent être déclarés avant le corps de texte.
     Déclarez les langues que vous souhaitez utiliser. Dans l'exemple suivant, on déclare les mots-clés `en`, `kr` et `fr` et quelque autres. Ces mots-clés seront utilisés comme suffixes des noms de fichier et comme marqueurs dans les fichiers `base.md`.
 
     ```markdown
-    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
+    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 1. **Suffixe invisible** (facultatif)
@@ -148,7 +198,6 @@ Les titres doivent être déclarés avant le corps de texte.
 Tout ce qui suit le marqueur est interprété comme corps principal de texte, donc vous devez placer les titres avant le texte.
 
 1. **Mots-clés**
-
     1. Classification de langue
 
         Les marqueurs qui distinguent les languages sont écrits sous la forme `<!-- [marqueur] -->`. Si un marqueur est reconnu, il sera retenu jusqu'à ce qu'un autre soit reconnu.
@@ -186,7 +235,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
     **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
 
     ```markdown
-    <!-- [[ multilangual toc: level=2~3 ]] -->
+    <!-- [[ multilingual toc: level=2~3 ]] -->
     ```
 
     1. **Option `level`**
@@ -199,20 +248,34 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         - **ATTENTION💥**: si vous ommettez `level` le script ignorera la commande.
         - **ATTENTION💥**: le marqueur `table of contents` change automatiquement le marqueur de section pour `common` donc les commandes de la table des matières concernent toutes les langues, et vous devez réindiquer un marqueur de langue par la suite.
     2. **Option `no-emoji`**
-        - En de rares occasions, vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières 😱. dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
+        - Vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières.😱 dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
 
         ```markdown
-        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
 ## Contribution
 
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
 
-> Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+### Comment construire localement pour le développement
+
+- Linux and MacOS
+  - Required packages: `pip3 install -r requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `mmg [OPTIONS] [FILENAMES]...`
+  - Uninstall: `xargs rm -rf < temp.txt`
+- Windows (Not recommended)
+  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
+  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
 ### Contributors
 
 > La liste des contributeurs est en Anglais seulement.
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)

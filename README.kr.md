@@ -1,15 +1,16 @@
 # 다국어 마크다운 생성기
 
-🚀 **version 0.2.0**
+이 패키지는 다국어 콘텐츠를 관리하고, 단일 기본 파일로부터 i18n 마크 다운을 생성하는 명령 줄 인터페이스(CLI)를 제공합니다.
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
-🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
+🚀 **version 1.0-alpha.1** 🌏
+[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
 
@@ -19,15 +20,20 @@
     1. [작동 방식](#작동-방식)
     1. [기능들](#기능들)
 1. [설치](#설치)
+1. [업데이트](#업데이트)
+1. [제거](#제거)
 1. [사용법](#사용법)
     1. [(1) 파일 지정](#1-파일-지정)
     1. [(2) 재귀 옵션 (recursive option)](#2-재귀-옵션-recursive-option)
-    1. [부연 설명](#부연-설명)
+    1. [(3) 베이스 파일 유효성 검사](#3-베이스-파일-유효성-검사)
+    1. [(4) 부연 설명](#4-부연-설명)
 1. [명령어 태그](#명령어-태그)
     1. [헤더](#헤더)
     1. [뱃지 달기](#뱃지-달기)
     1. [본문](#본문)
-1. [기여하기](#기여하기)
+1. [기여](#기여)
+    1. [개발을 위해 local로 빌드하는 방법](#개발을-위해-local로-빌드하는-방법)
+    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## 개요 🔎
@@ -46,30 +52,38 @@
 
 ## 설치
 
-먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다. ()
-
 ```sh
-pip3 install click --user
-```
-
-아래 명령을 사용하여`multilang_md.py`를 홈 디렉토리에 숨겨진 파일로 다운로드합니다.
-
-```sh
-cd
-curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
-```
-
-그 다음, 아래와 같은 alias를 당신의 shell에 등록하세요. 그저 아래 내용을 `~/.bashrc`나 `~/.zshrc`의 마지막에 추가하면 됩니다.
-
-```sh
-# vim ~/.bashrc
-alias mmg="python3 ~/.multilang_md.py"
+pip3 install mmg --user
 ```
 
 이제 새터미널을 열면 새로운 명령어 `mmg`를 사용할 수 있습니다.
 
 ```sh
-mmg --help
+$ mmg --help
+mmg [OPTIONS] [FILENAMES]...
+
+Options:
+  --version                 Show the current version.
+  -r, --recursive           This recursive option searches all subfolders
+                            based on current directory and converts all base
+                            files.
+  -y, --yes                 Confirm the action without prompting
+  -c, --check / -s, --skip  Check the number of language tags of each file
+                            (defualt: --check)
+  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
+  --help                    Show this message and exit.
+```
+
+## 업데이트
+
+```sh
+pip3 install mmg --upgrade --user
+```
+
+## 제거
+
+```sh
+pip3 uninstall mmg
 ```
 
 ## 사용법
@@ -102,7 +116,43 @@ recursive option은 명령어가 입력된 위치를 기준으로 모든 하위 
 mmg --recursive
 ```
 
-### 부연 설명
+### (3) 베이스 파일 유효성 검사
+
+문제가 있는 것으로 의심되는 경우.
+(정상은 녹색으로, 비정상은 빨간색으로 표시됩니다.)
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [X] 4 language(s) not translated.
+            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+        Line 28: This language reappeared before all languages appeared once.
+        Line 36: A common area appeared before all languages come out.
+        Line 57: Unknown suffix detected.
+        Line 59: This language reappeared before all languages appeared once.
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+문제점이 없다면
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+### (4) 부연 설명
 
 - 각 폴더의 동일한 위치에서 `{파일이름}.{접미사}.md`으로 된 파일들을 볼 수 있습니다. 예를 들어:
     - 기본일 때: `{파일이름}.en.md`, `{파일이름}.kr.md`, `{파일이름}.es.md`, ...
@@ -120,7 +170,7 @@ mmg --recursive
     사용할 언어를 선언하십시오. 다음 예제는 `en`과 `kr`을 키워드로 선언하였습니다. 이 키워드들은 접미사로 사용됩니다.
 
     ```markdown
-    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
+    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 1. **접미사 숨기기** (필수 아님)
@@ -148,7 +198,6 @@ mmg --recursive
 파서가 아래의 태그들를 읽는 순간부터 그 이후에 읽는 모든 것은 메인 텍스트로 인식합니다. (그래서 헤더를 메인 이전에 적어야 합니다.)
 
 1. **키워드**
-
     1. 언어 분류
 
         언어를 구분하는 태그는 `<!-- [키워드] -->` 같은 형태로 작성합니다. 하나의 키워드가 인식되면 다른 키워드가 나타날 때까지 해당 키워드로 인식됩니다.
@@ -186,7 +235,7 @@ mmg --recursive
     **(주의) `#`으로 표시하는 마크다운의 제목수준을 건너뛰면 에러가 발생합니다. 다시말해, `##`의 하위 제목은 `###` 이여야 합니다.**
 
     ```markdown
-    <!-- [[ multilangual toc: level=2~3 ]] -->
+    <!-- [[ multilingual toc: level=2~3 ]] -->
     ```
 
     1. **`level` 옵션**
@@ -199,20 +248,34 @@ mmg --recursive
         - **주의💥**: 만약 `level`을 생략하면 파서가 인식하지 못합니다.
         - **주의💥**: 목차 태그는 자동으로 현재 키워드를 `common`으로 변경합니다. 그래서 목차 태그 또한 암묵적으로 `common`에 속합니다.
     2. **`no-emoji` 옵션**
-        - 드문 경우지만 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
+        - 섹션 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
 
         ```markdown
-        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
-## 기여하기
+## 기여
 
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
 
-> 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+### 개발을 위해 local로 빌드하는 방법
+
+- Linux and MacOS
+  - Required packages: `pip3 install -r requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `mmg [OPTIONS] [FILENAMES]...`
+  - Uninstall: `xargs rm -rf < temp.txt`
+- Windows (Not recommended)
+  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
+  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
 ### Contributors
 
 > 기여자 명단은 영어로만 제공됩니다.
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)

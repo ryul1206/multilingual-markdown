@@ -1,28 +1,31 @@
 <!---------------------------->
-<!-- multilangual suffix: en, fr, kr  -->
+<!-- multilingual suffix: en, fr, kr -->
 <!-- no suffix: en -->
 <!---------------------------->
 
-<div style="text-align:center">
-
 <!-- [en] -->
 # Multilingual Markdown Generator
+
+This package provides a command-line interface to manage multilingual contents and generate i18n markdown from a single base file.
 <!-- [fr] -->
 # Générateur de Markdown Multilingue
+
+Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 <!-- [kr] -->
 # 다국어 마크다운 생성기
-<!-- [common] -->
 
-🚀 **version 0.2.0**
+이 패키지는 다국어 콘텐츠를 관리하고, 단일 기본 파일로부터 i18n 마크 다운을 생성하는 명령 줄 인터페이스(CLI)를 제공합니다.
+<!-- [common] -->
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-</div>
-
-🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
+🚀 **version 1.0-alpha.1** 🌏
+[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
 
@@ -34,7 +37,7 @@
 **Table des matières** ⚡
 <!-- [common] -->
 
-<!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+<!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
 
 <!-- [en] -->
 ## Overview 🔎
@@ -83,49 +86,15 @@
 <!-- [common] -->
 
 <!-- [en] -->
-## Installation
+## Install
 <!-- [fr] -->
-## Installation
+## Installer
 <!-- [kr] -->
 ## 설치
 <!-- [common] -->
 
-<!-- [en] -->
-First, install the required Python3 packages.
-<!-- [fr] -->
-Tout d'abord, installez les packages Python3 requis.
-<!-- [kr] -->
-먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다. ()
-<!-- [common] -->
-
 ```sh
-pip3 install click --user
-```
-
-<!-- [en] -->
-Download `multilang_md.py` as a hidden file on your home directory with the command below:
-<!-- [fr] -->
-Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
-<!-- [kr] -->
-아래 명령을 사용하여`multilang_md.py`를 홈 디렉토리에 숨겨진 파일로 다운로드합니다.
-<!-- [common] -->
-
-```sh
-cd
-curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
-```
-
-<!-- [en] -->
-Then, register the following alias in your shell. Just add the following to the end of `~/.bashrc` or `~/.zshrc`.
-<!-- [fr] -->
-Ensuite, enregistrez l'alias suivant dans votre shell. Ajoutez simplement ce qui suit à la fin de `~ / .bashrc` ou` ~ / .zshrc`.
-<!-- [kr] -->
-그 다음, 아래와 같은 alias를 당신의 shell에 등록하세요. 그저 아래 내용을 `~/.bashrc`나 `~/.zshrc`의 마지막에 추가하면 됩니다.
-<!-- [common] -->
-
-```sh
-# vim ~/.bashrc
-alias mmg="python3 ~/.multilang_md.py"
+pip3 install mmg --user
 ```
 
 <!-- [en] -->
@@ -137,7 +106,43 @@ Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nou
 <!-- [common] -->
 
 ```sh
-mmg --help
+$ mmg --help
+mmg [OPTIONS] [FILENAMES]...
+
+Options:
+  --version                 Show the current version.
+  -r, --recursive           This recursive option searches all subfolders
+                            based on current directory and converts all base
+                            files.
+  -y, --yes                 Confirm the action without prompting
+  -c, --check / -s, --skip  Check the number of language tags of each file
+                            (defualt: --check)
+  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
+  --help                    Show this message and exit.
+```
+
+<!-- [en] -->
+## Update
+<!-- [fr] -->
+## Mises à jour
+<!-- [kr] -->
+## 업데이트
+<!-- [common] -->
+
+```sh
+pip3 install mmg --upgrade --user
+```
+
+<!-- [en] -->
+## Uninstall
+<!-- [fr] -->
+## Désinstaller
+<!-- [kr] -->
+## 제거
+<!-- [common] -->
+
+```sh
+pip3 uninstall mmg
 ```
 
 <!-- [en] -->
@@ -221,11 +226,65 @@ mmg --recursive
 ```
 
 <!-- [en] -->
-### More explanations
+### (3) Base File Validation
+
+When your file may have a problem.
+(Normal is shown in green and abnormal in red.)
 <!-- [fr] -->
-### Plus d'explications
+### (3) Validation du Fichier de Base
+
+Lorsque votre fichier peut avoir un problème.
+(Normal est indiqué en vert et anormal en rouge.)
 <!-- [kr] -->
-### 부연 설명
+### (3) 베이스 파일 유효성 검사
+
+문제가 있는 것으로 의심되는 경우.
+(정상은 녹색으로, 비정상은 빨간색으로 표시됩니다.)
+<!-- [common] -->
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [X] 4 language(s) not translated.
+            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+        Line 28: This language reappeared before all languages appeared once.
+        Line 36: A common area appeared before all languages come out.
+        Line 57: Unknown suffix detected.
+        Line 59: This language reappeared before all languages appeared once.
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+<!-- [en] -->
+When your files are ok.
+<!-- [fr] -->
+Lorsque vos fichiers sont ok.
+<!-- [kr] -->
+문제점이 없다면
+<!-- [common] -->
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+<!-- [en] -->
+### (4) More explanations
+<!-- [fr] -->
+### (4) Plus d'explications
+<!-- [kr] -->
+### (4) 부연 설명
 <!-- [common] -->
 
 <!-- [en] -->
@@ -282,7 +341,7 @@ Les titres doivent être déclarés avant le corps de texte.
 <!-- [common] -->
 
     ```markdown
-    <!-- multilangual suffix: en, kr, fr, es, jp, cn -->
+    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
     ```
 
 <!-- [en] -->
@@ -342,7 +401,6 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [fr] -->
 1. **Mots-clés**
 <!-- [common] -->
-
 <!-- [en] -->
     1. Language Classification
 
@@ -424,7 +482,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [common] -->
 
     ```markdown
-    <!-- [[ multilangual toc: level=2~3 ]] -->
+    <!-- [[ multilingual toc: level=2~3 ]] -->
     ```
 
 <!-- [en] -->
@@ -459,41 +517,56 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
         - **ATTENTION💥**: le marqueur `table of contents` change automatiquement le marqueur de section pour `common` donc les commandes de la table des matières concernent toutes les langues, et vous devez réindiquer un marqueur de langue par la suite.
 <!-- [en] -->
     2. **`no-emoji` option**
-        - In rare cases, you may want to subtract emoji from the table of contents while inserting emoji in the title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
+        - You may want to subtract emoji from the table of contents while inserting emoji in a section title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
 <!-- [kr] -->
     2. **`no-emoji` 옵션**
-        - 드문 경우지만 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
+        - 섹션 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
 <!-- [fr] -->
     2. **Option `no-emoji`**
-        - En de rares occasions, vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières 😱. dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
+        - Vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières.😱 dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
 <!-- [common] -->
 
         ```markdown
-        <!-- [[ multilangual toc: level=2~3 no-emoji ]] -->
+        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
         ```
 
 <!-- [en] -->
 ## Contribution
-
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
-
-> Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
-
 <!-- [fr] -->
 ## Contribution
-
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
-
-> Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
-
 <!-- [kr] -->
-## 기여하기
-
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
-
-> 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
-
+## 기여
 <!-- [common] -->
+
+<!-- [en] -->
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.) Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+<!-- [fr] -->
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+<!-- [kr] -->
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+<!-- [common] -->
+
+<!-- [en] -->
+### How to build locally for development
+<!-- [fr] -->
+### Comment construire localement pour le développement
+<!-- [kr] -->
+### 개발을 위해 local로 빌드하는 방법
+<!-- [common] -->
+
+- Linux and MacOS
+  - Required packages: `pip3 install -r requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `mmg [OPTIONS] [FILENAMES]...`
+  - Uninstall: `xargs rm -rf < temp.txt`
+- Windows (Not recommended)
+  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
+  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
+
 ### Contributors
 
 <!-- [en] -->
@@ -504,4 +577,5 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
 > La liste des contributeurs est en Anglais seulement.
 <!-- [common] -->
 
-- [Francis Piérot](https://github.com/bkg2018) - French translation ([#1](https://github.com/ryul1206/multilingual-markdown/pull/1))
+- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
+- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)
