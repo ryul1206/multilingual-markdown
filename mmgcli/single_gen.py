@@ -48,8 +48,6 @@ class CreateMonolangualDoc(object):
         self._this_name = fname + ("." + lang + "." if suffix else ".") + ename
         self.full_name = os.path.join(path, self._this_name)
 
-        self.doc = open(self.full_name, "w", encoding="utf-8")
-
         self.content = []
 
         self.toc = OrderedDict()
@@ -61,21 +59,22 @@ class CreateMonolangualDoc(object):
 
     def __del__(self):
         if self.success:
-            self.__save()
-        self.doc.close()
-        if (not self.success) and (os.path.isfile(self.full_name)):
-            os.remove(self.full_name)
+            doc = open(self.full_name, "w", encoding="utf-8")
+            self.__save(doc)
+            doc.close()
+        # if (not self.success) and (os.path.isfile(self.full_name)):
+        #     os.remove(self.full_name)
 
     def __repr__(self):
         return self.full_name
 
-    def __save(self):
+    def __save(self, target_file):
         for line in self.content:
             if isinstance(line, tuple):  # toc
                 min_, max_, enable_emoji_header = line
-                self.doc.write(create_toc(self.toc, min_, max_, enable_emoji_header))
+                target_file.write(create_toc(self.toc, min_, max_, enable_emoji_header))
             else:
-                self.doc.write(str(line))
+                target_file.write(str(line))
 
     def CustomException(self, message):
         return click.ClickException(f"<{self._this_name}> {message}")

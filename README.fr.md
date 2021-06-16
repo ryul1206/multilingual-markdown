@@ -7,9 +7,9 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 0.2.1** 🌏
-[English](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[Français](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+🚀 **version 1.0-alpha.1** 🌏
+[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
 [한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
@@ -20,15 +20,19 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
     1. [Fonctionnement](#Fonctionnement)
     1. [Fonctionnalités](#Fonctionnalités)
 1. [Installer](#Installer)
+1. [Mises à jour](#Mises-à-jour)
+1. [Désinstaller](#Désinstaller)
 1. [Mode d'emploi](#Mode-demploi)
     1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
     1. [(2) Option Récursive](#2-Option-Récursive)
-    1. [(3) Plus d'explications](#3-Plus-dexplications)
+    1. [(3) Validation du Fichier de Base](#3-Validation-du-Fichier-de-Base)
+    1. [(4) Plus d'explications](#4-Plus-dexplications)
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
     1. [Badges](#Badges)
     1. [Corps de texte](#Corps-de-texte)
 1. [Contribution](#Contribution)
+    1. [Comment construire localement pour le développement](#Comment-construire-localement-pour-le-développement)
     1. [[Changelog](CHANGELOG.md)](#ChangelogCHANGELOGmd)
     1. [Contributors](#Contributors)
 
@@ -48,32 +52,39 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 
 ## Installer
 
-Tout d'abord, installez les packages Python3 requis.
-
 ```sh
-pip3 install -r requirements.txt --user
-```
-
-Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
-
-```sh
-cd
-curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
-```
-
-Ensuite, enregistrez l'alias suivant dans votre shell. Ajoutez simplement ce qui suit à la fin de `~ / .bashrc` ou` ~ / .zshrc`.
-
-```sh
-# vim ~/.bashrc
-alias mmg="python3 ~/.multilang_md.py"
+pip3 install mmg --user
 ```
 
 Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nouvelle commande `mmg`.
 
 ```sh
-mmg --help
+$ mmg --help
+mmg [OPTIONS] [FILENAMES]...
+
+Options:
+  --version                 Show the current version.
+  -r, --recursive           This recursive option searches all subfolders
+                            based on current directory and converts all base
+                            files.
+  -y, --yes                 Confirm the action without prompting
+  -c, --check / -s, --skip  Check the number of language tags of each file
+                            (defualt: --check)
+  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
+  --help                    Show this message and exit.
 ```
 
+## Mises à jour
+
+```sh
+pip3 install mmg --upgrade --user
+```
+
+## Désinstaller
+
+```sh
+pip3 uninstall mmg
+```
 
 ## Mode d'emploi
 
@@ -105,7 +116,43 @@ Vous ne pouvez pas encore spécifier un dossier comme argument.
 mmg --recursive
 ```
 
-### (3) Plus d'explications
+### (3) Validation du Fichier de Base
+
+Lorsque votre fichier peut avoir un problème.
+(Normal est indiqué en vert et anormal en rouge.)
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [X] 4 language(s) not translated.
+            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+        Line 28: This language reappeared before all languages appeared once.
+        Line 36: A common area appeared before all languages come out.
+        Line 57: Unknown suffix detected.
+        Line 59: This language reappeared before all languages appeared once.
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+Lorsque vos fichiers sont ok.
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+### (4) Plus d'explications
 
 - Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
     - Par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
@@ -211,6 +258,19 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 ## Contribution
 
 Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+
+### Comment construire localement pour le développement
+
+- Linux and MacOS
+  - Required packages: `pip3 install -r requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `mmg [OPTIONS] [FILENAMES]...`
+  - Uninstall: `xargs rm -rf < temp.txt`
+- Windows (Not recommended)
+  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
+  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
 
 ### [Changelog](CHANGELOG.md)
 

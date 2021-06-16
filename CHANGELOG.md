@@ -20,10 +20,11 @@ Security 취약점이 있는 경우
 To do
 
 - Better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
-- More CLI features: check, update, version
 
-Done
+## [1.0.a1] - 2021-06-17
 
+- **Added** - `pip install` from the Python Package Index.
+- **Added** - More CLI features: check, verbose, version, and yes parameter for confirmation.
 - **Added** - Detect a failure of ToC level [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2) by [**@mathben**](https://github.com/mathben)
 - **Added** - Detect an error of missing language keywords. [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2) by [**@mathben**](https://github.com/mathben)
 - **Changed** - Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2) by [**@mathben**](https://github.com/mathben)
@@ -41,7 +42,7 @@ Done
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v0.3.0...develop
-[0.3.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.3.0
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.a1...develop
+[1.0.a1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a1
 [0.2.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.2.0
 [0.1.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.1.0

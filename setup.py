@@ -38,8 +38,8 @@ setup_options = dict(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ryul1206/multilingual-markdown",
-    scripts=['bin/mmg'],
-    packages=setuptools.find_packages(exclude=['example', 'tests*']),
+    scripts=["bin/mmg"],
+    packages=setuptools.find_packages(exclude=["example", "tests*"]),
     install_requires=install_requires,
     license="MIT",
     python_requires=">=3.6, <4",
@@ -48,34 +48,47 @@ setup_options = dict(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Operating System :: POSIX :: Linux',
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Operating System :: POSIX :: Linux",
         # 'Operating System :: MacOS',
-        'Operating System :: Microsoft :: Windows',
-        'Topic :: Software Development :: Internationalization',
-        'Topic :: Software Development :: Localization',
-        'Topic :: Text Processing :: Markup :: Markdown',
+        "Operating System :: Microsoft :: Windows",
+        "Topic :: Software Development :: Internationalization",
+        "Topic :: Software Development :: Localization",
+        "Topic :: Text Processing :: Markup :: Markdown",
     ],
 )
 
 
-if 'py2exe' in sys.argv:
-    # This will actually give us a py2exe command.
-    import py2exe
-    # And we have some py2exe specific options.
-    setup_options['options'] = {
-        'py2exe': {
-            'optimize': 0,
-            'skip_archive': True,
-            # 'dll_excludes': ['crypt32.dll'],
-            # 'packages': ['docutils', 'urllib', 'httplib', 'HTMLParser',
-            #              'awscli', 'ConfigParser', 'xml.etree', 'pipes'],
-        }
-    }
-    setup_options['console'] = ['bin/mmg']
+# if "py2exe" in sys.argv:
+#     # This will actually give us a py2exe command.
+#     import py2exe
+#     setup_options["console"] = ["bin/mmg"]
+#     setup_options["options"] = {
+#         "py2exe": {
+#             "optimize": 0,
+#             "skip_archive": True,
+#             "includes": [
+#                 "regex",
+#                 "click",
+#                 "emoji",
+#             ],
+#             "excludes": [
+#                 "_ssl",
+#                 "pyreadline",
+#                 "difflib",
+#                 "doctest",
+#                 "locale",
+#                 "optparse",
+#                 "pickle",
+#                 "calendar",
+#                 "toml",
+#             ],
+#             "dll_excludes": ["msvcr71.dll"],
+#         }
+#     }
 
 
 setuptools.setup(**setup_options)

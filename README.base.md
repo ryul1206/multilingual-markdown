@@ -22,9 +22,9 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 0.2.1** 🌏
-[English](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[Français](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+🚀 **version 1.0-alpha.1** 🌏
+[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
 [한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
@@ -93,42 +93,8 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ## 설치
 <!-- [common] -->
 
-<!-- [en] -->
-First, install the required Python3 packages.
-<!-- [fr] -->
-Tout d'abord, installez les packages Python3 requis.
-<!-- [kr] -->
-먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다.
-<!-- [common] -->
-
 ```sh
-pip3 install -r requirements.txt --user
-```
-
-<!-- [en] -->
-Download `multilang_md.py` as a hidden file on your home directory with the command below:
-<!-- [fr] -->
-Téléchargez `multilang_md.py` en tant que fichier caché dans votre répertoire personnel avec la commande ci-dessous:
-<!-- [kr] -->
-아래 명령을 사용하여`multilang_md.py`를 홈 디렉토리에 숨겨진 파일로 다운로드합니다.
-<!-- [common] -->
-
-```sh
-cd
-curl -fsSL https://raw.githubusercontent.com/ryul1206/multilingual-markdown/master/multilang_md.py > .multilang_md.py
-```
-
-<!-- [en] -->
-Then, register the following alias in your shell. Just add the following to the end of `~/.bashrc` or `~/.zshrc`.
-<!-- [fr] -->
-Ensuite, enregistrez l'alias suivant dans votre shell. Ajoutez simplement ce qui suit à la fin de `~ / .bashrc` ou` ~ / .zshrc`.
-<!-- [kr] -->
-그 다음, 아래와 같은 alias를 당신의 shell에 등록하세요. 그저 아래 내용을 `~/.bashrc`나 `~/.zshrc`의 마지막에 추가하면 됩니다.
-<!-- [common] -->
-
-```sh
-# vim ~/.bashrc
-alias mmg="python3 ~/.multilang_md.py"
+pip3 install mmg --user
 ```
 
 <!-- [en] -->
@@ -140,17 +106,44 @@ Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nou
 <!-- [common] -->
 
 ```sh
-mmg --help
+$ mmg --help
+mmg [OPTIONS] [FILENAMES]...
+
+Options:
+  --version                 Show the current version.
+  -r, --recursive           This recursive option searches all subfolders
+                            based on current directory and converts all base
+                            files.
+  -y, --yes                 Confirm the action without prompting
+  -c, --check / -s, --skip  Check the number of language tags of each file
+                            (defualt: --check)
+  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
+  --help                    Show this message and exit.
 ```
 
-<!-- [ignore] -->
-Update
-Mises à jour
-업데이트
-Uninstall
-Désinstaller
-제거
+<!-- [en] -->
+## Update
+<!-- [fr] -->
+## Mises à jour
+<!-- [kr] -->
+## 업데이트
 <!-- [common] -->
+
+```sh
+pip3 install mmg --upgrade --user
+```
+
+<!-- [en] -->
+## Uninstall
+<!-- [fr] -->
+## Désinstaller
+<!-- [kr] -->
+## 제거
+<!-- [common] -->
+
+```sh
+pip3 uninstall mmg
+```
 
 <!-- [en] -->
 ## How to Use
@@ -233,11 +226,65 @@ mmg --recursive
 ```
 
 <!-- [en] -->
-### (3) More explanations
+### (3) Base File Validation
+
+When your file may have a problem.
+(Normal is shown in green and abnormal in red.)
 <!-- [fr] -->
-### (3) Plus d'explications
+### (3) Validation du Fichier de Base
+
+Lorsque votre fichier peut avoir un problème.
+(Normal est indiqué en vert et anormal en rouge.)
 <!-- [kr] -->
-### (3) 부연 설명
+### (3) 베이스 파일 유효성 검사
+
+문제가 있는 것으로 의심되는 경우.
+(정상은 녹색으로, 비정상은 빨간색으로 표시됩니다.)
+<!-- [common] -->
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [X] 4 language(s) not translated.
+            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+        Line 28: This language reappeared before all languages appeared once.
+        Line 36: A common area appeared before all languages come out.
+        Line 57: Unknown suffix detected.
+        Line 59: This language reappeared before all languages appeared once.
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+<!-- [en] -->
+When your files are ok.
+<!-- [fr] -->
+Lorsque vos fichiers sont ok.
+<!-- [kr] -->
+문제점이 없다면
+<!-- [common] -->
+
+```sh
+$ mmg -r --verbose
+----------------------
+ + .\README.base.md
+        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+ + .\example\example.base.md
+        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+----------------------
+ => 2 base markdowns were found.
+Do you want to convert these files? [y/N]
+```
+
+<!-- [en] -->
+### (4) More explanations
+<!-- [fr] -->
+### (4) Plus d'explications
+<!-- [kr] -->
+### (4) 부연 설명
 <!-- [common] -->
 
 <!-- [en] -->
@@ -486,20 +533,39 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
 <!-- [en] -->
 ## Contribution
-
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.) Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
-
 <!-- [fr] -->
 ## Contribution
-
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
-
 <!-- [kr] -->
 ## 기여
-
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
-
 <!-- [common] -->
+
+<!-- [en] -->
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.) Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+<!-- [fr] -->
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+<!-- [kr] -->
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+<!-- [common] -->
+
+<!-- [en] -->
+### How to build locally for development
+<!-- [fr] -->
+### Comment construire localement pour le développement
+<!-- [kr] -->
+### 개발을 위해 local로 빌드하는 방법
+<!-- [common] -->
+
+- Linux and MacOS
+  - Required packages: `pip3 install -r requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `mmg [OPTIONS] [FILENAMES]...`
+  - Uninstall: `xargs rm -rf < temp.txt`
+- Windows (Not recommended)
+  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
+  - Install: `python3 setup.py install --user --record temp.txt`
+  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
+  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+
 ### [Changelog](CHANGELOG.md)
 
 ### Contributors
