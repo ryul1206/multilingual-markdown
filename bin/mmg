@@ -1,0 +1,10 @@
+import sys
+import mmgcli
+
+
+def main():
+    return mmgcli.multilang_md.main()
+
+
+if __name__ == '__main__':
+    sys.exit(main())

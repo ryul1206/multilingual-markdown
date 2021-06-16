@@ -314,7 +314,7 @@ def search(dir_name):
     is_flag=True,
     help="This recursive option searches all subfolders based on current directory and convert all base files.",
 )
-def cli(filenames, recursive):
+def main(filenames, recursive):
     if recursive or filenames:
         base_count = 0
         click.secho("----------------------", fg="cyan")
@@ -339,6 +339,6 @@ def cli(filenames, recursive):
 if __name__ == "__main__":
     assert sys.version_info[0] == 3
     try:
-        cli()
+        main()
     except Exception as e:
         click.echo(e)
