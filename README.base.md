@@ -144,13 +144,12 @@ mmg --help
 ```
 
 <!-- [ignore] -->
-## Update
-## Mises à jour
-## 업데이트
-
-## Uninstall
-## Désinstaller
-## 제거
+Update
+Mises à jour
+업데이트
+Uninstall
+Désinstaller
+제거
 <!-- [common] -->
 
 <!-- [en] -->

@@ -1,0 +1,2 @@
+-r requirements_dev.txt
+py2exe>=0.10.*

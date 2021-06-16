@@ -1,0 +1,2 @@
+/home/hr/.local/lib/python3.6/site-packages/mmg-0.0.3-py3.6.egg
+/home/hr/.local/bin/mmg

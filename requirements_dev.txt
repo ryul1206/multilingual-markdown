@@ -2,4 +2,3 @@
 black>=20.*
 flake8>=3.9.*
 check-manifest==0.46
-py2exe>=0.10.*

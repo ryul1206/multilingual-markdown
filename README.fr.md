@@ -2,14 +2,15 @@
 
 Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 
-
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 0.2.1**
-🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
+🚀 **version 0.2.1** 🌏
+[English](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
 
@@ -28,6 +29,7 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
     1. [Badges](#Badges)
     1. [Corps de texte](#Corps-de-texte)
 1. [Contribution](#Contribution)
+    1. [[Changelog](CHANGELOG.md)](#ChangelogCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## Aperçu 🔎
@@ -209,6 +211,8 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 ## Contribution
 
 Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+
+### [Changelog](CHANGELOG.md)
 
 ### Contributors
 

@@ -2,14 +2,15 @@
 
 이 패키지는 다국어 콘텐츠를 관리하고, 단일 기본 파일로부터 i18n 마크 다운을 생성하는 명령 줄 인터페이스(CLI)를 제공합니다.
 
-
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 0.2.1**
-🌏 [English](README.md), [Français](README.fr.md), [한국어](README.kr.md)
+🚀 **version 0.2.1** 🌏
+[English](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[Français](Rhttps://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
 
 ---
 
@@ -28,6 +29,7 @@
     1. [뱃지 달기](#뱃지-달기)
     1. [본문](#본문)
 1. [기여](#기여)
+    1. [[Changelog](CHANGELOG.md)](#ChangelogCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## 개요 🔎
@@ -46,7 +48,7 @@
 
 ## 설치
 
-먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다. ()
+먼저 필요한 파이썬3 패키지를 안전한 user 권한으로 설치합니다.
 
 ```sh
 pip3 install -r requirements.txt --user
@@ -209,6 +211,8 @@ mmg --recursive
 ## 기여
 
 번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+
+### [Changelog](CHANGELOG.md)
 
 ### Contributors
 

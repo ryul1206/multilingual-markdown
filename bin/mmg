@@ -3,7 +3,7 @@ import mmgcli
 
 
 def main():
-    return mmgcli.multilang_md.main()
+    return mmgcli.cli.main()
 
 
 if __name__ == '__main__':
