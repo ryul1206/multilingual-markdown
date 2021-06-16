@@ -6,6 +6,8 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+# https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
+
 name: Upload Python Package
 
 on:
@@ -29,14 +31,7 @@ jobs:
         pip install build setuptools twine --user
     - name: Build package
       run: python -m build
-    - name: Publish package
-
-    env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        twine upload dist/*
-
+    - name: Publish package 📦 to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
         user: __token__
