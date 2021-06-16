@@ -33,7 +33,7 @@
     1. [본문](#본문)
 1. [기여](#기여)
     1. [개발을 위해 local로 빌드하는 방법](#개발을-위해-local로-빌드하는-방법)
-    1. [[Changelog](CHANGELOG.md)](#ChangelogCHANGELOGmd)
+    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## 개요 🔎
@@ -198,7 +198,6 @@ Do you want to convert these files? [y/N]
 파서가 아래의 태그들를 읽는 순간부터 그 이후에 읽는 모든 것은 메인 텍스트로 인식합니다. (그래서 헤더를 메인 이전에 적어야 합니다.)
 
 1. **키워드**
-
     1. 언어 분류
 
         언어를 구분하는 태그는 `<!-- [키워드] -->` 같은 형태로 작성합니다. 하나의 키워드가 인식되면 다른 키워드가 나타날 때까지 해당 키워드로 인식됩니다.
@@ -272,7 +271,7 @@ Do you want to convert these files? [y/N]
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
   - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
 
-### [Changelog](CHANGELOG.md)
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
 ### Contributors
 

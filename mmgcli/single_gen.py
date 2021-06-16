@@ -1,6 +1,6 @@
-import os
+import os.path
 import re
-import emoji
+# import emoji
 import click
 from collections import OrderedDict  # toc
 

@@ -401,7 +401,6 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 <!-- [fr] -->
 1. **Mots-clés**
 <!-- [common] -->
-
 <!-- [en] -->
     1. Language Classification
 
@@ -566,7 +565,7 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
   - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
 
-### [Changelog](CHANGELOG.md)
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
 ### Contributors
 

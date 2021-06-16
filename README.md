@@ -33,7 +33,7 @@ This package provides a command-line interface to manage multilingual contents a
     1. [Main Text](#Main-Text)
 1. [Contribution](#Contribution)
     1. [How to build locally for development](#How-to-build-locally-for-development)
-    1. [[Changelog](CHANGELOG.md)](#ChangelogCHANGELOGmd)
+    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## Overview 🔎
@@ -198,7 +198,6 @@ Headers must be declared before the body begins.
 Everything that the parser reads after the tag below is recognized as the main text. (So you have to write the header before main).
 
 1. **Keywords**
-
     1. Language Classification
 
         The tags that distinguish languages are written in the form `<!-- [keyword] -->`. If one keyword is recognized, it will be recognized as that keyword until another keyword is seen.
@@ -272,7 +271,7 @@ I would appreciate anything you send. (e.g. translations, simple improvements, b
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
   - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
 
-### [Changelog](CHANGELOG.md)
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
 ### Contributors
 

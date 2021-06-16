@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 
 import sys
-
-from click.termui import secho
-import mmgcli
-import click
 import os
 import re
+import click
+import mmgcli
 from mmgcli.base_parser import MultilingualDoc
 
 
@@ -51,15 +49,16 @@ def query_yes_no(question):
     default = "no"
     prompt = " [y/N] "
 
-    while True:
+    resp = None
+    while not resp:
         sys.stdout.write(question + prompt)
         choice = input().lower()
         if choice == "":
-            return valid[default]
+            resp = valid[default]
         elif choice in valid:
-            return valid[choice]
-        else:
-            sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
+            resp = valid[choice]
+        sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
+    return resp
 
 
 def load_files(filenames, recursive, check, verbosity):

@@ -33,7 +33,7 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
     1. [Corps de texte](#Corps-de-texte)
 1. [Contribution](#Contribution)
     1. [Comment construire localement pour le développement](#Comment-construire-localement-pour-le-développement)
-    1. [[Changelog](CHANGELOG.md)](#ChangelogCHANGELOGmd)
+    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
     1. [Contributors](#Contributors)
 
 ## Aperçu 🔎
@@ -198,7 +198,6 @@ Les titres doivent être déclarés avant le corps de texte.
 Tout ce qui suit le marqueur est interprété comme corps principal de texte, donc vous devez placer les titres avant le texte.
 
 1. **Mots-clés**
-
     1. Classification de langue
 
         Les marqueurs qui distinguent les languages sont écrits sous la forme `<!-- [marqueur] -->`. Si un marqueur est reconnu, il sera retenu jusqu'à ce qu'un autre soit reconnu.
@@ -272,7 +271,7 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
   - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
 
-### [Changelog](CHANGELOG.md)
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
 ### Contributors
 
