@@ -21,6 +21,10 @@ To do
 
 - Better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
 
+## [1.0.a2] - 2021-06-17
+
+- **Fixed** - Fix 'import-im6.q16' errors caused by missing shebang.
+
 ## [1.0.a1] - 2021-06-17
 
 - **Added** - `pip install` from the Python Package Index.
@@ -42,7 +46,8 @@ To do
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.a1...develop
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.a2...develop
+[1.0.a2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a2
 [1.0.a1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a1
 [0.2.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.2.0
 [0.1.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.1.0

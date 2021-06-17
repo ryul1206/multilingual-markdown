@@ -16,7 +16,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 
-[English](example.en-US.md),
+[English](example.md),
 [Français](example.fr-FR.md),
 [한국어](example.ko-KR.md),
 [日本語](example.ja-JP.md)

@@ -11,8 +11,10 @@
 name: Upload Python Package
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
+      - develop
 
 jobs:
   deploy:
@@ -31,7 +33,13 @@ jobs:
         pip install build setuptools twine --user
     - name: Build package
       run: python -m build
+    - name: Publish package 📦 to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository_url: https://test.pypi.org/legacy/
     - name: Publish package 📦 to PyPI
+      if: startsWith(github.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@master
       with:
         user: __token__
