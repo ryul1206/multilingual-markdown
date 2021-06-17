@@ -24,6 +24,7 @@ To do
 ## [1.0.a2] - 2021-06-17
 
 - **Fixed** - Fix 'import-im6.q16' errors caused by missing shebang.
+- **Fixed** - Fix an infinite loop bug when select no in query_yes_no.
 
 ## [1.0.a1] - 2021-06-17
 
