@@ -121,7 +121,7 @@ class MultilingualDoc(object):
         color = "bright_red" if missing else "bright_green"
         message = ""
         if verbosity > 0:
-            message = f"\t[X] {missing} language(s) not translated.\n\t    " if missing else "\t[O] "
+            message = f"\t❌ {missing} language(s) not translated.\n\t    " if missing else "\t✅ "
             message += f"Tag count: {str(suffix_counter)}"
             message += buffer
         return message, color

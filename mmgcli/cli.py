@@ -50,7 +50,7 @@ def query_yes_no(question):
     prompt = " [y/N] "
 
     resp = None
-    while not resp:
+    while resp is None:
         sys.stdout.write(question + prompt)
         choice = input().lower()
         if choice == "":

@@ -9,7 +9,7 @@
         // show space
         // "editor.renderWhitespace": "boundary",
         "editor.renderWhitespace": "none",
-        // 
+        //
         "editor.quickSuggestions": {
             "other": true,
             "comments": true,
@@ -22,4 +22,5 @@
     "python.linting.flake8Args": ["--max-line-length=88"],
     "python.formatting.provider": "black",
     "python.pythonPath": "/usr/bin/python3",
+    "files.eol": "\n"
 }
