@@ -271,7 +271,7 @@ Do you want to convert these files? [y/N]
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
   - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
 
-### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
 ### Contributors
 
