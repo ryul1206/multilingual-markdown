@@ -23,17 +23,17 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 1. [Mises à jour](#Mises-à-jour)
 1. [Désinstaller](#Désinstaller)
 1. [Mode d'emploi](#Mode-demploi)
-    1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
-    1. [(2) Option Récursive](#2-Option-Récursive)
-    1. [(3) Validation du Fichier de Base](#3-Validation-du-Fichier-de-Base)
-    1. [(4) Plus d'explications](#4-Plus-dexplications)
+    1. [(1) Spécification du fichier cible](#(1)-Spécification-du-fichier-cible)
+    1. [(2) Option Récursive](#(2)-Option-Récursive)
+    1. [(3) Validation du Fichier de Base](#(3)-Validation-du-Fichier-de-Base)
+    1. [(4) Plus d'explications](#(4)-Plus-dexplications)
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
     1. [Badges](#Badges)
     1. [Corps de texte](#Corps-de-texte)
 1. [Contribution](#Contribution)
     1. [Comment construire localement pour le développement](#Comment-construire-localement-pour-le-développement)
-    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
+    1. [Changelog](#Changelog)
     1. [Contributors](#Contributors)
 
 ## Aperçu 🔎
@@ -265,11 +265,11 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `mmg [OPTIONS] [FILENAMES]...`
   - Uninstall: `xargs rm -rf < temp.txt`
-- Windows (Not recommended)
+- Windows
   - Required packages: `pip3 install -r .\requirements_dev.txt --user`
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
 
 ### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 

@@ -5,8 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
 <!--
 알파벳 순서
 Added 새로운 기능
@@ -17,9 +15,15 @@ Fixed 버그 픽스
 Security 취약점이 있는 경우
 -->
 
-To do
+### Not Scheduled
+
+The items listed here are only minor notes and are of low priority. So it may be out of focus forever, but if you need anything, please [publish an issue](https://github.com/ryul1206/multilingual-markdown/issues).
 
 - Better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
+
+## [Upcoming Release][unreleased]
+
+- **Fixed** - Fix [#4](https://github.com/ryul1206/multilingual-markdown/issues/4): ToC contents are broken when a header(#) has a link.
 
 ## [1.0.a2] - 2021-06-17
 

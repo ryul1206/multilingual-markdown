@@ -23,17 +23,17 @@ This package provides a command-line interface to manage multilingual contents a
 1. [Update](#Update)
 1. [Uninstall](#Uninstall)
 1. [How to Use](#How-to-Use)
-    1. [(1) File Designation](#1-File-Designation)
-    1. [(2) Recursive Option](#2-Recursive-Option)
-    1. [(3) Base File Validation](#3-Base-File-Validation)
-    1. [(4) More explanations](#4-More-explanations)
+    1. [(1) File Designation](#(1)-File-Designation)
+    1. [(2) Recursive Option](#(2)-Recursive-Option)
+    1. [(3) Base File Validation](#(3)-Base-File-Validation)
+    1. [(4) More explanations](#(4)-More-explanations)
 1. [Command Tags](#Command-Tags)
     1. [Headers](#Headers)
     1. [Badges](#Badges)
     1. [Main Text](#Main-Text)
 1. [Contribution](#Contribution)
     1. [How to build locally for development](#How-to-build-locally-for-development)
-    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
+    1. [Changelog](#Changelog)
     1. [Contributors](#Contributors)
 
 ## Overview 🔎
@@ -265,11 +265,11 @@ I would appreciate anything you send. (e.g. translations, simple improvements, b
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `mmg [OPTIONS] [FILENAMES]...`
   - Uninstall: `xargs rm -rf < temp.txt`
-- Windows (Not recommended)
+- Windows
   - Required packages: `pip3 install -r .\requirements_dev.txt --user`
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
 
 ### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 

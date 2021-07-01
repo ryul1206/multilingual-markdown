@@ -23,17 +23,17 @@
 1. [업데이트](#업데이트)
 1. [제거](#제거)
 1. [사용법](#사용법)
-    1. [(1) 파일 지정](#1-파일-지정)
-    1. [(2) 재귀 옵션 (recursive option)](#2-재귀-옵션-recursive-option)
-    1. [(3) 베이스 파일 유효성 검사](#3-베이스-파일-유효성-검사)
-    1. [(4) 부연 설명](#4-부연-설명)
+    1. [(1) 파일 지정](#(1)-파일-지정)
+    1. [(2) 재귀 옵션 (recursive option)](#(2)-재귀-옵션-(recursive-option))
+    1. [(3) 베이스 파일 유효성 검사](#(3)-베이스-파일-유효성-검사)
+    1. [(4) 부연 설명](#(4)-부연-설명)
 1. [명령어 태그](#명령어-태그)
     1. [헤더](#헤더)
     1. [뱃지 달기](#뱃지-달기)
     1. [본문](#본문)
 1. [기여](#기여)
     1. [개발을 위해 local로 빌드하는 방법](#개발을-위해-local로-빌드하는-방법)
-    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
+    1. [Changelog](#Changelog)
     1. [Contributors](#Contributors)
 
 ## 개요 🔎
@@ -265,11 +265,11 @@ Do you want to convert these files? [y/N]
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `mmg [OPTIONS] [FILENAMES]...`
   - Uninstall: `xargs rm -rf < temp.txt`
-- Windows (Not recommended)
+- Windows
   - Required packages: `pip3 install -r .\requirements_dev.txt --user`
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
 
 ### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 

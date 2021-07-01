@@ -559,11 +559,11 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `mmg [OPTIONS] [FILENAMES]...`
   - Uninstall: `xargs rm -rf < temp.txt`
-- Windows (Not recommended)
+- Windows
   - Required packages: `pip3 install -r .\requirements_dev.txt --user`
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
 
 ### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
 
