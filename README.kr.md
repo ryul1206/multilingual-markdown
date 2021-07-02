@@ -1,16 +1,17 @@
 # 다국어 마크다운 생성기
 
-이 패키지는 다국어 콘텐츠를 관리하고, 단일 기본 파일로부터 i18n 마크 다운을 생성하는 명령 줄 인터페이스(CLI)를 제공합니다.
+이 패키지는 단일 기본 파일로부터 다국어 콘텐츠를 관리하고, i18n 마크 다운을 생성하는 명령 줄 인터페이스 (CLI)를 제공합니다.
 
 [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 1.0-alpha.2** 🌏
+🚀 **version 1.0.1** 🌏
 [English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
 [Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
 [한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
+[日本語](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md))
 
 ---
 
@@ -18,11 +19,12 @@
 
 1. [개요 ](#개요-)
     1. [작동 방식](#작동-방식)
-    1. [기능들](#기능들)
+    1. [기능](#기능)
 1. [설치](#설치)
 1. [업데이트](#업데이트)
 1. [제거](#제거)
 1. [사용법](#사용법)
+    1. [(0) 베이스 마크다운 파일 만들기](#0-베이스-마크다운-파일-만들기)
     1. [(1) 파일 지정](#1-파일-지정)
     1. [(2) 재귀 옵션 (recursive option)](#2-재귀-옵션-recursive-option)
     1. [(3) 베이스 파일 유효성 검사](#3-베이스-파일-유효성-검사)
@@ -33,7 +35,7 @@
     1. [본문](#본문)
 1. [기여](#기여)
     1. [개발을 위해 local로 빌드하는 방법](#개발을-위해-local로-빌드하는-방법)
-    1. [[Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)](#Changeloghttpsgithubcomryul1206multilingual-markdownblobmasterCHANGELOGmd)
+    1. [Changelog](#Changelog)
     1. [Contributors](#Contributors)
 
 ## 개요 🔎
@@ -41,11 +43,12 @@
 ### 작동 방식
 ![how it works](how-it-works.png)
 
-### 기능들
+### 기능
 
 - 파일 이름 뒤에 자동 접미사
-- 접미사 생략 옵션 (한 개 언어만 가능)
-- UTF-8 인코딩. 따라서 *아마도* 거의 모든 언어를 지원할겁니다. :) 🍷
+  - [IETF 언어 태그](https://ko.wikipedia.org/wiki/IETF_%EC%96%B8%EC%96%B4_%ED%83%9C%EA%B7%B8) 사용 가능
+  - 접미사 생략 옵션 (한 개 언어만 가능)
+- UTF-8 인코딩. 따라서 *아마* 거의 모든 언어를 지원합니다. :) 🍷
 - 자동 목차
     - 목차로 만들 제목수준 설정 가능
     - 목차에서 이모티콘 **표시/생략** 설정 가능
@@ -87,6 +90,8 @@ pip3 uninstall mmg
 ```
 
 ## 사용법
+
+### (0) 베이스 마크다운 파일 만들기
 
 `{파일이름}.base.md` 파일을 만듭니다. 예제는 [README.base.md](README.base.md) 와 [example.base.md](example/example.base.md) 를 참고하시고, 작성하는 규칙은 [명령어 태그](#명령어-태그)를 참고하십시오.
 
@@ -256,7 +261,7 @@ Do you want to convert these files? [y/N]
 
 ## 기여
 
-번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다. 특히 이 `README.md` 문서를 여기에 없는 다른 언어로 번역해주신다면 매우 감사드립니다.
+번역, 단순한 개선, 버그 제보 등 어떠한 것이라도 소중히 받습니다.
 
 ### 개발을 위해 local로 빌드하는 방법
 
@@ -265,13 +270,13 @@ Do you want to convert these files? [y/N]
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `mmg [OPTIONS] [FILENAMES]...`
   - Uninstall: `xargs rm -rf < temp.txt`
-- Windows (Not recommended)
+- Windows
   - Required packages: `pip3 install -r .\requirements_dev.txt --user`
   - Install: `python3 setup.py install --user --record temp.txt`
   - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `Get-Content .\temp.txt | Remove-Item`
+  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
 
-### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/master/CHANGELOG.md)
+### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
 ### Contributors
 

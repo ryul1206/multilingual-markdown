@@ -5,8 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
 <!--
 알파벳 순서
 Added 새로운 기능
@@ -17,9 +15,21 @@ Fixed 버그 픽스
 Security 취약점이 있는 경우
 -->
 
-To do
+### Not Scheduled
+
+The items listed here are only minor notes and are of low priority. So it may be out of focus forever, but if you need anything, please [publish an issue](https://github.com/ryul1206/multilingual-markdown/issues).
 
 - Better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
+
+## [Upcoming Release][unreleased]
+
+Empty
+
+## [1.0.1] - 2021-07-02
+
+- **Added** - Japanese README
+- **Changed** - Move the checklog icon to the front.
+- **Fixed** - Fix [#4](https://github.com/ryul1206/multilingual-markdown/issues/4): ToC contents are broken when a header(#) has a link.
 
 ## [1.0.a2] - 2021-06-17
 
@@ -47,7 +57,8 @@ To do
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.a2...develop
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.1...develop
+[1.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.1
 [1.0.a2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a2
 [1.0.a1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a1
 [0.2.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.2.0

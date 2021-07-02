@@ -1,5 +1,6 @@
 import os.path
 import re
+
 # import emoji
 import click
 from collections import OrderedDict  # toc
@@ -18,15 +19,28 @@ def remove_emoji(text):
     return emoji_pattern.sub(r"", text)  # no emoji
 
 
+def remove_links(text):
+    # remove: html style
+    tag_begin = r"(<a href=)(.(?<!<))+>"
+    tag_end = r"<\/a>"
+    text = re.sub(tag_begin, "", re.sub(tag_end, "", text))
+    # remove: markdown style
+    mdurl_pattern = r"\[(?P<TEXT>((?!\]\(.*\]\().)*)\]\(((?!\).*\)).)*\)"
+    text = re.sub(mdurl_pattern, lambda m: m.group("TEXT"), text)
+    return text
+
+
 def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
     for head, child in _dict.items():
         if (min_ <= _level) and (_level <= max_):
             # head
             if not enable_emoji_header:
                 head = remove_emoji(head)
+            # Fix the issue #4 (URL bug)
+            head = remove_links(head)
             # suburl
-            spc = r"[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:'\",./<>\?]+"
-            suburl = re.sub(spc, "", head)
+            special_char = r"[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:'\",./<>\?]+"
+            suburl = re.sub(special_char, "", head)
             suburl = remove_emoji(suburl)
             suburl = suburl.replace("  ", " ").replace(" ", "-")
             # toc line
@@ -90,8 +104,7 @@ class CreateMonolangualDoc(object):
                 self.append_toc(head, result.end() - 1)
 
     def append_toc(self, head, level):
-        # if (self.prev_level + 1) == level:  # new child
-        if self.prev_level < level:  # new child
+        if (self.prev_level + 1) == level:  # new child
             pass
         elif self.prev_level == level:  # same level
             self.toc_stack = self.toc_stack[:-1]
