@@ -118,13 +118,14 @@ class MultilingualDoc(object):
         max_tag = max(suffix_counter.values())
         missing = sum(1 if max_tag != x else 0 for x in suffix_counter.values())
 
+        icon = "❌" if missing else "✅"
         color = "bright_red" if missing else "bright_green"
         message = ""
         if verbosity > 0:
-            message = f"\t❌ {missing} language(s) not translated.\n\t    " if missing else "\t✅ "
-            message += f"Tag count: {str(suffix_counter)}"
+            message = f"    {missing} language(s) not translated.\n" if missing else ""
+            message += f"    Tag count: {str(suffix_counter)}"
             message += buffer
-        return message, color
+        return icon, message, color
 
     def run(self):
         # Main converting

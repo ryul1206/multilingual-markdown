@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys
+# import sys
 import codecs
 import os
 import re

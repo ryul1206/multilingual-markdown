@@ -7,10 +7,11 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 1.0-alpha.2** 🌏
+🚀 **version 1.0.1** 🌏
 [English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
 [Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
 [한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
+[日本語](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md))
 
 ---
 
@@ -23,10 +24,11 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 1. [Mises à jour](#Mises-à-jour)
 1. [Désinstaller](#Désinstaller)
 1. [Mode d'emploi](#Mode-demploi)
-    1. [(1) Spécification du fichier cible](#(1)-Spécification-du-fichier-cible)
-    1. [(2) Option Récursive](#(2)-Option-Récursive)
-    1. [(3) Validation du Fichier de Base](#(3)-Validation-du-Fichier-de-Base)
-    1. [(4) Plus d'explications](#(4)-Plus-dexplications)
+    1. [(0) Créer un fichier de démarques de base](#0-Créer-un-fichier-de-démarques-de-base)
+    1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
+    1. [(2) Option Récursive](#2-Option-Récursive)
+    1. [(3) Validation du Fichier de Base](#3-Validation-du-Fichier-de-Base)
+    1. [(4) Plus d'explications](#4-Plus-dexplications)
 1. [Marqueurs](#Marqueurs)
     1. [Titres](#Titres)
     1. [Badges](#Badges)
@@ -44,7 +46,8 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ### Fonctionnalités
 
 - Suffixe automatique des noms de fichier
-- Possibilité d'omettre le suffixe (pour la langue principale)
+  - [Étiquette d'identification de langues IETF](https://fr.wikipedia.org/wiki/%C3%89tiquette_d%27identification_de_langues_IETF) ​sont également disponibles
+  - Possibilité d'omettre le suffixe (pour la langue principale)
 - Encodage UTF-8. Cela *devrait* supporter presque toutes les langues. :) 🍷
 - Table des matières automatique
     - Niveaux de titres au choix
@@ -87,6 +90,8 @@ pip3 uninstall mmg
 ```
 
 ## Mode d'emploi
+
+### (0) Créer un fichier de démarques de base
 
 Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
 
@@ -256,7 +261,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
 ## Contribution
 
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.) Je serai particulièrement reconnaissant si vous pouviez traduire ce `README.md` dans votre langue et me l'envoyer.
+Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
 
 ### Comment construire localement pour le développement
 

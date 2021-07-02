@@ -23,6 +23,12 @@ The items listed here are only minor notes and are of low priority. So it may be
 
 ## [Upcoming Release][unreleased]
 
+Empty
+
+## [1.0.1] - 2021-07-02
+
+- **Added** - Japanese README
+- **Changed** - Move the checklog icon to the front.
 - **Fixed** - Fix [#4](https://github.com/ryul1206/multilingual-markdown/issues/4): ToC contents are broken when a header(#) has a link.
 
 ## [1.0.a2] - 2021-06-17
@@ -51,7 +57,8 @@ The items listed here are only minor notes and are of low priority. So it may be
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.a2...develop
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.1...develop
+[1.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.1
 [1.0.a2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a2
 [1.0.a1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a1
 [0.2.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v0.2.0

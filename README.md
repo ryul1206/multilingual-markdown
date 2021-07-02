@@ -7,10 +7,11 @@ This package provides a command-line interface to manage multilingual contents a
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 1.0-alpha.2** 🌏
+🚀 **version 1.0.1** 🌏
 [English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
 [Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
 [한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
+[日本語](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md))
 
 ---
 
@@ -23,10 +24,11 @@ This package provides a command-line interface to manage multilingual contents a
 1. [Update](#Update)
 1. [Uninstall](#Uninstall)
 1. [How to Use](#How-to-Use)
-    1. [(1) File Designation](#(1)-File-Designation)
-    1. [(2) Recursive Option](#(2)-Recursive-Option)
-    1. [(3) Base File Validation](#(3)-Base-File-Validation)
-    1. [(4) More explanations](#(4)-More-explanations)
+    1. [(0) Make a Base Markdown File](#0-Make-a-Base-Markdown-File)
+    1. [(1) File Designation](#1-File-Designation)
+    1. [(2) Recursive Option](#2-Recursive-Option)
+    1. [(3) Base File Validation](#3-Base-File-Validation)
+    1. [(4) More explanations](#4-More-explanations)
 1. [Command Tags](#Command-Tags)
     1. [Headers](#Headers)
     1. [Badges](#Badges)
@@ -44,8 +46,9 @@ This package provides a command-line interface to manage multilingual contents a
 ### Features
 
 - Auto suffix to file name
-- No suffix option (for one main language)
-- UTF-8 encoding. So *maybe* this will support almost all languages. :) 🍷
+  - [IETF language tags](https://en.wikipedia.org/wiki/IETF_language_tag) are also available.
+  - Remove suffix option for one main language
+- UTF-8 encoding. So this *would* support almost all languages. :) 🍷
 - Auto table of contents
     - Table of contents level options
     - Table of contents emoji **on-off** options
@@ -87,6 +90,8 @@ pip3 uninstall mmg
 ```
 
 ## How to Use
+
+### (0) Make a Base Markdown File
 
 Make `{something}.base.md` files. See [README.base.md](README.base.md) and [example.base.md](example/example.base.md) for examples, and [Command Tags](#Command-Tags) for rules.
 
@@ -256,7 +261,7 @@ Everything that the parser reads after the tag below is recognized as the main t
 
 ## Contribution
 
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.) Especially I would be very grateful if you could translate this `README.md` document into your language not listed here and give it to me.
+I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
 
 ### How to build locally for development
 

@@ -77,8 +77,8 @@ def load_files(filenames, recursive, check, verbosity):
 
     click.echo("----------------------")
     for base in base_files:
-        _msg, color = base.check_log(verbosity=verbosity) if check else ("", "white")
-        click.secho(f" + {base.full_name}", fg=color)
+        icon, _msg, color = base.check_log(verbosity=verbosity) if check else ("+", "", "white")
+        click.secho(f" {icon} {base.full_name}", fg=color)
         if _msg:
             click.echo(_msg)
     click.echo("----------------------")
