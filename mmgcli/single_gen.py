@@ -39,8 +39,8 @@ def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
             # Fix the issue #4 (URL bug)
             head = remove_links(head)
             # suburl
-            spc = r"[`~!@#$%\^&\*_=\+\|\{\}\\\\;:'\",./<>\?]+"
-            suburl = re.sub(spc, "", head)
+            special_char = r"[`~!@#$%\^&\*\(\)_=\+\|\[\]\{\}\\\\;:'\",./<>\?]+"
+            suburl = re.sub(special_char, "", head)
             suburl = remove_emoji(suburl)
             suburl = suburl.replace("  ", " ").replace(" ", "-")
             # toc line
