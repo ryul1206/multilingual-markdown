@@ -104,8 +104,7 @@ class CreateMonolangualDoc(object):
                 self.append_toc(head, result.end() - 1)
 
     def append_toc(self, head, level):
-        # if (self.prev_level + 1) == level:  # new child
-        if self.prev_level < level:  # new child
+        if (self.prev_level + 1) == level:  # new child
             pass
         elif self.prev_level == level:  # same level
             self.toc_stack = self.toc_stack[:-1]
