@@ -57,7 +57,7 @@ def query_yes_no(question):
             resp = valid[default]
         elif choice in valid:
             resp = valid[choice]
-        sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
+        # sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
     return resp
 
 
@@ -117,7 +117,7 @@ def load_files(filenames, recursive, check, verbosity):
     default=True,
     help='Check the number of language tags of each file (defualt: --check)',
 )
-@click.option('-v', '--verbose', count=True, help="For example, -v:1, -vv:2, -vvv:3")
+@click.option('-v', '--verbose', count=True, help="For example, -v:1, -vv:2")
 def main(filenames, recursive, yes, check, verbose):
     if recursive or filenames:
         base_files = load_files(filenames, recursive, check, verbose)

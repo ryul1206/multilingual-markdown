@@ -7,11 +7,13 @@
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 1.0.1** 🌏
-[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
-[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
-[日本語](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md))
+🚀 **version 1.0.2** 🌏
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md),
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+
+Bash, Zsh, WindowsPowerShellで使用できます。
 
 ---
 
@@ -21,6 +23,7 @@
     1. [作動方式](#作動方式)
     1. [技能](#技能)
 1. [設置](#設置)
+    1. ["コマンドが見つかりません"エラーを修正する方法](#コマンドが見つかりませんエラーを修正する方法)
 1. [アップデート](#アップデート)
 1. [削除](#削除)
 1. [使用方法](#使用方法)
@@ -76,6 +79,33 @@ Options:
   --help                    Show this message and exit.
 ```
 
+### "コマンドが見つかりません"エラーを修正する方法
+
+**Ubuntu Bash/Zsh**
+
+- 原因:`mmg`コマンドがインストールされる'$HOME/.local/bin'経路が'PATH'に含まれていないと発生します。
+- 解決:`/.bashrc`または`/.zshrc`ファイルを開き、`PATH`に`$HOME/.local/bin`を追加します。
+    ```
+    export PATH="$HOME/.local/bin:$PATH"
+    ```
+
+**Windows PowerShell**
+
+以下に説明した順にPSモジュールを作成すると、問題を解決することができます。
+
+1. PowerShellで`$env:PSModulePath`コマンドを使えばPSModule経路を確認することができる。ここのリポジトリのPSmmgフォルダをPSModuleの一つに貼り付けます。例えば、`C:\ProgramFiles\WindowsPowerShell\Modules\PSmmg\PSmmg.psm1`が必要です。
+2. PowerShellを管理者モードで実行し、実行ポリシーを変更します。
+    ```
+    Set-ExecutionPolicy RemoteSigned
+    ```
+3. PowerShellを再起動すると、`mmg`命令を書くことができます。
+
+**OSにこだわらない代案**
+
+```
+python -m mmgcli [options]
+```
+
 ## アップデート
 
 ```sh
@@ -122,34 +152,60 @@ mmg --recursive
 
 問題があると疑われる場合。（通常は緑色で、異常は赤で表示されます。）
 
-```sh
-$ mmg -r --verbose
-----------------------
- + .\README.base.md
-        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
- + .\example\example.base.md
-        [X] 4 language(s) not translated.
-            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-        Line 28: This language reappeared before all languages appeared once.
-        Line 36: A common area appeared before all languages come out.
-        Line 57: Unknown suffix detected.
-        Line 59: This language reappeared before all languages appeared once.
-----------------------
- => 2 base markdowns were found.
-Do you want to convert these files? [y/N]
-```
+- Verbosity 0
+    ```text
+    $ mmg -r
+    ----------------------
+    ✅ .\README.base.md
+    ❌ .\example\example.base.md
+    ----------------------
+    => 2 base markdowns were found.
+        Your verbosity is 0. Try the `--verbose` option for more details.
+    Do you want to convert these files? [y/N]
+    ```
+- Verbosity 1 (`--verbose`)
+    ```text
+    $ mmg -r -v
+    ----------------------
+    ✅ .\README.base.md
+        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+    ❌ .\example\example.base.md
+        4 language(s) not translated.
+        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+    ----------------------
+    => 2 base markdowns were found.
+    Do you want to convert these files? [y/N]
+    ```
+- Verbosity 2
+    ```text
+    $ mmg -r -vv
+    ----------------------
+    ✅ .\README.base.md
+        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+    ❌ .\example\example.base.md
+        4 language(s) not translated.
+        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+            Line 28: This language reappeared before all languages appeared once.
+            Line 36: A common area appeared before all languages come out.
+            Line 57: Unknown suffix detected.
+            Line 59: This language reappeared before all languages appeared once.
+    ----------------------
+    => 2 base markdowns were found.
+    Do you want to convert these files? [y/N]
+    ```
 
 問題がなければ、
 
-```sh
+```text
 $ mmg -r --verbose
 ----------------------
- + .\README.base.md
-        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
- + .\example\example.base.md
-        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+✅ .\README.base.md
+    Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+✅ .\example\example.base.md
+    Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}i
 ----------------------
- => 2 base markdowns were found.
+=> 2 base markdowns were found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
 Do you want to convert these files? [y/N]
 ```
 

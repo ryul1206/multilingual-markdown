@@ -7,11 +7,13 @@
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 1.0.1** 🌏
-[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
-[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
-[日本語](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md))
+🚀 **version 1.0.2** 🌏
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md),
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+
+Bash, Zsh, Windows PowerShell에서 사용할 수 있습니다.
 
 ---
 
@@ -21,6 +23,7 @@
     1. [작동 방식](#작동-방식)
     1. [기능](#기능)
 1. [설치](#설치)
+    1. ["명령을 찾을 수 없음" 오류를 수정하는 방법](#명령을-찾을-수-없음-오류를-수정하는-방법)
 1. [업데이트](#업데이트)
 1. [제거](#제거)
 1. [사용법](#사용법)
@@ -77,6 +80,33 @@ Options:
   --help                    Show this message and exit.
 ```
 
+### "명령을 찾을 수 없음" 오류를 수정하는 방법
+
+**Ubuntu Bash/Zsh**
+
+- 원인: `mmg` 명령어가 설치되는 `$HOME/.local/bin` 경로가 `PATH`에 포함되어 있지 않으면 발생합니다.
+- 해결: `~/.bashrc` 또는 `~/.zshrc` 파일을 열어 `PATH`에 `$HOME/.local/bin`을 추가합니다.
+    ```
+    export PATH="$HOME/.local/bin:$PATH"
+    ```
+
+**Windows PowerShell**
+
+아래 설명된 순서대로 PS모듈을 생성하면 문제를 해결할 수 있습니다.
+
+1. PowerShell에서 `$env:PSModulePath` 명령어를 쓰면 PSModule 경로를 확인할 수 있다. 여기 저장소의 PSmmg 폴더를 PSModule 중 하나에 붙여넣습니다. 예를 들어, `C:\Program Files\WindowsPowerShell\Modules\PSmmg\PSmmg.psm1`가 있어야 합니다.
+2. PowerShell을 관리자 모드로 실행하고, 실행정책을 변경합니다.
+    ```
+    Set-ExecutionPolicy RemoteSigned
+    ```
+3. 이제 PowerShell을 재시작하면 `mmg` 명령을 쓸 수 있습니다.
+
+**OS에 구애받지 않는 대안**
+
+```
+python -m mmgcli [options]
+```
+
 ## 업데이트
 
 ```sh
@@ -126,34 +156,60 @@ mmg --recursive
 문제가 있는 것으로 의심되는 경우.
 (정상은 녹색으로, 비정상은 빨간색으로 표시됩니다.)
 
-```sh
-$ mmg -r --verbose
-----------------------
- + .\README.base.md
-        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
- + .\example\example.base.md
-        [X] 4 language(s) not translated.
-            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-        Line 28: This language reappeared before all languages appeared once.
-        Line 36: A common area appeared before all languages come out.
-        Line 57: Unknown suffix detected.
-        Line 59: This language reappeared before all languages appeared once.
-----------------------
- => 2 base markdowns were found.
-Do you want to convert these files? [y/N]
-```
+- Verbosity 0
+    ```text
+    $ mmg -r
+    ----------------------
+    ✅ .\README.base.md
+    ❌ .\example\example.base.md
+    ----------------------
+    => 2 base markdowns were found.
+        Your verbosity is 0. Try the `--verbose` option for more details.
+    Do you want to convert these files? [y/N]
+    ```
+- Verbosity 1 (`--verbose`)
+    ```text
+    $ mmg -r -v
+    ----------------------
+    ✅ .\README.base.md
+        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+    ❌ .\example\example.base.md
+        4 language(s) not translated.
+        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+    ----------------------
+    => 2 base markdowns were found.
+    Do you want to convert these files? [y/N]
+    ```
+- Verbosity 2
+    ```text
+    $ mmg -r -vv
+    ----------------------
+    ✅ .\README.base.md
+        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+    ❌ .\example\example.base.md
+        4 language(s) not translated.
+        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+            Line 28: This language reappeared before all languages appeared once.
+            Line 36: A common area appeared before all languages come out.
+            Line 57: Unknown suffix detected.
+            Line 59: This language reappeared before all languages appeared once.
+    ----------------------
+    => 2 base markdowns were found.
+    Do you want to convert these files? [y/N]
+    ```
 
 문제점이 없다면
 
-```sh
+```text
 $ mmg -r --verbose
 ----------------------
- + .\README.base.md
-        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
- + .\example\example.base.md
-        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+✅ .\README.base.md
+    Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+✅ .\example\example.base.md
+    Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}i
 ----------------------
- => 2 base markdowns were found.
+=> 2 base markdowns were found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
 Do you want to convert these files? [y/N]
 ```
 
