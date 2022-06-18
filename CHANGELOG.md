@@ -23,7 +23,17 @@ The items listed here are only minor notes and are of low priority. So it may be
 
 ## [Upcoming Release][unreleased]
 
-Empty
+.
+
+## [1.0.2] - 2022-06-19
+
+- **Changed** - Change the verbosity level of some display information.
+- **Fixed** - Fix [#10](https://github.com/ryul1206/multilingual-markdown/issues/10): The CLI is not working on the Windows PowerShell.
+- **Removed** - Delete unnecessary sentences.
+    ```sh
+    Do you want to convert these files? [y/N]
+    Please respond with 'yes' or 'no' (or 'y' or 'n').  # <--- THIS LINE WAS DELETED.
+    ```
 
 ## [1.0.1] - 2021-07-02
 

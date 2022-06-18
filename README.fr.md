@@ -7,11 +7,13 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge/master)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/overview/master)
 
-🚀 **version 1.0.1** 🌏
-[English](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[Français](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
-[한국어](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md)
-[日本語](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md))
+🚀 **version 1.0.2** 🌏
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md),
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+
+Disponible dans Bash, Zsh et Windows PowerShell.
 
 ---
 
@@ -21,6 +23,7 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
     1. [Fonctionnement](#Fonctionnement)
     1. [Fonctionnalités](#Fonctionnalités)
 1. [Installer](#Installer)
+    1. [Comment corriger une erreur "Commande introuvable"](#Comment-corriger-une-erreur-Commande-introuvable)
 1. [Mises à jour](#Mises-à-jour)
 1. [Désinstaller](#Désinstaller)
 1. [Mode d'emploi](#Mode-demploi)
@@ -77,6 +80,33 @@ Options:
   --help                    Show this message and exit.
 ```
 
+### Comment corriger une erreur "Commande introuvable"
+
+**Ubuntu Bash/Zsh**
+
+- Cause : Cette erreur se produit si la variable `PATH` ne contient pas le chemin `$HOME/.local/bin` où la commande `mmg` est installée.
+- Solution : Ouvrez le fichier `~/.bashrc` ou `~/.zshrc` et ajoutez `$HOME/.local/bin` à `PATH`.
+    ```
+    export PATH="$HOME/.local/bin:$PATH"
+    ```
+
+**Windows PowerShell**
+
+Vous pouvez résoudre le problème en créant les modules PS dans l'ordre décrit ci-dessous.
+
+1. Vous pouvez vérifier les chemins PSModule en utilisant la commande `$env:PSModulePath` dans PowerShell. Collez le dossier PSmmg de ce référentiel dans l'un des chemins PSModule. Par exemple, `C:\Program Files\WindowsPowerShell\Modules\PSmmg\PSmmg.psm1` doit exister.
+2. Exécutez PowerShell en mode administrateur et modifiez la politique d'exécution.
+    ```
+    Set-ExecutionPolicy RemoteSigned
+    ```
+3. Redémarrez maintenant PowerShell et vous pouvez utiliser la commande `mmg`.
+
+**Alternative indépendante du système d'exploitation**
+
+```
+python -m mmgcli [options]
+```
+
 ## Mises à jour
 
 ```sh
@@ -126,34 +156,60 @@ mmg --recursive
 Lorsque votre fichier peut avoir un problème.
 (Normal est indiqué en vert et anormal en rouge.)
 
-```sh
-$ mmg -r --verbose
-----------------------
- + .\README.base.md
-        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
- + .\example\example.base.md
-        [X] 4 language(s) not translated.
-            Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-        Line 28: This language reappeared before all languages appeared once.
-        Line 36: A common area appeared before all languages come out.
-        Line 57: Unknown suffix detected.
-        Line 59: This language reappeared before all languages appeared once.
-----------------------
- => 2 base markdowns were found.
-Do you want to convert these files? [y/N]
-```
+- Verbosity 0
+    ```text
+    $ mmg -r
+    ----------------------
+    ✅ .\README.base.md
+    ❌ .\example\example.base.md
+    ----------------------
+    => 2 base markdowns were found.
+        Your verbosity is 0. Try the `--verbose` option for more details.
+    Do you want to convert these files? [y/N]
+    ```
+- Verbosity 1 (`--verbose`)
+    ```text
+    $ mmg -r -v
+    ----------------------
+    ✅ .\README.base.md
+        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+    ❌ .\example\example.base.md
+        4 language(s) not translated.
+        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+    ----------------------
+    => 2 base markdowns were found.
+    Do you want to convert these files? [y/N]
+    ```
+- Verbosity 2
+    ```text
+    $ mmg -r -vv
+    ----------------------
+    ✅ .\README.base.md
+        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+    ❌ .\example\example.base.md
+        4 language(s) not translated.
+        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
+            Line 28: This language reappeared before all languages appeared once.
+            Line 36: A common area appeared before all languages come out.
+            Line 57: Unknown suffix detected.
+            Line 59: This language reappeared before all languages appeared once.
+    ----------------------
+    => 2 base markdowns were found.
+    Do you want to convert these files? [y/N]
+    ```
 
 Lorsque vos fichiers sont ok.
 
-```sh
+```text
 $ mmg -r --verbose
 ----------------------
- + .\README.base.md
-        [O] Tag count: {'en': 37, 'fr': 37, 'kr': 37}
- + .\example\example.base.md
-        [O] Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}
+✅ .\README.base.md
+    Tag count: {'en': 37, 'fr': 37, 'kr': 37}
+✅ .\example\example.base.md
+    Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}i
 ----------------------
- => 2 base markdowns were found.
+=> 2 base markdowns were found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
 Do you want to convert these files? [y/N]
 ```
 

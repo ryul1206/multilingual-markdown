@@ -124,6 +124,7 @@ class MultilingualDoc(object):
         if verbosity > 0:
             message = f"    {missing} language(s) not translated.\n" if missing else ""
             message += f"    Tag count: {str(suffix_counter)}"
+        if verbosity > 1:
             message += buffer
         return icon, message, color
 
