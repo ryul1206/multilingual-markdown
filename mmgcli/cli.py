@@ -124,8 +124,8 @@ def main(filenames, recursive, yes, check, verbose):
         base_count = len(base_files)
         is_plural = base_count > 1
 
+        _msg = "these files" if is_plural else "this file"
         if not yes:
-            _msg = "these files" if is_plural else "this file"
             if not query_yes_no("Do you want to convert these files?"):
                 exit()
 
