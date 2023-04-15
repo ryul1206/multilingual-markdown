@@ -57,6 +57,10 @@ def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
 
 class CreateMonolangualDoc(object):
     def __init__(self, path, file_name, lang, suffix=True):
+        # Resolve a PowerShell bug related to file paths with specific names
+        # `mmg` will throw an error when the file_name starts with ".\" or "./".
+        if file_name.startswith(".\\") or file_name.startswith("./"):
+            file_name = file_name[2:]
         fname, base, ename = file_name.split(".")
 
         self._this_name = fname + ("." + lang + "." if suffix else ".") + ename

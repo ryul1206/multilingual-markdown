@@ -124,8 +124,8 @@ def main(filenames, recursive, yes, check, verbose):
         base_count = len(base_files)
         is_plural = base_count > 1
 
+        _msg = "files have" if is_plural else "file has"
         if not yes:
-            _msg = "these files" if is_plural else "this file"
             if not query_yes_no("Do you want to convert these files?"):
                 exit()
 
@@ -134,7 +134,7 @@ def main(filenames, recursive, yes, check, verbose):
             base.run()
         click.secho("----------------------", fg="cyan")
 
-        click.secho(f" => {base_count} base {_msg} converted.\n", fg="cyan")
+        click.secho(f" => {base_count} base {_msg} been converted.\n", fg="cyan")
     else:
         raise click.UsageError(
             "You have not entered anything. Do 'mmg Foo.base.md' or 'mmg --recursive'."
