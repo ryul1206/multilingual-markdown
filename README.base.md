@@ -853,3 +853,4 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
 
 - [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
 - [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)
+- [@ryukzak (Aleksandr Penskoi)](https://github.com/ryukzak): Bug fix for `--yes` flag. [PR #21](https://github.com/ryul1206/multilingual-markdown/pull/21)
