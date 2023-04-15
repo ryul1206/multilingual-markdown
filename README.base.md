@@ -26,19 +26,35 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
 
-🚀 **version 1.0.2** 🌏
-[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md),
+🚀 **version 1.0.3**
+🌏
+<!-- [en] -->
+English |
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md) |
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
 [**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
 
-<!-- [en] -->
 Available in Bash, Zsh, and Windows PowerShell.
 <!-- [fr] -->
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+Français |
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+
 Disponible dans Bash, Zsh et Windows PowerShell.
 <!-- [kr] -->
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md) |
+한국어 |
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+
 Bash, Zsh, Windows PowerShell에서 사용할 수 있습니다.
 <!-- [jp] -->
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md) |
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
+日本語
+
 Bash, Zsh, WindowsPowerShellで使用できます。
 <!-- [common] -->
 

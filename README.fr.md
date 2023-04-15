@@ -7,10 +7,11 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
 
-🚀 **version 1.0.2** 🌏
-[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md),
+🚀 **version 1.0.3**
+🌏
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+Français |
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
 [**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
 
 Disponible dans Bash, Zsh et Windows PowerShell.

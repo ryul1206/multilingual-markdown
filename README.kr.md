@@ -7,10 +7,11 @@
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
 
-🚀 **version 1.0.2** 🌏
-[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md),
-[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md),
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md),
+🚀 **version 1.0.3**
+🌏
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md) |
+한국어 |
 [**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
 
 Bash, Zsh, Windows PowerShell에서 사용할 수 있습니다.
