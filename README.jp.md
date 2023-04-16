@@ -2,16 +2,17 @@
 
 このパッケージは、単一のデフォルトのファイルから多言語コンテンツを管理してi18nマークダウンを生成するコマンドラインインタフェース（CLI）を提供しています。
 
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+<!-- [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown) -->
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
+[![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg)
 
 🚀 **version 1.0.3**
 🌏
-[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
-[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.fr.md) |
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.md) |
+[**Français**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.fr.md) |
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.kr.md) |
 日本語
 
 Bash, Zsh, WindowsPowerShellで使用できます。

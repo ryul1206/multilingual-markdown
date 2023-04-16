@@ -2,17 +2,18 @@
 
 Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+<!-- [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown) -->
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
+[![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg)
 
 🚀 **version 1.0.3**
 🌏
-[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.md) |
 Français |
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
-[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.kr.md) |
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.jp.md)
 
 Disponible dans Bash, Zsh et Windows PowerShell.
 

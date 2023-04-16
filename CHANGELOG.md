@@ -25,6 +25,12 @@ The items listed here are only minor notes and are of low priority. So it may be
 
 .
 
+## [1.0.3] - 2023-04-16
+
+- **Fixed** - Bug fix for `--yes` flag. #21 by @ryukzak
+- **Fixed** - Fix broken URL for CodeFactor badge in README
+- **Fixed** - Resolve PowerShell bug for specific file names
+
 ## [1.0.2] - 2022-06-19
 
 - **Changed** - Change the verbosity level of some display information.
@@ -68,6 +74,8 @@ The items listed here are only minor notes and are of low priority. So it may be
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
 [unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.1...develop
+[1.0.3]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.3
+[1.0.2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.1
 [1.0.a2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a2
 [1.0.a1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.a1
