@@ -23,11 +23,14 @@ The items listed here are only minor notes and are of low priority. So it may be
 
 ## [Upcoming Release][unreleased]
 
-.
+- **Changed** - Use [Poetry](https://python-poetry.org/) for Python package management [#16](https://github.com/ryul1206/multilingual-markdown/issues/16)
+- **Removed** - Drop support for Python 3.6
+  - Python 3.6 EOL is 23 Dec 2021
+  - Poetry requires Python 3.7 or higher
 
 ## [1.0.3] - 2023-04-16
 
-- **Fixed** - Bug fix for `--yes` flag. #21 by @ryukzak
+- **Fixed** - Bug fix for `--yes` flag. #21 by [@ryukzak](https://github.com/ryukzak)
 - **Fixed** - Fix broken URL for CodeFactor badge in README
 - **Fixed** - Resolve PowerShell bug for specific file names
 

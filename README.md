@@ -8,7 +8,7 @@ This package provides a command-line interface to manage multilingual contents a
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
 [![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg)
 
-🚀 **version 1.0.3**
+🚀 **version 2.0.0**
 🌏
 English |
 [**Français**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.fr.md) |
@@ -323,18 +323,21 @@ I would appreciate anything you send. (e.g. translations, simple improvements, b
 
 ### How to build locally for development
 
-- Linux and MacOS
-  - Required packages: `pip3 install -r requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `mmg [OPTIONS] [FILENAMES]...`
-  - Uninstall: `xargs rm -rf < temp.txt`
-- Windows
-  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
+If you would like to build and test the project locally, we recommend using [poetry](https://python-poetry.org/) to manage your development environment.
+[Poetry](https://python-poetry.org/) is a dependency management tool that simplifies installation and management of packages in your project.
+Here's how you can use poetry to build the project locally:
 
-### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
+1. Install poetry by following the instructions in the [official documentation](https://python-poetry.org/docs/).
+2. Clone the repository and navigate to the project directory.
+3. Set your virtual environment configuration for the project by:
+   - `poetry config virtualenvs.in-project true`
+   - `poetry config virtualenvs.path "./.venv"`
+4. Run `poetry install` to install the dependencies and create a virtual environment for the project.
+5. Activate the virtual environment by running `poetry shell`.
+
+### Changelog
+
+[CHANGELOG.md](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
 ### Contributors
 

@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "mmg"
+version = "2.0.0-dev"
+description = "Command line interface to generate i18n documents"
+authors = ["Hong-ryul Jung <jung.hr.1206@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+# homepage = "https://python-poetry.org/"
+repository = "https://github.com/ryul1206/multilingual-markdown"
+keywords=["i18n", "multilingual", "markdown", "language", "cli", "markdown-generator"]
+classifiers=[
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Software Development :: Internationalization",
+    "Topic :: Software Development :: Localization",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+packages = [
+	{ include = "mmgcli" },
+]
+exclude = ["example", "tests", "PSmmg", ".vscode", ".github"]
+
+[tool.poetry.scripts]
+mmg = "mmgcli:main"
+
+[tool.poetry.dependencies]
+python = ">=3.7, <4"
+click = "^8"
+emoji = "^0.6"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+flake8 = "^5"
+check-manifest = "^0.49"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.1"
+
+[tool.check-manifest]
+ignore = [
+	".github",
+	".github/*",
+	"CHANGELOG.md",
+	"READEME.base.md",
+	"requirements_dev.txt",
+	"example",
+	"example/*",
+	".vscode",
+	".vscode/*",
+	"PSmmg",
+	"PSmmg/*",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

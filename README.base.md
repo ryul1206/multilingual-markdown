@@ -27,7 +27,7 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
 [![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg)
 
-🚀 **version 1.0.3**
+🚀 **version 2.0.0**
 🌏
 <!-- [en] -->
 English |
@@ -819,26 +819,65 @@ Toute contribution sera grandement appréciée. (ex: traductions, améliorations
 
 <!-- [en] -->
 ### How to build locally for development
+
+If you would like to build and test the project locally, we recommend using [poetry](https://python-poetry.org/) to manage your development environment.
+[Poetry](https://python-poetry.org/) is a dependency management tool that simplifies installation and management of packages in your project.
+Here's how you can use poetry to build the project locally:
+
+1. Install poetry by following the instructions in the [official documentation](https://python-poetry.org/docs/).
+2. Clone the repository and navigate to the project directory.
+3. Set your virtual environment configuration for the project by:
+   - `poetry config virtualenvs.in-project true`
+   - `poetry config virtualenvs.path "./.venv"`
+4. Run `poetry install` to install the dependencies and create a virtual environment for the project.
+5. Activate the virtual environment by running `poetry shell`.
 <!-- [fr] -->
 ### Comment construire localement pour le développement
+
+Si vous souhaitez construire et tester le projet localement, nous vous recommandons d'utiliser [poetry](https://python-poetry.org/) pour gérer votre environnement de développement.
+[Poetry](https://python-poetry.org/) est un outil de gestion des dépendances qui simplifie l'installation et la gestion des paquets dans votre projet.
+Voici comment utiliser poetry pour construire le projet localement :
+
+1. Installez poetry en suivant les instructions de la [documentation officielle](https://python-poetry.org/docs/).
+2. Clonez le dépôt et accédez au répertoire du projet.
+3. Configurez votre environnement virtuel pour le projet en :
+   - `poetry config virtualenvs.in-project true`
+   - `poetry config virtualenvs.path "./.venv"`
+4. Exécutez `poetry install` pour installer les dépendances et créer un environnement virtuel pour le projet.
+5. Activez l'environnement virtuel en exécutant `poetry shell`.
 <!-- [kr] -->
-### 개발을 위해 local로 빌드하는 방법
+### 로컬에서 개발용 빌드 방법
+
+프로젝트를 로컬에서 빌드하고 테스트하려면 개발 환경을 관리하기 위해 [poetry](https://python-poetry.org/)를 사용하는 것이 좋습니다.
+[Poetry](https://python-poetry.org/)는 프로젝트 내 패키지 설치 및 관리를 단순화하는 의존성 관리 도구입니다.
+다음은 로컬에서 프로젝트를 빌드하는 데 poetry를 사용하는 방법입니다:
+
+1. [공식 문서](https://python-poetry.org/docs/)의 지침에 따라 poetry를 설치합니다.
+2. 저장소를 복제하고 프로젝트 디렉토리로 이동합니다.
+3. 다음을 사용하여 프로젝트의 가상 환경 구성을 설정합니다:
+   - `poetry config virtualenvs.in-project true`
+   - `poetry config virtualenvs.path "./.venv"`
+4. `poetry install`을 실행하여 종속성을 설치하고 프로젝트의 가상 환경을 생성합니다.
+5. `poetry shell`을 실행하여 가상 환경을 활성화합니다.
 <!-- [jp] -->
-### 開発のためのlocalに構築する方法
+### ローカルでの開発用ビルド方法
+
+プロジェクトをローカルでビルドしてテストしたい場合は、開発環境を管理するために [poetry](https://python-poetry.org/) を使用することをお勧めします。
+[Poetry](https://python-poetry.org/) は、プロジェクト内のパッケージのインストールと管理を簡素化する依存関係管理ツールです。
+以下は、ローカルでプロジェクトをビルドするために poetry を使用する方法です。
+
+1. [公式ドキュメント](https://python-poetry.org/docs/) の指示に従って poetry をインストールします。
+2. リポジトリをクローンし、プロジェクトディレクトリに移動します。
+3. 以下のコマンドを使用して、プロジェクトの仮想環境設定を行います:
+   - `poetry config virtualenvs.in-project true`
+   - `poetry config virtualenvs.path "./.venv"`
+4. `poetry install` を実行して依存関係をインストールし、プロジェクト用の仮想環境を作成します。
+5. `poetry shell` を実行して仮想環境を有効にします。
 <!-- [common] -->
 
-- Linux and MacOS
-  - Required packages: `pip3 install -r requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `mmg [OPTIONS] [FILENAMES]...`
-  - Uninstall: `xargs rm -rf < temp.txt`
-- Windows
-  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
+### Changelog
 
-### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
 ### Contributors
 

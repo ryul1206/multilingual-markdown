@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from importlib.metadata import version
 
-__version__ = "1.0.3"
+__version__ = version("mmg")
 
 from .cli import main

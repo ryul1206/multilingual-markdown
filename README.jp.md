@@ -8,7 +8,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
 [![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg)
 
-🚀 **version 1.0.3**
+🚀 **version 2.0.0**
 🌏
 [**English**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.md) |
 [**Français**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.fr.md) |
@@ -38,7 +38,7 @@ Bash, Zsh, WindowsPowerShellで使用できます。
     1. [バッジ付け](#バッジ付け)
     1. [本文](#本文)
 1. [貢献](#貢献)
-    1. [開発のためのlocalに構築する方法](#開発のためのlocalに構築する方法)
+    1. [ローカルでの開発用ビルド方法](#ローカルでの開発用ビルド方法)
     1. [Changelog](#Changelog)
     1. [Contributors](#Contributors)
 
@@ -317,20 +317,23 @@ Do you want to convert these files? [y/N]
 
 翻訳、単純な改善、バグ情報提供などいかなるものでも大切に受けます。
 
-### 開発のためのlocalに構築する方法
+### ローカルでの開発用ビルド方法
 
-- Linux and MacOS
-  - Required packages: `pip3 install -r requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `mmg [OPTIONS] [FILENAMES]...`
-  - Uninstall: `xargs rm -rf < temp.txt`
-- Windows
-  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
+プロジェクトをローカルでビルドしてテストしたい場合は、開発環境を管理するために [poetry](https://python-poetry.org/) を使用することをお勧めします。
+[Poetry](https://python-poetry.org/) は、プロジェクト内のパッケージのインストールと管理を簡素化する依存関係管理ツールです。
+以下は、ローカルでプロジェクトをビルドするために poetry を使用する方法です。
 
-### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
+1. [公式ドキュメント](https://python-poetry.org/docs/) の指示に従って poetry をインストールします。
+2. リポジトリをクローンし、プロジェクトディレクトリに移動します。
+3. 以下のコマンドを使用して、プロジェクトの仮想環境設定を行います:
+   - `poetry config virtualenvs.in-project true`
+   - `poetry config virtualenvs.path "./.venv"`
+4. `poetry install` を実行して依存関係をインストールし、プロジェクト用の仮想環境を作成します。
+5. `poetry shell` を実行して仮想環境を有効にします。
+
+### Changelog
+
+[CHANGELOG.md](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
 ### Contributors
 
