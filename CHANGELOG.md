@@ -15,18 +15,14 @@ Fixed 버그 픽스
 Security 취약점이 있는 경우
 -->
 
-### Not Scheduled
-
-The items listed here are only minor notes and are of low priority. So it may be out of focus forever, but if you need anything, please [publish an issue](https://github.com/ryul1206/multilingual-markdown/issues).
-
-- Better emoji detection (https://stackoverflow.com/questions/43146528/how-to-extract-all-the-emojis-from-text)
-
 ## [Upcoming Release][unreleased]
 
+- **Added** - Simple Python API for script usage [#13](https://github.com/ryul1206/multilingual-markdown/issues/13)
 - **Changed** - Use [Poetry](https://python-poetry.org/) for Python package management [#16](https://github.com/ryul1206/multilingual-markdown/issues/16)
 - **Removed** - Drop support for Python 3.6
   - Python 3.6 EOL is 23 Dec 2021
   - Poetry requires Python 3.7 or higher
+- **Fixed** Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
 
 ## [1.0.3] - 2023-04-16
 

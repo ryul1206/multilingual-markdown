@@ -1,33 +1,8 @@
 import os.path
 import re
-
-# import emoji
 import click
 from collections import OrderedDict  # toc
-
-
-def remove_emoji(text):
-    emoji_pattern = re.compile(
-        "["
-        "\U0001F600-\U0001F64F"  # emoticons
-        "\U0001F300-\U0001F5FF"  # symbols & pictographs
-        "\U0001F680-\U0001F6FF"  # transport & map symbols
-        "\U0001F1E0-\U0001F1FF"  # flags (iOS)
-        "]+",
-        flags=re.UNICODE,
-    )
-    return emoji_pattern.sub(r"", text)  # no emoji
-
-
-def remove_links(text):
-    # remove: html style
-    tag_begin = r"(<a href=)(.(?<!<))+>"
-    tag_end = r"<\/a>"
-    text = re.sub(tag_begin, "", re.sub(tag_end, "", text))
-    # remove: markdown style
-    mdurl_pattern = r"\[(?P<TEXT>((?!\]\(.*\]\().)*)\]\(((?!\).*\)).)*\)"
-    text = re.sub(mdurl_pattern, lambda m: m.group("TEXT"), text)
-    return text
+from .utils import remove_emoji, remove_links
 
 
 def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
