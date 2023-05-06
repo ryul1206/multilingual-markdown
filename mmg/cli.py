@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import sys
 import os
 import re
 import click
-import mmgcli
-from mmgcli.base_parser import MultilingualDoc
+import mmg
+from mmg.base_parser import MultilingualDoc
 
 
 def is_base_md(filename):
@@ -27,10 +26,10 @@ def filtered_base_list(filelist):
             yield filename
 
 
-def print_version(ctx, param, value):
+def _print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    click.echo(f'Version {mmgcli.__version__}')
+    click.echo(f"Version {mmg.__version__}")
     ctx.exit()
 
 
@@ -92,33 +91,31 @@ def load_files(filenames, recursive, check, verbosity):
 
 @click.command()
 @click.option(
-    "--version",
-    is_flag=True,
-    callback=print_version,
-    expose_value=False,
-    is_eager=True,
-    help='Show the current version.')
+    "--version", is_flag=True, callback=_print_version, expose_value=False, is_eager=True, help="Show the current version."
+)
 @click.argument("filenames", nargs=-1, type=click.Path(exists=True))
 @click.option(
-    "--recursive", "-r",
+    "--recursive",
+    "-r",
     is_flag=True,
     default=False,
-    help='This recursive option searches all subfolders based on current directory'
-         ' and converts all base files.',
+    help="This recursive option searches all subfolders based on current directory" " and converts all base files.",
 )
 @click.option(
-    "--yes", "-y",
+    "--yes",
+    "-y",
     is_flag=True,
     default=False,
-    help='Confirm the action without prompting',
+    help="Confirm the action without prompting",
 )
 @click.option(
-    "--check/--skip", "-c/-s",
+    "--check/--skip",
+    "-c/-s",
     default=True,
-    help='Check the number of language tags of each file (defualt: --check)',
+    help="Check the number of language tags of each file (defualt: --check)",
 )
-@click.option('-v', '--verbose', count=True, help="For example, -v:1, -vv:2")
-def main(filenames, recursive, yes, check, verbose):
+@click.option("-v", "--verbose", count=True, help="For example, -v:1, -vv:2")
+def mmgcli(filenames, recursive, yes, check, verbose):
     if recursive or filenames:
         base_files = load_files(filenames, recursive, check, verbose)
         base_count = len(base_files)
@@ -136,6 +133,12 @@ def main(filenames, recursive, yes, check, verbose):
 
         click.secho(f" => {base_count} base {_msg} been converted.\n", fg="cyan")
     else:
-        raise click.UsageError(
-            "You have not entered anything. Do 'mmg Foo.base.md' or 'mmg --recursive'."
-        )
+        raise click.UsageError("You have not entered anything. Do 'mmg Foo.base.md' or 'mmg --recursive'.")
+
+
+def main():
+    assert sys.version_info[0] == 3
+    try:
+        mmgcli()
+    except Exception as e:
+        click.echo(e)

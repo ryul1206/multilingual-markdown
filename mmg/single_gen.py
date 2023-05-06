@@ -2,7 +2,7 @@ import os.path
 import re
 import click
 from collections import OrderedDict  # toc
-from .utils import remove_emoji, remove_links
+from mmg.utils import remove_emoji, remove_links
 
 
 def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
@@ -24,9 +24,7 @@ def create_toc(_dict, min_, max_, enable_emoji_header, _toc_str="", _level=1):
             _toc_str += "    " * (_level - min_)
             _toc_str += temp
         # recursive
-        _toc_str = create_toc(
-            child, min_, max_, enable_emoji_header, _toc_str, _level + 1
-        )
+        _toc_str = create_toc(child, min_, max_, enable_emoji_header, _toc_str, _level + 1)
     return _toc_str
 
 
@@ -79,7 +77,7 @@ class CreateMonolangualDoc(object):
         if not codeblock_mark:
             result = self.header_re.match(oneline)
             if result:
-                head = oneline[result.end():].replace("\n", "")
+                head = oneline[result.end() :].replace("\n", "")
                 self.append_toc(head, result.end() - 1)
 
     def append_toc(self, head, level):

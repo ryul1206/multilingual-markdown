@@ -1,3 +1,3 @@
 function mmg {
-    python -m mmgcli $args
+    python -m mmg $args
 }

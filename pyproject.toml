@@ -18,12 +18,12 @@ classifiers=[
     "Topic :: Text Processing :: Markup :: Markdown",
 ]
 packages = [
-	{ include = "mmgcli" },
+	{ include = "mmg" },  # Include the folder
 ]
 exclude = ["example", "tests", "PSmmg", ".vscode", ".github"]
 
 [tool.poetry.scripts]
-mmg = "mmgcli:main"
+mmg = "mmg:main"
 
 [tool.poetry.dependencies]
 python = ">=3.7, <4"

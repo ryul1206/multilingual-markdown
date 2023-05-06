@@ -1,11 +1,10 @@
 import os.path
 import re
 import click
-from mmgcli.single_gen import CreateMonolangualDoc
+from mmg.single_gen import CreateMonolangualDoc
 
 
 class MultilingualDoc(object):
-
     class SafetyRead(object):
         def __init__(self, full_name):
             self.__doc = open(full_name, "r", encoding="utf-8")
@@ -54,8 +53,7 @@ class MultilingualDoc(object):
             self._counter[suffix] += 1
             health = False if any([x > 1 for x in self._counter.values()]) else True
             # reset
-            if all([x == 1 for x in self._counter.values()])\
-               or any([x > 1 for x in self._counter.values()]):
+            if all([x == 1 for x in self._counter.values()]) or any([x > 1 for x in self._counter.values()]):
                 self._counter = dict.fromkeys(self._counter, 0)
             return health
 
@@ -78,9 +76,9 @@ class MultilingualDoc(object):
         return cblock_mark
 
     def check_log(self, verbosity=0):
-        keywords = ['common', 'ignore']
+        keywords = ["common", "ignore"]
         suffixes = list(self.lang_doc.keys())
-        unknown = '<Unknown>'
+        unknown = "<Unknown>"
 
         suffix_counter = dict.fromkeys(self.lang_doc, 0)
         health_counter = self.HealthCounter(self.lang_doc)
@@ -173,9 +171,7 @@ class MultilingualDoc(object):
                 break
         # prepare a single doc
         for lang, _ in self.lang_read.items():
-            self.lang_doc[lang] = CreateMonolangualDoc(
-                path, file_name, lang, suffix=(lang != self.no_suffix)
-            )
+            self.lang_doc[lang] = CreateMonolangualDoc(path, file_name, lang, suffix=(lang != self.no_suffix))
 
     def _config_setlang(self, line):
         langs = line.replace(" ", "")[23:-4].split(",")
@@ -191,9 +187,7 @@ class MultilingualDoc(object):
         self.no_suffix = lang
 
     def _parse_min_max_toc_level(self, toc_line):
-        level_option = re.compile(
-            r"level[ ]*=[ ]*([1-9]~[1-9]|~[1-9]+|[1-9]+~?)"
-        ).search(toc_line)
+        level_option = re.compile(r"level[ ]*=[ ]*([1-9]~[1-9]|~[1-9]+|[1-9]+~?)").search(toc_line)
         if level_option is None:
             msg = "You forgot the level option on the table of contents."
             raise self.CustomException(msg)
@@ -245,8 +239,7 @@ class MultilingualDoc(object):
             if single_doc:
                 single_doc.write(self.doc.last_line, codeblock_mark)
             else:
-                msg = f"Missing '{signal}' language. Check your " \
-                        f"header 'multilingual suffix'."
+                msg = f"Missing '{signal}' language. Check your " f"header 'multilingual suffix'."
                 raise self.CustomException(msg)
 
     def _converting(self):

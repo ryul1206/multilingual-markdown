@@ -6,10 +6,13 @@ def remove_emoji(text: str) -> str:
     """
     Remove all emojis from a given string.
     """
-    return emoji.get_emoji_regexp().sub(r'', text)
+    return emoji.get_emoji_regexp().sub(r"", text)
 
 
 def remove_links(text: str) -> str:
+    """
+    Remove all links from a given string.
+    """
     # remove: html style
     tag_begin = r"(<a href=)(.(?<!<))+>"
     tag_end = r"<\/a>"
