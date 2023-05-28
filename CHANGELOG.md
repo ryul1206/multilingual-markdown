@@ -22,7 +22,8 @@ Security 취약점이 있는 경우
 - **Removed** - Drop support for Python 3.6
   - Python 3.6 EOL is 23 Dec 2021
   - Poetry requires Python 3.7 or higher
-- **Fixed** Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
+- **Fixed** - Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
+- **Fixed** - Fixes and enhancements for code block tracking [#24](https://github.com/ryul1206/multilingual-markdown/issues/24)
 
 ## [1.0.3] - 2023-04-16
 
@@ -35,10 +36,11 @@ Security 취약점이 있는 경우
 - **Changed** - Change the verbosity level of some display information.
 - **Fixed** - Fix [#10](https://github.com/ryul1206/multilingual-markdown/issues/10): The CLI is not working on the Windows PowerShell.
 - **Removed** - Delete unnecessary sentences.
-    ```sh
-    Do you want to convert these files? [y/N]
-    Please respond with 'yes' or 'no' (or 'y' or 'n').  # <--- THIS LINE WAS DELETED.
-    ```
+
+  ```sh
+  Do you want to convert these files? [y/N]
+  Please respond with 'yes' or 'no' (or 'y' or 'n').  # <--- THIS LINE WAS DELETED.
+  ```
 
 ## [1.0.1] - 2021-07-02
 
