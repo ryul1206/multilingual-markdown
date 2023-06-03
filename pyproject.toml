@@ -23,7 +23,7 @@ packages = [
 exclude = ["example", "tests", "PSmmg", ".vscode", ".github"]
 
 [tool.poetry.scripts]
-mmg = "mmg:main"
+mmg = "mmg:cli.main"
 
 [tool.poetry.dependencies]
 python = ">=3.7, <4"

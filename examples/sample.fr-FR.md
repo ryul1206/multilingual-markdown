@@ -10,19 +10,24 @@
 
 ![lets go now](lets-go-now.jpg)
 
-Ce document est généré à partir du document `base`.
+Ce document est généré à partir du `sample.base.md`.
 
 ```sh
-$ cd example
-$ mmg example.base.md
+$ mmg sample.base.md
 ----------------------
-./example.base.md
-    en-US: ./example.en-US.md
-    fr-FR: ./example.fr-FR.md
-    ko-KR: ./example.ko-KR.md
-    ja-JP: ./example.ja-JP.md
+ ✅ ./sample.base.md
 ----------------------
- => 1 base markdown was converted.
+ => 1 base markdown was found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
+Do you want to convert these files? [y/N] y
+----------------------
+./sample.base.md
+        en-US: ./sample.md
+        fr-FR: ./sample.fr-FR.md
+        ko-KR: ./sample.ko-KR.md
+        ja-JP: ./sample.ja-JP.md
+----------------------
+ => 1 base file has been converted.
 ```
 
 **Table des matières**
