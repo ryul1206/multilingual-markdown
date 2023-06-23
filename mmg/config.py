@@ -1,7 +1,18 @@
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import List, Optional, Final, Dict
 import re
 from mmg.exceptions import MmgException
+
+
+RESERVED_KEYWORDS: Final[List] = ["common", "ignore", "<Unknown>"]
+
+
+REGEX_PATTERN: Final[Dict[str, re.Pattern]] = {
+    "comment": re.compile(r"<!--.*-->"),
+    "tag": re.compile(r"<!--\s*\[\s*([\w-]+)\s*\]\s*-->"),
+    "lang_tags": re.compile(r"(<!-- multilingual suffix:)\s*([\w\s,-]+)(?=\s--)"),
+    "no_suffix": re.compile(r"<!-- no suffix:\s*([\w-]+)"),
+}
 
 
 @dataclass
@@ -22,10 +33,6 @@ class Config:
 
 
 class ConfigExtractor:
-    REGEX_TAG = re.compile(r"<!--[\w ]*-->")
-    REGEX_LANG_TAGS = re.compile(r"<!-- multilingual suffix:[ ]*([\w]+)(, [\w]+)*")
-    REGEX_NO_SUFFIX = re.compile(r"<!-- no suffix:[ ]*([\w]+)")
-
     @classmethod
     def extract(cls, base_md: str) -> Config:
         """
@@ -39,27 +46,29 @@ class ConfigExtractor:
         """
         cfg = Config()
         for line_num, line in enumerate(base_md.splitlines()):
-            if cls.REGEX_TAG.match(line):
+            if REGEX_PATTERN["comment"].match(line):
                 cfg = cls._try_update_lang_tags(line, cfg, line_num)
                 cfg = cls._try_update_no_suffix(line, cfg, line_num)
         return cfg
 
     @classmethod
     def _try_update_lang_tags(cls, line: str, cfg: Config, line_num: int) -> Config:
-        m = cls.REGEX_LANG_TAGS.search(line)
-        lang_tags = m.group(1).split(", ")
-        cfg.lang_tags = cls._update_config_value(cfg.lang_tags, lang_tags, "lan_tags", line_num)
+        m = REGEX_PATTERN["lang_tags"].search(line)
+        if m:
+            cls._check_duplicate_config_value(cfg.lang_tags, "lang_tags", line_num)
+            lang_tags = m.group(2).replace(" ", "").split(",")
+            cfg.lang_tags = lang_tags
         return cfg
 
     @classmethod
     def _try_update_no_suffix(cls, line: str, cfg: Config, line_num: int) -> Config:
-        m = cls.REGEX_NO_SUFFIX.search(line)
-        no_suffix = m.group(1)
-        cfg.no_suffix = cls._update_config_value(cfg.no_suffix, no_suffix, "no_suffix", line_num)
+        m = REGEX_PATTERN["no_suffix"].search(line)
+        if m:
+            cls._check_duplicate_config_value(cfg.no_suffix, "no_suffix", line_num)
+            no_suffix = m.group(1)
         return cfg
 
     @staticmethod
-    def _update_config_value(old_value: any, new_value: any, config_name: str, line_num: int) -> any:
-        if new_value and old_value:
+    def _check_duplicate_config_value(value: any, config_name: str, line_num: int):
+        if value:
             raise MmgException(f"The configuration '{config_name}' is already defined. [line: {line_num + 1}]")
-        return new_value if new_value else old_value

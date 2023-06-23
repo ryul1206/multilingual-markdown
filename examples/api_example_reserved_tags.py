@@ -1,8 +1,9 @@
-import mmg.api as mmg
+# import mmg.api as mmg
+from mmg.config import RESERVED_KEYWORDS
 
 
 def main():
-    print(mmg.RESERVED_KEYWORDS)
+    print(RESERVED_KEYWORDS)
 
 
 if __name__ == "__main__":
