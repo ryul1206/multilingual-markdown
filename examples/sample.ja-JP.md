@@ -1,3 +1,4 @@
+
 # サンプルドキュメント
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)

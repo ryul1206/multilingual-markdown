@@ -1,8 +1,8 @@
+
 # Générateur de Markdown Multilingue
 
 Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 
-<!-- [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown) -->
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
@@ -21,27 +21,27 @@ Disponible dans Bash, Zsh et Windows PowerShell.
 
 **Table des matières** ⚡
 
-1. [Aperçu ](#Aperçu-)
-    1. [Fonctionnement](#Fonctionnement)
-    1. [Fonctionnalités](#Fonctionnalités)
-1. [Installer](#Installer)
-    1. [Comment corriger une erreur "Commande introuvable"](#Comment-corriger-une-erreur-Commande-introuvable)
-1. [Mises à jour](#Mises-à-jour)
-1. [Désinstaller](#Désinstaller)
-1. [Mode d'emploi](#Mode-demploi)
-    1. [(0) Créer un fichier de démarques de base](#0-Créer-un-fichier-de-démarques-de-base)
-    1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
-    1. [(2) Option Récursive](#2-Option-Récursive)
-    1. [(3) Validation du Fichier de Base](#3-Validation-du-Fichier-de-Base)
-    1. [(4) Plus d'explications](#4-Plus-dexplications)
-1. [Marqueurs](#Marqueurs)
-    1. [Titres](#Titres)
-    1. [Badges](#Badges)
-    1. [Corps de texte](#Corps-de-texte)
-1. [Contribution](#Contribution)
-    1. [Comment construire localement pour le développement](#Comment-construire-localement-pour-le-développement)
-    1. [Changelog](#Changelog)
-    1. [Contributors](#Contributors)
+1. [Aperçu](#aperçu-)
+    1. [Fonctionnement](#fonctionnement)
+    1. [Fonctionnalités](#fonctionnalités)
+1. [Installer](#installer)
+    1. [Comment corriger une erreur "Commande introuvable"](#comment-corriger-une-erreur-commande-introuvable)
+1. [Mises à jour](#mises-à-jour)
+1. [Désinstaller](#désinstaller)
+1. [Mode d'emploi](#mode-demploi)
+    1. [(0) Créer un fichier de démarques de base](#0-créer-un-fichier-de-démarques-de-base)
+    1. [(1) Spécification du fichier cible](#1-spécification-du-fichier-cible)
+    1. [(2) Option Récursive](#2-option-récursive)
+    1. [(3) Validation du Fichier de Base](#3-validation-du-fichier-de-base)
+    1. [(4) Plus d'explications](#4-plus-dexplications)
+1. [Marqueurs](#marqueurs)
+    1. [Titres](#titres)
+    1. [Badges](#badges)
+    1. [Corps de texte](#corps-de-texte)
+1. [Contribution](#contribution)
+    1. [Comment construire localement pour le développement](#comment-construire-localement-pour-le-développement)
+    1. [Changelog](#changelog)
+    1. [Contributors](#contributors)
 
 ## Aperçu 🔎
 
@@ -295,7 +295,7 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
     Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option `level`. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown `# titre` et aux tags HTML `<H1>`.
 
-    **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
+    <!-- **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.** -->
 
     ```markdown
     <!-- [[ multilingual toc: level=2~3 ]] -->

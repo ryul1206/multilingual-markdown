@@ -51,16 +51,15 @@ class HealthChecker:
         icon = "❌" if num_incomplete else "✅"
         file_name = file_name if file_name else "Anonymous file"
         # Messages
-        messages = "----------------------\n"
-        messages += f" {icon} {file_name}\n"
+        messages = [f" {icon} {file_name}"]
         if verbosity > 0:
-            messages += f"    {num_incomplete} language(s) not translated.\n" if num_incomplete else ""
-            messages += f"    Tag count: {str(self._tag_count)}\n"
+            if num_incomplete:
+                messages.append(f"    {num_incomplete} language(s) not translated.")
+            messages.append(f"    Tag count: {str(self._tag_count)}")
         if verbosity > 1:
-            messages += "\n".join(self._error)
-            messages += "\n".join(self._warning)
-        messages += "----------------------\n"
-        return messages
+            messages.extend(self._error)
+            messages.extend(self._warning)
+        return "\n".join(messages)
 
     def health_check(self, base_doc: List[str], cfg: Config = None) -> HealthStatus:
         """Check the health based on the current config.
@@ -101,7 +100,6 @@ class HealthChecker:
                 self._status = HealthStatus.UNHEALTHY
 
     def _check_doc(self, cfg: Config, doc: List[str], codeblock_flag: List[bool]):
-        # self._tag_count = dict.fromkeys(cfg.lang_tags, 0)
         balance_checker = _TagBalanceChecker(cfg)
         # Check the tag line by line.
         for line_num, line in enumerate(doc):
@@ -110,7 +108,7 @@ class HealthChecker:
             if (not is_codeblock) and detected_tag:
                 # Find "<!-- [A] -->" or "<!--[A]-->" and extract the tag "A".
                 tag = detected_tag.group(1)
-                looks_good = balance_checker.push(tag, line_num)
+                looks_good = balance_checker.push(tag, line_num + 1)  # The line number starts from 1.
                 if not looks_good:
                     self._status = HealthStatus.UNHEALTHY
         # Get the tag count, warning, and error messages.
@@ -163,7 +161,7 @@ class _TagBalanceChecker:
 
             # Unbalanced if any tag appears again before all tags appear once.
             if _is_unbalanced:
-                self._warning.append(f"Line {line_num}: '{tag}' appeared again before all tags appeared once.")
+                self._warning.append(f"\tLine {line_num}: '{tag}' appeared again before all tags appeared once.")
                 self._balance_count[tag] -= 1
             # Reset the balance count if all tags appeared once.
             if _all_appeared_once:
@@ -172,12 +170,13 @@ class _TagBalanceChecker:
         elif tag == "common":
             _any_appeared = any([x > 0 for x in self._balance_count.values()])
             # The `common` area should appear after all tags appeared once. (balanced)
+            self._balance_count = dict.fromkeys(self._balance_count, 0)
             if _any_appeared:
-                self._warning.append(f"Line {line_num}: '{tag}' appeared before all tags appeared once.")
+                self._warning.append(f"\tLine {line_num}: '{tag}' appeared before all tags appeared once.")
             return False if _any_appeared else True
         elif tag == "ignore":
             return True
         else:
             self._tag_count["<Unknown>"] += 1
-            self._error.append(f"Line {line_num}: Unknown tag '{tag}' detected.")
+            self._error.append(f"\tLine {line_num}: Unknown tag '{tag}' detected.")
             return False

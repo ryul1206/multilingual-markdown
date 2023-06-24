@@ -1,3 +1,4 @@
+
 # Sample Document
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
@@ -31,8 +32,8 @@ Do you want to convert these files? [y/N] y
 ```
 
 **Table of contents**
-1. [This is heading 2](#This-is-heading-2)
-    1. [This is heading 3](#This-is-heading-3)
+1. [This is heading 2](#this-is-heading-2)
+    1. [This is heading 3](#this-is-heading-3)
 
 ## This is heading 2
 
@@ -41,4 +42,3 @@ Do you want to convert these files? [y/N] y
 ```bash
 This is a code block.
 ```
-

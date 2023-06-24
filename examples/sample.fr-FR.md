@@ -1,3 +1,4 @@
+
 # Document exemple
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
@@ -31,8 +32,8 @@ Do you want to convert these files? [y/N] y
 ```
 
 **Table des matières**
-1. [Ceci est un titre 2](#Ceci-est-un-titre-2)
-    1. [Ceci est un titre 3](#Ceci-est-un-titre-3)
+1. [Ceci est un titre 2](#ceci-est-un-titre-2)
+    1. [Ceci est un titre 3](#ceci-est-un-titre-3)
 
 ## Ceci est un titre 2
 
@@ -41,4 +42,3 @@ Do you want to convert these files? [y/N] y
 ```bash
 Ceci est un bloc de code.
 ```
-

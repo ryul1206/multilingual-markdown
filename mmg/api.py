@@ -12,8 +12,9 @@ def convert(
     skip_health_check: bool = False,
     force_convert: bool = False,
     print_log: bool = False,
+    file_name: str = None,
     verbosity: int = 0,
-) -> Dict[str, str]:
+) -> Dict[str, List[str]]:
     """Split the base_md into multiple markdowns based on the config.
 
     Args:
@@ -21,12 +22,17 @@ def convert(
         cfg (Config, optional): The config to convert.
             If not given, the config will be extracted from the base_md. Defaults to None.
         skip_health_check (bool, optional): If True, skip the health check. Defaults to False.
-        force_convert (bool, optional): If True, ignore the health check result and force to convert. Defaults to False.
-        print_log (bool, optional): If True, print the log. Defaults to False.
-        verbosity (int, optional): The verbosity level from 0 to 2. Defaults to 0.
+        force_convert (bool, optional): If True, ignore the health check result and force to convert.
+            This option is not working when `skip_health_check` is True. Defaults to False.
+        print_log (bool, optional): If True, print the log.
+            This option is not working when `skip_health_check` is True. Defaults to False.
+        file_name (str, optional): The file name to show in the log.
+            This option is not working when `print_log` is False. Defaults to None.
+        verbosity (int, optional): The verbosity level from 0 to 2.
+            This option is not working when `print_log` is False. Defaults to 0.
 
     Returns:
-        Dict[str, str]: A dictionary of converted markdowns. The key is the language tag, a.k.a. suffix.
+        Dict[str, List[str]]: A dictionary of converted markdowns. The key is the language tag, a.k.a. suffix.
     """
     base_doc: List[str] = base_md.splitlines()
 
@@ -42,7 +48,7 @@ def convert(
         hc = HealthChecker()
         status: HealthStatus = hc.health_check(base_doc, cfg=cfg)
         if print_log:
-            print(hc.cli_log(verbosity=verbosity))
+            print(hc.cli_log(file_name=file_name, verbosity=verbosity))
         if (not force_convert) and (status != HealthStatus.HEALTHY):
             raise MmgException(f"Health check failed: {status.name}")
 
@@ -54,13 +60,20 @@ def convert(
     target_docs = _LineClassifier(cfg)
 
     for line_num, line in enumerate(base_doc):
+        # DEBUG
+        # m = "O" if REGEX_PATTERN["comment"].match(line) else "X"
+        # c = "O" if codeblock[line_num] else "X"
+        # print(f"{line_num}: match[{m}] code[{c}]: {line}")
+
         if REGEX_PATTERN["comment"].match(line) and (not codeblock[line_num]):
             # Case 1: Tag
             #   * Switch the signal to the tag.
             detected_tag = REGEX_PATTERN["tag"].search(line)
             if detected_tag:
-                new_signal = detected_tag.group(1)
-                signal = new_signal if new_signal in cfg.lang_tags else "ignore"
+                signal = detected_tag.group(1)
+                # If the tag is <Unknown>, ignore it.
+                if (signal not in cfg.lang_tags) and (signal != "common"):
+                    signal = "ignore"
             # Case 2: Table of Contents
             #   * Mark TOC position. In some cases, the table of contents (TOC) can vary for each tag,
             #     so for now, we will only determine the TOC position and generate the TOC at the end.
@@ -69,6 +82,8 @@ def convert(
                 signal = "common"
                 target_docs.write(signal, line)
         else:
+            # DEBUG
+            # print(f"    write[{signal}]: {line}")
             target_docs.write(signal, line)
 
     # Generate TOC
@@ -82,7 +97,7 @@ def convert(
 
 class _LineClassifier:
     def __init__(self, cfg: Config):
-        self.docs: Dict[str, List[str]] = dict.fromkeys(cfg.lang_tags, [])
+        self.docs: Dict[str, List[str]] = {lang: [] for lang in cfg.lang_tags}
 
     def write(self, tag, line):
         if tag == "common":
