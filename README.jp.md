@@ -1,8 +1,8 @@
+
 # 多言語マークダウンジェネレータ
 
 このパッケージは、単一のデフォルトのファイルから多言語コンテンツを管理してi18nマークダウンを生成するコマンドラインインタフェース（CLI）を提供しています。
 
-<!-- [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown) -->
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
@@ -21,7 +21,7 @@ Bash, Zsh, WindowsPowerShellで使用できます。
 
 **目次** ⚡
 
-1. [概要 ](#概要-)
+1. [概要](#概要-)
     1. [作動方式](#作動方式)
     1. [技能](#技能)
 1. [設置](#設置)
@@ -39,8 +39,8 @@ Bash, Zsh, WindowsPowerShellで使用できます。
     1. [本文](#本文)
 1. [貢献](#貢献)
     1. [ローカルでの開発用ビルド方法](#ローカルでの開発用ビルド方法)
-    1. [Changelog](#Changelog)
-    1. [Contributors](#Contributors)
+    1. [Changelog](#changelog)
+    1. [Contributors](#contributors)
 
 ## 概要 🔎
 
@@ -291,7 +291,7 @@ Do you want to convert these files? [y/N]
 
     次のタグは、ジェネレータによって本文に自動的に置き換えられます。目次のレベルは、`level`部分を介してすることができます。最大のタイトル（`# 題目`）はhtmlで`<h1>`あるため`level 1`です。
 
-    **（注意）`#`に表示するマークダウンの見出しレベルをスキップエラーが発生します。つまり、`##`サブタイトルは`###`でなければします。**
+    <!-- **（注意）`#`に表示するマークダウンの見出しレベルをスキップエラーが発生します。つまり、`##`サブタイトルは`###`でなければします。** -->
 
     ```markdown
     <!-- [[ multilingual toc: level=2~3 ]] -->

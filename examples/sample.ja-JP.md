@@ -1,3 +1,4 @@
+
 # サンプルドキュメント
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
@@ -10,19 +11,24 @@
 
 ![lets go now](lets-go-now.jpg)
 
-この記事は、`base`文書から生成された結果です。
+この記事は、`sample.base.md`から生成された結果です。
 
 ```sh
-$ cd example
-$ mmg example.base.md
+$ mmg sample.base.md
 ----------------------
-./example.base.md
-    en-US: ./example.en-US.md
-    fr-FR: ./example.fr-FR.md
-    ko-KR: ./example.ko-KR.md
-    ja-JP: ./example.ja-JP.md
+ ✅ ./sample.base.md
 ----------------------
- => 1 base markdown was converted.
+ => 1 base markdown was found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
+Do you want to convert these files? [y/N] y
+----------------------
+./sample.base.md
+        en-US: ./sample.md
+        fr-FR: ./sample.fr-FR.md
+        ko-KR: ./sample.ko-KR.md
+        ja-JP: ./sample.ja-JP.md
+----------------------
+ => 1 base file has been converted.
 ```
 
 **目次**

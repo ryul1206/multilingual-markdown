@@ -1,3 +1,4 @@
+
 # 예제 문서
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
@@ -10,19 +11,24 @@
 
 ![lets go now](lets-go-now.jpg)
 
-이 문서는 `base` 문서로 부터 생성된 결과입니다.
+이 문서는 `sample.base.md`로 부터 생성된 결과입니다.
 
 ```sh
-$ cd example
-$ mmg example.base.md
+$ mmg sample.base.md
 ----------------------
-./example.base.md
-    en-US: ./example.en-US.md
-    fr-FR: ./example.fr-FR.md
-    ko-KR: ./example.ko-KR.md
-    ja-JP: ./example.ja-JP.md
+ ✅ ./sample.base.md
 ----------------------
- => 1 base markdown was converted.
+ => 1 base markdown was found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
+Do you want to convert these files? [y/N] y
+----------------------
+./sample.base.md
+        en-US: ./sample.md
+        fr-FR: ./sample.fr-FR.md
+        ko-KR: ./sample.ko-KR.md
+        ja-JP: ./sample.ja-JP.md
+----------------------
+ => 1 base file has been converted.
 ```
 
 **목차**
@@ -36,4 +42,3 @@ $ mmg example.base.md
 ```bash
 이것은 코드 블럭입니다.
 ```
-

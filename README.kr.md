@@ -1,8 +1,8 @@
+
 # 다국어 마크다운 생성기
 
 이 패키지는 단일 기본 파일로부터 다국어 콘텐츠를 관리하고, i18n 마크 다운을 생성하는 명령 줄 인터페이스 (CLI)를 제공합니다.
 
-<!-- [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown) -->
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
@@ -21,7 +21,7 @@ Bash, Zsh, Windows PowerShell에서 사용할 수 있습니다.
 
 **목차** ⚡
 
-1. [개요 ](#개요-)
+1. [개요](#개요-)
     1. [작동 방식](#작동-방식)
     1. [기능](#기능)
 1. [설치](#설치)
@@ -40,8 +40,8 @@ Bash, Zsh, Windows PowerShell에서 사용할 수 있습니다.
     1. [본문](#본문)
 1. [기여](#기여)
     1. [로컬에서 개발용 빌드 방법](#로컬에서-개발용-빌드-방법)
-    1. [Changelog](#Changelog)
-    1. [Contributors](#Contributors)
+    1. [Changelog](#changelog)
+    1. [Contributors](#contributors)
 
 ## 개요 🔎
 
@@ -295,7 +295,7 @@ Do you want to convert these files? [y/N]
 
     아래 태그는 생성기에 의해 목차로 자동교체됩니다. 목차의 수준은 `level` 부분을 통해 정할 수 있습니다. 가장 큰 제목(`# 제목`)은 html에서 `<h1>`이기 때문에 `level 1`입니다.
 
-    **(주의) `#`으로 표시하는 마크다운의 제목수준을 건너뛰면 에러가 발생합니다. 다시말해, `##`의 하위 제목은 `###` 이여야 합니다.**
+    <!-- **(주의) `#`으로 표시하는 마크다운의 제목수준을 건너뛰면 에러가 발생합니다. 다시말해, `##`의 하위 제목은 `###` 이여야 합니다.** -->
 
     ```markdown
     <!-- [[ multilingual toc: level=2~3 ]] -->

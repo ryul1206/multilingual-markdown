@@ -2,6 +2,5 @@
 # -*- coding: utf-8 -*-
 from importlib.metadata import version
 
-__version__ = version("mmg")
 
-from .cli import main
+__version__ = version("mmg")

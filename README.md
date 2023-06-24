@@ -1,8 +1,8 @@
+
 # Multilingual Markdown Generator
 
 This package provides a command-line interface to manage multilingual contents and generate i18n markdown from a single base file.
 
-<!-- [![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown) -->
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
 ![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
@@ -21,27 +21,27 @@ Available in Bash, Zsh, and Windows PowerShell.
 
 **Table of Contents** ⚡
 
-1. [Overview ](#Overview-)
-    1. [How It Works](#How-It-Works)
-    1. [Features](#Features)
-1. [Install](#Install)
-    1. [How to Fix a "Command Not Found" Error](#How-to-Fix-a-Command-Not-Found-Error)
-1. [Update](#Update)
-1. [Uninstall](#Uninstall)
-1. [How to Use](#How-to-Use)
-    1. [(0) Make a Base Markdown File](#0-Make-a-Base-Markdown-File)
-    1. [(1) File Designation](#1-File-Designation)
-    1. [(2) Recursive Option](#2-Recursive-Option)
-    1. [(3) Base File Validation](#3-Base-File-Validation)
-    1. [(4) More explanations](#4-More-explanations)
-1. [Command Tags](#Command-Tags)
-    1. [Headers](#Headers)
-    1. [Badges](#Badges)
-    1. [Main Text](#Main-Text)
-1. [Contribution](#Contribution)
-    1. [How to build locally for development](#How-to-build-locally-for-development)
-    1. [Changelog](#Changelog)
-    1. [Contributors](#Contributors)
+1. [Overview](#overview-)
+    1. [How It Works](#how-it-works)
+    1. [Features](#features)
+1. [Install](#install)
+    1. [How to Fix a "Command Not Found" Error](#how-to-fix-a-command-not-found-error)
+1. [Update](#update)
+1. [Uninstall](#uninstall)
+1. [How to Use](#how-to-use)
+    1. [(0) Make a Base Markdown File](#0-make-a-base-markdown-file)
+    1. [(1) File Designation](#1-file-designation)
+    1. [(2) Recursive Option](#2-recursive-option)
+    1. [(3) Base File Validation](#3-base-file-validation)
+    1. [(4) More explanations](#4-more-explanations)
+1. [Command Tags](#command-tags)
+    1. [Headers](#headers)
+    1. [Badges](#badges)
+    1. [Main Text](#main-text)
+1. [Contribution](#contribution)
+    1. [How to build locally for development](#how-to-build-locally-for-development)
+    1. [Changelog](#changelog)
+    1. [Contributors](#contributors)
 
 ## Overview 🔎
 
@@ -295,7 +295,8 @@ Everything that the parser reads after the tag below is recognized as the main t
 
     The tags below are automatically replaced to the table of contents by the generator. The level of the table of contents can be determined through the `level` option. The highest-level of title(`# title`) is level 1 because it is `<h1>` in HTML.
 
-    **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.**
+    <!-- TODO -->
+    <!-- **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.** -->
 
     ```markdown
     <!-- [[ multilingual toc: level=2~3 ]] -->

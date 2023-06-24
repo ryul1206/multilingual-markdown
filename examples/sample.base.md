@@ -24,26 +24,31 @@
 ![lets go now](lets-go-now.jpg)
 
 <!-- [en-US] -->
-This document is the output from the `base` document.
+This document is the output from the `sample.base.md`.
 <!-- [ko-KR] -->
-이 문서는 `base` 문서로 부터 생성된 결과입니다.
+이 문서는 `sample.base.md`로 부터 생성된 결과입니다.
 <!-- [fr-FR] -->
-Ce document est généré à partir du document `base`.
+Ce document est généré à partir du `sample.base.md`.
 <!-- [ja-JP] -->
-この記事は、`base`文書から生成された結果です。
+この記事は、`sample.base.md`から生成された結果です。
 <!-- [common] -->
 
 ```sh
-$ cd example
-$ mmg example.base.md
+$ mmg sample.base.md
 ----------------------
-./example.base.md
-    en-US: ./example.en-US.md
-    fr-FR: ./example.fr-FR.md
-    ko-KR: ./example.ko-KR.md
-    ja-JP: ./example.ja-JP.md
+ ✅ ./sample.base.md
 ----------------------
- => 1 base markdown was converted.
+ => 1 base markdown was found.
+    Your verbosity is 0. Try the `--verbose` option for more details.
+Do you want to convert these files? [y/N] y
+----------------------
+./sample.base.md
+        en-US: ./sample.md
+        fr-FR: ./sample.fr-FR.md
+        ko-KR: ./sample.ko-KR.md
+        ja-JP: ./sample.ja-JP.md
+----------------------
+ => 1 base file has been converted.
 ```
 
 <!-- [ignore] -->

@@ -714,25 +714,26 @@ Tout ce qui suit le marqueur est interprété comme corps principal de texte, do
 
     The tags below are automatically replaced to the table of contents by the generator. The level of the table of contents can be determined through the `level` option. The highest-level of title(`# title`) is level 1 because it is `<h1>` in HTML.
 
-    **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.**
+    <!-- TODO -->
+    <!-- **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.** -->
 <!-- [kr] -->
 1. **목차**
 
     아래 태그는 생성기에 의해 목차로 자동교체됩니다. 목차의 수준은 `level` 부분을 통해 정할 수 있습니다. 가장 큰 제목(`# 제목`)은 html에서 `<h1>`이기 때문에 `level 1`입니다.
 
-    **(주의) `#`으로 표시하는 마크다운의 제목수준을 건너뛰면 에러가 발생합니다. 다시말해, `##`의 하위 제목은 `###` 이여야 합니다.**
+    <!-- **(주의) `#`으로 표시하는 마크다운의 제목수준을 건너뛰면 에러가 발생합니다. 다시말해, `##`의 하위 제목은 `###` 이여야 합니다.** -->
 <!-- [fr] -->
 1. **Table des matières**
 
     Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option `level`. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown `# titre` et aux tags HTML `<H1>`.
 
-    **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
+    <!-- **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.** -->
 <!-- [jp] -->
 1. **目次**
 
     次のタグは、ジェネレータによって本文に自動的に置き換えられます。目次のレベルは、`level`部分を介してすることができます。最大のタイトル（`# 題目`）はhtmlで`<h1>`あるため`level 1`です。
 
-    **（注意）`#`に表示するマークダウンの見出しレベルをスキップエラーが発生します。つまり、`##`サブタイトルは`###`でなければします。**
+    <!-- **（注意）`#`に表示するマークダウンの見出しレベルをスキップエラーが発生します。つまり、`##`サブタイトルは`###`でなければします。** -->
 <!-- [common] -->
 
     ```markdown
