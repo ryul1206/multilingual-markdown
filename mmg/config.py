@@ -2,17 +2,10 @@ from dataclasses import dataclass, field
 from typing import List, Optional, Final, Dict
 import re
 from mmg.exceptions import MmgException
+from mmg.utils import REGEX_PATTERN
 
 
 RESERVED_KEYWORDS: Final[List] = ["common", "ignore", "<Unknown>"]
-
-
-REGEX_PATTERN: Final[Dict[str, re.Pattern]] = {
-    "comment": re.compile(r"<!--.*-->"),
-    "tag": re.compile(r"<!--\s*\[\s*([\w-]+)\s*\]\s*-->"),
-    "lang_tags": re.compile(r"(<!-- multilingual suffix:)\s*([\w\s,-]+)(?=\s--)"),
-    "no_suffix": re.compile(r"<!-- no suffix:\s*([\w-]+)"),
-}
 
 
 @dataclass
@@ -34,18 +27,21 @@ class Config:
 
 class ConfigExtractor:
     @classmethod
-    def extract(cls, base_md: str) -> Config:
+    def extract(cls, base_doc: List[str]) -> Config:
         """
         Extract configuration from the base markdown string.
 
         Args:
             base_md (str): A base markdown string.
 
+        Raises:
+            MmgException: If the configuration is duplicated.
+
         Returns:
             Config: A configuration extracted from the base markdown file.
         """
         cfg = Config()
-        for line_num, line in enumerate(base_md.splitlines()):
+        for line_num, line in enumerate(base_doc):
             if REGEX_PATTERN["comment"].match(line):
                 cfg = cls._try_update_lang_tags(line, cfg, line_num)
                 cfg = cls._try_update_no_suffix(line, cfg, line_num)
@@ -65,7 +61,7 @@ class ConfigExtractor:
         m = REGEX_PATTERN["no_suffix"].search(line)
         if m:
             cls._check_duplicate_config_value(cfg.no_suffix, "no_suffix", line_num)
-            no_suffix = m.group(1)
+            cfg.no_suffix = m.group(1)
         return cfg
 
     @staticmethod

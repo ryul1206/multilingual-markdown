@@ -10,20 +10,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Added 새로운 기능
 Changed 기존 기능의 변경사항
 Deprecated 곧 지워질 기능
-Removed 지금 지워진 기능
 Fixed 버그 픽스
+Improved 기능 개선
+Removed 지금 지워진 기능
 Security 취약점이 있는 경우
 -->
 
 ## [Upcoming Release][unreleased]
 
+Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md) for upcoming release changes.
+
 - **Added** - Simple Python API for script usage [#13](https://github.com/ryul1206/multilingual-markdown/issues/13)
 - **Changed** - Use [Poetry](https://python-poetry.org/) for Python package management [#16](https://github.com/ryul1206/multilingual-markdown/issues/16)
+- **Fixed** - Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
+- **Fixed** - Fixes and enhancements for code block tracking [#24](https://github.com/ryul1206/multilingual-markdown/issues/24)
+- **Improved** - From version 2.0, skipping header levels will no longer cause an error when generating a table of contents. In versions 1.X, if header 2 was skipped and header 3 followed immediately, an error occurred when creating the table of contents. However, we have removed this restriction as it was deemed inconvenient. Instead, in such cases, the skipped header 3 will not be displayed in the table of contents.
 - **Removed** - Drop support for Python 3.6
   - Python 3.6 EOL is 23 Dec 2021
   - Poetry requires Python 3.7 or higher
-- **Fixed** - Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
-- **Fixed** - Fixes and enhancements for code block tracking [#24](https://github.com/ryul1206/multilingual-markdown/issues/24)
+
+## [2.0.0]
 
 ## [1.0.3] - 2023-04-16
 
@@ -45,7 +51,7 @@ Security 취약점이 있는 경우
 ## [1.0.1] - 2021-07-02
 
 - **Added** - Japanese README
-- **Changed** - Move the checklog icon to the front.
+- **Changed** - Move the log's check icon to the front.
 - **Fixed** - Fix [#4](https://github.com/ryul1206/multilingual-markdown/issues/4): ToC contents are broken when a header(#) has a link.
 
 ## [1.0.a2] - 2021-06-17
@@ -74,7 +80,8 @@ Security 취약점이 있는 경우
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v1.0.1...develop
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v2.0.0...develop
+[2.0.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.0
 [1.0.3]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.3
 [1.0.2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.1

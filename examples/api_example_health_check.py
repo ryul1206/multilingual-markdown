@@ -23,7 +23,7 @@ Thank you for using mmg!
 
 def main():
     hc = HealthChecker()
-    status: HealthStatus = hc.health_check(base_md)
+    status: HealthStatus = hc.health_check(base_md.splitlines())
 
     print(f" - Health check: {status.name}")
     print(" - Health messages:")

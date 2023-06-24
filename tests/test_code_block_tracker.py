@@ -1,6 +1,6 @@
 import pytest
 from typing import List, Tuple
-from mmg.utils import CodeBlockTracker
+from mmg.utils import flag_code_block_lines
 
 
 CB = True
@@ -120,9 +120,8 @@ scenarios = {
 
 @pytest.mark.parametrize("name, scenario", scenarios.items())
 def test_code_block_tracker(name, scenario):
-    tracker = CodeBlockTracker()
-    tracker.parse(scenario.doc)
-    assert scenario == tracker.result, f"Failed: {name}"
+    result = flag_code_block_lines(scenario.doc)
+    assert scenario == result, f"Failed: {name}"
 
 
 if __name__ == "__main__":
