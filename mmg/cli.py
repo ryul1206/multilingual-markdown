@@ -118,17 +118,18 @@ def query_yes_no(question):
 @click.command()
 @click.argument("file_names", nargs=-1, type=click.Path(exists=True))
 @click.option(
+    "-r", "--recursive", is_flag=True, default=False, help="This will search all subfolders based on current directory."
+)
+@click.option(
+    "-y", "--yes", is_flag=True, default=False, help="This will confirm the conversion without asking. (Default: False)"
+)
+@click.option("-s", "--skip-validation", is_flag=True, default=False, help="Skip the health check. (Default: False)")
+@click.option("--validation-only", is_flag=True, default=False, help="Only check the health. (Default: False)")
+@click.option("-v", "--verbose", count=True, help="Verbosity level from 0 to 2. --verbose:1, -v:1, -vv:2 (Default: 0)")
+@click.option(
     "--version", is_flag=True, callback=_print_version, expose_value=False, is_eager=True, help="Show the current version."
 )
-@click.option(
-    "--recursive", "-r", is_flag=True, default=False, help="This will search all subfolders based on current directory."
-)
-@click.option(
-    "--yes", "-y", is_flag=True, default=False, help="This will confirm the conversion without asking. (Default: False)"
-)
-@click.option("--skip-health-check", "-s", default=False, help="Skip the health check. (Default: False)")
-@click.option("-v", "--verbose", count=True, help="Verbosity level from 0 to 2. -v:1, -vv:2, --verbose:2 (Default: 0)")
-def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_health_check: bool, verbose: int):
+def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: bool, validation_only: bool, verbose: int):
     # Check arguments
     # ^^^^^^^^^^^^^^^
     if not file_names and not recursive:
@@ -136,6 +137,7 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_health_check:
 
     # Get base files
     # ^^^^^^^^^^^^^^
+    # Collect base files
     base_items: set[_BaseFileItem] = set()  # use set to avoid duplicates
     if file_names:
         for item in filter_base_md(file_names):
@@ -145,56 +147,67 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_health_check:
             base_items.add(item)
     if not base_items:
         raise click.UsageError("No base files found.")
-    # Sort as a list
-    base_items: List[_BaseFileItem] = sorted(base_items, key=lambda x: x.abs_path)
-
-    # Health Check and Print Log
-    # ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    click.echo("----------------------")
-    for item in base_items:
+    # Count base files
+    base_count = len(base_items)
+    is_plural = base_count > 1
+    # Sort and List up
+    backlogs = []
+    for item in sorted(base_items, key=lambda x: x.abs_path):
         if not os.path.isfile(item.norm_path):
-            raise click.UsageError(f"File not found: {item.norm_path}")
+            raise click.UsageError(f"File not found: {item.abs_path}")
         # Read the base file
         with open(item.norm_path, "r", encoding="utf-8") as f:
             base_md: str = f.read()
         base_doc: List[str] = base_md.splitlines()
         # Extract config
         cfg: Config = ConfigExtractor.extract(base_doc)
-        # Health check
-        hc = HealthChecker()
-        hc.health_check(base_doc, cfg=cfg)
-        # Print log
-        log = hc.cli_log(file_name=repr(item), verbosity=verbose)
-        click.echo(log)
-    click.echo("----------------------")
+        # Add to backlogs
+        backlogs.append((item, base_md, base_doc, cfg))
 
-    base_count = len(base_items)
-    is_plural = base_count > 1
+    # Health Check and Print Log
+    # ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    all_healthy = True
+    click.echo("----------------------")
+    for item, _, base_doc, cfg in backlogs:
+        if skip_validation:
+            click.echo(f" 📄 {repr(item)}")
+        else:
+            # Health check
+            hc = HealthChecker()
+            hc.health_check(base_doc, cfg=cfg)
+            if not hc.is_healthy:
+                all_healthy = False
+            # Print log
+            log = hc.cli_log(file_name=repr(item), verbosity=verbose)
+            click.echo(log)
+    click.echo("----------------------")
     _msg = "markdowns were" if is_plural else "markdown was"
     click.echo(f" => {base_count} base {_msg} found.")
 
     # Ask for confirmation
     # ^^^^^^^^^^^^^^^^^^^^
+    if validation_only:
+        if skip_validation:
+            click.secho(" => No health check was performed.", fg="yellow")
+            sys.exit(0)
+        if all_healthy:
+            click.secho(" => All files are healthy.", fg="green")
+            sys.exit(0)
+        else:
+            click.secho(" => Some files are unhealthy.", fg="red")
+            sys.exit(1)
     if not yes:
         if not query_yes_no("    Do you want to convert these files?"):
-            exit()
+            sys.exit(0)
 
     # Convert
     # ^^^^^^^
     click.secho("----------------------", fg="cyan")
-    for item in base_items:
-        # Read the base file
-        with open(item.norm_path, "r", encoding="utf-8") as f:
-            base_md: str = f.read()
+    for item, base_md, _, cfg in backlogs:
         # Convert
         target_docs: Dict[str, List[str]] = convert(base_md, skip_health_check=True)
-        # Extract config
-        base_doc: List[str] = base_md.splitlines()
-        cfg: Config = ConfigExtractor.extract(base_doc)
+        click.secho(f" {repr(item)}", fg="cyan")
         # Save with log
-        _repr_name = repr(item)
-        click.secho(f" {_repr_name}", fg="cyan")
-
         for lang, md in target_docs.items():
             # target
             suffix = f".{lang}." if lang != cfg.no_suffix else "."
@@ -205,7 +218,6 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_health_check:
             # log
             click.echo(f"\t{lang}: {repr(target_item)}")
     click.secho("----------------------", fg="cyan")
-
     _msg = "files have" if is_plural else "file has"
     click.secho(f" => {base_count} base {_msg} been converted.\n", fg="cyan")
     return

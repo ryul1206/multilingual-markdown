@@ -25,6 +25,10 @@ class HealthChecker:
         return self._status.name
 
     @property
+    def is_healthy(self) -> bool:
+        return self._status == HealthStatus.HEALTHY
+
+    @property
     def warning_messages(self) -> List[str]:
         return self._warning
 
