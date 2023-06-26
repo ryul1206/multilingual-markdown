@@ -1,7 +1,9 @@
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from enum import Enum, auto
 from mmg.utils import flag_code_block_lines, REGEX_PATTERN
-from mmg.config import Config, ConfigExtractor, RESERVED_KEYWORDS
+from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter, RESERVED_KEYWORDS
+from mmg.toc import parse_toc_options
+from mmg.exceptions import BadConfigError
 
 
 class HealthStatus(Enum):
@@ -40,7 +42,7 @@ class HealthChecker:
     def tag_count(self) -> Dict[str, int]:
         return self._tag_count
 
-    def cli_log(self, file_name: str = None, verbosity: int = 0) -> str:
+    def cli_log(self, file_name: str = None, verbosity: int = 0) -> List[str]:
         """Return the log string of the CLI style.
 
         Args:
@@ -61,35 +63,9 @@ class HealthChecker:
                 messages.append(f"    {num_incomplete} language(s) not translated.")
             messages.append(f"    Tag count: {str(self._tag_count)}")
         if verbosity > 1:
-            messages.extend(self._error)
-            messages.extend(self._warning)
-        return "\n".join(messages)
-
-    def health_check(self, base_doc: List[str], cfg: Config = None) -> HealthStatus:
-        """Check the health based on the current config.
-
-        Args:
-            base_md (str): The base markdown string to check.
-            cfg (Config, optional): The config to check. If not given, the config will be extracted from the base_md.
-
-        Returns:
-            HealthStatus: The health status. (HEALTHY, UNHEALTHY, NOT_CHECKED)
-        """
-        # Reset for the current config
-        self._reset()
-
-        # Check the config
-        cfg: Config = cfg if cfg else ConfigExtractor.extract(base_doc)
-        self._check_config(cfg)
-
-        # Parse the base_md to ignore command tags in code blocks.
-        codeblock_flag = flag_code_block_lines(base_doc)
-        self._check_doc(cfg, base_doc, codeblock_flag)
-
-        # If no error detected, the health is healthy.
-        if self._status == HealthStatus.NOT_CHECKED:
-            self._status = HealthStatus.HEALTHY
-        return self._status
+            messages.extend([f"\t{message}" for message in self._error])
+            messages.extend([f"\t{message}" for message in self._warning])
+        return messages
 
     def _check_config(self, cfg: Config):
         # Check if there are reserved keywords in lang_tags.
@@ -103,33 +79,78 @@ class HealthChecker:
                 self._error.append(f"Config: no_suffix '{cfg.no_suffix}' is not in lang_tags.")
                 self._status = HealthStatus.UNHEALTHY
 
-    def _check_doc(self, cfg: Config, doc: List[str], codeblock_flag: List[bool]):
-        balance_checker = _TagBalanceChecker(cfg)
-        # Check the tag line by line.
-        for line_num, line in enumerate(doc):
-            is_codeblock = codeblock_flag[line_num]
-            detected_tag = REGEX_PATTERN["tag"].search(line)
-            if (not is_codeblock) and detected_tag:
-                # Find "<!-- [A] -->" or "<!--[A]-->" and extract the tag "A".
-                tag = detected_tag.group(1)
-                looks_good = balance_checker.push(tag, line_num + 1)  # The line number starts from 1.
-                if not looks_good:
-                    self._status = HealthStatus.UNHEALTHY
+    def health_check(self, base: any, cfg: Config = None, extension: str = "md") -> HealthStatus:
+        """Check the health based on the current config.
+
+        Args:
+            base (any): The base file to check. Markdown(List[str]) or Jupyter(Dict).
+            cfg (Config, optional): The config to check. If not given, the config will be extracted from the base_md.
+            extension (str, optional): The extension of the base file. "md" or "ipynb". Defaults to "md".
+
+        Returns:
+            HealthStatus: The health status. (HEALTHY, UNHEALTHY, NOT_CHECKED)
+        """
+        # Reset for the current config
+        self._reset()
+        # Check
+        if extension == "md":
+            self._health_check_markdown(base, cfg)
+        elif extension == "ipynb":
+            self._health_check_jupyter(base, cfg)
+        # If no error detected, the health is healthy.
+        self._status = HealthStatus.HEALTHY if self._status != HealthStatus.UNHEALTHY else self._status
+        return self._status
+
+    def _health_check_markdown(self, base_doc: List[str], cfg: Config = None):
+        # Check the config
+        cfg: Config = cfg if cfg else ConfigExtractor.extract(base_doc)
+        self._check_config(cfg)
+        # Check the doc
+        dc = DocChecker(cfg)
+        dc.check_doc(base_doc)
         # Get the tag count, warning, and error messages.
-        self._tag_count = balance_checker.tag_count
-        self._warning.extend(balance_checker.warning_messages)
-        self._error.extend(balance_checker.error_messages)
+        self._tag_count = dc.tag_count
+        self._error.extend([f"Line {line_num}: {message}" for line_num, message in dc.error_messages])
+        self._warning.extend([f"Line {line_num}: {message}" for line_num, message in dc.warning_messages])
+
+    def _health_check_jupyter(self, base_jn: Dict, cfg: Config = None):
+        # Check the config
+        cfg: Config = cfg if cfg else extract_config_from_jupyter(base_jn)
+        self._check_config(cfg)
+        # Make a doc (list of lines)
+        # > Because, some people may use multiple language tags in a single Markdown cell,
+        # > while others may only use one language tag in a Markdown cell.
+        indexing: List[Tuple[int, int]] = []  # indexing[line_num - 1] = (cell_num, cell_line_num)
+        doc: List[str] = []
+        for i, cell in enumerate(base_jn["cells"]):
+            cell_num = i + 1
+            # "markdown" cell
+            if cell["cell_type"] == "markdown":
+                indexing.extend([(cell_num, j + 1) for j, _ in enumerate(cell["source"])])
+                doc.extend(cell["source"])
+            # "code" cell
+            else:
+                indexing.append((cell_num, 0))
+                doc.append("<!-- [common] -->")
+        # Check the doc
+        dc = DocChecker(cfg)
+        dc.check_doc(doc)
+        # Get the tag count, warning, and error messages.
+        self._tag_count = dc.tag_count
+        header = lambda x: f"Cell {x[0]}, Line {x[1]}: "
+        self._error.extend([header(indexing[line_num - 1]) + message for line_num, message in dc.error_messages])
+        self._warning.extend([header(indexing[line_num - 1]) + message for line_num, message in dc.warning_messages])
 
 
-class _TagBalanceChecker:
+class DocChecker:
     def __init__(self, cfg: Config):
         self._cfg: Config = cfg
         self._balance_count: Dict[str, int] = dict.fromkeys(cfg.lang_tags, 0)
         self._tag_count: Dict[str, int] = dict.fromkeys(cfg.lang_tags, 0)
         self._tag_count["<Unknown>"] = 0
-
-        self._warning: List[str] = []
-        self._error: List[str] = []
+        self._warning: List[Tuple[int, str]] = []  # (line_num, message)
+        self._error: List[Tuple[int, str]] = []  # (line_num, message)
+        self._used: bool = False
 
     @property
     def warning_messages(self) -> List[str]:
@@ -146,7 +167,37 @@ class _TagBalanceChecker:
             return {k: v for k, v in self._tag_count.items() if k != "<Unknown>"}
         return self._tag_count
 
-    def push(self, tag: str, line_num: int) -> bool:
+    def check_doc(self, doc: List[str]):
+        # Check if the DocChecker is already used.
+        if self._used:
+            raise RuntimeError("The DocChecker can be used only once.")
+        self._used = True
+
+        # Flag the code block lines.
+        codeblock_flag = flag_code_block_lines(doc)
+
+        # Check the tag line by line.
+        for line_num, line in enumerate(doc):
+            # Skip the code block lines.
+            if codeblock_flag[line_num]:
+                continue
+            # Normal tags
+            detected_tag = REGEX_PATTERN["tag"].search(line)
+            if detected_tag:
+                # Find "<!-- [A] -->" or "<!--[A]-->" and extract the tag "A".
+                tag = detected_tag.group(1)
+                looks_good = self._push(tag, line_num + 1)  # The line number starts from 1.
+                if not looks_good:
+                    self._status = HealthStatus.UNHEALTHY
+            # ToC tags
+            elif REGEX_PATTERN["auto_toc"].search(line):
+                try:
+                    parse_toc_options(line)
+                except BadConfigError as e:
+                    self._error.append((line_num, e))
+                    self._status = HealthStatus.UNHEALTHY
+
+    def _push(self, tag: str, line_num: int) -> bool:
         """Push a tag to check the balance.
 
         Args:
@@ -165,7 +216,7 @@ class _TagBalanceChecker:
 
             # Unbalanced if any tag appears again before all tags appear once.
             if _is_unbalanced:
-                self._warning.append(f"\tLine {line_num}: '{tag}' appeared again before all tags appeared once.")
+                self._warning.append((line_num, f"'{tag}' appeared again before all tags appeared once."))
                 self._balance_count[tag] -= 1
             # Reset the balance count if all tags appeared once.
             if _all_appeared_once:
@@ -176,11 +227,11 @@ class _TagBalanceChecker:
             # The `common` area should appear after all tags appeared once. (balanced)
             self._balance_count = dict.fromkeys(self._balance_count, 0)
             if _any_appeared:
-                self._warning.append(f"\tLine {line_num}: '{tag}' appeared before all tags appeared once.")
+                self._warning.append((line_num, f"'{tag}' appeared before all tags appeared once."))
             return False if _any_appeared else True
         elif tag == "ignore":
             return True
         else:
             self._tag_count["<Unknown>"] += 1
-            self._error.append(f"\tLine {line_num}: Unknown tag '{tag}' detected.")
+            self._error.append((line_num, f"Unknown tag '{tag}' detected."))
             return False

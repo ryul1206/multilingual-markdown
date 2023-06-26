@@ -15,7 +15,7 @@ REGEX_PATTERN: Final[Dict[str, re.Pattern]] = {
     "tag": re.compile(r"<!--\s*\[\s*([\w-]+)\s*\]\s*-->"),
 
     # Table of Contents
-    "auto_toc": re.compile(r"<!-- \[\[ multilingual toc:[ \w=~-]+\]\] -->"),
+    "auto_toc": re.compile(r"<!--\s*\[\[\s*multilingual toc:[^\]]*\s*]]\s*-->"),
     "toc_level": re.compile(r"level\s*=\s*([1-9]\s*~\s*[1-9]|~\s*[1-9]+|[1-9]+\s*~?)"),
     "toc_no_emoji": re.compile("no-emoji"),
 

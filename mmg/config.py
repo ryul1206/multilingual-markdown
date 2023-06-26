@@ -1,7 +1,6 @@
 from dataclasses import dataclass, field
 from typing import List, Optional, Final, Dict
-import re
-from mmg.exceptions import MmgException
+from mmg.exceptions import BadConfigError
 from mmg.utils import REGEX_PATTERN
 
 
@@ -35,7 +34,7 @@ class ConfigExtractor:
             base_md (str): A base markdown string.
 
         Raises:
-            MmgException: If the configuration is duplicated.
+            BadConfigError: If the configuration is duplicated.
 
         Returns:
             Config: A configuration extracted from the base markdown file.
@@ -67,4 +66,11 @@ class ConfigExtractor:
     @staticmethod
     def _check_duplicate_config_value(value: any, config_name: str, line_num: int):
         if value:
-            raise MmgException(f"The configuration '{config_name}' is already defined. [line: {line_num + 1}]")
+            raise BadConfigError(f"The configuration '{config_name}' is already defined. [Check line: {line_num + 1}]")
+
+
+def extract_config_from_jupyter(base_jn: Dict) -> Config:
+    md_cells: List[str] = [cell["source"] for cell in base_jn["cells"] if cell["cell_type"] == "markdown"]
+    md_cells = [line for cell in md_cells for line in cell]  # flatten
+    cfg: Config = ConfigExtractor.extract(md_cells)
+    return cfg

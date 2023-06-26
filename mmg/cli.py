@@ -1,28 +1,13 @@
-from typing import List, Iterator, Dict
-from dataclasses import dataclass
+from typing import List, Dict, Tuple, Callable
 import sys
 import os
-import re
+import json
 import click
 import mmg
-from mmg.config import Config, ConfigExtractor
+from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter
 from mmg.health import HealthChecker
-from mmg.api import convert
-
-
-@dataclass
-class _BaseFileItem:
-    norm_path: str
-
-    @property
-    def abs_path(self) -> str:
-        return os.path.abspath(self.norm_path)
-
-    def __repr__(self):
-        return shorten_path(self.norm_path)
-
-    def __hash__(self) -> int:
-        return hash(self.abs_path)
+from mmg.api import convert_base_doc, convert_base_jupyter
+from mmg.base_item import BaseFileItem, collect_base_files
 
 
 def _print_version(ctx, param, value):
@@ -30,63 +15,6 @@ def _print_version(ctx, param, value):
         return
     click.echo(f"Version {mmg.__version__}")
     ctx.exit()
-
-
-def is_base_md(file_name: str) -> bool:
-    base = re.compile(r"[.]base[.]md")
-    return base.search(file_name) is not None
-
-
-def filter_base_md(file_names: List[str]) -> Iterator[_BaseFileItem]:
-    for file_name in file_names:
-        if is_base_md(file_name):
-            # Resolve a PowerShell bug related to file paths with specific names
-            # `mmg` will throw an error when the file_name starts with ".\" or "./".
-            if file_name.startswith(".\\") or file_name.startswith("./"):
-                file_name = file_name[2:]
-            file_path = os.path.join(".", file_name)
-            norm_path = os.path.normpath(file_path)
-            yield _BaseFileItem(norm_path)
-
-
-def walk_base_md(path: str) -> Iterator[_BaseFileItem]:
-    for path, _, files in os.walk(path):
-        for file_name in files:
-            if is_base_md(file_name):
-                file_path = os.path.join(path, file_name)
-                norm_path = os.path.normpath(file_path)
-                yield _BaseFileItem(norm_path)
-
-
-def shorten_path(path: str, max_length: int = 50) -> str:
-    """Shorten the path to a given length.
-    https://stackoverflow.com/questions/74300488/pretty-printing-of-paths-in-python
-
-    Args:
-        path (str): The path to shorten.
-        max_length (int, optional): The maximum length of the path. Defaults to 20.
-
-    Returns:
-        str: The shortened path.
-    """
-    if len(path) < max_length:
-        return path  # no need to shorten
-
-    shortened_path = "..."  # add middle item
-    paths_to_choose_from = path.split(os.sep)  # split by your custom OS separator. "/" for linux, "\" for windows.
-    add_last_path = True
-    while len(shortened_path) < max_length:
-        if len(paths_to_choose_from) == 0:
-            return shortened_path
-        if add_last_path:
-            shortened_path = shortened_path.replace("...", f"...{os.sep}{paths_to_choose_from[-1]}")
-            del paths_to_choose_from[-1]  # delete elem used
-            add_last_path = False
-        else:
-            shortened_path = shortened_path.replace("...", f"{paths_to_choose_from[0]}{os.sep}...")
-            del paths_to_choose_from[0]  # delete elem used
-            add_last_path = True
-    return shortened_path
 
 
 def query_yes_no(question):
@@ -115,6 +43,66 @@ def query_yes_no(question):
     return resp
 
 
+def _process_file(item: BaseFileItem) -> Tuple[BaseFileItem, any, Config]:
+    # Check if file exists
+    if not os.path.isfile(item.norm_path):
+        raise click.FileError(item.abs_path, hint="File not found.")
+    # Open file
+    with open(item.norm_path, "r", encoding="utf-8") as f:
+        if item.extension == "md":
+            base_md: str = f.read()
+            base_doc: List[str] = base_md.splitlines()
+            cfg: Config = ConfigExtractor.extract(base_doc)
+            return (item, base_doc, cfg)
+        elif item.extension == "ipynb":
+            base_jn: Dict = json.load(f)
+            cfg: Config = extract_config_from_jupyter(base_jn)
+            return (item, base_jn, cfg)
+
+
+def _health_check_on_backlogs(backlogs: Tuple, extension: str, emoji: str, skip_validation: bool, verbose: int) -> bool:
+    all_healthy = True
+    for item, base, cfg in backlogs:
+        if skip_validation:
+            click.echo(f" {emoji} {repr(item)}")
+        else:
+            # Health check
+            hc = HealthChecker()
+            hc.health_check(base, cfg=cfg, extension=extension)
+            if not hc.is_healthy:
+                all_healthy = False
+            # Print log
+            log = hc.cli_log(file_name=repr(item), verbosity=verbose)
+            click.echo("\n".join(log))
+    return all_healthy
+
+
+def _convert_backlogs(backlogs: List, convert_func: Callable, extension: str, save_func: Callable):
+    for item, base, cfg in backlogs:
+        # Convert
+        target_docs = convert_func(base, skip_health_check=True)
+        click.secho(f" {repr(item)}", fg="cyan")
+        # Save with log
+        for lang, doc in target_docs.items():
+            # target
+            suffix = f".{lang}." if lang != cfg.no_suffix else "."
+            target_item = BaseFileItem(item.norm_path.replace(".base.", suffix), extension)
+            # save
+            save_func(target_item.norm_path, doc)
+            # log
+            click.echo(f"\t{lang}: {repr(target_item)}")
+
+
+def save_md(path, content):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(content))
+
+
+def save_jn(path, content):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(content, f, indent=2)
+
+
 @click.command()
 @click.argument("file_names", nargs=-1, type=click.Path(exists=True))
 @click.option(
@@ -137,49 +125,28 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: b
 
     # Get base files
     # ^^^^^^^^^^^^^^
-    # Collect base files
-    base_items: set[_BaseFileItem] = set()  # use set to avoid duplicates
-    if file_names:
-        for item in filter_base_md(file_names):
-            base_items.add(item)
-    if recursive:
-        for item in walk_base_md("."):
-            base_items.add(item)
+    base_items = collect_base_files(file_names, recursive)
     if not base_items:
         raise click.UsageError("No base files found.")
-    # Count base files
     base_count = len(base_items)
     is_plural = base_count > 1
+
     # Sort and List up
-    backlogs = []
+    # ^^^^^^^^^^^^^^^^
+    md_backlogs = []  # (item: BaseFileItem, base_doc: List[str], cfg: Config)
+    jn_backlogs = []  # (item: BaseFileItem, base_jn: Dict, cfg: Config)
     for item in sorted(base_items, key=lambda x: x.abs_path):
-        if not os.path.isfile(item.norm_path):
-            raise click.UsageError(f"File not found: {item.abs_path}")
-        # Read the base file
-        with open(item.norm_path, "r", encoding="utf-8") as f:
-            base_md: str = f.read()
-        base_doc: List[str] = base_md.splitlines()
-        # Extract config
-        cfg: Config = ConfigExtractor.extract(base_doc)
-        # Add to backlogs
-        backlogs.append((item, base_md, base_doc, cfg))
+        backlog = _process_file(item)
+        if item.extension == "md":
+            md_backlogs.append(backlog)
+        elif item.extension == "ipynb":
+            jn_backlogs.append(backlog)
 
     # Health Check and Print Log
     # ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    all_healthy = True
     click.echo("----------------------")
-    for item, _, base_doc, cfg in backlogs:
-        if skip_validation:
-            click.echo(f" 📄 {repr(item)}")
-        else:
-            # Health check
-            hc = HealthChecker()
-            hc.health_check(base_doc, cfg=cfg)
-            if not hc.is_healthy:
-                all_healthy = False
-            # Print log
-            log = hc.cli_log(file_name=repr(item), verbosity=verbose)
-            click.echo(log)
+    md_healthy = _health_check_on_backlogs(md_backlogs, "md", "📄", skip_validation, verbose)
+    jn_healthy = _health_check_on_backlogs(jn_backlogs, "ipynb", "📒", skip_validation, verbose)
     click.echo("----------------------")
     _msg = "markdowns were" if is_plural else "markdown was"
     click.echo(f" => {base_count} base {_msg} found.")
@@ -190,6 +157,7 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: b
         if skip_validation:
             click.secho(" => No health check was performed.", fg="yellow")
             sys.exit(0)
+        all_healthy = md_healthy and jn_healthy
         if all_healthy:
             click.secho(" => All files are healthy.", fg="green")
             sys.exit(0)
@@ -203,20 +171,8 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: b
     # Convert
     # ^^^^^^^
     click.secho("----------------------", fg="cyan")
-    for item, base_md, _, cfg in backlogs:
-        # Convert
-        target_docs: Dict[str, List[str]] = convert(base_md, skip_health_check=True)
-        click.secho(f" {repr(item)}", fg="cyan")
-        # Save with log
-        for lang, md in target_docs.items():
-            # target
-            suffix = f".{lang}." if lang != cfg.no_suffix else "."
-            target_item = _BaseFileItem(item.norm_path.replace(".base.", suffix))
-            # save
-            with open(target_item.norm_path, "w", encoding="utf-8") as f:
-                f.write("\n".join(md))
-            # log
-            click.echo(f"\t{lang}: {repr(target_item)}")
+    _convert_backlogs(md_backlogs, convert_base_doc, "md", save_md)
+    _convert_backlogs(jn_backlogs, convert_base_jupyter, "ipynb", save_jn)
     click.secho("----------------------", fg="cyan")
     _msg = "files have" if is_plural else "file has"
     click.secho(f" => {base_count} base {_msg} been converted.\n", fg="cyan")

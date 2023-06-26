@@ -1,7 +1,7 @@
 import re
 from typing import Tuple, List
 from mmg.utils import REGEX_PATTERN, flag_code_block_lines, remove_emoji, remove_links
-from mmg.exceptions import MmgException
+from mmg.exceptions import BadConfigError
 
 
 def parse_toc_options(toc_line: str) -> Tuple[int, int, bool]:
@@ -10,13 +10,16 @@ def parse_toc_options(toc_line: str) -> Tuple[int, int, bool]:
     Args:
         toc_line (str): Example: `<!-- [[ multilingual toc: level=1~3, no-emoji ]] -->`
 
+    Raises:
+        BadConfigError: If the level option is not specified. or If the level option is invalid.
+
     Returns:
         Tuple[int, int, bool]: (min_level, max_level, no_emoji)
     """
     # Level option
     level_option = REGEX_PATTERN["toc_level"].search(toc_line)
     if level_option is None:
-        raise MmgException("You must specify the level option in the table of contents.")
+        raise BadConfigError("You must specify the level option in the table of contents.")
     level_option = level_option.group(1).replace(" ", "")
 
     min_level = 1
@@ -33,7 +36,7 @@ def parse_toc_options(toc_line: str) -> Tuple[int, int, bool]:
         min_level = int(s[0])
         max_level = int(s[1])
     else:
-        raise MmgException(f"Cannnot parse the level option: {level_option}")
+        raise BadConfigError(f"Cannnot parse the level option: {level_option}\nToC line: {toc_line}")
 
     # Emoji option
     no_emoji = True if REGEX_PATTERN["toc_no_emoji"].search(toc_line) else False

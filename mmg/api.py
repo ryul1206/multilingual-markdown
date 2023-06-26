@@ -1,9 +1,9 @@
 from typing import List, Dict
-from mmg.config import Config, ConfigExtractor
+from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter
 from mmg.health import HealthChecker, HealthStatus
 from mmg.utils import REGEX_PATTERN, flag_code_block_lines
-from mmg.toc import create_toc, parse_toc_options
-from mmg.exceptions import MmgException
+from mmg.exceptions import BadConfigError
+from mmg.classifier import MarkdownClassifier, JupyterClassifier
 
 
 def convert(
@@ -14,8 +14,8 @@ def convert(
     print_log: bool = False,
     file_name: str = None,
     verbosity: int = 0,
-) -> Dict[str, List[str]]:
-    """Split the base_md into multiple markdowns based on the config.
+) -> Dict[str, str]:
+    """Split the base markdown string into multiple markdowns based on the config.
 
     Args:
         base_md (str): The base markdown string to convert.
@@ -32,87 +32,150 @@ def convert(
             This option is not working when `print_log` is False. Defaults to 0.
 
     Returns:
-        Dict[str, List[str]]: A dictionary of converted markdowns. The key is the language tag, a.k.a. suffix.
+        Dict[str, str]: A dictionary of converted markdowns. The key is the language tag, a.k.a. suffix.
     """
     base_doc: List[str] = base_md.splitlines()
+    target_docs: Dict[str, List[str]] = convert_base_doc(
+        base_doc, cfg, skip_health_check, force_convert, print_log, file_name, verbosity
+    )
+    return {lang: "\n".join(doc) for lang, doc in target_docs.items()}
 
+
+def convert_base_doc(
+    base_doc: List[str],
+    cfg: Config = None,
+    skip_health_check: bool = False,
+    force_convert: bool = False,
+    print_log: bool = False,
+    file_name: str = None,
+    verbosity: int = 0,
+) -> Dict[str, List[str]]:
+    """Split the base_doc into multiple markdowns based on the config.
+
+    Args:
+        base_doc (List[str]): The base markdown string to convert.
+        cfg (Config, optional): The config to convert.
+            If not given, the config will be extracted from the base_doc. Defaults to None.
+        skip_health_check (bool, optional): If True, skip the health check. Defaults to False.
+        force_convert (bool, optional): If True, ignore the health check result and force to convert.
+            This option is not working when `skip_health_check` is True. Defaults to False.
+        print_log (bool, optional): If True, print the log.
+            This option is not working when `skip_health_check` is True. Defaults to False.
+        file_name (str, optional): The file name to show in the log.
+            This option is not working when `print_log` is False. Defaults to None.
+        verbosity (int, optional): The verbosity level from 0 to 2.
+            This option is not working when `print_log` is False. Defaults to 0.
+
+    Raises:
+        BadConfigError: If the health check failed.
+
+    Returns:
+        Dict[str, List[str]]: A dictionary of converted markdowns. The key is the language tag, a.k.a. suffix.
+    """
     # Extract config (using HealthChecker)
-    # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    # If `cfg` is not given, extract it from the base_md.
-    # If `cfg` is provided, settings in base_md will be ignored.
+    # > If `cfg` is not given, extract it from the base_md.
+    # > If `cfg` is provided, settings in base_md will be ignored.
     cfg: Config = cfg if cfg else ConfigExtractor.extract(base_doc)
 
     # Health check
-    # ^^^^^^^^^^^^
-    if not skip_health_check:
-        hc = HealthChecker()
-        status: HealthStatus = hc.health_check(base_doc, cfg=cfg)
-        if print_log:
-            print(hc.cli_log(file_name=file_name, verbosity=verbosity))
-        if (not force_convert) and (status != HealthStatus.HEALTHY):
-            raise MmgException(f"Health check failed: {status.name}")
+    _health_check(
+        base_doc,
+        cfg,
+        extension="md",
+        skip_health_check=skip_health_check,
+        force_convert=force_convert,
+        print_log=print_log,
+        file_name=file_name,
+        verbosity=verbosity,
+    )
 
     # Classify lines
-    # ^^^^^^^^^^^^^^
-    # signal (str): Tag for the current line.
-    signal = "common"
-    codeblock = flag_code_block_lines(base_doc)
-    target_docs = _LineClassifier(cfg)
-
-    for line_num, line in enumerate(base_doc):
-        # DEBUG
-        # m = "O" if REGEX_PATTERN["comment"].match(line) else "X"
-        # c = "O" if codeblock[line_num] else "X"
-        # print(f"{line_num}: match[{m}] code[{c}]: {line}")
-
-        if REGEX_PATTERN["comment"].match(line) and (not codeblock[line_num]):
-            # Case 1: Tag
-            #   * Switch the signal to the tag.
-            detected_tag = REGEX_PATTERN["tag"].search(line)
-            if detected_tag:
-                signal = detected_tag.group(1)
-                # If the tag is <Unknown>, ignore it.
-                if (signal not in cfg.lang_tags) and (signal != "common"):
-                    signal = "ignore"
-            # Case 2: Table of Contents
-            #   * Mark TOC position. In some cases, the table of contents (TOC) can vary for each tag,
-            #     so for now, we will only determine the TOC position and generate the TOC at the end.
-            #   * And, the signal will be switched to "common".
-            elif REGEX_PATTERN["auto_toc"].match(line):
-                signal = "common"
-                target_docs.write(signal, line)
-        else:
-            # DEBUG
-            # print(f"    write[{signal}]: {line}")
-            target_docs.write(signal, line)
+    target_docs = MarkdownClassifier(cfg.lang_tags)
+    target_docs.classify(base_doc)
 
     # Generate TOC
-    # ^^^^^^^^^^^^
     target_docs.insert_toc()
 
     # Return
-    # ^^^^^^
     return target_docs.docs
 
 
-class _LineClassifier:
-    def __init__(self, cfg: Config):
-        self.docs: Dict[str, List[str]] = {lang: [] for lang in cfg.lang_tags}
+def convert_base_jupyter(
+    base_jn: Dict,
+    cfg: Config = None,
+    skip_health_check: bool = False,
+    force_convert: bool = False,
+    print_log: bool = False,
+    file_name: str = None,
+    verbosity: int = 0,
+) -> Dict[str, Dict]:
+    """Split the base jupyter notebook into multiple markdowns based on the config.
 
-    def write(self, tag, line):
-        if tag == "common":
-            for doc in self.docs.values():
-                doc.append(line)
-        elif tag != "ignore":
-            self.docs[tag].append(line)
+    Args:
+        base_jn (Dict): The base jupyter notebook to convert.
+        cfg (Config, optional): The config to convert.
+            If not given, the config will be extracted from the base_jn. Defaults to None.
+        skip_health_check (bool, optional): If True, skip the health check. Defaults to False.
+        force_convert (bool, optional): If True, ignore the health check result and force to convert.
+            This option is not working when `skip_health_check` is True. Defaults to False.
+        print_log (bool, optional): If True, print the log.
+            This option is not working when `skip_health_check` is True. Defaults to False.
+        file_name (str, optional): The file name to show in the log.
+            This option is not working when `print_log` is False. Defaults to None.
+        verbosity (int, optional): The verbosity level from 0 to 2.
+            This option is not working when `print_log` is False. Defaults to 0.
 
-    def insert_toc(self):
-        for lang, doc in self.docs.items():
-            new_doc = []
-            for line in doc:
-                if REGEX_PATTERN["auto_toc"].match(line):
-                    toc_options = parse_toc_options(line)
-                    new_doc.extend(create_toc(toc_options, doc))
-                else:
-                    new_doc.append(line)
-            self.docs[lang] = new_doc
+    Raises:
+        BadConfigError: If the health check failed.
+
+    Returns:
+        Dict[str, Dict]: A dictionary of converted jupyter notebooks. The key is the language tag, a.k.a. suffix.
+    """
+    # Extract config (using HealthChecker)
+    # > If `cfg` is not given, extract it from the base_md.
+    # > If `cfg` is provided, settings in base_md will be ignored.
+    cfg: Config = cfg if cfg else extract_config_from_jupyter(base_jn)
+
+    # Health check
+    _health_check(
+        base_jn,
+        cfg,
+        extension="ipynb",
+        skip_health_check=skip_health_check,
+        force_convert=force_convert,
+        print_log=print_log,
+        file_name=file_name,
+        verbosity=verbosity,
+    )
+
+    # Classify cells
+    jupyter_docs = JupyterClassifier(cfg.lang_tags)
+    jupyter_docs.init_targets(base_jn)
+    for cell in base_jn["cells"]:
+        jupyter_docs.push(cell)
+
+    # Generate TOC
+    jupyter_docs.insert_toc()
+
+    # Return
+    return jupyter_docs.docs
+
+
+def _health_check(
+    base: any,
+    cfg: Config,
+    extension: str,
+    skip_health_check: bool,
+    force_convert: bool,
+    print_log: bool,
+    file_name: str,
+    verbosity: int,
+):
+    if not skip_health_check:
+        hc = HealthChecker()
+        status: HealthStatus = hc.health_check(base, cfg=cfg, extension=extension)
+        if print_log:
+            log = hc.cli_log(file_name=file_name, verbosity=verbosity)
+        if (not force_convert) and (status != HealthStatus.HEALTHY):
+            error_messages = "\n".join(hc.error_messages)
+            raise BadConfigError(f"Health check failed.\n - Status: {status.name}\n - Error:\n{error_messages}")
