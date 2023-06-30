@@ -72,7 +72,15 @@ class JupyterClassifier:
             for doc in self.docs.values():
                 doc[key] = copy.deepcopy(value) if key != "cells" else []
 
-    def push(self, cell):
+    def push(self, cell: Dict):
+        """Divide the cell into each language and push to the target notebooks.
+
+        Args:
+            cell (Dict): The cell to push.
+
+        Raises:
+            RuntimeError: Cannot push to the classifier after freezing.
+        """
         # Check if the classifier is freezed
         if self.freezed:
             raise RuntimeError("Cannot push to the classifier after freezing.")

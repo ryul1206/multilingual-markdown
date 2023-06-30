@@ -1,0 +1,109 @@
+from typing import List, Dict
+import os
+import json
+import markdown     # Markdown to HTML
+import weasyprint   # HTML to PDF
+import nbconvert    # Jupyter Notebook to HTML
+import nbformat     # Dict to Jupyter Notebook
+from mmg.base_item import FileItem
+
+
+def save_md(path, md_doc: List[str]):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(md_doc))
+
+
+def save_jn(path, jupyter_notebook: Dict):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(jupyter_notebook, f, indent=2)
+
+
+def save_html(path, html: str):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+
+def save_pdf(path, html: str):
+    html = weasyprint.HTML(string=html)
+    html.write_pdf(path)
+
+
+def handle_as_is(base_item: FileItem, suffix: str, content: any) -> FileItem:
+    target_item = FileItem(base_item.norm_path.replace(".base.", suffix), base_item.extension)
+    if target_item.extension == "md":
+        save_md(target_item.norm_path, content)
+    elif target_item.extension == "ipynb":
+        save_jn(target_item.norm_path, content)
+    return target_item
+
+
+def handle_html_or_pdf(base_item: FileItem, suffix: str, output_format: str, css: str, content: any) -> FileItem:
+    """
+    Converts and saves the provided content into a file with the specified suffix and output format.
+
+    Args:
+        base_item (FileItem): Holds the file information of the source file.
+        suffix (str): The suffix for the target file in the format 'file_name.suffix.extension'.
+        output_format (str): The desired output format - either "html" or "pdf".
+        css (str): This parameter indicates the styling used for the HTML conversion.
+            It can be a path to a CSS file, or one of the two preset values: "github-light" or "github-dark".
+            This option is mandatory, regardless of the output format.
+            This is because, even for PDF output, the content is first converted to HTML, then to PDF.
+        content (any): This can be a List[str] for markdown content, or a Dict for a jupyter notebook.
+
+    Raises:
+        ValueError: Raised when an unsupported output format is specified.
+
+    Returns:
+        FileItem: Holds the file information of the newly created file.
+    """
+    # Save function
+    if output_format not in ["html", "pdf"]:
+        raise ValueError(f"Invalid output format: {output_format} (Should be 'html' or 'pdf'.)")
+    save_func = save_html if output_format == "html" else save_pdf
+    # Target item
+    target_item = FileItem(
+        base_item.norm_path.replace(f".base.{base_item.extension}", f"{suffix}{output_format}"),
+        output_format,
+    )
+    # Convert to HTML
+    if base_item.extension == "md":
+        html = convert_md_to_html("\n".join(content), css=css)
+    elif base_item.extension == "ipynb":
+        html = convert_jupyter_to_html(content)
+    # Save
+    save_func(target_item.norm_path, html)
+    return target_item
+
+
+def convert_md_to_html(md: str, css: str):
+    html = markdown.markdown(md, extensions=["fenced_code", "codehilite"])
+    # Get path of css file
+    if css == "github-light" or css == "github-dark":
+        this_dir = os.path.dirname(os.path.abspath(__file__))
+        css_path = os.path.join(this_dir, "css", f"{css}.css")
+        with open(css_path, "r", encoding="utf-8") as f:
+            css_content = f.read()
+    else:
+        current_dir = os.getcwd()
+        css_path = os.path.join(current_dir, css)
+        with open(css_path, "r", encoding="utf-8") as f:
+            css_content = f.read()
+    # Add css
+    html = f"<style>{css_content}</style><article class='markdown-body'>{html}</article>"
+    return html
+
+
+def convert_jupyter_to_html(notebook: Dict):
+    # Read
+    nb_str = json.dumps(notebook)
+    nb: nbformat.NotebookNode = nbformat.reads(nb_str, as_version=4)
+    # Validate
+    try:
+        nbformat.validate(nb)
+    except nbformat.ValidationError as e:
+        raise e
+    # Convert
+    html_exporter = nbconvert.HTMLExporter()
+    html_data, resources = html_exporter.from_notebook_node(nb)
+    return html_data

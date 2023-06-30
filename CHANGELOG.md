@@ -25,6 +25,7 @@ Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/mu
 - **Added** - Add "Validation Only" command to the mmg CLI [#20](https://github.com/ryul1206/multilingual-markdown/issues/20)
 - **Added** - Add "Skip Validation" command to the mmg CLI.
 - **Added** - Support Jupyter Notebook(.ipynb) [#13](https://github.com/ryul1206/multilingual-markdown/issues/13)
+- **Added** - Support for HTML, PDF output formats [#19](https://github.com/ryul1206/multilingual-markdown/issues/19)
 - **Changed** - Use [Poetry](https://python-poetry.org/) for Python package management [#16](https://github.com/ryul1206/multilingual-markdown/issues/16)
 - **Fixed** - Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
 - **Fixed** - Fixes and enhancements for code block tracking [#24](https://github.com/ryul1206/multilingual-markdown/issues/24)

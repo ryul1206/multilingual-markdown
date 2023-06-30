@@ -150,6 +150,11 @@ Bash, Zsh, WindowsPowerShellで使用できます。
 pip3 install mmg --user
 ```
 
+If you are on Windows, you have to download the GTK below to create a PDF. If you don't want to create a PDF, you don't have to.
+윈도우라면 PDF 생성할 때 아래 GTK를 다운받아야 하는 번거로움이 있음. PDF 생성 안 할거면 안 해도 됨.
+
+When Python is installed, you have to install GTK. Download the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases) and launch it. If you don’t know what some options mean, you can safely keep the default options selected.
+
 <!-- [en] -->
 Now when you open a new terminal you can use the new command `mmg`.
 <!-- [fr] -->

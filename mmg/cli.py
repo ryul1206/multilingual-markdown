@@ -7,7 +7,8 @@ import mmg
 from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter
 from mmg.health import HealthChecker
 from mmg.api import convert_base_doc, convert_base_jupyter
-from mmg.base_item import BaseFileItem, collect_base_files
+from mmg.base_item import FileItem, collect_base_files
+from mmg import output
 
 
 def _print_version(ctx, param, value):
@@ -43,7 +44,7 @@ def query_yes_no(question):
     return resp
 
 
-def _process_file(item: BaseFileItem) -> Tuple[BaseFileItem, any, Config]:
+def _process_file(item: FileItem) -> Tuple[FileItem, any, Config]:
     # Check if file exists
     if not os.path.isfile(item.norm_path):
         raise click.FileError(item.abs_path, hint="File not found.")
@@ -77,47 +78,74 @@ def _health_check_on_backlogs(backlogs: Tuple, extension: str, emoji: str, skip_
     return all_healthy
 
 
-def _convert_backlogs(backlogs: List, convert_func: Callable, extension: str, save_func: Callable):
-    for item, base, cfg in backlogs:
+def _convert_backlogs(backlogs: List, convert_func: Callable, output_format: str, css: str):
+    for base_item, base, cfg in backlogs:
         # Convert
         target_docs = convert_func(base, skip_health_check=True)
-        click.secho(f" {repr(item)}", fg="cyan")
+        click.secho(f" {repr(base_item)}", fg="cyan")
         # Save with log
-        for lang, doc in target_docs.items():
+        for lang, content in target_docs.items():
+            """
+            lang: str (e.g. "en-US")
+            content: List[str] (for markdown) or Dict (for jupyter notebook)
+            """
             # target
             suffix = f".{lang}." if lang != cfg.no_suffix else "."
-            target_item = BaseFileItem(item.norm_path.replace(".base.", suffix), extension)
             # save
-            save_func(target_item.norm_path, doc)
+            if output_format == "as-is":
+                target_item = output.handle_as_is(base_item, suffix, content)
+            else:
+                target_item = output.handle_html_or_pdf(base_item, suffix, output_format, css, content)
             # log
             click.echo(f"\t{lang}: {repr(target_item)}")
 
 
-def save_md(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        f.write("\n".join(content))
-
-
-def save_jn(path, content):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(content, f, indent=2)
+def perform_exit(message: str, fg: str, code: int):
+    click.secho(message, fg=fg)
+    sys.exit(code)
 
 
 @click.command()
+# Designate files ############################################################
 @click.argument("file_names", nargs=-1, type=click.Path(exists=True))
 @click.option(
     "-r", "--recursive", is_flag=True, default=False, help="This will search all subfolders based on current directory."
 )
+# Output format ##############################################################
+@click.option(
+    "-o",
+    "--output-format",
+    type=click.Choice(["as-is", "html", "pdf"]),
+    default="as-is",
+    help="Output format. (Default: as-is)",
+)
+@click.option(
+    "--css",
+    type=str,
+    default="github-light",
+    help="CSS file path or preset ('github-light'/'github-dark'). Only for Markdown to HTML/PDF. (Default: github-light)",
+)
+# CLI options #################################################################
 @click.option(
     "-y", "--yes", is_flag=True, default=False, help="This will confirm the conversion without asking. (Default: False)"
 )
 @click.option("-s", "--skip-validation", is_flag=True, default=False, help="Skip the health check. (Default: False)")
 @click.option("--validation-only", is_flag=True, default=False, help="Only check the health. (Default: False)")
 @click.option("-v", "--verbose", count=True, help="Verbosity level from 0 to 2. --verbose:1, -v:1, -vv:2 (Default: 0)")
+# Others ######################################################################
 @click.option(
     "--version", is_flag=True, callback=_print_version, expose_value=False, is_eager=True, help="Show the current version."
 )
-def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: bool, validation_only: bool, verbose: int):
+def mmgcli(
+    file_names: List[str],
+    recursive: bool,
+    output_format: str,
+    css: str,
+    yes: bool,
+    skip_validation: bool,
+    validation_only: bool,
+    verbose: int,
+):
     # Check arguments
     # ^^^^^^^^^^^^^^^
     if not file_names and not recursive:
@@ -133,8 +161,8 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: b
 
     # Sort and List up
     # ^^^^^^^^^^^^^^^^
-    md_backlogs = []  # (item: BaseFileItem, base_doc: List[str], cfg: Config)
-    jn_backlogs = []  # (item: BaseFileItem, base_jn: Dict, cfg: Config)
+    md_backlogs = []  # (item: FileItem, base_doc: List[str], cfg: Config)
+    jn_backlogs = []  # (item: FileItem, base_jn: Dict, cfg: Config)
     for item in sorted(base_items, key=lambda x: x.abs_path):
         backlog = _process_file(item)
         if item.extension == "md":
@@ -155,15 +183,11 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: b
     # ^^^^^^^^^^^^^^^^^^^^
     if validation_only:
         if skip_validation:
-            click.secho(" => No health check was performed.", fg="yellow")
-            sys.exit(0)
-        all_healthy = md_healthy and jn_healthy
-        if all_healthy:
-            click.secho(" => All files are healthy.", fg="green")
-            sys.exit(0)
+            perform_exit(" => No health check was performed.", fg="yellow", code=0)
+        elif (md_healthy and jn_healthy):
+            perform_exit(" => All files are healthy.", fg="green", code=0)
         else:
-            click.secho(" => Some files are unhealthy.", fg="red")
-            sys.exit(1)
+            perform_exit(" => Some files are unhealthy.", fg="red", code=1)
     if not yes:
         if not query_yes_no("    Do you want to convert these files?"):
             sys.exit(0)
@@ -171,8 +195,8 @@ def mmgcli(file_names: List[str], recursive: bool, yes: bool, skip_validation: b
     # Convert
     # ^^^^^^^
     click.secho("----------------------", fg="cyan")
-    _convert_backlogs(md_backlogs, convert_base_doc, "md", save_md)
-    _convert_backlogs(jn_backlogs, convert_base_jupyter, "ipynb", save_jn)
+    _convert_backlogs(md_backlogs, convert_base_doc, output_format, css)
+    _convert_backlogs(jn_backlogs, convert_base_jupyter, output_format, css)
     click.secho("----------------------", fg="cyan")
     _msg = "files have" if is_plural else "file has"
     click.secho(f" => {base_count} base {_msg} been converted.\n", fg="cyan")

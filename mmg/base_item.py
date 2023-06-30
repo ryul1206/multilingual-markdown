@@ -5,8 +5,8 @@ import re
 
 
 @dataclass
-class BaseFileItem:
-    """A dataclass for the base file item.
+class FileItem:
+    """A dataclass for the file item.
 
     Attributes:
         norm_path (str): The normalized path of the base file.
@@ -39,7 +39,7 @@ def is_base_file(file_name: str) -> bool:
     return base.search(file_name) is not None
 
 
-def base_file_to_item(path: str, file_name: str) -> BaseFileItem:
+def base_file_to_item(path: str, file_name: str) -> FileItem:
     """Convert the base file name to the base file item.
 
     Args:
@@ -50,24 +50,24 @@ def base_file_to_item(path: str, file_name: str) -> BaseFileItem:
         ValueError: If the file name is not a base file.
 
     Returns:
-        BaseFileItem: The base file item.
+        FileItem: The base file item.
     """
     if not is_base_file(file_name):
         raise ValueError("The file name, {file_name}, is not a base file. It must be `*.base.md` or `*.base.ipynb`.")
     file_path = os.path.join(path, file_name)
     norm_path = os.path.normpath(file_path)
     extension = file_name.split(".")[-1]
-    return BaseFileItem(norm_path, extension)
+    return FileItem(norm_path, extension)
 
 
-def walk_base_file(path: str) -> Iterator[BaseFileItem]:
+def walk_base_file(path: str) -> Iterator[FileItem]:
     """Walk the given path and find all base files.
 
     Args:
         path (str): The path to walk.
 
     Returns:
-        Iterator[BaseFileItem]: The iterator of the base file items.
+        Iterator[FileItem]: The iterator of the base file items.
     """
     for path, _, files in os.walk(path):
         for file_name in files:
@@ -75,7 +75,7 @@ def walk_base_file(path: str) -> Iterator[BaseFileItem]:
                 yield base_file_to_item(path, file_name)
 
 
-def collect_base_files(file_names: List[str], recursive: bool) -> set[BaseFileItem]:
+def collect_base_files(file_names: List[str], recursive: bool) -> set[FileItem]:
     """Collect all base files from the given file names and the recursive flag.
 
     Args:
@@ -83,9 +83,9 @@ def collect_base_files(file_names: List[str], recursive: bool) -> set[BaseFileIt
         recursive (bool): The recursive flag.
 
     Returns:
-        set[BaseFileItem]: The set of the base file items.
+        set[FileItem]: The set of the base file items.
     """
-    base_items: set[BaseFileItem] = set()
+    base_items: set[FileItem] = set()
     for file_name in file_names:
         # Resolve a PowerShell bug related to file paths with specific names
         # `mmg` will throw an error when the file_name starts with ".\" or "./".

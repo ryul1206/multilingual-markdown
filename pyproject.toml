@@ -29,10 +29,12 @@ mmg = "mmg:cli.main"
 python = ">=3.7, <4"
 click = "^8"
 emoji = "^0.6"
+markdown = "^3.4.3"
+weasyprint = "^59.0"
+nbconvert = "^7.6.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
-flake8 = "^5"
 check-manifest = "^0.49"
 
 [tool.poetry.group.test.dependencies]
