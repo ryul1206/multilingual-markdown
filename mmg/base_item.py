@@ -88,7 +88,7 @@ def collect_base_files(file_names: List[str], recursive: bool) -> set[FileItem]:
     base_items: set[FileItem] = set()
     for file_name in file_names:
         # Resolve a PowerShell bug related to file paths with specific names
-        # `mmg` will throw an error when the file_name starts with ".\" or "./".
+        # The below line prevents the error when the file_name starts with ".\" or "./".
         if file_name.startswith(".\\") or file_name.startswith("./"):
             file_name = file_name[2:]
         base_items.add(base_file_to_item(".", file_name))

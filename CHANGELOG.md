@@ -18,6 +18,11 @@ Security 취약점이 있는 경우
 
 ## [Upcoming Release][unreleased]
 
+TODO2. [#12](https://github.com/ryul1206/multilingual-markdown/issues/12) Better README for Windows PowerShell
+TODO3. TEST 리포지토리 만들어서 pypi test에다 올려보고, 다운받고 윈도우에서 잘 돌아가는지 테스트해보기.
+TODO4. 정식 v2.0.0 릴리즈
+
+
 Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md) for upcoming release changes.
 
 - **Added** - Simple Python API for script usage [#13](https://github.com/ryul1206/multilingual-markdown/issues/13)
@@ -26,6 +31,7 @@ Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/mu
 - **Added** - Add "Skip Validation" command to the mmg CLI.
 - **Added** - Support Jupyter Notebook(.ipynb) [#13](https://github.com/ryul1206/multilingual-markdown/issues/13)
 - **Added** - Support for HTML, PDF output formats [#19](https://github.com/ryul1206/multilingual-markdown/issues/19)
+- **Added** - Publish documentation on ReadTheDocs [#17](https://github.com/ryul1206/multilingual-markdown/issues/17)
 - **Changed** - Use [Poetry](https://python-poetry.org/) for Python package management [#16](https://github.com/ryul1206/multilingual-markdown/issues/16)
 - **Fixed** - Bug in `remove_emoji` function that fails to remove all emojis [#23](https://github.com/ryul1206/multilingual-markdown/issues/23)
 - **Fixed** - Fixes and enhancements for code block tracking [#24](https://github.com/ryul1206/multilingual-markdown/issues/24)

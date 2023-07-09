@@ -3,6 +3,8 @@
 <!-- no suffix: en -->
 <!---------------------------->
 
+![MMG](docs/assets/mmg-logo-dark.jpg)
+
 <!-- [en] -->
 # Multilingual Markdown Generator
 
@@ -92,7 +94,7 @@ Bash, Zsh, WindowsPowerShellで使用できます。
 <!-- [jp] -->
 ### 作動方式
 <!-- [common] -->
-![how it works](how-it-works.png)
+![How It Works](docs/assets/how-it-works.png)
 
 <!-- [en] -->
 ### Features
