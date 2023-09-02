@@ -29,7 +29,32 @@ classifiers = [
 packages = [
 	{ include = "mmg" }, # Include the folder
 ]
-exclude = ["example", "tests", "PSmmg", ".vscode", ".github"]
+exclude = [
+	".github",
+	".venv",
+	".vscode",
+	"docs",
+	"examples",
+	"tests",
+]
+
+[tool.check-manifest]
+ignore = [
+	".github",
+	".github/*",
+	".venv",
+	".venv/*",
+	".vscode",
+	".vscode/*",
+	"docs",
+	"docs/*",
+	"examples",
+	"examples/*",
+	"tests",
+	"tests/*",
+	"CHANGELOG.md",
+	"READEME.base.md",
+]
 
 [tool.poetry.scripts]
 mmg = "mmg:cli.main"
@@ -52,20 +77,10 @@ pytest = "^7.3.1"
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.4.3"
 mkdocs-material = "^9.1.17"
-
-[tool.check-manifest]
-ignore = [
-	".github",
-	".github/*",
-	"CHANGELOG.md",
-	"READEME.base.md",
-	"examples",
-	"examples/*",
-	".vscode",
-	".vscode/*",
-	"PSmmg",
-	"PSmmg/*",
-]
+mkdocs-static-i18n = {extras = ["material"], version = "^1.0.2"}
+mkdocs-jupyter = "^0.24.2"
+mkdocstrings-python = "^1.6.0"
+mike = "^1.1.2"
 
 [build-system]
 requires = ["poetry-core"]

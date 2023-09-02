@@ -1,16 +1,23 @@
 site_name: MMG
+site_url: https://ryul1206.github.io/multilingual-markdown/
 repo_url: https://github.com/ryul1206/multilingual-markdown
-nav:
-  - Home: 'index.md'
-  - 'license.md'
+repo_name: multilingual-markdown
 
 theme:
   name: material
   language: en
   logo: assets/mmg-logo-dark-small.png
   favicon: assets/mmg-favicon-small.png
+  icon:
+    repo: fontawesome/brands/github-alt
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
   palette:
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -19,7 +26,6 @@ theme:
         name: Switch to dark mode
       primary: white
       accent: pink
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -29,31 +35,53 @@ theme:
       primary: black
       accent: yellow
 
+markdown_extensions:
+  - abbr
+
+copyright:
+  Copyright &copy; 2019 - 2023 Hong-ryul Jung |
+  <a href="#__consent">Change cookie settings</a>
+
 extra:
-  homepage: https://mmg.readthedocs.io/latest/
+  version:
+    provider: mike
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/?h=mike#versioning
   consent:
     title: Cookie consent
-    cookies:
-      analytics: Google Analytics
-      # TODO: https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/
-    description:
+    description: >-
       We use cookies to recognize your repeated visits and preferences, as well
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-  copyright:
-    Copyright &copy; 2019 - 2023 Hong-ryul Jung –
-    <a href="#__consent">Change cookie settings</a>
-  alternate:
-    - name: English
-      link: /
-      lang: en
-    - name: Français
-      link: /fr/
-      lang: fr
-    - name: 한국어
-      link: /ko/
-      lang: ko
-    - name: 日本語
-      link: /ja/
-      lang: ja
+
+plugins:
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: fr
+          name: Français
+          build: true
+        - locale: ko
+          name: 한국어
+          build: true
+        - locale: ja
+          name: 日本語
+          build: true
+  - search:
+      lang:
+        - en
+        - fr
+        # - ko  # Lunr.js doesn't support Korean yet
+        - ja
+  - mkdocstrings:
+      default_handler: python
+  - mkdocs-jupyter:
+      execute: false
+
+nav:
+  - Home: 'index.md'
+  - License: 'license.md'
