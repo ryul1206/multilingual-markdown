@@ -35,7 +35,8 @@ def main(fake: bool = True):
         return
     for tag, txt in converted_mds.items():
         file_name = f"./README.{tag}.md" if tag != cfg.no_suffix else "./README.md"
-        file_name = os.path.normpath(file_name)
+        file_name = os.path.join(os.path.dirname(__file__), file_name)
+        file_name = os.path.abspath(file_name)
         with open(file_name, "w", encoding="utf-8") as f:
             f.write(txt)
 

@@ -10,14 +10,20 @@ class FileItem:
 
     Attributes:
         norm_path (str): The normalized path of the base file.
+        abs_path (str): The absolute path of the base file.
         extension (str): The extension of the base file. `md` or `ipynb`.
     """
-    norm_path: str
+
+    _path: str
     extension: str
 
     @property
+    def norm_path(self) -> str:
+        return os.path.normpath(self._path)
+
+    @property
     def abs_path(self) -> str:
-        return os.path.abspath(self.norm_path)
+        return os.path.abspath(self._path)
 
     def __repr__(self):
         return shorten_path(self.norm_path)
@@ -53,34 +59,59 @@ def base_file_to_item(path: str, file_name: str) -> FileItem:
         FileItem: The base file item.
     """
     if not is_base_file(file_name):
-        raise ValueError("The file name, {file_name}, is not a base file. It must be `*.base.md` or `*.base.ipynb`.")
+        raise ValueError(f"The file name, {file_name}, is not a base file. It must be `*.base.md` or `*.base.ipynb`.")
     file_path = os.path.join(path, file_name)
     norm_path = os.path.normpath(file_path)
     extension = file_name.split(".")[-1]
     return FileItem(norm_path, extension)
 
 
-def walk_base_file(path: str) -> Iterator[FileItem]:
+def walk_base_file(path: str, recursive: bool) -> Iterator[FileItem]:
     """Walk the given path and find all base files.
 
     Args:
         path (str): The path to walk.
+        recursive (bool): The recursive flag.
 
     Returns:
         Iterator[FileItem]: The iterator of the base file items.
     """
-    for path, _, files in os.walk(path):
-        for file_name in files:
-            if is_base_file(file_name):
-                yield base_file_to_item(path, file_name)
+    file_info = []
+    if recursive:
+        for path, _, files in os.walk(path):
+            for file_name in files:
+                file_info.append((path, file_name))
+    else:
+        for file_name in os.listdir(path):
+            if os.path.isfile(os.path.join(path, file_name)):
+                file_info.append((path, file_name))
+    # Collect base files
+    for path, file_name in file_info:
+        if is_base_file(file_name):
+            yield base_file_to_item(path, file_name)
 
 
-def collect_base_files(file_names: List[str], recursive: bool) -> set[FileItem]:
-    """Collect all base files from the given file names and the recursive flag.
+def collect_bases_from_dir(dir: str, recursive: bool) -> set[FileItem]:
+    """Collect all base files from the given directory and the recursive flag.
+
+    Args:
+        dir (str): The directory to collect.
+        recursive (bool): The recursive flag.
+
+    Returns:
+        set[FileItem]: The set of the base file items.
+    """
+    base_items: set[FileItem] = set()
+    for item in walk_base_file(dir, recursive):
+        base_items.add(item)
+    return base_items
+
+
+def collect_bases_from_files(file_names: List[str]) -> set[FileItem]:
+    """Collect all base files from the given file names.
 
     Args:
         file_names (List[str]): The list of file names to collect.
-        recursive (bool): The recursive flag.
 
     Returns:
         set[FileItem]: The set of the base file items.
@@ -92,9 +123,6 @@ def collect_base_files(file_names: List[str], recursive: bool) -> set[FileItem]:
         if file_name.startswith(".\\") or file_name.startswith("./"):
             file_name = file_name[2:]
         base_items.add(base_file_to_item(".", file_name))
-    if recursive:
-        for item in walk_base_file("."):
-            base_items.add(item)
     return base_items
 
 

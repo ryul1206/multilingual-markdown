@@ -137,9 +137,12 @@ class HealthChecker:
         dc.check_doc(doc)
         # Get the tag count, warning, and error messages.
         self._tag_count = dc.tag_count
-        header = lambda x: f"Cell {x[0]}, Line {x[1]}: "
-        self._error.extend([header(indexing[line_num - 1]) + message for line_num, message in dc.error_messages])
-        self._warning.extend([header(indexing[line_num - 1]) + message for line_num, message in dc.warning_messages])
+
+        def _header(x):
+            return f"Cell {x[0]}, Line {x[1]}: "
+
+        self._error.extend([_header(indexing[line_num - 1]) + message for line_num, message in dc.error_messages])
+        self._warning.extend([_header(indexing[line_num - 1]) + message for line_num, message in dc.warning_messages])
 
 
 class DocChecker:

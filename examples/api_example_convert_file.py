@@ -5,8 +5,8 @@ import mmg.api as mmg
 
 def main():
     # Read a markdown file as a string
-    base_file: str = os.path.normpath("./sample.base.md")
-    base_file = os.path.join(os.path.dirname(__file__), base_file)
+    base_file = os.path.join(os.path.dirname(__file__), "./sample.base.md")
+    base_file = os.path.abspath(base_file)
     print(f"Reading file: {base_file}")
 
     with open(base_file, "r", encoding="utf-8") as f:

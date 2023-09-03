@@ -29,7 +29,8 @@ def main(fake: bool = True):
         print(f"Fake mode: skip saving file. Detected tags: {converted_mds.keys()}")
         return
     for tag, txt in converted_mds.items():
-        file_name = os.path.normpath(f"./{tag}.md")
+        file_name = os.path.join(os.path.dirname(__file__), f"./{tag}.md")
+        file_name = os.path.abspath(file_name)
         with open(file_name, "w", encoding="utf-8") as f:
             f.write(txt)
 
