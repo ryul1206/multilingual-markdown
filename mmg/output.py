@@ -1,10 +1,10 @@
 from typing import List, Dict
 import os
 import json
-import markdown     # Markdown to HTML
-import weasyprint   # HTML to PDF
-import nbconvert    # Jupyter Notebook to HTML
-import nbformat     # Dict to Jupyter Notebook
+import markdown  # Markdown to HTML
+import weasyprint  # HTML to PDF
+import nbconvert  # Jupyter Notebook to HTML
+import nbformat  # Dict to Jupyter Notebook
 from mmg.base_item import FileItem
 
 
@@ -28,23 +28,20 @@ def save_pdf(path, html: str):
     html.write_pdf(path)
 
 
-def handle_as_is(base_item: FileItem, suffix: str, content: any) -> FileItem:
-    target_item = FileItem(base_item.norm_path.replace(".base.", suffix), base_item.extension)
+def handle_as_is(target_item: FileItem, content: any):
     if target_item.extension == "md":
         save_md(target_item.norm_path, content)
     elif target_item.extension == "ipynb":
         save_jn(target_item.norm_path, content)
-    return target_item
 
 
-def handle_html_or_pdf(base_item: FileItem, suffix: str, output_format: str, css: str, content: any) -> FileItem:
+def handle_html_or_pdf(target_item: FileItem, input_format: str, css: str, content: any):
     """
-    Converts and saves the provided content into a file with the specified suffix and output format.
+    Saves the provided content into a HTML file or a PDF file.
 
     Args:
-        base_item (FileItem): Holds the file information of the source file.
-        suffix (str): The suffix for the target file in the format 'file_name.suffix.extension'.
-        output_format (str): The desired output format - either "html" or "pdf".
+        target_item (FileItem): Holds the file information of the target file.
+        input_format (str): The format of the input content - either "md" or "ipynb".
         css (str): This parameter indicates the styling used for the HTML conversion.
             It can be a path to a CSS file, or one of the two preset values: "github-light" or "github-dark".
             This option is mandatory, regardless of the output format.
@@ -53,27 +50,17 @@ def handle_html_or_pdf(base_item: FileItem, suffix: str, output_format: str, css
 
     Raises:
         ValueError: Raised when an unsupported output format is specified.
-
-    Returns:
-        FileItem: Holds the file information of the newly created file.
     """
-    # Save function
-    if output_format not in ["html", "pdf"]:
-        raise ValueError(f"Invalid output format: {output_format} (Should be 'html' or 'pdf'.)")
-    save_func = save_html if output_format == "html" else save_pdf
-    # Target item
-    target_item = FileItem(
-        base_item.norm_path.replace(f".base.{base_item.extension}", f"{suffix}{output_format}"),
-        output_format,
-    )
     # Convert to HTML
-    if base_item.extension == "md":
+    if input_format == "md":
         html = convert_md_to_html("\n".join(content), css=css)
-    elif base_item.extension == "ipynb":
+    elif input_format == "ipynb":
         html = convert_jupyter_to_html(content)
     # Save
-    save_func(target_item.norm_path, html)
-    return target_item
+    if target_item.extension == "html":
+        save_html(target_item.norm_path, html)
+    elif target_item.extension == "pdf":
+        save_pdf(target_item.norm_path, html)
 
 
 def convert_md_to_html(md: str, css: str):

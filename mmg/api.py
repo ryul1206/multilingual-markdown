@@ -176,6 +176,7 @@ def _health_check(
         status: HealthStatus = hc.health_check(base, cfg=cfg, extension=extension)
         if print_log:
             log = hc.cli_log(file_name=file_name, verbosity=verbosity)
+            print("\n".join(log))
         if (not force_convert) and (status != HealthStatus.HEALTHY):
             error_messages = "\n".join(hc.error_messages)
             raise BadConfigError(f"Health check failed.\n - Status: {status.name}\n - Error:\n{error_messages}")
