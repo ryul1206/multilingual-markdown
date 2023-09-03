@@ -1,0 +1,1046 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ryul1206.github.io/multilingual-markdown/unstable/ja/base/references/command-tags.base/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/mmg-favicon-small.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+    
+    
+      
+        <title>Command tags.base - MMG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e669242.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-tags" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../../" title="MMG" class="md-header__button md-logo" aria-label="MMG" data-md-component="logo">
+      
+  <img src="../../../../assets/mmg-logo-dark-small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command tags.base
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../base/references/command-tags.base/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../../fr/base/references/command-tags.base/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../../ko/base/references/command-tags.base/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="共有" aria-label="共有" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ryul1206/multilingual-markdown" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    multilingual-markdown
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="MMG" class="md-nav__button md-logo" aria-label="MMG" data-md-component="logo">
+      
+  <img src="../../../../assets/mmg-logo-dark-small.png" alt="logo">
+
+    </a>
+    MMG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ryul1206/multilingual-markdown" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    multilingual-markdown
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to use
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            How to use
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/advanced-usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/update-and-uninstall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update and uninstall
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/command-tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<!---------------------------->
+<!-- multilingual suffix: en, fr, ko, ja -->
+<!---------------------------->
+
+<!-- [en] -->
+<h1 id="command-tags">Command Tags</h1>
+<!-- [ko] -->
+<h1 id="_1">명령어 태그</h1>
+<!-- [fr] -->
+<h1 id="marqueurs">Marqueurs</h1>
+<!-- [ja] -->
+<h1 id="_2">コマンドタグ</h1>
+<!-- [common] -->
+
+<!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
+
+<!-- [en] -->
+<h2 id="headers">Headers</h2>
+<p>Headers must be declared before the body begins.</p>
+<!-- [ko] -->
+<h2 id="_3">헤더</h2>
+<p>헤더는 반드시 본문이 시작하기 전에 선언되어야 합니다.</p>
+<!-- [fr] -->
+<h2 id="titres">Titres</h2>
+<p>Les titres doivent être déclarés avant le corps de texte.</p>
+<!-- [ja] -->
+<h2 id="_4">ヘッダ</h2>
+<p>ヘッダは、必ず本体を開始する前に宣言する必要があります。</p>
+<!-- [common] -->
+
+<!-- [en] -->
+<ol>
+<li>
+<p><strong>Suffix Declaration</strong></p>
+<p>Declare the language you want to use. The following example declares <code>en</code> and <code>kr</code> and others as keywords. These keywords are used as suffixes.</p>
+</li>
+</ol>
+<!-- [ko] -->
+<ol>
+<li>
+<p><strong>접미사 선언</strong></p>
+<p>사용할 언어를 선언하십시오. 다음 예제는 <code>en</code>과 <code>kr</code>을 키워드로 선언하였습니다. 이 키워드들은 접미사로 사용됩니다.</p>
+</li>
+</ol>
+<!-- [fr] -->
+<ol>
+<li>
+<p><strong>Déclaration des suffixes</strong></p>
+<p>Déclarez les langues que vous souhaitez utiliser. Dans l'exemple suivant, on déclare les mots-clés <code>en</code>, <code>kr</code> et <code>fr</code> et quelque autres. Ces mots-clés seront utilisés comme suffixes des noms de fichier et comme marqueurs dans les fichiers <code>base.md</code>.</p>
+</li>
+</ol>
+<!-- [ja] -->
+<ol>
+<li>
+<p><strong>サフィックス宣言</strong></p>
+<p>使用する言語を宣言します。次の例では、enとkrをキーワードで宣言しました。このキーワードは、接尾辞として使用されます。</p>
+</li>
+</ol>
+<!-- [common] -->
+
+<pre><code>```markdown
+&lt;!-- multilingual suffix: en, kr, fr, es, jp, cn --&gt;
+```
+</code></pre>
+<!-- [en] -->
+<ol>
+<li>
+<p><strong>Hidden Suffix</strong> (Optional)</p>
+<p>The <code>no suffix</code> option can prevent the suffix from being appended when creating the file. In other words, setting <code>no suffix</code> to <code>en</code> will generate <code>FileName.md</code> instead of <code>FileName.en.md</code>. This is useful because the main <code>README</code> in <strong>GitHub</strong> is not recognized when it has a suffix.</p>
+</li>
+</ol>
+<!-- [ko] -->
+<ol>
+<li>
+<p><strong>접미사 숨기기</strong> (필수 아님)</p>
+<p><code>no suffix</code> 옵션은 파일을 생성할 때 접미사가 붙는 것을 방지할 수 있습니다. 다시 말하자면 <code>no suffix</code>를 <code>en</code>으로 설정하면 <code>파일이름.en.md</code>가 아니라 <code>파일이름.md</code>가 생성됩니다. <strong>GitHub</strong>에서 메인 <code>README</code>는 접미사가 붙으면 인식이 안되기 때문에 이 기능이 유용합니다.</p>
+</li>
+</ol>
+<!-- [fr] -->
+<ol>
+<li>
+<p><strong>Suffixe invisible</strong> (facultatif)</p>
+<p>L'option <code>no suffix</code> évite l'ajout de l'un des suffixes lors de la création des fichiers. Ainsi, appliquer <code>no suffix</code>à la langue <code>en</code> génèrera <em><code>fichier</code></em><code>.md</code> au lieu de <em><code>fichier</code></em><code>.en.md</code>. Cela est utile par exemple pour le <code>README</code> obligatoire dans  <strong>GitHub</strong> qui n sera pas reconnu s'il a un suffixe (par exemple <code>README.en.md</code>).</p>
+</li>
+</ol>
+<!-- [ja] -->
+<ol>
+<li>
+<p><strong>サフィックスを非表示</strong>（必須ではない）</p>
+<p><code>no suffix</code>オプションは、ファイルを作成するときにサフィックスがつくのを防ぐことができます。言い換えればno suffixをenに設定すると、<code>ファイル名.en.md</code>ではなく、<code>ファイル名.md</code>が生成されます。<strong>GitHub</strong>からメイン<code>README</code>はサフィックスが付く認識にならないので、この機能が便利です。</p>
+</li>
+</ol>
+<!-- [common] -->
+
+<pre><code>```markdown
+&lt;!-- no suffix: en --&gt;
+```
+</code></pre>
+<!-- [en] -->
+<h2 id="badges">Badges</h2>
+<!-- [ko] -->
+<h2 id="_5">뱃지 달기</h2>
+<!-- [fr] -->
+<h2 id="badges_1">Badges</h2>
+<!-- [ja] -->
+<h2 id="_6">バッジ付け</h2>
+<!-- [common] -->
+
+<p><a href="https://github.com/ryul1206/multilingual-markdown"><img alt="Multilingual Markdown Generator" src="https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg" /></a>
+<a href="https://github.com/ryul1206/multilingual-markdown"><img alt="Multilingual Markdown Generator" src="https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg" /></a>
+<a href="https://github.com/ryul1206/multilingual-markdown"><img alt="Multilingual Markdown Generator" src="https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg" /></a>
+<a href="https://github.com/ryul1206/multilingual-markdown"><img alt="Multilingual Markdown Generator" src="https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg" /></a>
+...</p>
+<pre><code class="language-markdown">[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
+</code></pre>
+<!-- [en] -->
+<h2 id="main-text">Main Text</h2>
+<p>Everything that the parser reads after the tag below is recognized as the main text. (So you have to write the header before main).</p>
+<!-- [ko] -->
+<h2 id="_7">본문</h2>
+<p>파서가 아래의 태그들를 읽는 순간부터 그 이후에 읽는 모든 것은 메인 텍스트로 인식합니다. (그래서 헤더를 메인 이전에 적어야 합니다.)</p>
+<!-- [fr] -->
+<h2 id="corps-de-texte">Corps de texte</h2>
+<p>Tout ce qui suit le marqueur est interprété comme corps principal de texte, donc vous devez placer les titres avant le texte.</p>
+<!-- [ja] -->
+<h2 id="_8">本文</h2>
+<p>パーサが下のタグ立ち寄る読む瞬間から、その後に読むすべてはメインテキストとして認識します。（だからヘッダをメインの前に書かなければならいます。）</p>
+<!-- [common] -->
+
+<!-- [en] -->
+<ol>
+<li><strong>Keywords</strong></li>
+</ol>
+<!-- [ko] -->
+<ol>
+<li><strong>키워드</strong></li>
+</ol>
+<!-- [fr] -->
+<ol>
+<li><strong>Mots-clés</strong></li>
+</ol>
+<!-- [ja] -->
+<ol>
+<li><strong>キーワード</strong></li>
+</ol>
+<!-- [common] -->
+<!-- [en] -->
+<pre><code>1. Language Classification
+
+    The tags that distinguish languages are written in the form `&lt;!-- [keyword] --&gt;`. If one keyword is recognized, it will be recognized as that keyword until another keyword is seen.
+</code></pre>
+<!-- [ko] -->
+<pre><code>1. 언어 분류
+
+    언어를 구분하는 태그는 `&lt;!-- [키워드] --&gt;` 같은 형태로 작성합니다. 하나의 키워드가 인식되면 다른 키워드가 나타날 때까지 해당 키워드로 인식됩니다.
+</code></pre>
+<!-- [fr] -->
+<pre><code>1. Classification de langue
+
+    Les marqueurs qui distinguent les languages sont écrits sous la forme `&lt;!-- [marqueur] --&gt;`. Si un marqueur est reconnu, il sera retenu jusqu'à ce qu'un autre soit reconnu.
+</code></pre>
+<!-- [ja] -->
+<pre><code>1. 言語分類
+
+    言語を区別するタグは、`&lt;!-- [キーワード] --&gt;`同じ形で作成します。一つのキーワードが認識されると、他のキーワードが表示されるまで、そのキーワードとして認識されます。
+</code></pre>
+<!-- [common] -->
+
+<pre><code>    ```markdown
+    &lt;!-- [en] --&gt;
+    &lt;!-- [ko] --&gt;
+    &lt;!-- [fr] --&gt;
+    &lt;!-- [es] --&gt;
+    &lt;!-- [ja] --&gt;
+    &lt;!-- [cn] --&gt;
+    ...
+    ```
+</code></pre>
+<!-- [en] -->
+<pre><code>1. Common Section
+
+    You can use the 'common' keyword to create a common entry for all files to be generated.
+</code></pre>
+<!-- [ko] -->
+<pre><code>1. 공통 영역
+
+    생성될 모든 파일에 공통적으로 들어갈 내용은 `common` 키워드를 사용하여 작성하면 됩니다.
+</code></pre>
+<!-- [ja] -->
+<pre><code>1. 共通領域
+
+    生成されるすべてのファイルに共通に入る内容は`common`、キーワードを使用して作成します。
+</code></pre>
+<!-- [fr] -->
+<pre><code>1. Section commune
+
+    Vous pouvez utiliser le mot-clé 'common' pour une partie de texte commune à toutes les langues, par exemple pour des illustrations.
+</code></pre>
+<!-- [common] -->
+
+<pre><code>    ```markdown
+    &lt;!-- [common] --&gt;
+    ```
+</code></pre>
+<!-- [en] -->
+<pre><code>1. Ignored Section
+
+    Sometimes you do not want to include some items such as comments or TODOs in the files to be generated. If so, use the `ignore` keyword.
+</code></pre>
+<!-- [ko] -->
+<pre><code>1. 무시되는 영역
+
+    주석이나 TODO와 같은 몇 가지 항목들은 생성될 파일에 포함하고 싶지 않는 경우가 있습니다. 그런 경우 `ignore` 키워드를 사용하세요.
+</code></pre>
+<!-- [fr] -->
+<pre><code>1. Section ignorée
+
+    Vous pouvez exclure des parties du texte telles que les blocs de commentaires ou les TODO avec le mot-clé `ignore`.
+</code></pre>
+<!-- [ja] -->
+<pre><code>1. 無視される領域
+
+    コメントやTODOなどのいくつかの項目は、生成されるファイルに含ましたくない場合があります。そのような場合`ignore`、キーワードを使用します。
+</code></pre>
+<!-- [common] -->
+
+<pre><code>    ```markdown
+    &lt;!-- [ignore] --&gt;
+    ```
+</code></pre>
+<!-- [en] -->
+<ol>
+<li>
+<p><strong>Table of contents</strong></p>
+<ul>
+<li>The tags below are automatically replaced to the table of contents by the generator. The level of the table of contents can be determined through the <code>level</code> option. The highest-level of title(<code># title</code>) is level 1 because it is <code>&lt;h1&gt;</code> in HTML.</li>
+<li><strong>(Caution)</strong> Skipping header levels in Markdown may result in the omission or incorrect formatting of subheadings. Therefore, it is recommended not to skip header levels. In other words, the subheading for <code>##</code> should be <code>###</code>. While skipping header levels won't cause errors, please ensure that the generated table of contents appears correctly.</li>
+</ul>
+</li>
+</ol>
+<!-- [ko] -->
+<ol>
+<li>
+<p><strong>목차</strong></p>
+<ul>
+<li>아래 태그는 생성기에 의해 목차로 자동교체됩니다. 목차의 수준은 <code>level</code> 부분을 통해 정할 수 있습니다. 가장 큰 제목(<code># 제목</code>)은 html에서 <code>&lt;h1&gt;</code>이기 때문에 <code>level 1</code>입니다.</li>
+<li><strong>(주의)</strong> 마크다운의 제목수준을 건너뛰면 하위 제목이 생략되거나 잘못 표시될 수 있으므로, 제목수준을 건너뛰지 않는 것이 좋습니다. 다시말해, <code>##</code>의 하위 제목은 <code>###</code> 이여야 합니다. 제목수준을 건너뛰어도 에러가 발생하지는 않지만, 생성된 목차가 괜찮은지 확인해주세요.</li>
+</ul>
+</li>
+</ol>
+<!-- [fr] -->
+<ol>
+<li>
+<p><strong>Table des matières</strong></p>
+<ul>
+<li>Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option <code>level</code>. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown <code># titre</code> et aux tags HTML <code>&lt;H1&gt;</code>.</li>
+<li><strong>(Attention)</strong> Passer des niveaux d'en-tête dans Markdown peut entraîner l'omission ou le mauvais formatage des sous-titres. Par conséquent, il est recommandé de ne pas sauter de niveaux d'en-tête. En d'autres termes, le sous-titre pour <code>##</code> devrait être <code>###</code>. Bien que sauter des niveaux d'en-tête ne provoque pas d'erreurs, veuillez vous assurer que la table des matières générée s'affiche correctement.</li>
+</ul>
+</li>
+</ol>
+<!-- [ja] -->
+<ol>
+<li>
+<p><strong>目次</strong></p>
+<ul>
+<li>次のタグは、ジェネレータによって本文に自動的に置き換えられます。目次のレベルは、<code>level</code>部分を介してすることができます。最大のタイトル（<code># 題目</code>）はhtmlで<code>&lt;h1&gt;</code>あるため<code>level 1</code>です。</li>
+<li><strong>(注意)</strong> Markdownで見出しのレベルをスキップすると、副見出しの欠落や誤った書式設定が生じる可能性があります。そのため、見出しのレベルをスキップしないことをおすすめします。言い換えれば、<code>##</code>の副見出しは<code>###</code>であるべきです。見出しのレベルをスキップしてもエラーは発生しませんが、生成された目次が正しく表示されているかどうかを確認してください。</li>
+</ul>
+</li>
+</ol>
+<!-- [common] -->
+
+<pre><code>```markdown
+&lt;!-- [[ multilingual toc: level=2~3 ]] --&gt;
+```
+</code></pre>
+<!-- [en] -->
+<pre><code>1. **`level` option**
+    - There are four ways to mark `level`. You can change the numbers below.
+        - `level=2`: Make the 2nd level to table of contents.
+        - `level=2~`: Make the 2nd ~ 9th level to table of contents.
+        - `level=~4`: Make the 1st ~ 4th level to table of contents.
+        - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
+    - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
+    - **CAUTION💥**: If you omit this `level`, the parser will not recognize it.
+    - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
+</code></pre>
+<!-- [ko] -->
+<pre><code>1. **`level` 옵션**
+    - `level`을 표기하는 방법은 총 4가지입니다. 여러분의 필요에 따라 숫자는 바꾸시면 됩니다.
+        - `level=2`: 2수준의 제목만 목차로 만듭니다.
+        - `level=2~`: 2~9수준의 제목만 목차로 만듭니다.
+        - `level=~4`: 1~4수준의 제목만 목차로 만듭니다.
+        - `level=2~4`: 2~4수준의 제목만 목차로 만듭니다.
+    - 하나의 문서에서 `table of contents` 태그는 여러번 쓸 수 있고, 매번 다른 `level` 옵션을 줄 수도 있습니다.
+    - **주의💥**: 만약 `level`을 생략하면 파서가 인식하지 못합니다.
+    - **주의💥**: 목차 태그는 자동으로 현재 키워드를 `common`으로 변경합니다. 그래서 목차 태그 또한 암묵적으로 `common`에 속합니다.
+</code></pre>
+<!-- [fr] -->
+<pre><code>1. **Option `level`**
+    - Les niveaux acceptés dans la table des matières par l'option `level` vont de 1 à 9 et sont indiqués avec un niveau de départ et un niveau de fin séparés par une tilde `~`. Si vous ne spécifiez pas le premier numéro, les niveaux commenceront au premier et si vous ne spécifiez pas le second numéro, les niveaux seront pris jusqu'au neuvième. Adaptez les nombres des exemples suivants selon vos besoins.
+        - `level=2`: Mettre uniquement le niveau 2 dans la table des matières.
+        - `level=2~`: Mettre les niveaux 2 à 9 dans la table des matières.
+        - `level=~4`: Mettre les niveaux 1 à 4 dans la table des matières.
+        - `level=2~4`: Mettre les niveaux 2 à 4 dans la table des matières..
+    - Vous pouvez écrire les marqueurs de la table des matières plusieurs fois dans le document et spécifier différentes options `level` à chaque fois.
+    - **ATTENTION💥**: si vous ommettez `level` le script ignorera la commande.
+    - **ATTENTION💥**: le marqueur `table of contents` change automatiquement le marqueur de section pour `common` donc les commandes de la table des matières concernent toutes les langues, et vous devez réindiquer un marqueur de langue par la suite.
+</code></pre>
+<!-- [ja] -->
+<pre><code>1. **`level`オプション**
+    - `level`を表記する方法は、合計4つあります。お客様のニーズに応じて、数字は変えたらされます。
+        - `level=2`：2レベルの見出しのみ目次にします。
+        - `level=2~`：2〜9レベルの見出しのみ目次にします。
+        - `level=~4`：1〜4レベルの見出しのみ目次にします。
+        - `level=2~4`：2〜4レベルの見出しのみ目次にします。
+    - 1つの記事で`table of contents`タグは何度も書くことができ、毎回異なる`level`オプションを与えることもできます。
+    - **注意💥**：もし`level`を省略すると、パーサが認識しない。
+    - **注意💥**：目次タグは、自動的に現在のキーワードを`common`変更します。だから目次タグも暗黙的に`common`に属します。
+</code></pre>
+<!-- [en] -->
+<pre><code>2. **`no-emoji` option**
+    - You may want to subtract emoji from the table of contents while inserting emoji in a section title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
+</code></pre>
+<!-- [ko] -->
+<pre><code>2. **`no-emoji` 옵션**
+    - 섹션 제목에는 이모티콘을 넣으면서 목차에서는 이모티콘을 지우고 싶을 때가 있습니다.😱 만약 당신이 이와 같은 상황이라면, 아래와 같이 `no-emoji` 옵션을 적용하세요.😎
+</code></pre>
+<!-- [fr] -->
+<pre><code>2. **Option `no-emoji`**
+    - Vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières.😱 dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
+</code></pre>
+<!-- [ja] -->
+<pre><code>2. **`no-emoji`オプション**
+    - セクションのタイトルには、絵文字を入れながら、目次では、絵文字を消したいときがあります。😱 もしあなたがこのような状況であれば、以下のように`no-emoji`オプションを適用します。😎
+</code></pre>
+<!-- [common] -->
+
+<pre><code>    ```markdown
+    &lt;!-- [[ multilingual toc: level=2~3 no-emoji ]] --&gt;
+    ```
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2019 - 2023 Hong-ryul Jung | <a href="#__consent">Change cookie settings</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">サイトの設定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>
