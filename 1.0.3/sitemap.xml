@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/base/index.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/base/index.base/"/>
-    </url>
-    <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/base/license.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/base/license.base/"/>
-    </url>
-    <url>
         <loc>https://mmg.ryul1206.dev/1.0.3/</loc>
         <lastmod>2023-09-03</lastmod>
         <changefreq>daily</changefreq>
@@ -35,24 +17,6 @@
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/license/"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/license/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/license/"/>
-    </url>
-    <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/fr/base/index.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3/fr/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/base/index.base/"/>
-    </url>
-    <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/fr/base/license.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3/fr/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/base/license.base/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/1.0.3/fr/</loc>
@@ -73,24 +37,6 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/license/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/ko/base/index.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3/ko/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/base/index.base/"/>
-    </url>
-    <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/ko/base/license.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3/ko/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/base/license.base/"/>
-    </url>
-    <url>
         <loc>https://mmg.ryul1206.dev/1.0.3/ko/</loc>
         <lastmod>2023-09-03</lastmod>
         <changefreq>daily</changefreq>
@@ -107,24 +53,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3license/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/license/"/>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3ja/license/"/>
-    </url>
-    <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/ja/base/index.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3/ja/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/base/index.base/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/base/index.base/"/>
-    </url>
-    <url>
-        <loc>https://mmg.ryul1206.dev/1.0.3/ja/base/license.base/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/1.0.3/ja/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/1.0.3base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/1.0.3fr/base/license.base/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/1.0.3ko/base/license.base/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/1.0.3/ja/</loc>
