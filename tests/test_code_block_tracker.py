@@ -226,7 +226,7 @@ scenarios = {
             (CB, "        ```"),
             (no, "    This is not a code line."),
             (CB, "    ```"),
-            (no, ""),
+            (CB, ""),
             (no, "This is not a code line."),
         ]
     ),
@@ -239,11 +239,29 @@ scenarios = {
             (CB, "    ```md"),
             (CB, "    This is a code line."),
             (CB, "        ```"),
-            (no, ""),
+            (CB, ""),
             (no, "This is not a code line."),
             (CB, "```"),
             (CB, ""),
             (CB, "This is a code line."),
+        ]
+    ),
+    "Tags in indented block": Scenario(
+        [
+            (no, "        La validation échoue car B est manquant."),
+            (no, "<!-- [common] -->"),
+            (no, ""),
+            (CB, "    ```markdown"),
+            (CB, "    <!-- multilingual suffix: A, B, C -->"),
+            (CB, ""),
+            (CB, "    <!-- [A] -->"),
+            (CB, "    Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+            (CB, "    <!-- [C] -->"),
+            (CB, "    Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+            (CB, "    ```"),
+            (no, ""),
+            (no, "<!-- [ko] -->"),
+            (no, "=== Validation 통과"),
         ]
     ),
 }

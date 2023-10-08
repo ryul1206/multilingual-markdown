@@ -102,8 +102,8 @@ def flag_code_block_lines(doc: List[str]) -> List[bool]:
                 result[i] = True
                 cb_indent = indent
             continue
-        # Previous line is in a code block
-        if cb_indent > indent:
+        # Previous line is in a code block (when line is not empty)
+        if (cb_indent > indent) and (line.strip() != ""):
             last_backtick_size = 0
         else:
             result[i] = True
