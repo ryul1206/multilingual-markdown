@@ -54,6 +54,5 @@ jobs:
       - run: poetry run mike deploy --push --update-aliases unstable
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/dev')
       # Deploy with Mike (when docs branch is pushed)
-      # - run: poetry run mike deploy --push --update-aliases ${{ steps.mmg_version.outputs.VERSION }} latest
-      - run: echo "${{ steps.mmg_version.outputs.VERSION }}"
+      - run: poetry run mike deploy ${{ steps.mmg_version.outputs.VERSION }} latest --push --update-aliases
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/docs')
