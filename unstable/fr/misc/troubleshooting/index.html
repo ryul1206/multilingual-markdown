@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://mmg.ryul1206.dev/unstable/fr/misc/troubleshooting/">
+        <link rel="canonical" href="https://mmg.ryul1206.dev/unstable/unstable/fr/misc/troubleshooting/">
       
       
         <link rel="prev" href="../../programming-guide/advanced-reference/">
@@ -851,6 +851,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#les-fichiers-markdown-ne-sont-pas-convertis-correctement-lorsque-des-balises-html-sont-incluses" class="md-nav__link">
+    Les fichiers Markdown ne sont pas convertis correctement lorsque des balises HTML sont incluses
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -967,6 +974,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#les-fichiers-markdown-ne-sont-pas-convertis-correctement-lorsque-des-balises-html-sont-incluses" class="md-nav__link">
+    Les fichiers Markdown ne sont pas convertis correctement lorsque des balises HTML sont incluses
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -987,10 +1001,10 @@
 
 <h1 id="depannage">Dépannage</h1>
 <div class="admonition note">
-<p><a href="/misc/troubleshooting"><strong>English</strong></a> |
+<p><a href="/unstable/unstable/misc/troubleshooting"><strong>English</strong></a> |
 Français |
-<a href="/ko/misc/troubleshooting"><strong>한국어</strong></a> |
-<a href="/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
+<a href="/unstable/unstable/ko/misc/troubleshooting"><strong>한국어</strong></a> |
+<a href="/unstable/unstable/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
 </div>
 <p>Cette page décrit les solutions aux problèmes connus.</p>
 <h2 id="weasyprint-ne-peut-pas-importer-des-bibliotheques-externes">WeasyPrint ne peut pas importer des bibliothèques externes</h2>
@@ -1022,6 +1036,7 @@ Français |
 <div class="highlight"><pre><span></span><code><span class="n">GLib-GIO-WARNING</span> <span class="p">**:</span> <span class="n">13</span><span class="p">:</span><span class="n">19</span><span class="p">:</span><span class="n">49</span><span class="p">.</span><span class="n">232</span><span class="p">:</span> <span class="n">Unexpectedly</span><span class="p">,</span> <span class="n">UWP</span> <span class="n">app</span> <span class="p">`</span><span class="n">Clipchamp</span><span class="p">.</span><span class="n">Clipchamp_2</span><span class="p">.</span><span class="n">7</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">0_neutral__yxz26nhyzhsrt</span><span class="s1">&#39; (AUMId `Clipchamp.Clipchamp_yxz26nhyzhsrt!App&#39;</span><span class="p">)</span> <span class="n">supports</span> <span class="n">41</span> <span class="n">extensions</span> <span class="n">but</span> <span class="n">has</span> <span class="n">no</span> <span class="n">verbs</span>
 </code></pre></div>
 <p><strong>Référence</strong>: <a href="https://stackoverflow.com/a/71053742/17167856">https://stackoverflow.com/a/71053742/17167856</a></p>
+<h2 id="les-fichiers-markdown-ne-sont-pas-convertis-correctement-lorsque-des-balises-html-sont-incluses">Les fichiers Markdown ne sont pas convertis correctement lorsque des balises HTML sont incluses</h2>
 <p>Pour générer des HTML, MMG utilise le <a href="https://github.com/Python-Markdown/markdown">package markdown</a> pour les fichiers markdown.
 Et lors de la génération de PDF, il convertit d'abord en HTML puis en PDF.</p>
 <p>Cependant, lorsque le markdown contient des balises HTML, il peut ne pas être converti correctement dans les cas suivants.

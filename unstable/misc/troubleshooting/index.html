@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://mmg.ryul1206.dev/unstable/misc/troubleshooting/">
+        <link rel="canonical" href="https://mmg.ryul1206.dev/unstable/unstable/misc/troubleshooting/">
       
       
         <link rel="prev" href="../../programming-guide/advanced-reference/">
@@ -849,6 +849,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#markdown-files-are-not-converted-properly-when-html-tags-are-included" class="md-nav__link">
+    Markdown files are not converted properly when HTML tags are included
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -965,6 +972,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#markdown-files-are-not-converted-properly-when-html-tags-are-included" class="md-nav__link">
+    Markdown files are not converted properly when HTML tags are included
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -986,9 +1000,9 @@
 <h1 id="troubleshooting">Troubleshooting</h1>
 <div class="admonition note">
 <p>English |
-<a href="/fr/misc/troubleshooting"><strong>Français</strong></a> |
-<a href="/ko/misc/troubleshooting"><strong>한국어</strong></a> |
-<a href="/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
+<a href="/unstable/unstable/fr/misc/troubleshooting"><strong>Français</strong></a> |
+<a href="/unstable/unstable/ko/misc/troubleshooting"><strong>한국어</strong></a> |
+<a href="/unstable/unstable/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
 </div>
 <p>This page describes solutions to known issues.</p>
 <h2 id="weasyprint-cannot-import-external-libraries">WeasyPrint cannot import external libraries</h2>
@@ -1020,6 +1034,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">GLib-GIO-WARNING</span> <span class="p">**:</span> <span class="n">13</span><span class="p">:</span><span class="n">19</span><span class="p">:</span><span class="n">49</span><span class="p">.</span><span class="n">232</span><span class="p">:</span> <span class="n">Unexpectedly</span><span class="p">,</span> <span class="n">UWP</span> <span class="n">app</span> <span class="p">`</span><span class="n">Clipchamp</span><span class="p">.</span><span class="n">Clipchamp_2</span><span class="p">.</span><span class="n">7</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">0_neutral__yxz26nhyzhsrt</span><span class="s1">&#39; (AUMId `Clipchamp.Clipchamp_yxz26nhyzhsrt!App&#39;</span><span class="p">)</span> <span class="n">supports</span> <span class="n">41</span> <span class="n">extensions</span> <span class="n">but</span> <span class="n">has</span> <span class="n">no</span> <span class="n">verbs</span>
 </code></pre></div>
 <p><strong>Reference</strong>: <a href="https://stackoverflow.com/a/71053742/17167856">https://stackoverflow.com/a/71053742/17167856</a></p>
+<h2 id="markdown-files-are-not-converted-properly-when-html-tags-are-included">Markdown files are not converted properly when HTML tags are included</h2>
 <p>To generate HTMLs, MMG uses the <a href="https://github.com/Python-Markdown/markdown">markdown package</a> for markdown files.
 And when generating PDFs, it first converts to HTML and then converts to PDF.</p>
 <p>However, when markdown contains HTML tags, it may not be converted properly in the following cases.
