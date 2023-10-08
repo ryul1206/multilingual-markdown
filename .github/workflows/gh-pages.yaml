@@ -10,6 +10,8 @@ permissions:
 
 jobs:
   deploy:
+    if: ${{ endsWith(github.ref, 'refs/heads/dev') || endsWith(github.ref, 'refs/heads/docs') }}
+
     runs-on: ubuntu-latest
     steps:
       # Git pull (to prevent the fallowing error)
@@ -50,7 +52,7 @@ jobs:
 
       # Deploy with Mike (when dev branch is pushed)
       - run: poetry run mike deploy --push --update-aliases unstable
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/dev')
+        if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/dev')
       # Deploy with Mike (when docs branch is pushed)
       - run: poetry run mike deploy --push --update-aliases ${{ steps.mmg_version.outputs.VERSION }} latest
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/docs')
+        if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/docs')
