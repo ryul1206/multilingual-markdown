@@ -44,8 +44,8 @@ jobs:
         run: echo "VERSION=$(poetry version | cut -d' ' -f2)" >> $env:GITHUB_OUTPUT
 
       # Deploy with Mike (when dev branch is pushed)
-      - run: poetry run mike deploy --push --update-aliases unstable --force
+      - run: poetry run mike deploy --push --update-aliases unstable
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/dev')
       # Deploy with Mike (when docs branch is pushed)
-      - run: poetry run mike deploy --push --update-aliases ${{ steps.mmg_version.outputs.VERSION }} latest --force
+      - run: poetry run mike deploy --push --update-aliases ${{ steps.mmg_version.outputs.VERSION }} latest
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/docs')

@@ -42,10 +42,10 @@ Please make sure the package version in `pyproject.toml` is correct before pushi
 
 ```sh
 mmg -b ./mmg.yml
-mike deploy --push --update-aliases $VERSION $TAGS --force
+mike deploy --push --update-aliases $VERSION $TAGS
 ```
 
-- `$VERSION` must be a valid [SemVer](https://semver.org/) version.
+- `$VERSION` must be a valid [SemVer](https://semver.org/) version. For example, `0.1.0`.
 - `$TAGS` is a list of tags separated by space.
    - `latest` for the latest stable version, usually `docs` branch.
    - `unstable` for the latest unstable version, usually `dev` branch.
