@@ -4,7 +4,7 @@
 <!---------------------------->
 
 <div align="center" markdown>
-   <img src="./docs/assets/mmg-logo-dark.jpg" width="500" alt="Multilingual Markdown Generator" />
+   <img src="https://github.com/ryul1206/multilingual-markdown/assets/19263912/7cfded93-4c64-428a-b027-76a621de92a6" width="500" alt="Multilingual Markdown Generator" />
 </div>
 
 <div align="center" markdown>
@@ -115,13 +115,13 @@ Base 파일 하나만 관리하기 때문에, 콘텐츠 번역이 누락되거�
 Markdown:
 
 <div align="center">
-   <img src="./docs/assets/how-it-works-md.png" width="800" alt="How It Works: Markdown" />
+   <img src="https://github.com/ryul1206/multilingual-markdown/assets/19263912/fd88420e-ddd1-403c-a9df-3429ec8095e3" width="800" alt="How It Works: Markdown" />
 </div>
 
 Jupyter Notebook:
 
 <div align="center">
-   <img src="./docs/assets/how-it-works-ipynb.png" width="900" alt="How It Works: Jupyter Notebook" />
+   <img src="https://github.com/ryul1206/multilingual-markdown/assets/19263912/ff2ef5d9-da9f-4d91-9618-fb933802bf69" width="900" alt="How It Works: Jupyter Notebook" />
 </div>
 
 <!-- [en] -->
