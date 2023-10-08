@@ -48,7 +48,7 @@ jobs:
       # Publish to PyPI Test (when release branch is pushed)
       - name: Publish package distributions to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/dev')
+        if: github.event_name != 'pull_request' && endsWith(github.ref, 'refs/heads/dev')
         with:
           repository-url: https://test.pypi.org/legacy/
       # Publish to PyPI (when a tag is pushed)
