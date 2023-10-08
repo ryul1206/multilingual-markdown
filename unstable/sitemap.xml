@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://mmg.ryul1206.dev/unstable/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/"/>
@@ -10,17 +10,8 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/contribution/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/contribution/"/>
-    </url>
-    <url>
         <loc>https://mmg.ryul1206.dev/unstable/license/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/license/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/license/"/>
@@ -28,62 +19,134 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/license/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/how-to-use/advanced-usage/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/advanced-usage/cli-batch-processing/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/advanced-usage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/how-to-use/installation/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/advanced-usage/cli-jupyter-notebook/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/how-to-use/quick-start/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/advanced-usage/cli-validation/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-validation/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/how-to-use/update-and-uninstall/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/basic-usage/cli-html-pdf/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/update-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/references/api-reference/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/basic-usage/cli-recursive/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/references/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/cli-recursive/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/references/command-tags/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/basic-usage/create-base-file/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/references/command-tags/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/create-base-file/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/getting-started/installation/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/getting-started/quick-start/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/quick-start/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/getting-started/upgrade-and-uninstall/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/upgrade-and-uninstall/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/misc/contributing/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/misc/contributing/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/misc/troubleshooting/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/misc/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/programming-guide/advanced-reference/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/advanced-reference/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/programming-guide/api-examples/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/api-examples/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/programming-guide/python-api/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/python-api/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/unstable/fr/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable"/>
@@ -91,17 +154,8 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/contribution/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablecontribution/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/contribution/"/>
-    </url>
-    <url>
         <loc>https://mmg.ryul1206.dev/unstable/fr/license/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/license/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablelicense/"/>
@@ -109,62 +163,134 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/license/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/how-to-use/advanced-usage/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/advanced-usage/cli-batch-processing/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/advanced-usage/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/how-to-use/installation/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/advanced-usage/cli-jupyter-notebook/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/how-to-use/quick-start/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/advanced-usage/cli-validation/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-validation/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/how-to-use/update-and-uninstall/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/basic-usage/cli-html-pdf/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/update-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/references/api-reference/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/basic-usage/cli-recursive/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablereferences/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/references/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/cli-recursive/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/fr/references/command-tags/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/basic-usage/create-base-file/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablereferences/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/references/command-tags/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/create-base-file/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/getting-started/installation/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/getting-started/quick-start/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/quick-start/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/getting-started/upgrade-and-uninstall/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/upgrade-and-uninstall/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/misc/contributing/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablemisc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/misc/contributing/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/misc/troubleshooting/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablemisc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/misc/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/programming-guide/advanced-reference/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/advanced-reference/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/programming-guide/api-examples/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/api-examples/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/fr/programming-guide/python-api/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstable/fr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/python-api/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/unstable/ko/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable"/>
@@ -172,17 +298,8 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/contribution/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablecontribution/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/contribution/"/>
-    </url>
-    <url>
         <loc>https://mmg.ryul1206.dev/unstable/ko/license/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/license/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablelicense/"/>
@@ -190,62 +307,134 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/license/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/how-to-use/advanced-usage/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/advanced-usage/cli-batch-processing/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/advanced-usage/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/how-to-use/installation/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/advanced-usage/cli-jupyter-notebook/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/how-to-use/quick-start/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/advanced-usage/cli-validation/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/advanced-usage/cli-validation/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/how-to-use/update-and-uninstall/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/basic-usage/cli-html-pdf/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/how-to-use/update-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/references/api-reference/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/basic-usage/cli-recursive/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablereferences/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/references/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/cli-recursive/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ko/references/command-tags/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/basic-usage/create-base-file/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablereferences/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/references/command-tags/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/basic-usage/create-base-file/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/getting-started/installation/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/getting-started/quick-start/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/quick-start/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/getting-started/upgrade-and-uninstall/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/getting-started/upgrade-and-uninstall/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/misc/contributing/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablemisc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/misc/contributing/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/misc/troubleshooting/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablemisc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/misc/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/programming-guide/advanced-reference/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/advanced-reference/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/programming-guide/api-examples/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/api-examples/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ko/programming-guide/python-api/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstable/ko/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstableja/programming-guide/python-api/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/unstable/ja/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstable"/>
@@ -253,17 +442,8 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/contribution/</loc>
-        <lastmod>2023-09-03</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablecontribution/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/contribution/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/contribution/"/>
-    </url>
-    <url>
         <loc>https://mmg.ryul1206.dev/unstable/ja/license/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/license/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablelicense/"/>
@@ -271,57 +451,129 @@
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/license/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/how-to-use/advanced-usage/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/advanced-usage/cli-batch-processing/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/advanced-usage/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/advanced-usage/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/how-to-use/installation/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/advanced-usage/cli-jupyter-notebook/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/how-to-use/quick-start/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/advanced-usage/cli-validation/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableadvanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/advanced-usage/cli-validation/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/how-to-use/update-and-uninstall/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/basic-usage/cli-html-pdf/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablehow-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/how-to-use/update-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/how-to-use/update-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/references/api-reference/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/basic-usage/cli-recursive/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablereferences/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/references/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/references/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/cli-recursive/"/>
     </url>
     <url>
-        <loc>https://mmg.ryul1206.dev/unstable/ja/references/command-tags/</loc>
-        <lastmod>2023-09-03</lastmod>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/basic-usage/create-base-file/</loc>
+        <lastmod>2023-10-08</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablereferences/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/references/command-tags/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/references/command-tags/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablebasic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/basic-usage/create-base-file/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/getting-started/installation/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/getting-started/quick-start/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/quick-start/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/getting-started/upgrade-and-uninstall/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablegetting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/getting-started/upgrade-and-uninstall/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/misc/contributing/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablemisc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/misc/contributing/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/misc/troubleshooting/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstablemisc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/misc/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/programming-guide/advanced-reference/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/advanced-reference/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/programming-guide/api-examples/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/api-examples/"/>
+    </url>
+    <url>
+        <loc>https://mmg.ryul1206.dev/unstable/ja/programming-guide/python-api/</loc>
+        <lastmod>2023-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/unstable/ja/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/unstableprogramming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/unstablefr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/unstableko/programming-guide/python-api/"/>
     </url>
 </urlset>
