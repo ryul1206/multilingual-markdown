@@ -1,0 +1,162 @@
+site_name: MMG
+site_url: https://mmg.ryul1206.dev/
+repo_url: https://github.com/ryul1206/multilingual-markdown
+repo_name: multilingual-markdown
+
+theme:
+  name: material
+  language: en
+  logo: assets/mmg-logo-dark-small.png
+  favicon: assets/mmg-favicon-small.png
+  icon:
+    repo: fontawesome/brands/github-alt
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: white
+      accent: pink
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: black
+      accent: yellow
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.superfences  # Code block with indentation
+  - pymdownx.caret  # ^^underline^^
+  - pymdownx.mark  # ==highlight==
+  - pymdownx.inlinehilite  # Highlight inline code
+  - pymdownx.highlight:  # Highlight code block
+      use_pygments: true
+  - pymdownx.tabbed:  # Content tabs
+      alternate_style: true
+  - pymdownx.details  # Details/summary
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright:
+  Copyright &copy; 2019 - 2023 Hong-ryul Jung |
+  <a href="#__consent">Change cookie settings</a>
+
+extra:
+  version:
+    provider: mike
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/?h=mike#versioning
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  analytics:
+    provider: google
+    property: G-8XGG7Z9Z3K
+
+plugins:
+  - site-urls
+  - search:
+      lang:
+        - en
+        - fr
+        # - ko  # Lunr.js doesn't support Korean yet
+        - ja
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            heading_level: 2
+            show_source: false
+            show_root_heading: true
+            separate_signature: true
+            show_signature_annotations: true
+            annotations_path: brief
+            unwrap_annotated: true
+  - mkdocs-jupyter:
+      execute: false
+  - exclude:
+      glob:
+        - 'base/*'
+        - '*.base.md'
+        - 'manual.md'
+  - i18n:
+      docs_structure: folder
+      reconfigure_material: true
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+        - locale: fr
+          name: Français
+          build: true
+          nav_translations:
+            Home: Accueil
+            Getting Started: Commencer
+            Basic Usage (CLI): Utilisation de Base (CLI)
+            Advanced Usage (CLI): Utilisation Avancée (CLI)
+            Programming Guide: Guide de Programmation
+            Miscellaneous: Divers
+        - locale: ko
+          name: 한국어
+          build: true
+          nav_translations:
+            Home: 홈
+            Getting Started: 시작하기
+            Basic Usage (CLI): 기본 사용법 (CLI)
+            Advanced Usage (CLI): 고급 사용법 (CLI)
+            Programming Guide: 프로그래밍 가이드
+            Miscellaneous: 기타
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            Home: ホーム
+            Getting Started: はじめに
+            Basic Usage (CLI): 基本的な使い方 (CLI)
+            Advanced Usage (CLI): 高度な使い方 (CLI)
+            Programming Guide: プログラミングガイド
+            Miscellaneous: その他
+
+nav:
+  - Home: 'index.md'
+  - Getting Started:
+    - 'getting-started/installation.md'
+    - 'getting-started/quick-start.md'
+    - 'getting-started/upgrade-and-uninstall.md'
+  - Basic Usage (CLI):
+    - 'basic-usage/create-base-file.md'
+    - 'basic-usage/cli-recursive.md'
+    - 'basic-usage/cli-html-pdf.md'
+  - Advanced Usage (CLI):
+    - 'advanced-usage/cli-validation.md'
+    - 'advanced-usage/cli-jupyter-notebook.md'
+    - 'advanced-usage/cli-batch-processing.md'
+  - Programming Guide:
+    - 'programming-guide/python-api.md'
+    - 'programming-guide/api-examples.md'
+    - 'programming-guide/advanced-reference.md'
+  - Miscellaneous:
+    - 'misc/troubleshooting.md'
+    - 'misc/contributing.md'
+    - Changelog: 'https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md'
+    - 'license.md'

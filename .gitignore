@@ -170,9 +170,9 @@ Thumbs.db
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 *.code-workspace
 
 ### VisualStudioCode Patch ###
@@ -208,4 +208,11 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,python,windows
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
-temp.txt
+temp
+*.log
+
+docs/*
+!docs/assets
+!docs/base
+!docs/stylesheets
+!docs/manual.md

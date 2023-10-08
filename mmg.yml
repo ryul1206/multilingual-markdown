@@ -1,0 +1,30 @@
+
+convert_without_ask: true
+# If false (default), ask for confirmation before converting.
+# If true, it is same as `mmg ** --yes`.`
+
+verbose: 2
+# 0: quiet(default), 1: normal, 2: verbose
+
+log_dir: "logs"
+# Log files will be placed in this folder.
+# If the folder does not exist, error will occur.
+# If comment out, log files will not be generated.
+
+# The `tags_as` can be "folder" or "suffix"
+#   - "folder" is for the folder docs structure.
+#   - "suffix" is for the suffix docs structure
+# Please refer to the following link for details.
+# https://ultrabug.github.io/mkdocs-static-i18n/getting-started/quick-start/
+
+jobs:
+  - name: "MkDocs pages"        # Job name (optional)
+    tag_as: "folder"            # "folder" or "suffix" (required)
+    source: "docs/base"         # Source folder containing the files to convert (required)
+    recursive: true             # If true, recursively search for files in subfolders (default: true)
+    output_dir: "docs"          # Generated files will be placed in this folder (required)
+
+  - name: "README.md"           # Job name (optional)
+    tag_as: "suffix"            # "folder" or "suffix" (required)
+    source: "README.base.md"    # Source file to convert (required)
+    output_dir: "./"            # Generated file will be placed in this folder (required)

@@ -1,26 +1,12 @@
 {
-    "editor.formatOnSave": false,
-    "editor.formatOnType": false,
-    "markdownFormatter.enable": false,
-    "[markdown]": {
-        "editor.tabSize": 4,
-        "editor.formatOnSave": false,
-        "editor.formatOnType": false,
-        // show space
-        // "editor.renderWhitespace": "boundary",
-        "editor.renderWhitespace": "none",
-        //
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": true,
-            "strings": true
-        },
-    },
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": ["--max-line-length=88"],
-    "python.formatting.provider": "black",
-    "python.pythonPath": "/usr/bin/python3",
-    "files.eol": "\n"
+  "yaml.schemas": {
+    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+  },
+  "yaml.customTags": [
+    "!ENV scalar",
+    "!ENV sequence",
+    "tag:yaml.org,2002:python/name:materialx.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
+    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+  ]
 }

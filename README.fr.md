@@ -1,343 +1,168 @@
-# Générateur de Markdown Multilingue
+
+<div align="center" markdown>
+   <img src="https://github.com/ryul1206/multilingual-markdown/assets/19263912/7cfded93-4c64-428a-b027-76a621de92a6" width="500" alt="Multilingual Markdown Generator" />
+</div>
+
+<div align="center" markdown>
+
+# [Générateur de Markdown Multilingue](https://mmg.ryul1206.dev/latest/fr)
 
 Ce package fournit une interface de ligne de commande pour gérer les contenus multilingues et générer des démarques i18n à partir d'un seul fichier de base.
 
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
-![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
-[![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
+[![PyPI - Version](https://img.shields.io/pypi/v/mmg?color)](https://pypi.org/project/mmg/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mmg)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown)
+[![PyPI - License](https://img.shields.io/pypi/l/mmg)](https://github.com/ryul1206/multilingual-markdown/blob/main/LICENSE)
 
-🚀 **version 1.0.3**
 🌏
-[**English**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.md) |
+[**English**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.md) |
 Français |
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.kr.md) |
-[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/master/README.jp.md)
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.ko.md) |
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.ja.md)
 
 Disponible dans Bash, Zsh et Windows PowerShell.
+
+</div>
 
 ---
 
 **Table des matières** ⚡
 
-1. [Aperçu ](#Aperçu-)
-    1. [Fonctionnement](#Fonctionnement)
-    1. [Fonctionnalités](#Fonctionnalités)
-1. [Installer](#Installer)
-    1. [Comment corriger une erreur "Commande introuvable"](#Comment-corriger-une-erreur-Commande-introuvable)
-1. [Mises à jour](#Mises-à-jour)
-1. [Désinstaller](#Désinstaller)
-1. [Mode d'emploi](#Mode-demploi)
-    1. [(0) Créer un fichier de démarques de base](#0-Créer-un-fichier-de-démarques-de-base)
-    1. [(1) Spécification du fichier cible](#1-Spécification-du-fichier-cible)
-    1. [(2) Option Récursive](#2-Option-Récursive)
-    1. [(3) Validation du Fichier de Base](#3-Validation-du-Fichier-de-Base)
-    1. [(4) Plus d'explications](#4-Plus-dexplications)
-1. [Marqueurs](#Marqueurs)
-    1. [Titres](#Titres)
-    1. [Badges](#Badges)
-    1. [Corps de texte](#Corps-de-texte)
-1. [Contribution](#Contribution)
-    1. [Comment construire localement pour le développement](#Comment-construire-localement-pour-le-développement)
-    1. [Changelog](#Changelog)
-    1. [Contributors](#Contributors)
+1. [Aperçu](#aperçu-)
+    1. [Comment Ça Fonctionne](#comment-ça-fonctionne)
+    1. [Caractéristiques](#caractéristiques)
+1. [Installation](#installation-)
+    1. [Linux](#linux)
+    1. [macOS](#macos)
+    1. [Windows](#windows)
+1. [Mode d'emploi](#mode-demploi-)
+1. [Dépannage](#dépannage-)
+1. [Changelog](#changelog-)
+1. [Contributeurs](#contributeurs-)
 
 ## Aperçu 🔎
 
-### Fonctionnement
-![how it works](how-it-works.png)
+### Comment Ça Fonctionne
 
-### Fonctionnalités
+En gérant un seul fichier Base, nous pouvons réduire le nombre d'erreurs causées par des traductions manquantes ou incohérentes.
+De plus, grâce à l'édition dans un seul fichier, nous pouvons nous attendre à une traduction pratique avec la fonction de complétion automatique des outils AI tels que [Copilot](https://github.com/features/copilot).
 
-- Suffixe automatique des noms de fichier
-  - [Étiquette d'identification de langues IETF](https://fr.wikipedia.org/wiki/%C3%89tiquette_d%27identification_de_langues_IETF) ​sont également disponibles
-  - Possibilité d'omettre le suffixe (pour la langue principale)
-- Encodage UTF-8. Cela *devrait* supporter presque toutes les langues. :) 🍷
-- Table des matières automatique
-    - Niveaux de titres au choix
-    - Emojis en option
+Markdown:
 
-## Installer
+<div align="center">
+   <img src="https://github.com/ryul1206/multilingual-markdown/assets/19263912/fd88420e-ddd1-403c-a9df-3429ec8095e3" width="800" alt="How It Works: Markdown" />
+</div>
+
+Jupyter Notebook:
+
+<div align="center">
+   <img src="https://github.com/ryul1206/multilingual-markdown/assets/19263912/ff2ef5d9-da9f-4d91-9618-fb933802bf69" width="900" alt="How It Works: Jupyter Notebook" />
+</div>
+
+### Caractéristiques
+
+Prend en charge les fonctionnalités suivantes :
+
+- **Markdown, Jupyter Notebook(`.ipynb`) comme formats d'entrée**
+- **Tel quel, HTML, PDF comme formats de sortie**
+- Interface de ligne de commande pour Bash, Zsh, Windows PowerShell
+- API Python
+- Mode de parcours récursif avec l'option `-r` (tels quels, HTML, PDF sont tous pris en charge)
+- Mode de traitement par lots avec fichier YAML (seul `tel quel` est pris en charge)
+- [Étiquette d'identification de langues IETF](https://fr.wikipedia.org/wiki/%C3%89tiquette_d%27identification_de_langues_IETF)
+- Encodage UTF-8
+- Génération automatique de table des matières avec options de niveau et options de emoji (Markdown et Jupyter Notebook sont tous deux pris en charge)
+- Validation du fichier de base (Vérifier le nombre de balises de chaque langue)
+- Mode validation uniquement pour CI/CD (désactiver la génération de fichiers)
+
+## Installation 📦
+
+### Linux
 
 ```sh
-pip3 install mmg --user
+pip3 install mmg
 ```
 
-Maintenant, lorsque vous ouvrez un nouveau terminal, vous pouvez utiliser la nouvelle commande `mmg`.
+### macOS
+
+```sh
+pip3 install mmg
+```
+
+Si vous rencontrez des problèmes avec [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#macos), installez-le avec la commande suivante. WeasyPrint est uniquement utilisé pour créer des PDF.
+
+```sh
+brew install weasyprint
+```
+
+### Windows
+
+1. MMG utilise [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) pour créer des PDF. WeasyPrint nécessite la bibliothèque GTK, alors téléchargez et exécutez le dernier [installateur GTK3](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **Si vous n'êtes pas intéressé par la création de PDF, vous pouvez ignorer cette étape.** Les autres fonctionnalités de MMG sont disponibles sans GTK.
+2. Installez MMG à l'aide de Pip.
+
+    ```sh
+    pip3 install mmg
+    ```
+
+## Mode d'emploi 💡
+
+Veuillez vous référer à la [documentation](https://mmg.ryul1206.dev/latest/fr/) pour plus de détails sur l'utilisation et des exemples.
 
 ```sh
 $ mmg --help
-mmg [OPTIONS] [FILENAMES]...
+Usage: mmg [OPTIONS] [FILE_NAMES]...
+
+  FILE_NAMES: Base file names to convert. `*.base.md` or `*.base.ipynb` are
+  available.
+
+  Here are some examples:
+
+      mmg *.base.md
+
+      mmg *.base.ipynb
+
+      mmg *.base.md *.base.ipynb -o pdf --css github-dark
+
+      mmg --recursive
+
+      mmg --recursive --validation-only
+
+      mmg --batch mmg.yml
 
 Options:
-  --version                 Show the current version.
-  -r, --recursive           This recursive option searches all subfolders
-                            based on current directory and converts all base
-                            files.
-  -y, --yes                 Confirm the action without prompting
-  -c, --check / -s, --skip  Check the number of language tags of each file
-                            (defualt: --check)
-  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
-  --help                    Show this message and exit.
+  -r, --recursive                 This will search all subfolders based on
+                                  current directory.
+  -b, --batch FILE                YAML file path for batch conversion.
+                                  (Default: None)
+  -o, --output-format [as-is|html|pdf]
+                                  Output format. (Default: as-is)
+  --css TEXT                      CSS file path or preset('github-
+                                  light'/'github-dark'). Only for the HTML/PDF
+                                  output. (Default: github-light)
+  -y, --yes                       This will confirm the conversion without
+                                  asking. (Default: False)
+  -s, --skip-validation           Skip the health check. (Default: False)
+  --validation-only               Only check the health. (Default: False)
+  -v, --verbose                   Verbosity level from 0 to 2. --verbose:1,
+                                  -v:1, -vv:2 (Default: 0)
+  --version                       Show the current version.
+  --help                          Show this message and exit.
 ```
 
-### Comment corriger une erreur "Commande introuvable"
+## Dépannage 💊
 
-**Ubuntu Bash/Zsh**
+Veuillez vous référer à la page [dépannage](https://mmg.ryul1206.dev/latest/fr/misc/troubleshooting/) sur le site web.
 
-- Cause : Cette erreur se produit si la variable `PATH` ne contient pas le chemin `$HOME/.local/bin` où la commande `mmg` est installée.
-- Solution : Ouvrez le fichier `~/.bashrc` ou `~/.zshrc` et ajoutez `$HOME/.local/bin` à `PATH`.
-    ```
-    export PATH="$HOME/.local/bin:$PATH"
-    ```
+## Changelog 📝
 
-**Windows PowerShell**
+[CHANGELOG.md](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
-Vous pouvez résoudre le problème en créant les modules PS dans l'ordre décrit ci-dessous.
+## Contributeurs 🤝
 
-1. Vous pouvez vérifier les chemins PSModule en utilisant la commande `$env:PSModulePath` dans PowerShell. Collez le dossier PSmmg de ce référentiel dans l'un des chemins PSModule. Par exemple, `C:\Program Files\WindowsPowerShell\Modules\PSmmg\PSmmg.psm1` doit exister.
-2. Exécutez PowerShell en mode administrateur et modifiez la politique d'exécution.
-    ```
-    Set-ExecutionPolicy RemoteSigned
-    ```
-3. Redémarrez maintenant PowerShell et vous pouvez utiliser la commande `mmg`.
+<a href="https://github.com/ryul1206/multilingual-markdown/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ryul1206/multilingual-markdown" />
+</a>
 
-**Alternative indépendante du système d'exploitation**
+Réalisé avec [contrib.rocks](https://contrib.rocks).
 
-```
-python -m mmgcli [options]
-```
-
-## Mises à jour
-
-```sh
-pip3 install mmg --upgrade --user
-```
-
-## Désinstaller
-
-```sh
-pip3 uninstall mmg
-```
-
-## Mode d'emploi
-
-### (0) Créer un fichier de démarques de base
-
-Saisissez les fichiers multilingues avec une extension `.base.md`. Voir les exemples [README.base.md](README.base.md) et [example.base.md](example/example.base.md) et reportez-vous à [Marqueurs](#marqueurs) pour les règles.
-
-**(Remarque) Un format incorrect de fichier de base cassera le style généré.**
-
-### (1) Spécification du fichier cible
-
-Entrez les fichiers `* .base.md` que vous souhaitez créer dans plusieurs langues comme arguments de la commande` mmg`.
-
-```sh
-mmg FileName.base.md
-```
-
-Les arguments multiples sont séparés par des espaces.
-
-```sh
-mmg Foo.base.md Bar.base.md Baz.base.md
-```
-
-### (2) Option Récursive
-
-Si vous voulez convertir tous les fichiers de base dans le répertoire courant et les sous-répertoires, utilisez l'option `--recursive` ou` -r`.
-L'option récursive recherche tous les sous-dossiers en fonction de l'endroit où la commande est entrée.
-Vous ne pouvez pas encore spécifier un dossier comme argument.
-
-```sh
-mmg --recursive
-```
-
-### (3) Validation du Fichier de Base
-
-Lorsque votre fichier peut avoir un problème.
-(Normal est indiqué en vert et anormal en rouge.)
-
-- Verbosity 0
-    ```text
-    $ mmg -r
-    ----------------------
-    ✅ .\README.base.md
-    ❌ .\example\example.base.md
-    ----------------------
-    => 2 base markdowns were found.
-        Your verbosity is 0. Try the `--verbose` option for more details.
-    Do you want to convert these files? [y/N]
-    ```
-- Verbosity 1 (`--verbose`)
-    ```text
-    $ mmg -r -v
-    ----------------------
-    ✅ .\README.base.md
-        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
-    ❌ .\example\example.base.md
-        4 language(s) not translated.
-        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-    ----------------------
-    => 2 base markdowns were found.
-    Do you want to convert these files? [y/N]
-    ```
-- Verbosity 2
-    ```text
-    $ mmg -r -vv
-    ----------------------
-    ✅ .\README.base.md
-        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
-    ❌ .\example\example.base.md
-        4 language(s) not translated.
-        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-            Line 28: This language reappeared before all languages appeared once.
-            Line 36: A common area appeared before all languages come out.
-            Line 57: Unknown suffix detected.
-            Line 59: This language reappeared before all languages appeared once.
-    ----------------------
-    => 2 base markdowns were found.
-    Do you want to convert these files? [y/N]
-    ```
-
-Lorsque vos fichiers sont ok.
-
-```text
-$ mmg -r --verbose
-----------------------
-✅ .\README.base.md
-    Tag count: {'en': 37, 'fr': 37, 'kr': 37}
-✅ .\example\example.base.md
-    Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}i
-----------------------
-=> 2 base markdowns were found.
-    Your verbosity is 0. Try the `--verbose` option for more details.
-Do you want to convert these files? [y/N]
-```
-
-### (4) Plus d'explications
-
-- Vous trouverez les fichiers `{quelquechose}.{suffixe}.md` dans le même répertoire que celui de base qui leur correspond. Par example :
-    - Par défaut : `{quelquechose}.en.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
-    - Lorsque option no-suffix pour `en`: `{quelquechose}.md`, `{quelquechose}.kr.md`, `{quelquechose}.fr.md`, ...
-- Le générateur écrase les fichiers générés à chaque exécution, il est donc inutile de les supprimer après avoir modifié `{fichier}.base.md`. Reprenez simplement au point 2. Ne modifiez pas les fichiers de chaque langue, les modifications disparaitraient à la prochaine exécution du script.
-
-## Marqueurs
-
-### Titres
-
-Les titres doivent être déclarés avant le corps de texte.
-
-1. **Déclaration des suffixes**
-
-    Déclarez les langues que vous souhaitez utiliser. Dans l'exemple suivant, on déclare les mots-clés `en`, `kr` et `fr` et quelque autres. Ces mots-clés seront utilisés comme suffixes des noms de fichier et comme marqueurs dans les fichiers `base.md`.
-
-    ```markdown
-    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
-    ```
-
-1. **Suffixe invisible** (facultatif)
-
-    L'option `no suffix` évite l'ajout de l'un des suffixes lors de la création des fichiers. Ainsi, appliquer `no suffix`à la langue `en` génèrera *`fichier`*`.md` au lieu de *`fichier`*`.en.md`. Cela est utile par exemple pour le `README` obligatoire dans  **GitHub** qui n sera pas reconnu s'il a un suffixe (par exemple `README.en.md`).
-
-    ```markdown
-    <!-- no suffix: en -->
-    ```
-
-### Badges
-
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
-...
-
-```markdown
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-```
-
-### Corps de texte
-
-Tout ce qui suit le marqueur est interprété comme corps principal de texte, donc vous devez placer les titres avant le texte.
-
-1. **Mots-clés**
-    1. Classification de langue
-
-        Les marqueurs qui distinguent les languages sont écrits sous la forme `<!-- [marqueur] -->`. Si un marqueur est reconnu, il sera retenu jusqu'à ce qu'un autre soit reconnu.
-
-        ```markdown
-        <!-- [en] -->
-        <!-- [kr] -->
-        <!-- [fr] -->
-        <!-- [es] -->
-        <!-- [jp] -->
-        <!-- [cn] -->
-        ...
-        ```
-
-    1. Section commune
-
-        Vous pouvez utiliser le mot-clé 'common' pour une partie de texte commune à toutes les langues, par exemple pour des illustrations.
-
-        ```markdown
-        <!-- [common] -->
-        ```
-
-    1. Section ignorée
-
-        Vous pouvez exclure des parties du texte telles que les blocs de commentaires ou les TODO avec le mot-clé `ignore`.
-
-        ```markdown
-        <!-- [ignore] -->
-        ```
-
-1. **Table des matières**
-
-    Les marqueurs sont automatiquement placés dans la table des matières par le générateur. Le niveau de titre auquel commence la table des matières peut être indiqué avec l'option `level`. Le niveau le plus haut est 1, ce qui correspond aux titres Markdown `# titre` et aux tags HTML `<H1>`.
-
-    **(Remarque) Si vous sautez le niveau de titre de la démarque marquée avec `#`, une erreur se produira. En d'autres termes, le sous-titre de `##` doit être `###`.**
-
-    ```markdown
-    <!-- [[ multilingual toc: level=2~3 ]] -->
-    ```
-
-    1. **Option `level`**
-        - Les niveaux acceptés dans la table des matières par l'option `level` vont de 1 à 9 et sont indiqués avec un niveau de départ et un niveau de fin séparés par une tilde `~`. Si vous ne spécifiez pas le premier numéro, les niveaux commenceront au premier et si vous ne spécifiez pas le second numéro, les niveaux seront pris jusqu'au neuvième. Adaptez les nombres des exemples suivants selon vos besoins.
-            - `level=2`: Mettre uniquement le niveau 2 dans la table des matières.
-            - `level=2~`: Mettre les niveaux 2 à 9 dans la table des matières.
-            - `level=~4`: Mettre les niveaux 1 à 4 dans la table des matières.
-            - `level=2~4`: Mettre les niveaux 2 à 4 dans la table des matières..
-        - Vous pouvez écrire les marqueurs de la table des matières plusieurs fois dans le document et spécifier différentes options `level` à chaque fois.
-        - **ATTENTION💥**: si vous ommettez `level` le script ignorera la commande.
-        - **ATTENTION💥**: le marqueur `table of contents` change automatiquement le marqueur de section pour `common` donc les commandes de la table des matières concernent toutes les langues, et vous devez réindiquer un marqueur de langue par la suite.
-    2. **Option `no-emoji`**
-        - Vous pouvez souhaiter mettre un emoji dans un titre sans qu'il apparaisse dans la table des matières.😱 dans ce cas, utilisez l'option `no-emoji` comme indiqué ci-dessous 😎
-
-        ```markdown
-        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
-        ```
-
-## Contribution
-
-Toute contribution sera grandement appréciée. (ex: traductions, améliorations, signalements de bugs etc.)
-
-### Comment construire localement pour le développement
-
-- Linux and MacOS
-  - Required packages: `pip3 install -r requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `mmg [OPTIONS] [FILENAMES]...`
-  - Uninstall: `xargs rm -rf < temp.txt`
-- Windows
-  - Required packages: `pip3 install -r .\requirements_dev.txt --user`
-  - Install: `python3 setup.py install --user --record temp.txt`
-  - Usage: `python3 -m mmgcli [OPTIONS] [FILENAMES]...`
-  - Uninstall (PowerShell): `python3 -m pip uninstall mmg`
-
-### [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
-
-### Contributors
-
-> La liste des contributeurs est en Anglais seulement.
-
-- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
-- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)
+Si vous êtes intéressé par la façon de contribuer, veuillez vous référer au [guide de contribution](https://mmg.ryul1206.dev/latest/fr/contributing/).
