@@ -48,12 +48,12 @@ jobs:
           git config --global user.email "github-action[bot]@users.noreply.github.com"
       - name: Extract Pakcage Version
         id: mmg_version
-        run: echo "VERSION=$(poetry version | cut -d' ' -f2)" >> $env:GITHUB_OUTPUT
+        run: echo "VERSION=$(poetry version | cut -d' ' -f2)" >> $GITHUB_OUTPUT
 
       # Deploy with Mike (when dev branch is pushed)
       - run: poetry run mike deploy --push --update-aliases unstable
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/dev')
       # Deploy with Mike (when docs branch is pushed)
       # - run: poetry run mike deploy --push --update-aliases ${{ steps.mmg_version.outputs.VERSION }} latest
-      - run: echo ${{ steps.mmg_version.outputs.VERSION }}
+      - run: echo "${{ steps.mmg_version.outputs.VERSION }}"
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/docs')
