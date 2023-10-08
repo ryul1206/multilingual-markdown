@@ -1,7 +1,7 @@
 from typing import List, Dict, Tuple
 from enum import Enum, auto
 from mmg.utils import flag_code_block_lines, REGEX_PATTERN
-from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter, RESERVED_KEYWORDS
+from mmg.config import Config, extract_config_from_md, extract_config_from_jupyter, RESERVED_KEYWORDS
 from mmg.toc import parse_toc_options
 from mmg.exceptions import BadConfigError
 
@@ -52,9 +52,15 @@ class HealthChecker:
         Returns:
             str: The log string.
         """
-        tag_count_max = max(self._tag_count.values())
-        num_incomplete = sum(1 if x != tag_count_max else 0 for x in self._tag_count.values())
-        icon = "❌" if num_incomplete else "✅"
+        icon = "✅" if self.is_healthy else "❌"
+        if self._tag_count:
+            tag_count_max = max(self._tag_count.values())
+            num_incomplete = sum(1 if x != tag_count_max else 0 for x in self._tag_count.values())
+            if num_incomplete:
+                icon = "❌"
+        else:
+            num_incomplete = 0
+            icon = "❌"
         file_name = file_name if file_name else "Anonymous file"
         # Messages
         messages = [f" {icon} {file_name}"]
@@ -97,13 +103,17 @@ class HealthChecker:
             self._health_check_markdown(base, cfg)
         elif extension == "ipynb":
             self._health_check_jupyter(base, cfg)
+        # If no tag detected, it is unhealthy.
+        if not self._tag_count:
+            self._error.append("No tag detected.")
+            self._status = HealthStatus.UNHEALTHY
         # If no error detected, the health is healthy.
         self._status = HealthStatus.HEALTHY if self._status != HealthStatus.UNHEALTHY else self._status
         return self._status
 
     def _health_check_markdown(self, base_doc: List[str], cfg: Config = None):
         # Check the config
-        cfg: Config = cfg if cfg else ConfigExtractor.extract(base_doc)
+        cfg: Config = cfg if cfg else extract_config_from_md(base_doc)
         self._check_config(cfg)
         # Check the doc
         dc = DocChecker(cfg)

@@ -31,7 +31,8 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: poetry install --only docs
+      - run: poetry install --with docs
+      - run: mmg -b ./mmg.yml
 
       # Set up Git
       - name: Commit Bot

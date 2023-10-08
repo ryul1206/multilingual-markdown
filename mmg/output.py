@@ -2,10 +2,18 @@ from typing import List, Dict
 import os
 import json
 import markdown  # Markdown to HTML
-import weasyprint  # HTML to PDF
 import nbconvert  # Jupyter Notebook to HTML
 import nbformat  # Dict to Jupyter Notebook
 from mmg.base_item import FileItem
+
+# For Windows, import weasyprint only when GTK is available.
+# Please refer to the following link for more information:
+#   - https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows
+#   - https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#troubleshooting
+try:
+    import weasyprint  # HTML to PDF
+except OSError:
+    pass
 
 
 def save_md(path, md_doc: List[str]):
@@ -24,6 +32,10 @@ def save_html(path, html: str):
 
 
 def save_pdf(path, html: str):
+    # Raise error when weasyprint is not imported (Windows)
+    # If GTK is not available, weasyprint cannot be imported.
+    if "weasyprint" not in globals():
+        raise ImportError("GTK is not available. Please refer to the documentation for more information.")
     html = weasyprint.HTML(string=html)
     html.write_pdf(path)
 
@@ -64,7 +76,7 @@ def handle_html_or_pdf(target_item: FileItem, input_format: str, css: str, conte
 
 
 def convert_md_to_html(md: str, css: str):
-    html = markdown.markdown(md, extensions=["fenced_code", "codehilite"])
+    html = markdown.markdown(md, extensions=["fenced_code", "codehilite", "md_in_html"])
     # Get path of css file
     if css == "github-light" or css == "github-dark":
         this_dir = os.path.dirname(os.path.abspath(__file__))

@@ -1,7 +1,6 @@
 from typing import List, Dict
-from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter
+from mmg.config import Config, extract_config_from_md, extract_config_from_jupyter
 from mmg.health import HealthChecker, HealthStatus
-from mmg.utils import REGEX_PATTERN, flag_code_block_lines
 from mmg.exceptions import BadConfigError
 from mmg.classifier import MarkdownClassifier, JupyterClassifier
 
@@ -75,7 +74,7 @@ def convert_base_doc(
     # Extract config (using HealthChecker)
     # > If `cfg` is not given, extract it from the base_md.
     # > If `cfg` is provided, settings in base_md will be ignored.
-    cfg: Config = cfg if cfg else ConfigExtractor.extract(base_doc)
+    cfg: Config = cfg if cfg else extract_config_from_md(base_doc)
 
     # Health check
     _health_check(

@@ -6,23 +6,20 @@ from typing import Final, Dict, List
 REGEX_PATTERN: Final[Dict[str, re.Pattern]] = {
     "comment": re.compile(r"<!--.*-->"),
     "header": re.compile(r"^#+\s+"),
-
     # Config
     "lang_tags": re.compile(r"(<!-- multilingual suffix:)\s*([\w\s,-]+)(?=\s--)"),
     "no_suffix": re.compile(r"<!-- no suffix:\s*([\w-]+)"),
-
     # Command
     "tag": re.compile(r"<!--\s*\[\s*([\w-]+)\s*\]\s*-->"),
-
     # Table of Contents
     "auto_toc": re.compile(r"<!--\s*\[\[\s*multilingual toc:[^\]]*\s*]]\s*-->"),
     "toc_level": re.compile(r"level\s*=\s*([1-9]\s*~\s*[1-9]|~\s*[1-9]+|[1-9]+\s*~?)"),
     "toc_no_emoji": re.compile("no-emoji"),
-
-    # Code block
+    # Code block (backtick)
     "inline_code": re.compile(r"`+"),
-    "code_block_start": re.compile(r"^```[\w]*$"),
-    "code_block_end": re.compile(r"^```$"),
+    "cb_begin": re.compile(r"^[ \t]*```[`]*[\w]*$"),
+    "cb_end": re.compile(r"^[ \t]*```[`]*$"),
+    "cb_backtick_only": re.compile(r"^[ \t]*```[`]*"),
 }
 
 
@@ -47,27 +44,75 @@ def remove_links(text: str) -> str:
     return text
 
 
+def get_size_of_code_block_backtick(line: str) -> int:
+    """Get the size of the backtick of a code block.
+
+    Args:
+        line (str): The line to check.
+
+    Returns:
+        int: The size of the backtick. If the line is not a code block, return 0.
+    """
+    match_found = REGEX_PATTERN["cb_backtick_only"].match(line.lstrip())
+    if match_found:
+        return match_found.span()[1]
+    return 0
+
+
+def get_indentation_level(line: str) -> int:
+    """Get the size of the indentation of a line.
+
+    Args:
+        line (str): The line to check.
+
+    Returns:
+        int: The level of indentation. If the line is not indented, return 0.
+    """
+    # Convert tabs to spaces (4 spaces)
+    tmp = line.replace("\t", "    ")
+    # Count the number of spaces at the beginning of the line
+    space = len(tmp) - len(tmp.lstrip())
+    return space // 4
+
+
 def flag_code_block_lines(doc: List[str]) -> List[bool]:
-    """ Parse the markdwon string and find all code blocks.
+    """
+    Parse the markdwon string and find all code blocks.
+    Marked lines will be skipped when parsing the MMG tags.
 
     Args:
         doc (List[str]): The markdown string to parse.
 
     Returns:
         List[bool]: A list of booleans indicating whether the line is in a code block.
+            (True: in a code block, False: not in a code block)
     """
     result = [False for _ in doc]
 
-    # First, mark all code blocks with three backticks(```).
-    is_code_block = False
+    # First, mark all code blocks (not inline, more than 3 backticks).
+    last_backtick_size: int = 0  # >= 3
+    cb_indent: int = 0
     for i, line in enumerate(doc):
-        if is_code_block:
+        indent: int = get_indentation_level(line)
+
+        # Previous line is not in a code block
+        if last_backtick_size < 3:
+            last_backtick_size = get_size_of_code_block_backtick(line)
+            if last_backtick_size > 2:
+                result[i] = True
+                cb_indent = indent
+            continue
+        # Previous line is in a code block
+        if cb_indent > indent:
+            last_backtick_size = 0
+        else:
             result[i] = True
-            if REGEX_PATTERN["code_block_end"].match(line):
-                is_code_block = False
-        elif REGEX_PATTERN["code_block_start"].match(line):
-            is_code_block = True
-            result[i] = True
+            if (
+                cb_indent == indent
+                and REGEX_PATTERN["cb_end"].match(line)
+                and last_backtick_size <= get_size_of_code_block_backtick(line)
+            ):
+                last_backtick_size = 0
 
     # Second, mark all inline code(`, ``, ```) except for the code blocks.
     current_backtick: str = None
@@ -83,6 +128,7 @@ def flag_code_block_lines(doc: List[str]) -> List[bool]:
             current_backtick = None
             continue
         # If the line is not in a code block, check if the line contains inline code.
+        # If the line contains inline code, mark the line as True.
         for backtick in REGEX_PATTERN["inline_code"].findall(line):
             if current_backtick is None:
                 current_backtick = backtick

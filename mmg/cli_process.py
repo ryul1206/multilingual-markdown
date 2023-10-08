@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple, Callable
+from typing import List, Dict, Tuple, Callable, Set
 import sys
 import os
 import time
@@ -6,11 +6,12 @@ import json
 import click
 import yaml
 from mmg.api import convert_base_doc, convert_base_jupyter
-from mmg.config import Config, ConfigExtractor, extract_config_from_jupyter
+from mmg.config import Config, extract_config_from_md, extract_config_from_jupyter
 from mmg.health import HealthChecker
 from mmg.base_item import FileItem, collect_bases_from_dir, collect_bases_from_files
-from mmg import output
 from mmg.cli_log import log_info, log_warn, log_error, set_log_dir
+from mmg.exceptions import BadConfigError
+from mmg import output
 
 
 def query_yes_no(question):
@@ -48,7 +49,11 @@ def _process_file(item: FileItem) -> Tuple[FileItem, any, Config]:
         if item.extension == "md":
             base_md: str = f.read()
             base_doc: List[str] = base_md.splitlines()
-            cfg: Config = ConfigExtractor.extract(base_doc)
+            try:
+                cfg: Config = extract_config_from_md(base_doc)
+            except BadConfigError as e:
+                log_error(f" => {repr(item)}: {e}")
+                sys.exit(1)
             return (item, base_doc, cfg)
         elif item.extension == "ipynb":
             base_jn: Dict = json.load(f)
@@ -176,7 +181,7 @@ def convert_batch(batch: str):
         cfg = yaml.safe_load(f)
 
     # Configurations
-    yes = cfg.get("convert_without_ask", True)
+    yes = cfg.get("convert_without_ask", False)
     verbose = cfg.get("verbose", 0)
     log_dir = cfg.get("log_dir", None)
     set_log_dir(log_dir)
@@ -245,7 +250,7 @@ def _convert_job(job: Dict, yes: bool, verbose: int):
 
 
 def _convert_items(
-    base_items: set[FileItem],
+    base_items: Set[FileItem],
     output_format: str,
     css: str,
     yes: bool,

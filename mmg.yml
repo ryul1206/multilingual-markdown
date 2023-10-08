@@ -1,15 +1,15 @@
 
-convert_without_ask: false
-# If true(default), it is same as `mmg ** --yes`.`
-# If false, ask for confirmation before converting.
+convert_without_ask: true
+# If false (default), ask for confirmation before converting.
+# If true, it is same as `mmg ** --yes`.`
 
-verbose: 1
+verbose: 2
 # 0: quiet(default), 1: normal, 2: verbose
 
 log_dir: "logs"
 # Log files will be placed in this folder.
 # If the folder does not exist, error will occur.
-# If not specified, log files will not be generated.
+# If comment out, log files will not be generated.
 
 # The `tags_as` can be "folder" or "suffix"
 #   - "folder" is for the folder docs structure.

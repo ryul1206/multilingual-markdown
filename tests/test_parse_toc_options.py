@@ -26,6 +26,29 @@ test_cases = [
     ((2, 2, True), "<!-- [[ multilingual toc: level=2, no-emoji ]] -->"),
     ((2, 2, True), "<!-- [[ multilingual toc: level = 2, no-emoji ]] -->"),
     ((2, 2, True), "<!-- [[ multilingual toc: level = 2 , no-emoji ]] -->"),
+    # Min, Max
+    ((2, 3, False), "<!-- [[ multilingual toc: level=2~3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level=2~ 3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level=2 ~3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level=2 ~ 3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level= 2~3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level =2~3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level = 2~3 ]] -->"),
+    ((2, 3, False), "<!-- [[ multilingual toc: level = 2~ 3 ]] -->"),
+    # Max
+    ((1, 3, False), "<!-- [[ multilingual toc: level=~3 ]] -->"),
+    ((1, 3, False), "<!-- [[ multilingual toc: level=~ 3 ]] -->"),
+    ((1, 3, False), "<!-- [[ multilingual toc: level= ~ 3 ]] -->"),
+    ((1, 3, False), "<!-- [[ multilingual toc: level = ~3 ]] -->"),
+    ((1, 3, False), "<!-- [[ multilingual toc: level = ~ 3 ]] -->"),
+    # Min
+    ((1, 9, False), "<!-- [[ multilingual toc: level=1~ ]] -->"),
+    ((1, 9, False), "<!-- [[ multilingual toc: level = 1~ ]] -->"),
+    ((1, 9, False), "<!-- [[ multilingual toc: level = 1 ~  ]] -->"),
+    # Single
+    ((2, 2, False), "<!-- [[ multilingual toc: level=2 ]] -->"),
+    ((2, 2, False), "<!-- [[ multilingual toc: level = 2 ]] -->"),
+    ((2, 2, False), "<!-- [[ multilingual toc: level = 2  ]] -->"),
 ]
 
 

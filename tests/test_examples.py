@@ -5,7 +5,7 @@ import pytest
 
 # Collect all the examples from the `examples` folder.
 _current_dir = os.path.dirname(os.path.realpath(__file__))
-_example_dir = os.path.abspath(os.path.join(_current_dir, "..", "examples"))
+_example_dir = os.path.abspath(os.path.join(_current_dir, "..", "examples", "api-examples"))
 _file_list = os.listdir(_example_dir)
 
 # Filter out the non-python files.

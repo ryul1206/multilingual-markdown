@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "mmg"
-version = "2.0.0-dev"
+version = "2.0.0"
 description = "Command line interface and Python API to generate i18n documents"
 authors = ["Hong-ryul Jung <jung.hr.1206@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 # homepage = "https://python-poetry.org/"
 repository = "https://github.com/ryul1206/multilingual-markdown"
+homepage = "https://mmg.ryul1206.dev/"
 keywords = [
 	"i18n",
 	"multilingual",
@@ -17,7 +18,11 @@ keywords = [
 ]
 classifiers = [
 	"License :: OSI Approved :: MIT License",
-	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
 	"Operating System :: POSIX :: Linux",
 	"Operating System :: Microsoft :: Windows",
 	"Operating System :: MacOS",
@@ -81,6 +86,7 @@ mkdocs-static-i18n = {extras = ["material"], version = "^1.0.2"}
 mkdocs-jupyter = "^0.24.2"
 mkdocstrings-python = "^1.6.0"
 mike = "^1.1.2"
+mkdocs-exclude = "^1.0.2"
 
 [build-system]
 requires = ["poetry-core"]

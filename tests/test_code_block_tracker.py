@@ -115,6 +115,137 @@ scenarios = {
             (no, "This is not a code line."),
         ]
     ),
+    "Double backtick lines": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "```md"),
+            (CB, "This is a code line."),
+            (CB, "```md"),
+            (CB, "This is a ```code line."),
+            (CB, ""),
+            (CB, "```"),
+            (no, "This is not a code line."),
+            (CB, "```"),
+            (CB, "This is a code line."),
+            (CB, "This is a ```code line."),
+            (CB, "This is a code line."),
+        ]
+    ),
+    "Code block in code block": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "````md"),
+            (CB, "This is a code line."),
+            (CB, "```sh"),
+            (CB, "This is a ```code line."),
+            (CB, "This is a code line."),
+            (CB, "```"),
+            (CB, ""),
+            (CB, "This is a code line."),
+            (CB, "````"),
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+        ]
+    ),
+    "Open block": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "````md"),
+            (CB, "This is a code line."),
+            (CB, "```sh"),
+            (CB, "This is a ```code line."),
+            (CB, "This is a code line."),
+            (CB, "```"),
+            (CB, ""),
+            (CB, "This is a code line."),
+        ]
+    ),
+    "Unbalanced block": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "````md"),
+            (CB, "This is a code line."),
+            (CB, "```sh"),
+            (CB, "This is a ```code line."),
+            (CB, "This is a code line."),
+            (CB, "``````"),
+            (no, ""),
+            (no, "This is not a code line."),
+        ]
+    ),
+    "Indented block": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "```md"),
+            (CB, "This is a code line."),
+            (CB, " ```"),
+            (no, " This is not a ```code line."),
+            (CB, " ```"),
+            (CB, "This is a code line."),
+            (CB, "``````"),
+            (no, ""),
+            (no, "This is not a code line."),
+        ]
+    ),
+    "Indented block 2": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "```md"),
+            (CB, "This is a code line."),
+            (CB, "    ```"),
+            (CB, "    This is a ```code line."),
+            (CB, "    ```"),
+            (CB, "This is a code line."),
+            (CB, "```"),
+            (no, ""),
+            (no, "This is not a code line."),
+        ]
+    ),
+    "Indented block 3": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (CB, "    ```md"),
+            (CB, "    This is a code line."),
+            (CB, "     ```"),
+            (no, "     This is not a ```code line."),
+            (CB, "        ```"),
+            (no, "    This is not a code line."),
+            (CB, "    ```"),
+            (no, ""),
+            (no, "This is not a code line."),
+        ]
+    ),
+    "Unclosed indented block": Scenario(
+        [
+            (no, "This is not a code line."),
+            (no, "This is not a ```code line."),
+            (no, "This is not a code line."),
+            (no, ""),
+            (CB, "    ```md"),
+            (CB, "    This is a code line."),
+            (CB, "        ```"),
+            (no, ""),
+            (no, "This is not a code line."),
+            (CB, "```"),
+            (CB, ""),
+            (CB, "This is a code line."),
+        ]
+    ),
 }
 
 

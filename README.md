@@ -1,21 +1,28 @@
 
-# Multilingual Markdown Generator
+<div align="center" markdown>
+   <img src="./docs/assets/mmg-logo-dark.jpg" width="500" alt="Multilingual Markdown Generator" />
+</div>
+
+<div align="center" markdown>
+
+# [Multilingual Markdown Generator](https://mmg.ryul1206.dev/latest/)
 
 This package provides a command-line interface to manage multilingual contents and generate i18n markdown from a single base file.
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown.svg)
-![GitHub](https://img.shields.io/github/license/ryul1206/multilingual-markdown.svg)
-[![CodeFactor](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown/badge)](https://www.codefactor.io/repository/github/ryul1206/multilingual-markdown)
-[![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg)
+[![PyPI - Version](https://img.shields.io/pypi/v/mmg?color)](https://pypi.org/project/mmg/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mmg)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown)
+[![PyPI - License](https://img.shields.io/pypi/l/mmg)](https://github.com/ryul1206/multilingual-markdown/blob/main/LICENSE)
 
-🚀 **version 2.0.0**
 🌏
 English |
 [**Français**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.fr.md) |
-[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.kr.md) |
-[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.jp.md)
+[**한국어**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.ko.md) |
+[**日本語**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.ja.md)
 
 Available in Bash, Zsh, and Windows PowerShell.
+
+</div>
 
 ---
 
@@ -24,326 +31,138 @@ Available in Bash, Zsh, and Windows PowerShell.
 1. [Overview](#overview-)
     1. [How It Works](#how-it-works)
     1. [Features](#features)
-1. [Install](#install)
-    1. [How to Fix a "Command Not Found" Error](#how-to-fix-a-command-not-found-error)
-1. [Update](#update)
-1. [Uninstall](#uninstall)
-1. [How to Use](#how-to-use)
-    1. [(0) Make a Base Markdown File](#0-make-a-base-markdown-file)
-    1. [(1) File Designation](#1-file-designation)
-    1. [(2) Recursive Option](#2-recursive-option)
-    1. [(3) Base File Validation](#3-base-file-validation)
-    1. [(4) More explanations](#4-more-explanations)
-1. [Command Tags](#command-tags)
-    1. [Headers](#headers)
-    1. [Badges](#badges)
-    1. [Main Text](#main-text)
-1. [Contribution](#contribution)
-    1. [How to build locally for development](#how-to-build-locally-for-development)
-    1. [Changelog](#changelog)
-    1. [Contributors](#contributors)
+1. [Installation](#installation-)
+    1. [Linux](#linux)
+    1. [macOS](#macos)
+    1. [Windows](#windows)
+1. [How to Use](#how-to-use-)
+1. [Troubleshooting](#troubleshooting-)
+1. [Changelog](#changelog-)
+1. [Contributors](#contributors-)
 
 ## Overview 🔎
 
 ### How It Works
-![how it works](how-it-works.png)
+
+By managing only one Base file, we can reduce the number of errors caused by missing or mismatched translations.
+Additionally, thanks to editing in a single file, we can expect convenient translation with the auto-completion function of AI tools such as [Copilot](https://github.com/features/copilot).
+
+Markdown:
+
+<div align="center">
+   <img src="./docs/assets/how-it-works-md.png" width="800" alt="How It Works: Markdown" />
+</div>
+
+Jupyter Notebook:
+
+<div align="center">
+   <img src="./docs/assets/how-it-works-ipynb.png" width="900" alt="How It Works: Jupyter Notebook" />
+</div>
 
 ### Features
 
-- Auto suffix to file name
-  - [IETF language tags](https://en.wikipedia.org/wiki/IETF_language_tag) are also available.
-  - Remove suffix option for one main language
-- UTF-8 encoding. So this *would* support almost all languages. :) 🍷
-- Auto table of contents
-    - Table of contents level options
-    - Table of contents emoji **on-off** options
+Supports the following features:
 
-## Install
+- **Markdown, Jupyter Notebook(`.ipynb`) as input formats**
+- **As-is, HTML, PDF as ouput formats**
+- Command-line interface for Bash, Zsh, Windows PowerShell
+- Python API
+- Recursive traversal mode with `-r` option (As-is, HTML, PDF are all supported)
+- Batch processing mode with YAML file (Only `As-is` is supported)
+- [IETF language tags](https://en.wikipedia.org/wiki/IETF_language_tag)
+- UTF-8 encoding
+- Automatic generation of table of contents with level and emoji options (Markdown and Jupyter Notebook are both supported)
+- Base file validation (Check the number of tags of each language)
+- Validation only mode for CI/CD (Disable file generation)
+
+## Installation 📦
+
+### Linux
 
 ```sh
-pip3 install mmg --user
+pip3 install mmg
 ```
 
-Now when you open a new terminal you can use the new command `mmg`.
+### macOS
+
+```sh
+pip3 install mmg
+```
+
+If you have any issues with [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#macos), install it with the following command. WeasyPrint is only used to create PDFs.
+
+```sh
+brew install weasyprint
+```
+
+### Windows
+
+1. MMG uses [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) to create PDFs. WeasyPrint requires the GTK library, so download and run the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **If you are not interested in creating PDFs, you can skip this step.** Other features of MMG are available without GTK.
+2. Install MMG using Pip.
+
+    ```sh
+    pip3 install mmg
+    ```
+
+## How to Use 💡
+
+Please refer to the [documentation](https://mmg.ryul1206.dev/latest/) for detailed usage and examples.
 
 ```sh
 $ mmg --help
-mmg [OPTIONS] [FILENAMES]...
+Usage: mmg [OPTIONS] [FILE_NAMES]...
+
+  FILE_NAMES: Base file names to convert. `*.base.md` or `*.base.ipynb` are
+  available.
+
+  Here are some examples:
+
+      mmg *.base.md
+
+      mmg *.base.ipynb
+
+      mmg *.base.md *.base.ipynb -o pdf --css github-dark
+
+      mmg --recursive
+
+      mmg --recursive --validation-only
+
+      mmg --batch mmg.yml
 
 Options:
-  --version                 Show the current version.
-  -r, --recursive           This recursive option searches all subfolders
-                            based on current directory and converts all base
-                            files.
-  -y, --yes                 Confirm the action without prompting
-  -c, --check / -s, --skip  Check the number of language tags of each file
-                            (defualt: --check)
-  -v, --verbose             For example, -v:1, -vv:2, -vvv:3  [x>=0]
-  --help                    Show this message and exit.
+  -r, --recursive                 This will search all subfolders based on
+                                  current directory.
+  -b, --batch FILE                YAML file path for batch conversion.
+                                  (Default: None)
+  -o, --output-format [as-is|html|pdf]
+                                  Output format. (Default: as-is)
+  --css TEXT                      CSS file path or preset('github-
+                                  light'/'github-dark'). Only for the HTML/PDF
+                                  output. (Default: github-light)
+  -y, --yes                       This will confirm the conversion without
+                                  asking. (Default: False)
+  -s, --skip-validation           Skip the health check. (Default: False)
+  --validation-only               Only check the health. (Default: False)
+  -v, --verbose                   Verbosity level from 0 to 2. --verbose:1,
+                                  -v:1, -vv:2 (Default: 0)
+  --version                       Show the current version.
+  --help                          Show this message and exit.
 ```
 
-### How to Fix a "Command Not Found" Error
+## Troubleshooting 💊
 
-**Ubuntu Bash/Zsh**
+Please refer to the [troubleshooting](https://mmg.ryul1206.dev/latest/misc/troubleshooting/) page on the website.
 
-- Cause: This error occurs if the variable `PATH` does not contain the path `$HOME/.local/bin` where the `mmg` command is installed.
-- Solution: Open `~/.bashrc` or `~/.zshrc` file and add `$HOME/.local/bin` to `PATH`.
-    ```
-    export PATH="$HOME/.local/bin:$PATH"
-    ```
-
-**Windows PowerShell**
-
-You can solve the problem by creating the PS modules in the order described below.
-
-1. You can check the PSModule paths by using the `$env:PSModulePath` command in PowerShell. Paste the PSmmg folder of this repository into one of the PSModule paths. For example, `C:\Program Files\WindowsPowerShell\Modules\PSmmg\PSmmg.psm1` should exist.
-2. Run PowerShell in administrator mode and change the execution policy.
-    ```
-    Set-ExecutionPolicy RemoteSigned
-    ```
-3. Now restart PowerShell and you can use the `mmg` command.
-
-**OS Agnostic Alternative**
-
-```
-python -m mmgcli [options]
-```
-
-## Update
-
-```sh
-pip3 install mmg --upgrade --user
-```
-
-## Uninstall
-
-```sh
-pip3 uninstall mmg
-```
-
-## How to Use
-
-### (0) Make a Base Markdown File
-
-Make `{something}.base.md` files. See [README.base.md](README.base.md) and [example.base.md](example/example.base.md) for examples, and [Command Tags](#Command-Tags) for rules.
-
-**(Note) A wrong format of base-file will break generated style.**
-
-### (1) File Designation
-
-Enter the `*.base.md` files that you want to create in multiple languages as arguments to the `mmg` command.
-
-```sh
-mmg FileName.base.md
-```
-
-Multiple arguments are separated by spaces.
-
-```sh
-mmg Foo.base.md Bar.base.md Baz.base.md
-```
-
-### (2) Recursive Option
-
-If you want to convert all base files in the current directory and subdirectories, use the `--recursive` or `-r` option.
-The recursive option searches all subfolders based on where the command is entered.
-You cannot specify a folder as an argument yet.
-
-```sh
-mmg --recursive
-```
-
-### (3) Base File Validation
-
-When your file may have a problem.
-(Normal is shown in green and abnormal in red.)
-
-- Verbosity 0
-    ```text
-    $ mmg -r
-    ----------------------
-    ✅ .\README.base.md
-    ❌ .\example\example.base.md
-    ----------------------
-    => 2 base markdowns were found.
-        Your verbosity is 0. Try the `--verbose` option for more details.
-    Do you want to convert these files? [y/N]
-    ```
-- Verbosity 1 (`--verbose`)
-    ```text
-    $ mmg -r -v
-    ----------------------
-    ✅ .\README.base.md
-        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
-    ❌ .\example\example.base.md
-        4 language(s) not translated.
-        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-    ----------------------
-    => 2 base markdowns were found.
-    Do you want to convert these files? [y/N]
-    ```
-- Verbosity 2
-    ```text
-    $ mmg -r -vv
-    ----------------------
-    ✅ .\README.base.md
-        Tag count: {'en': 37, 'fr': 37, 'kr': 37}
-    ❌ .\example\example.base.md
-        4 language(s) not translated.
-        Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 5, 'ja-JP': 4, '<Unknown>': 1}
-            Line 28: This language reappeared before all languages appeared once.
-            Line 36: A common area appeared before all languages come out.
-            Line 57: Unknown suffix detected.
-            Line 59: This language reappeared before all languages appeared once.
-    ----------------------
-    => 2 base markdowns were found.
-    Do you want to convert these files? [y/N]
-    ```
-
-When your files are ok.
-
-```text
-$ mmg -r --verbose
-----------------------
-✅ .\README.base.md
-    Tag count: {'en': 37, 'fr': 37, 'kr': 37}
-✅ .\example\example.base.md
-    Tag count: {'en-US': 4, 'fr-FR': 4, 'ko-KR': 4, 'ja-JP': 4}i
-----------------------
-=> 2 base markdowns were found.
-    Your verbosity is 0. Try the `--verbose` option for more details.
-Do you want to convert these files? [y/N]
-```
-
-### (4) More explanations
-
-- You can find the `{something}.{suffix}.md` files in the same directory. For example:
-    - By default: `{something}.en.md`, `{something}.kr.md`, `{something}.es.md`, ...
-    - When no-suffix option on `en`: `{something}.md`, `{something}.kr.md`, `{something}.es.md`, ...
-- Since this generator overwrites the auto-generated files each time, you do not have to delete them every time when you modify the `{something}.base.md`. Just run step 2 again.
-
-## Command Tags
-
-### Headers
-
-Headers must be declared before the body begins.
-
-1. **Suffix Declaration**
-
-    Declare the language you want to use. The following example declares `en` and `kr` and others as keywords. These keywords are used as suffixes.
-
-    ```markdown
-    <!-- multilingual suffix: en, kr, fr, es, jp, cn -->
-    ```
-
-1. **Hidden Suffix** (Optional)
-
-    The `no suffix` option can prevent the suffix from being appended when creating the file. In other words, setting `no suffix` to `en` will generate `FileName.md` instead of `FileName.en.md`. This is useful because the main `README` in **GitHub** is not recognized when it has a suffix.
-
-    ```markdown
-    <!-- no suffix: en -->
-    ```
-
-### Badges
-
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-yellow.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-green.svg)](https://github.com/ryul1206/multilingual-markdown)
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-blue.svg)](https://github.com/ryul1206/multilingual-markdown)
-...
-
-```markdown
-[![Multilingual Markdown Generator](https://img.shields.io/badge/markdown-multilingual%20🌐-ff69b4.svg)](https://github.com/ryul1206/multilingual-markdown)
-```
-
-### Main Text
-
-Everything that the parser reads after the tag below is recognized as the main text. (So you have to write the header before main).
-
-1. **Keywords**
-    1. Language Classification
-
-        The tags that distinguish languages are written in the form `<!-- [keyword] -->`. If one keyword is recognized, it will be recognized as that keyword until another keyword is seen.
-
-        ```markdown
-        <!-- [en] -->
-        <!-- [kr] -->
-        <!-- [fr] -->
-        <!-- [es] -->
-        <!-- [jp] -->
-        <!-- [cn] -->
-        ...
-        ```
-
-    1. Common Section
-
-        You can use the 'common' keyword to create a common entry for all files to be generated.
-
-        ```markdown
-        <!-- [common] -->
-        ```
-
-    1. Ignored Section
-
-        Sometimes you do not want to include some items such as comments or TODOs in the files to be generated. If so, use the `ignore` keyword.
-
-        ```markdown
-        <!-- [ignore] -->
-        ```
-
-1. **Table of contents**
-
-    The tags below are automatically replaced to the table of contents by the generator. The level of the table of contents can be determined through the `level` option. The highest-level of title(`# title`) is level 1 because it is `<h1>` in HTML.
-
-    <!-- TODO -->
-    <!-- **(Note) If you skip the title level of the markdown marked with `#`, an error will occur. In other words, the subtitle of `##` must be `###`.** -->
-
-    ```markdown
-    <!-- [[ multilingual toc: level=2~3 ]] -->
-    ```
-
-    1. **`level` option**
-        - There are four ways to mark `level`. You can change the numbers below.
-            - `level=2`: Make the 2nd level to table of contents.
-            - `level=2~`: Make the 2nd ~ 9th level to table of contents.
-            - `level=~4`: Make the 1st ~ 4th level to table of contents.
-            - `level=2~4`: Make the 2nd ~ 4th level to table of contents.
-        - You can write the `table of contents` tags multiple times in one document, and also put different `level` options each time.
-        - **CAUTION💥**: If you omit this `level`, the parser will not recognize it.
-        - **CAUTION💥**: The `table of contents` tag automatically changes the current keyword to `common`. So this tag is also implicitly in `common`.
-    2. **`no-emoji` option**
-        - You may want to subtract emoji from the table of contents while inserting emoji in a section title.😱 If you are in this situation, apply the `no-emoji` option as shown below.😎
-
-        ```markdown
-        <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
-        ```
-
-## Contribution
-
-I would appreciate anything you send. (e.g. translations, simple improvements, bug reports, and so on.)
-
-### How to build locally for development
-
-If you would like to build and test the project locally, we recommend using [poetry](https://python-poetry.org/) to manage your development environment.
-[Poetry](https://python-poetry.org/) is a dependency management tool that simplifies installation and management of packages in your project.
-Here's how you can use poetry to build the project locally:
-
-1. Install poetry by following the instructions in the [official documentation](https://python-poetry.org/docs/).
-2. Clone the repository and navigate to the project directory.
-3. Set your virtual environment configuration for the project by:
-   - `poetry config virtualenvs.in-project true`
-   - `poetry config virtualenvs.path "./.venv"`
-4. Run `poetry install` to install the dependencies and create a virtual environment for the project.
-5. Activate the virtual environment by running `poetry shell`.
-
-### Changelog
+## Changelog 📝
 
 [CHANGELOG.md](https://github.com/ryul1206/multilingual-markdown/blob/develop/CHANGELOG.md)
 
-### Contributors
+## Contributors 🤝
 
-> The contributor list is available in English only.
+<a href="https://github.com/ryul1206/multilingual-markdown/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ryul1206/multilingual-markdown" />
+</a>
 
-- [@bkg2018 (Francis Piérot)](https://github.com/bkg2018): Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1)
-- [@mathben (Mathieu Benoit)](https://github.com/mathben): Update README pip installation with requirements.txt [PR #2](https://github.com/ryul1206/multilingual-markdown/pull/2)
-- [@ryukzak (Aleksandr Penskoi)](https://github.com/ryukzak): Bug fix for `--yes` flag. [PR #21](https://github.com/ryul1206/multilingual-markdown/pull/21)
+Made with [contrib.rocks](https://contrib.rocks).
+
+If you are interested in how to contribute, please refer to the [contribution guide](https://mmg.ryul1206.dev/latest/contributing/).

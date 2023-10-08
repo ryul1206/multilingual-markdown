@@ -1,4 +1,4 @@
-from typing import List, Iterator
+from typing import List, Iterator, Set
 from dataclasses import dataclass
 import os
 import re
@@ -91,7 +91,7 @@ def walk_base_file(path: str, recursive: bool) -> Iterator[FileItem]:
             yield base_file_to_item(path, file_name)
 
 
-def collect_bases_from_dir(dir: str, recursive: bool) -> set[FileItem]:
+def collect_bases_from_dir(dir: str, recursive: bool) -> Set[FileItem]:
     """Collect all base files from the given directory and the recursive flag.
 
     Args:
@@ -99,24 +99,24 @@ def collect_bases_from_dir(dir: str, recursive: bool) -> set[FileItem]:
         recursive (bool): The recursive flag.
 
     Returns:
-        set[FileItem]: The set of the base file items.
+        Set[FileItem]: The set of the base file items.
     """
-    base_items: set[FileItem] = set()
+    base_items: Set[FileItem] = set()
     for item in walk_base_file(dir, recursive):
         base_items.add(item)
     return base_items
 
 
-def collect_bases_from_files(file_names: List[str]) -> set[FileItem]:
+def collect_bases_from_files(file_names: List[str]) -> Set[FileItem]:
     """Collect all base files from the given file names.
 
     Args:
         file_names (List[str]): The list of file names to collect.
 
     Returns:
-        set[FileItem]: The set of the base file items.
+        Set[FileItem]: The set of the base file items.
     """
-    base_items: set[FileItem] = set()
+    base_items: Set[FileItem] = set()
     for file_name in file_names:
         # Resolve a PowerShell bug related to file paths with specific names
         # The below line prevents the error when the file_name starts with ".\" or "./".
