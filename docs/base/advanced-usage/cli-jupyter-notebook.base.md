@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/advanced-usage/cli-jupyter-notebook) |
-    [**한국어**](/ko/advanced-usage/cli-jupyter-notebook) |
-    [**日本語**](/ja/advanced-usage/cli-jupyter-notebook)
+    [**Français**](site:/fr/advanced-usage/cli-jupyter-notebook) |
+    [**한국어**](site:/ko/advanced-usage/cli-jupyter-notebook) |
+    [**日本語**](site:/ja/advanced-usage/cli-jupyter-notebook)
 <!-- [fr] -->
-    [**English**](/advanced-usage/cli-jupyter-notebook) |
+    [**English**](site:/advanced-usage/cli-jupyter-notebook) |
     Français |
-    [**한국어**](/ko/advanced-usage/cli-jupyter-notebook) |
-    [**日本語**](/ja/advanced-usage/cli-jupyter-notebook)
+    [**한국어**](site:/ko/advanced-usage/cli-jupyter-notebook) |
+    [**日本語**](site:/ja/advanced-usage/cli-jupyter-notebook)
 <!-- [ko] -->
-    [**English**](/advanced-usage/cli-jupyter-notebook) |
-    [**Français**](/fr/advanced-usage/cli-jupyter-notebook) |
+    [**English**](site:/advanced-usage/cli-jupyter-notebook) |
+    [**Français**](site:/fr/advanced-usage/cli-jupyter-notebook) |
     한국어 |
-    [**日本語**](/ja/advanced-usage/cli-jupyter-notebook)
+    [**日本語**](site:/ja/advanced-usage/cli-jupyter-notebook)
 <!-- [ja] -->
-    [**English**](/advanced-usage/cli-jupyter-notebook) |
-    [**Français**](/fr/advanced-usage/cli-jupyter-notebook) |
-    [**한국어**](/ko/advanced-usage/cli-jupyter-notebook) |
+    [**English**](site:/advanced-usage/cli-jupyter-notebook) |
+    [**Français**](site:/fr/advanced-usage/cli-jupyter-notebook) |
+    [**한국어**](site:/ko/advanced-usage/cli-jupyter-notebook) |
     日本語
 <!-- [common] -->
 

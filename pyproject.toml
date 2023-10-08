@@ -87,6 +87,7 @@ mkdocs-jupyter = "^0.24.2"
 mkdocstrings-python = "^1.6.0"
 mike = "^1.1.2"
 mkdocs-exclude = "^1.0.2"
+mkdocs-site-urls = "^0.2.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/misc/contributing) |
-    [**한국어**](/ko/misc/contributing) |
-    [**日本語**](/ja/misc/contributing)
+    [**Français**](site:/fr/misc/contributing) |
+    [**한국어**](site:/ko/misc/contributing) |
+    [**日本語**](site:/ja/misc/contributing)
 <!-- [fr] -->
-    [**English**](/misc/contributing) |
+    [**English**](site:/misc/contributing) |
     Français |
-    [**한국어**](/ko/misc/contributing) |
-    [**日本語**](/ja/misc/contributing)
+    [**한국어**](site:/ko/misc/contributing) |
+    [**日本語**](site:/ja/misc/contributing)
 <!-- [ko] -->
-    [**English**](/misc/contributing) |
-    [**Français**](/fr/misc/contributing) |
+    [**English**](site:/misc/contributing) |
+    [**Français**](site:/fr/misc/contributing) |
     한국어 |
-    [**日本語**](/ja/misc/contributing)
+    [**日本語**](site:/ja/misc/contributing)
 <!-- [ja] -->
-    [**English**](/misc/contributing) |
-    [**Français**](/fr/misc/contributing) |
-    [**한국어**](/ko/misc/contributing) |
+    [**English**](site:/misc/contributing) |
+    [**Français**](site:/fr/misc/contributing) |
+    [**한국어**](site:/ko/misc/contributing) |
     日本語
 <!-- [common] -->
 

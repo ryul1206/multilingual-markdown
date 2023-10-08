@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/getting-started/upgrade-and-uninstall) |
-    [**한국어**](/ko/getting-started/upgrade-and-uninstall) |
-    [**日本語**](/ja/getting-started/upgrade-and-uninstall)
+    [**Français**](site:/fr/getting-started/upgrade-and-uninstall) |
+    [**한국어**](site:/ko/getting-started/upgrade-and-uninstall) |
+    [**日本語**](site:/ja/getting-started/upgrade-and-uninstall)
 <!-- [fr] -->
-    [**English**](/getting-started/upgrade-and-uninstall) |
+    [**English**](site:/getting-started/upgrade-and-uninstall) |
     Français |
-    [**한국어**](/ko/getting-started/upgrade-and-uninstall) |
-    [**日本語**](/ja/getting-started/upgrade-and-uninstall)
+    [**한국어**](site:/ko/getting-started/upgrade-and-uninstall) |
+    [**日本語**](site:/ja/getting-started/upgrade-and-uninstall)
 <!-- [ko] -->
-    [**English**](/getting-started/upgrade-and-uninstall) |
-    [**Français**](/fr/getting-started/upgrade-and-uninstall) |
+    [**English**](site:/getting-started/upgrade-and-uninstall) |
+    [**Français**](site:/fr/getting-started/upgrade-and-uninstall) |
     한국어 |
-    [**日本語**](/ja/getting-started/upgrade-and-uninstall)
+    [**日本語**](site:/ja/getting-started/upgrade-and-uninstall)
 <!-- [ja] -->
-    [**English**](/getting-started/upgrade-and-uninstall) |
-    [**Français**](/fr/getting-started/upgrade-and-uninstall) |
-    [**한국어**](/ko/getting-started/upgrade-and-uninstall) |
+    [**English**](site:/getting-started/upgrade-and-uninstall) |
+    [**Français**](site:/fr/getting-started/upgrade-and-uninstall) |
+    [**한국어**](site:/ko/getting-started/upgrade-and-uninstall) |
     日本語
 <!-- [common] -->
 

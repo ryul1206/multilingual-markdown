@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/misc/troubleshooting) |
-    [**한국어**](/ko/misc/troubleshooting) |
-    [**日本語**](/ja/misc/troubleshooting)
+    [**Français**](site:/fr/misc/troubleshooting) |
+    [**한국어**](site:/ko/misc/troubleshooting) |
+    [**日本語**](site:/ja/misc/troubleshooting)
 <!-- [fr] -->
-    [**English**](/misc/troubleshooting) |
+    [**English**](site:/misc/troubleshooting) |
     Français |
-    [**한국어**](/ko/misc/troubleshooting) |
-    [**日本語**](/ja/misc/troubleshooting)
+    [**한국어**](site:/ko/misc/troubleshooting) |
+    [**日本語**](site:/ja/misc/troubleshooting)
 <!-- [ko] -->
-    [**English**](/misc/troubleshooting) |
-    [**Français**](/fr/misc/troubleshooting) |
+    [**English**](site:/misc/troubleshooting) |
+    [**Français**](site:/fr/misc/troubleshooting) |
     한국어 |
-    [**日本語**](/ja/misc/troubleshooting)
+    [**日本語**](site:/ja/misc/troubleshooting)
 <!-- [ja] -->
-    [**English**](/misc/troubleshooting) |
-    [**Français**](/fr/misc/troubleshooting) |
-    [**한국어**](/ko/misc/troubleshooting) |
+    [**English**](site:/misc/troubleshooting) |
+    [**Français**](site:/fr/misc/troubleshooting) |
+    [**한국어**](site:/ko/misc/troubleshooting) |
     日本語
 <!-- [common] -->
 
@@ -178,10 +178,13 @@ GLib-GIO-WARNING **: 13:19:49.232: Unexpectedly, UWP app `Clipchamp.Clipchamp_2.
 <!-- [common] -->
 
 <!-- [en] -->
+## Markdown files are not converted properly when HTML tags are included
 <!-- [fr] -->
+## Les fichiers Markdown ne sont pas convertis correctement lorsque des balises HTML sont incluses
 <!-- [ko] -->
 ## Markdown에 HTML 태그가 포함된 경우, HTML 또는 PDF 변환이 제대로 되지 않음
 <!-- [ja] -->
+## MarkdownにHTMLタグが含まれている場合、HTMLまたはPDF変換が正しく行われない
 <!-- [common] -->
 
 <!-- [en] -->

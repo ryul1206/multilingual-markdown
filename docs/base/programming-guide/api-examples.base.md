@@ -15,38 +15,38 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/programming-guide/api-examples) |
-    [**한국어**](/ko/programming-guide/api-examples) |
-    [**日本語**](/ja/programming-guide/api-examples)
+    [**Français**](site:/fr/programming-guide/api-examples) |
+    [**한국어**](site:/ko/programming-guide/api-examples) |
+    [**日本語**](site:/ja/programming-guide/api-examples)
 <!-- [fr] -->
-    [**English**](/programming-guide/api-examples) |
+    [**English**](site:/programming-guide/api-examples) |
     Français |
-    [**한국어**](/ko/programming-guide/api-examples) |
-    [**日本語**](/ja/programming-guide/api-examples)
+    [**한국어**](site:/ko/programming-guide/api-examples) |
+    [**日本語**](site:/ja/programming-guide/api-examples)
 <!-- [ko] -->
-    [**English**](/programming-guide/api-examples) |
-    [**Français**](/fr/programming-guide/api-examples) |
+    [**English**](site:/programming-guide/api-examples) |
+    [**Français**](site:/fr/programming-guide/api-examples) |
     한국어 |
-    [**日本語**](/ja/programming-guide/api-examples)
+    [**日本語**](site:/ja/programming-guide/api-examples)
 <!-- [ja] -->
-    [**English**](/programming-guide/api-examples) |
-    [**Français**](/fr/programming-guide/api-examples) |
-    [**한국어**](/ko/programming-guide/api-examples) |
+    [**English**](site:/programming-guide/api-examples) |
+    [**Français**](site:/fr/programming-guide/api-examples) |
+    [**한국어**](site:/ko/programming-guide/api-examples) |
     日本語
 <!-- [common] -->
 
 <!-- [ko] -->
 - 모든 예제는 [GitHub](https://github.com/ryul1206/multilingual-markdown/tree/main/examples/api-examples)에서 확인할 수 있습니다.
-- 이 페이지에서 사용되는 MMG API의 레퍼런스는 [Python API](/ko/programming-guide/python-api)에서 확인할 수 있습니다.
+- 이 페이지에서 사용되는 MMG API의 레퍼런스는 [Python API](site:/ko/programming-guide/python-api)에서 확인할 수 있습니다.
 <!-- [ja] -->
 - 全ての例は[GitHub](https://github.com/ryul1206/multilingual-markdown/tree/main/examples/api-examples)で確認できます。
-- このページで使用されるMMG APIのリファレンスは[Python API](/ja/programming-guide/python-api)で確認できます。
+- このページで使用されるMMG APIのリファレンスは[Python API](site:/ja/programming-guide/python-api)で確認できます。
 <!-- [en] -->
 - All examples can be found on [GitHub](https://github.com/ryul1206/multilingual-markdown/tree/main/examples/api-examples).
-- The reference of MMG API used in this page can be found in [Python API](/programming-guide/python-api).
+- The reference of MMG API used in this page can be found in [Python API](site:/programming-guide/python-api).
 <!-- [fr] -->
 - Tous les exemples peuvent être trouvés sur [GitHub](https://github.com/ryul1206/multilingual-markdown/tree/main/examples/api-examples).
-- La référence de l'API MMG utilisée dans cette page peut être trouvée dans [Python API](/fr/programming-guide/python-api).
+- La référence de l'API MMG utilisée dans cette page peut être trouvée dans [Python API](site:/fr/programming-guide/python-api).
 <!-- [common] -->
 
 ## api_example_convert_file.py

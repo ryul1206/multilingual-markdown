@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/advanced-usage/cli-validation) |
-    [**한국어**](/ko/advanced-usage/cli-validation) |
-    [**日本語**](/ja/advanced-usage/cli-validation)
+    [**Français**](site:/fr/advanced-usage/cli-validation) |
+    [**한국어**](site:/ko/advanced-usage/cli-validation) |
+    [**日本語**](site:/ja/advanced-usage/cli-validation)
 <!-- [fr] -->
-    [**English**](/advanced-usage/cli-validation) |
+    [**English**](site:/advanced-usage/cli-validation) |
     Français |
-    [**한국어**](/ko/advanced-usage/cli-validation) |
-    [**日本語**](/ja/advanced-usage/cli-validation)
+    [**한국어**](site:/ko/advanced-usage/cli-validation) |
+    [**日本語**](site:/ja/advanced-usage/cli-validation)
 <!-- [ko] -->
-    [**English**](/advanced-usage/cli-validation) |
-    [**Français**](/fr/advanced-usage/cli-validation) |
+    [**English**](site:/advanced-usage/cli-validation) |
+    [**Français**](site:/fr/advanced-usage/cli-validation) |
     한국어 |
-    [**日本語**](/ja/advanced-usage/cli-validation)
+    [**日本語**](site:/ja/advanced-usage/cli-validation)
 <!-- [ja] -->
-    [**English**](/advanced-usage/cli-validation) |
-    [**Français**](/fr/advanced-usage/cli-validation) |
-    [**한국어**](/ko/advanced-usage/cli-validation) |
+    [**English**](site:/advanced-usage/cli-validation) |
+    [**Français**](site:/fr/advanced-usage/cli-validation) |
+    [**한국어**](site:/ko/advanced-usage/cli-validation) |
     日本語
 <!-- [common] -->
 

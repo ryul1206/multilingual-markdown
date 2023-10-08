@@ -1,5 +1,7 @@
 site_name: MMG
-site_url: https://mmg.ryul1206.dev/
+
+# TODO: Always check the version for Mike
+site_url: https://mmg.ryul1206.dev/unstable/
 repo_url: https://github.com/ryul1206/multilingual-markdown
 repo_name: multilingual-markdown
 
@@ -72,6 +74,7 @@ extra:
     property: G-8XGG7Z9Z3K
 
 plugins:
+  - site-urls
   - search:
       lang:
         - en

@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/getting-started/quick-start) |
-    [**한국어**](/ko/getting-started/quick-start) |
-    [**日本語**](/ja/getting-started/quick-start)
+    [**Français**](site:/fr/getting-started/quick-start) |
+    [**한국어**](site:/ko/getting-started/quick-start) |
+    [**日本語**](site:/ja/getting-started/quick-start)
 <!-- [fr] -->
-    [**English**](/getting-started/quick-start) |
+    [**English**](site:/getting-started/quick-start) |
     Français |
-    [**한국어**](/ko/getting-started/quick-start) |
-    [**日本語**](/ja/getting-started/quick-start)
+    [**한국어**](site:/ko/getting-started/quick-start) |
+    [**日本語**](site:/ja/getting-started/quick-start)
 <!-- [ko] -->
-    [**English**](/getting-started/quick-start) |
-    [**Français**](/fr/getting-started/quick-start) |
+    [**English**](site:/getting-started/quick-start) |
+    [**Français**](site:/fr/getting-started/quick-start) |
     한국어 |
-    [**日本語**](/ja/getting-started/quick-start)
+    [**日本語**](site:/ja/getting-started/quick-start)
 <!-- [ja] -->
-    [**English**](/getting-started/quick-start) |
-    [**Français**](/fr/getting-started/quick-start) |
-    [**한국어**](/ko/getting-started/quick-start) |
+    [**English**](site:/getting-started/quick-start) |
+    [**Français**](site:/fr/getting-started/quick-start) |
+    [**한국어**](site:/ko/getting-started/quick-start) |
     日本語
 <!-- [common] -->
 
@@ -89,22 +89,22 @@ Tags within code blocks are treated as plain text.
 ````
 
 <!-- [en] -->
-Please refer to the ["Create a Base File"](/basic-usage/create-base-file) page for features not introduced here.
+Please refer to the ["Create a Base File"](site:/basic-usage/create-base-file) page for features not introduced here.
 
 Now you are ready to use MMG!
 Let's create `en`, `fr`, `ko`, `ja` files in the next step.
 <!-- [fr] -->
-Veuillez vous référer à la page ["Créer un Fichier Base"](/fr/basic-usage/create-base-file) pour les fonctionnalités non présentées ici.
+Veuillez vous référer à la page ["Créer un Fichier Base"](site:/fr/basic-usage/create-base-file) pour les fonctionnalités non présentées ici.
 
 Vous êtes maintenant prêt à utiliser MMG !
 Créons les fichiers `en`, `fr`, `ko`, `ja` à l'étape suivante.
 <!-- [ko] -->
-여기서 소개하지 않은 기능들은 ["베이스 파일 만들기"](/ko/basic-usage/create-base-file) 페이지를 참고하세요.
+여기서 소개하지 않은 기능들은 ["베이스 파일 만들기"](site:/ko/basic-usage/create-base-file) 페이지를 참고하세요.
 
 이제 MMG를 사용할 준비가 되었습니다!
 다음 단계에서는 `en`, `fr`, `ko`, `ja` 파일을 생성해보겠습니다.
 <!-- [ja] -->
-ここでは紹介していない機能は、["Baseファイルを作成する"](/ja/basic-usage/create-base-file)ページを参照してください。
+ここでは紹介していない機能は、["Baseファイルを作成する"](site:/ja/basic-usage/create-base-file)ページを参照してください。
 
 これでMMGを使用する準備が整いました！
 次のステップでは、`en`、`fr`、`ko`、`ja`ファイルを作成します。
@@ -290,24 +290,24 @@ mmg Foo.base.md Bar.base.md Baz.base.md
 
 <!-- [en] -->
 For the second method, use the `--recursive` or `-r` option, which can also be used with the first method.
-Please refer to the [recursive option](/basic-usage/cli-recursive) for more information.
+Please refer to the [recursive option](site:/basic-usage/cli-recursive) for more information.
 <!-- [fr] -->
 Pour la deuxième méthode, utilisez l'option `--recursive` ou `-r`, qui peut également être utilisée avec la première méthode.
-Veuillez vous référer à l'[option récursive](/fr/basic-usage/cli-recursive) pour plus d'informations.
+Veuillez vous référer à l'[option récursive](site:/fr/basic-usage/cli-recursive) pour plus d'informations.
 <!-- [ko] -->
 두 번째 방법의 경우, `--recursive` 또는 `-r` 옵션을 사용하면 되고, 첫 번째 방법과 함께 사용할 수도 있습니다.
-자세한 내용은 [재귀 옵션](/ko/basic-usage/cli-recursive)을 참고하세요.
+자세한 내용은 [재귀 옵션](site:/ko/basic-usage/cli-recursive)을 참고하세요.
 <!-- [ja] -->
 2番目の方法では、最初の方法と同様に、`--recursive`または`-r`オプションを使用します。
-詳細については、[再帰オプション](/ja/basic-usage/cli-recursive)を参照してください。
+詳細については、[再帰オプション](site:/ja/basic-usage/cli-recursive)を参照してください。
 <!-- [common] -->
 
 <!-- [en] -->
-Finally, for the third method, please refer to the [batch processing with YAML file](/advanced-usage/cli-batch-processing) page.
+Finally, for the third method, please refer to the [batch processing with YAML file](site:/advanced-usage/cli-batch-processing) page.
 <!-- [fr] -->
-Enfin, pour la troisième méthode, veuillez vous référer à la page [traitement par lots avec fichier YAML](/fr/advanced-usage/cli-batch-processing).
+Enfin, pour la troisième méthode, veuillez vous référer à la page [traitement par lots avec fichier YAML](site:/fr/advanced-usage/cli-batch-processing).
 <!-- [ko] -->
-마지막으로 세 번째 방법에 대해서는 [YAML 파일을 사용한 일괄 처리](/ko/advanced-usage/cli-batch-processing) 페이지를 참고하세요.
+마지막으로 세 번째 방법에 대해서는 [YAML 파일을 사용한 일괄 처리](site:/ko/advanced-usage/cli-batch-processing) 페이지를 참고하세요.
 <!-- [ja] -->
-最後に、3番目の方法については、[YAMLファイルを使用したバッチ処理](/ja/advanced-usage/cli-batch-processing)ページを参照してください。
+最後に、3番目の方法については、[YAMLファイルを使用したバッチ処理](site:/ja/advanced-usage/cli-batch-processing)ページを参照してください。
 <!-- [common] -->

@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/basic-usage/create-base-file) |
-    [**한국어**](/ko/basic-usage/create-base-file) |
-    [**日本語**](/ja/basic-usage/create-base-file)
+    [**Français**](site:/fr/basic-usage/create-base-file) |
+    [**한국어**](site:/ko/basic-usage/create-base-file) |
+    [**日本語**](site:/ja/basic-usage/create-base-file)
 <!-- [fr] -->
-    [**English**](/basic-usage/create-base-file) |
+    [**English**](site:/basic-usage/create-base-file) |
     Français |
-    [**한국어**](/ko/basic-usage/create-base-file) |
-    [**日本語**](/ja/basic-usage/create-base-file)
+    [**한국어**](site:/ko/basic-usage/create-base-file) |
+    [**日本語**](site:/ja/basic-usage/create-base-file)
 <!-- [ko] -->
-    [**English**](/basic-usage/create-base-file) |
-    [**Français**](/fr/basic-usage/create-base-file) |
+    [**English**](site:/basic-usage/create-base-file) |
+    [**Français**](site:/fr/basic-usage/create-base-file) |
     한국어 |
-    [**日本語**](/ja/basic-usage/create-base-file)
+    [**日本語**](site:/ja/basic-usage/create-base-file)
 <!-- [ja] -->
-    [**English**](/basic-usage/create-base-file) |
-    [**Français**](/fr/basic-usage/create-base-file) |
-    [**한국어**](/ko/basic-usage/create-base-file) |
+    [**English**](site:/basic-usage/create-base-file) |
+    [**Français**](site:/fr/basic-usage/create-base-file) |
+    [**한국어**](site:/ko/basic-usage/create-base-file) |
     日本語
 <!-- [common] -->
 
@@ -420,17 +420,17 @@ Une fois qu'un mot-clé est reconnu, le contenu suivant sera reconnu avec ce mot
 <!-- [common] -->
 
 <!-- [en] -->
-Using the keywords declared in the [header](/basic-usage/create-base-file/#header), you can declare which keyword the section belongs to.
-If you use an undefined keyword by mistake or the number of keywords does not match, MMG will notify you of an error through the [validation feature](/advanced-usage/cli-validation).
+Using the keywords declared in the [header](site:/basic-usage/create-base-file/#header), you can declare which keyword the section belongs to.
+If you use an undefined keyword by mistake or the number of keywords does not match, MMG will notify you of an error through the [validation feature](site:/advanced-usage/cli-validation).
 <!-- [fr] -->
-En utilisant les mots-clés déclarés dans l'[en-tête](/fr/basic-usage/create-base-file/#en-tete), vous pouvez déclarer à quel mot-clé appartient la section.
-Si vous utilisez par erreur un mot-clé non défini ou si le nombre de mots-clés ne correspond pas, MMG vous informera d'une erreur via la [fonction de validation](/fr/advanced-usage/cli-validation).
+En utilisant les mots-clés déclarés dans l'[en-tête](site:/fr/basic-usage/create-base-file/#en-tete), vous pouvez déclarer à quel mot-clé appartient la section.
+Si vous utilisez par erreur un mot-clé non défini ou si le nombre de mots-clés ne correspond pas, MMG vous informera d'une erreur via la [fonction de validation](site:/fr/advanced-usage/cli-validation).
 <!-- [ko] -->
-앞서 [헤더](/ko/basic-usage/create-base-file/#_3)에서 선언한 키워드를 사용하여, 해당 섹션이 어떤 키워드에 속하는지 선언할 수 있습니다.
-만약 실수로 정의되지 않은 키워드를 사용하거나 키워드 간의 개수가 맞지 않는다면, MMG는 [유효성 검사 기능](/ko/advanced-usage/cli-validation)을 통해 오류를 알려줍니다.
+앞서 [헤더](site:/ko/basic-usage/create-base-file/#_3)에서 선언한 키워드를 사용하여, 해당 섹션이 어떤 키워드에 속하는지 선언할 수 있습니다.
+만약 실수로 정의되지 않은 키워드를 사용하거나 키워드 간의 개수가 맞지 않는다면, MMG는 [유효성 검사 기능](site:/ko/advanced-usage/cli-validation)을 통해 오류를 알려줍니다.
 <!-- [ja] -->
-[ヘッダー](/ja/basic-usage/create-base-file/#_3)で宣言されたキーワードを使用して、セクションがどのキーワードに属するかを宣言できます。
-誤って未定義のキーワードを使用した場合や、キーワードの数が一致しない場合は、[検証機能](/ja/advanced-usage/cli-validation)を介してエラーが通知されます。
+[ヘッダー](site:/ja/basic-usage/create-base-file/#_3)で宣言されたキーワードを使用して、セクションがどのキーワードに属するかを宣言できます。
+誤って未定義のキーワードを使用した場合や、キーワードの数が一致しない場合は、[検証機能](site:/ja/advanced-usage/cli-validation)を介してエラーが通知されます。
 <!-- [common] -->
 
 ```markdown

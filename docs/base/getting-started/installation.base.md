@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/getting-started/installation) |
-    [**한국어**](/ko/getting-started/installation) |
-    [**日本語**](/ja/getting-started/installation)
+    [**Français**](site:/fr/getting-started/installation) |
+    [**한국어**](site:/ko/getting-started/installation) |
+    [**日本語**](site:/ja/getting-started/installation)
 <!-- [fr] -->
-    [**English**](/getting-started/installation) |
+    [**English**](site:/getting-started/installation) |
     Français |
-    [**한국어**](/ko/getting-started/installation) |
-    [**日本語**](/ja/getting-started/installation)
+    [**한국어**](site:/ko/getting-started/installation) |
+    [**日本語**](site:/ja/getting-started/installation)
 <!-- [ko] -->
-    [**English**](/getting-started/installation) |
-    [**Français**](/fr/getting-started/installation) |
+    [**English**](site:/getting-started/installation) |
+    [**Français**](site:/fr/getting-started/installation) |
     한국어 |
-    [**日本語**](/ja/getting-started/installation)
+    [**日本語**](site:/ja/getting-started/installation)
 <!-- [ja] -->
-    [**English**](/getting-started/installation) |
-    [**Français**](/fr/getting-started/installation) |
-    [**한국어**](/ko/getting-started/installation) |
+    [**English**](site:/getting-started/installation) |
+    [**Français**](site:/fr/getting-started/installation) |
+    [**한국어**](site:/ko/getting-started/installation) |
     日本語
 <!-- [common] -->
 

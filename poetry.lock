@@ -1391,6 +1391,17 @@ files = [
 ]
 
 [[package]]
+name = "mkdocs-site-urls"
+version = "0.2.0"
+description = "A MkDocs plugin that adds support for site-relative URLs"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocs-site-urls-0.2.0.tar.gz", hash = "sha256:1a2a1363e55de0bb9818984ae544a6f2f48a851d0112ebe097ad392eeaaf1cec"},
+    {file = "mkdocs_site_urls-0.2.0-py2.py3-none-any.whl", hash = "sha256:675cdf9c3f759620edfb3011cc75226daf106593548c93ee568feb5ffd3cc089"},
+]
+
+[[package]]
 name = "mkdocs-static-i18n"
 version = "1.0.6"
 description = "MkDocs i18n plugin using static translation markdown files"
@@ -2733,4 +2744,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8, <4"
-content-hash = "50bd79197dcbd9e1f0bbe24755925ace4c7dec7e5aebf22bda5234f9f6d23799"
+content-hash = "4f316ca42ff67f1dd09d8ade3a268505722d53fe7a0a9b492a24ad74648d4e88"

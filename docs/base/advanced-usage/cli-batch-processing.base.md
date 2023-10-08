@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/advanced-usage/cli-batch-processing) |
-    [**한국어**](/ko/advanced-usage/cli-batch-processing) |
-    [**日本語**](/ja/advanced-usage/cli-batch-processing)
+    [**Français**](site:/fr/advanced-usage/cli-batch-processing) |
+    [**한국어**](site:/ko/advanced-usage/cli-batch-processing) |
+    [**日本語**](site:/ja/advanced-usage/cli-batch-processing)
 <!-- [fr] -->
-    [**English**](/advanced-usage/cli-batch-processing) |
+    [**English**](site:/advanced-usage/cli-batch-processing) |
     Français |
-    [**한국어**](/ko/advanced-usage/cli-batch-processing) |
-    [**日本語**](/ja/advanced-usage/cli-batch-processing)
+    [**한국어**](site:/ko/advanced-usage/cli-batch-processing) |
+    [**日本語**](site:/ja/advanced-usage/cli-batch-processing)
 <!-- [ko] -->
-    [**English**](/advanced-usage/cli-batch-processing) |
-    [**Français**](/fr/advanced-usage/cli-batch-processing) |
+    [**English**](site:/advanced-usage/cli-batch-processing) |
+    [**Français**](site:/fr/advanced-usage/cli-batch-processing) |
     한국어 |
-    [**日本語**](/ja/advanced-usage/cli-batch-processing)
+    [**日本語**](site:/ja/advanced-usage/cli-batch-processing)
 <!-- [ja] -->
-    [**English**](/advanced-usage/cli-batch-processing) |
-    [**Français**](/fr/advanced-usage/cli-batch-processing) |
-    [**한국어**](/ko/advanced-usage/cli-batch-processing) |
+    [**English**](site:/advanced-usage/cli-batch-processing) |
+    [**Français**](site:/fr/advanced-usage/cli-batch-processing) |
+    [**한국어**](site:/ko/advanced-usage/cli-batch-processing) |
     日本語
 <!-- [common] -->
 

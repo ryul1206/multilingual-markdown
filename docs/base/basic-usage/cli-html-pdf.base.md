@@ -15,23 +15,23 @@
 
 <!-- [en] -->
     English |
-    [**Français**](/fr/basic-usage/cli-html-pdf) |
-    [**한국어**](/ko/basic-usage/cli-html-pdf) |
-    [**日本語**](/ja/basic-usage/cli-html-pdf)
+    [**Français**](site:/fr/basic-usage/cli-html-pdf) |
+    [**한국어**](site:/ko/basic-usage/cli-html-pdf) |
+    [**日本語**](site:/ja/basic-usage/cli-html-pdf)
 <!-- [fr] -->
-    [**English**](/basic-usage/cli-html-pdf) |
+    [**English**](site:/basic-usage/cli-html-pdf) |
     Français |
-    [**한국어**](/ko/basic-usage/cli-html-pdf) |
-    [**日本語**](/ja/basic-usage/cli-html-pdf)
+    [**한국어**](site:/ko/basic-usage/cli-html-pdf) |
+    [**日本語**](site:/ja/basic-usage/cli-html-pdf)
 <!-- [ko] -->
-    [**English**](/basic-usage/cli-html-pdf) |
-    [**Français**](/fr/basic-usage/cli-html-pdf) |
+    [**English**](site:/basic-usage/cli-html-pdf) |
+    [**Français**](site:/fr/basic-usage/cli-html-pdf) |
     한국어 |
-    [**日本語**](/ja/basic-usage/cli-html-pdf)
+    [**日本語**](site:/ja/basic-usage/cli-html-pdf)
 <!-- [ja] -->
-    [**English**](/basic-usage/cli-html-pdf) |
-    [**Français**](/fr/basic-usage/cli-html-pdf) |
-    [**한국어**](/ko/basic-usage/cli-html-pdf) |
+    [**English**](site:/basic-usage/cli-html-pdf) |
+    [**Français**](site:/fr/basic-usage/cli-html-pdf) |
+    [**한국어**](site:/ko/basic-usage/cli-html-pdf) |
     日本語
 <!-- [common] -->
 
@@ -80,16 +80,16 @@ mmg foo.md --output-format pdf
 ```
 
 <!-- [en] -->
-You can also use it with the [recursive option](/basic-usage/cli-recursive-option), and you can specify the style of HTML and PDF by adding the `--css` option.
+You can also use it with the [recursive option](site:/basic-usage/cli-recursive-option), and you can specify the style of HTML and PDF by adding the `--css` option.
 For easy styling, two themes, `github-light` and `github-dark`, are provided by default.
 <!-- [fr] -->
-Vous pouvez également l'utiliser avec l'[option récursive](/fr/basic-usage/cli-recursive-option), et vous pouvez spécifier le style de HTML et PDF en ajoutant l'option `--css`.
+Vous pouvez également l'utiliser avec l'[option récursive](site:/fr/basic-usage/cli-recursive-option), et vous pouvez spécifier le style de HTML et PDF en ajoutant l'option `--css`.
 Pour un style facile, deux thèmes, `github-light` et `github-dark`, sont fournis par défaut.
 <!-- [ko] -->
-뿐만 아니라, [재귀 옵션](/ko/basic-usage/cli-recursive-option)과 함께 사용할 수도 있고, `--css` 옵션을 추가하여 HTML과 PDF의 스타일을 지정할 수도 있습니다.
+뿐만 아니라, [재귀 옵션](site:/ko/basic-usage/cli-recursive-option)과 함께 사용할 수도 있고, `--css` 옵션을 추가하여 HTML과 PDF의 스타일을 지정할 수도 있습니다.
 스타일을 쉽게 지정할 수 있도록, `github-light`와 `github-dark` 두 가지 테마를 기본으로 제공합니다.
 <!-- [ja] -->
-[再帰オプション](/ja/basic-usage/cli-recursive-option)とも一緒に使用でき、`--css` オプションを追加することで HTML と PDF のスタイルを指定できます。
+[再帰オプション](site:/ja/basic-usage/cli-recursive-option)とも一緒に使用でき、`--css` オプションを追加することで HTML と PDF のスタイルを指定できます。
 簡単にスタイリングするために、`github-light` と `github-dark` の 2 つのテーマがデフォルトで用意されています。
 <!-- [common] -->
 

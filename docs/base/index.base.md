@@ -3,7 +3,7 @@
 <!---------------------------->
 
 <div align="center">
-   <img src="/assets/mmg-logo-dark.jpg" width="500" alt="Multilingual Markdown Generator" />
+   <img src="site:/assets/mmg-logo-dark.jpg" width="500" alt="Multilingual Markdown Generator" />
 </div>
 &nbsp;
 
@@ -42,13 +42,13 @@ Bash, Zsh, WindowsPowerShellで使用できます。
 !!! note ""
 
 <!-- [en] -->
-    English | [**Français**](/fr) | [**한국어**](/ko) | [**日本語**](/ja)
+    English | [**Français**](site:/fr) | [**한국어**](site:/ko) | [**日本語**](site:/ja)
 <!-- [fr] -->
-    [**English**](/) | Français | [**한국어**](/ko) | [**日本語**](/ja)
+    [**English**](site:/) | Français | [**한국어**](site:/ko) | [**日本語**](site:/ja)
 <!-- [ko] -->
-    [**English**](/) | [**Français**](/fr) | 한국어 | [**日本語**](/ja)
+    [**English**](site:/) | [**Français**](site:/fr) | 한국어 | [**日本語**](site:/ja)
 <!-- [ja] -->
-    [**English**](/) | [**Français**](/fr) | [**한국어**](/ko) | 日本語
+    [**English**](site:/) | [**Français**](site:/fr) | [**한국어**](site:/ko) | 日本語
 <!-- [common] -->
 
 <!-- [en] -->
@@ -76,13 +76,13 @@ Base 파일 하나만 관리하기 때문에, 콘텐츠 번역이 누락되거�
 Markdown:
 
 <div align="center">
-   <img src="/assets/how-it-works-md.png" width="800" alt="How It Works: Markdown" />
+   <img src="site:/assets/how-it-works-md.png" width="800" alt="How It Works: Markdown" />
 </div>
 
 Jupyter Notebook:
 
 <div align="center">
-   <img src="/assets/how-it-works-ipynb.png" width="900" alt="How It Works: Jupyter Notebook" />
+   <img src="site:/assets/how-it-works-ipynb.png" width="900" alt="How It Works: Jupyter Notebook" />
 </div>
 
 <!-- [en] -->
@@ -164,135 +164,135 @@ Prend en charge les fonctionnalités suivantes :
 <!-- [en] -->
 ### Getting Started
 
-1. [Installation](/getting-started/installation)
-2. [Quick Start with Examples](/getting-started/quick-start)
-3. [Upgrade and Uninstall](/getting-started/upgrade-and-uninstall)
+1. [Installation](site:/getting-started/installation)
+2. [Quick Start with Examples](site:/getting-started/quick-start)
+3. [Upgrade and Uninstall](site:/getting-started/upgrade-and-uninstall)
 <!-- [fr] -->
 ### Commencer
 
-1. [Installation](/fr/getting-started/installation)
-2. [Démarrage rapide avec des Exemples](/fr/getting-started/quick-start)
-3. [Mettre à niveau et Désinstaller](/fr/getting-started/upgrade-and-uninstall)
+1. [Installation](site:/fr/getting-started/installation)
+2. [Démarrage rapide avec des Exemples](site:/fr/getting-started/quick-start)
+3. [Mettre à niveau et Désinstaller](site:/fr/getting-started/upgrade-and-uninstall)
 <!-- [ko] -->
 ### 시작하기
 
-1. [설치](/ko/getting-started/installation)
-2. [빠른 시작을 위한 예제](/ko/getting-started/quick-start)
-3. [업그레이드 및 제거](/ko/getting-started/upgrade-and-uninstall)
+1. [설치](site:/ko/getting-started/installation)
+2. [빠른 시작을 위한 예제](site:/ko/getting-started/quick-start)
+3. [업그레이드 및 제거](site:/ko/getting-started/upgrade-and-uninstall)
 <!-- [ja] -->
 ### はじめに
 
-1. [設置](/ja/getting-started/installation)
-2. [クイックスタートのための例](/ja/getting-started/quick-start)
-3. [アップグレードと削除](/ja/getting-started/upgrade-and-uninstall)
+1. [設置](site:/ja/getting-started/installation)
+2. [クイックスタートのための例](site:/ja/getting-started/quick-start)
+3. [アップグレードと削除](site:/ja/getting-started/upgrade-and-uninstall)
 <!-- [common] -->
 
 <!-- [en] -->
 ### Basic Usage (CLI)
 
-1. [Create Base File](/basic-usage/create-base-file)
-2. [Recursive Option](/basic-usage/cli-recursive-option)
-3. [HTML, PDF Output](/basic-usage/cli-html-pdf)
+1. [Create Base File](site:/basic-usage/create-base-file)
+2. [Recursive Option](site:/basic-usage/cli-recursive-option)
+3. [HTML, PDF Output](site:/basic-usage/cli-html-pdf)
 <!-- [fr] -->
 ### Utilisation de Base (CLI)
 
-1. [Créer un Fichier de Base](/fr/basic-usage/create-base-file)
-2. [Option Récursive](/fr/basic-usage/cli-recursive-option)
-3. [Sortie HTML, PDF](/fr/basic-usage/cli-html-pdf)
+1. [Créer un Fichier de Base](site:/fr/basic-usage/create-base-file)
+2. [Option Récursive](site:/fr/basic-usage/cli-recursive-option)
+3. [Sortie HTML, PDF](site:/fr/basic-usage/cli-html-pdf)
 <!-- [ko] -->
 ### 기본 사용법 (CLI)
 
-1. [Base 파일 생성](/ko/basic-usage/create-base-file)
-2. [재귀 옵션](/ko/basic-usage/cli-recursive-option)
-3. [HTML, PDF 출력](/ko/basic-usage/cli-html-pdf)
+1. [Base 파일 생성](site:/ko/basic-usage/create-base-file)
+2. [재귀 옵션](site:/ko/basic-usage/cli-recursive-option)
+3. [HTML, PDF 출력](site:/ko/basic-usage/cli-html-pdf)
 <!-- [ja] -->
 ### 基本的な使い方 (CLI)
 
-1. [ベースファイルの作成](/ja/basic-usage/create-base-file)
-2. [再帰オプション](/ja/basic-usage/cli-recursive-option)
-3. [HTML, PDF 出力](/ja/basic-usage/cli-html-pdf)
+1. [ベースファイルの作成](site:/ja/basic-usage/create-base-file)
+2. [再帰オプション](site:/ja/basic-usage/cli-recursive-option)
+3. [HTML, PDF 出力](site:/ja/basic-usage/cli-html-pdf)
 <!-- [common] -->
 
 <!-- [en] -->
 ### Advanced Usage (CLI)
 
-1. [Base File Validation](/advanced-usage/cli-validation)
-2. [Using Juptyer Notebook](/advanced-usage/cli-jupyter-notebook)
-3. [Batch Processing with YAML File](/advanced-usage/cli-batch-processing)
+1. [Base File Validation](site:/advanced-usage/cli-validation)
+2. [Using Juptyer Notebook](site:/advanced-usage/cli-jupyter-notebook)
+3. [Batch Processing with YAML File](site:/advanced-usage/cli-batch-processing)
 <!-- [fr] -->
 ### Utilisation Avancée (CLI)
 
-1. [Validation du Fichier de Base](/fr/advanced-usage/cli-validation)
-2. [Utilisation de Juptyer Notebook](/fr/advanced-usage/cli-jupyter-notebook)
-3. [Traitement par lots avec Fichier YAML](/fr/advanced-usage/cli-batch-processing)
+1. [Validation du Fichier de Base](site:/fr/advanced-usage/cli-validation)
+2. [Utilisation de Juptyer Notebook](site:/fr/advanced-usage/cli-jupyter-notebook)
+3. [Traitement par lots avec Fichier YAML](site:/fr/advanced-usage/cli-batch-processing)
 <!-- [ko] -->
 ### 고급 사용법 (CLI)
 
-1. [Base 파일 유효성 검사](/ko/advanced-usage/cli-validation)
-2. [Juptyer Notebook 사용하기](/ko/advanced-usage/cli-jupyter-notebook)
-3. [YAML 파일을 사용한 일괄 처리](/ko/advanced-usage/cli-batch-processing)
+1. [Base 파일 유효성 검사](site:/ko/advanced-usage/cli-validation)
+2. [Juptyer Notebook 사용하기](site:/ko/advanced-usage/cli-jupyter-notebook)
+3. [YAML 파일을 사용한 일괄 처리](site:/ko/advanced-usage/cli-batch-processing)
 <!-- [ja] -->
 ### 高度な使い方 (CLI)
 
-1. [ベースファイルの検証](/ja/advanced-usage/cli-validation)
-2. [Jupyter Notebook 使用する](/ja/advanced-usage/cli-jupyter-notebook)
-3. [YAML ファイルを使用したバッチ処理](/ja/advanced-usage/cli-batch-processing)
+1. [ベースファイルの検証](site:/ja/advanced-usage/cli-validation)
+2. [Jupyter Notebook 使用する](site:/ja/advanced-usage/cli-jupyter-notebook)
+3. [YAML ファイルを使用したバッチ処理](site:/ja/advanced-usage/cli-batch-processing)
 <!-- [common] -->
 
 <!-- [en] -->
 ### Programming Guide
 
-1. [Python API](/programming-guide/python-api)
-2. [API Usage Examples](/programming-guide/api-examples)
-3. [Advanced Reference](/programming-guide/advanced-reference)
+1. [Python API](site:/programming-guide/python-api)
+2. [API Usage Examples](site:/programming-guide/api-examples)
+3. [Advanced Reference](site:/programming-guide/advanced-reference)
 <!-- [fr] -->
 ### Guide de Programmation
 
-1. [Python API](/fr/programming-guide/python-api)
-2. [Exemples d'Utilisation de l'API](/fr/programming-guide/api-examples)
-3. [Advanced Reference](/fr/programming-guide/advanced-reference)
+1. [Python API](site:/fr/programming-guide/python-api)
+2. [Exemples d'Utilisation de l'API](site:/fr/programming-guide/api-examples)
+3. [Advanced Reference](site:/fr/programming-guide/advanced-reference)
 <!-- [ko] -->
 ### 프로그래밍 가이드
 
-1. [Python API](/ko/programming-guide/python-api)
-2. [API 사용 예제](/ko/programming-guide/api-examples)
-3. [Advanced Reference](/ko/programming-guide/advanced-reference)
+1. [Python API](site:/ko/programming-guide/python-api)
+2. [API 사용 예제](site:/ko/programming-guide/api-examples)
+3. [Advanced Reference](site:/ko/programming-guide/advanced-reference)
 <!-- [ja] -->
 ### プログラミングガイド
 
-1. [Python API](/ja/programming-guide/python-api)
-2. [API 使用例](/ja/programming-guide/api-examples)
-3. [Advanced Reference](/ja/programming-guide/advanced-reference)
+1. [Python API](site:/ja/programming-guide/python-api)
+2. [API 使用例](site:/ja/programming-guide/api-examples)
+3. [Advanced Reference](site:/ja/programming-guide/advanced-reference)
 <!-- [common] -->
 
 <!-- [en] -->
 ### Miscellaneous
 
-1. [Troubleshooting](/misc/troubleshooting)
-2. [Contribution Guide](/misc/contributing)
+1. [Troubleshooting](site:/misc/troubleshooting)
+2. [Contribution Guide](site:/misc/contributing)
 3. [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md)
-4. [License](/LICENSE)
+4. [License](site:/LICENSE)
 <!-- [fr] -->
 ### Divers
 
-1. [Dépannage](/fr/misc/troubleshooting)
-2. [Guide de Contribution](/fr/misc/contributing)
+1. [Dépannage](site:/fr/misc/troubleshooting)
+2. [Guide de Contribution](site:/fr/misc/contributing)
 3. [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md)
-4. [Licence](/fr/LICENSE)
+4. [Licence](site:/fr/LICENSE)
 <!-- [ko] -->
 ### 기타
 
-1. [문제 해결](/ko/misc/troubleshooting)
-2. [기여 가이드](/ko/misc/contributing)
+1. [문제 해결](site:/ko/misc/troubleshooting)
+2. [기여 가이드](site:/ko/misc/contributing)
 3. [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md)
-4. [라이선스](/ko/LICENSE)
+4. [라이선스](site:/ko/LICENSE)
 <!-- [ja] -->
 ### その他
 
-1. [トラブルシューティング](/ja/misc/troubleshooting)
-2. [貢献ガイド](/ja/misc/contributing)
+1. [トラブルシューティング](site:/ja/misc/troubleshooting)
+2. [貢献ガイド](site:/ja/misc/contributing)
 3. [Changelog](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md)
-4. [ライセンス](/ja/LICENSE)
+4. [ライセンス](site:/ja/LICENSE)
 <!-- [common] -->
 
 <!-- [en] -->
@@ -312,17 +312,17 @@ Prend en charge les fonctionnalités suivantes :
 <!-- [en] -->
 Made with [contrib.rocks](https://contrib.rocks).
 
-If you are interested in how to contribute, please refer to the [contribution guide](/contributing).
+If you are interested in how to contribute, please refer to the [contribution guide](site:/contributing).
 <!-- [fr] -->
 Réalisé avec [contrib.rocks](https://contrib.rocks).
 
-Si vous êtes intéressé par la façon de contribuer, veuillez vous référer au [guide de contribution](/fr/contributing).
+Si vous êtes intéressé par la façon de contribuer, veuillez vous référer au [guide de contribution](site:/fr/contributing).
 <!-- [ko] -->
 [contrib.rocks](https://contrib.rocks)로 만들었습니다.
 
-기여 방법에 관심이 있으시다면, [기여 가이드](/ko/contributing)를 참고해주세요.
+기여 방법에 관심이 있으시다면, [기여 가이드](site:/ko/contributing)를 참고해주세요.
 <!-- [ja] -->
 [contrib.rocks](https://contrib.rocks)で作りました。
 
-貢献方法に興味がある方は、[貢献ガイド](/ja/contributing)を参照してください。
+貢献方法に興味がある方は、[貢献ガイド](site:/ja/contributing)を参照してください。
 <!-- [common] -->
