@@ -12,8 +12,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Git pull (to prevent the fallowing error)
+      # "Updates were rejected because the remote contains work that you do not have locally."
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       # Poetry
-      - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: 3.11
