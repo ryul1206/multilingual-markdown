@@ -5,7 +5,15 @@
 1. Enable virtual environment:
 
    ```sh
-   poetry shell
+   # macOS and Linux
+   uv sync --group dev --group test
+   source .venv/bin/activate
+   ```
+
+   ```sh
+   # Windows
+   uv sync  --link-mode=copy --group dev --group test
+   source .venv\Scripts\activate
    ```
 
 2. Edit the base markdown files in `docs/base/` directory.
@@ -42,9 +50,10 @@ Please make sure the package version in `pyproject.toml` is correct before pushi
 
 ```sh
 mmg -b ./mmg.yml
-mike deploy --push --update-aliases $VERSION $TAGS
+mike deploy $MAJOR_MINOR --push --title $VERSION --update-aliases $TAGS
 ```
 
+- `$MAJOR_MINOR` is the major and minor version of the package. For example, `0.1`.
 - `$VERSION` must be a valid [SemVer](https://semver.org/) version. For example, `0.1.0`.
 - `$TAGS` is a list of tags separated by space.
    - `latest` for the latest stable version, usually `docs` branch.

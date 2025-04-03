@@ -14,6 +14,9 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown)
 [![PyPI - License](https://img.shields.io/pypi/l/mmg)](https://github.com/ryul1206/multilingual-markdown/blob/main/LICENSE)
 
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/mmg)](https://pypi.org/project/mmg/)
+[![PyPI Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/projects/mmg)
+
 🌏
 [**English**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.md) |
 [**Français**](https://github.com/ryul1206/multilingual-markdown/blob/main/README.fr.md) |

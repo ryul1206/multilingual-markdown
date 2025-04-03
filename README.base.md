@@ -31,7 +31,9 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mmg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown)
 [![PyPI - License](https://img.shields.io/pypi/l/mmg)](https://github.com/ryul1206/multilingual-markdown/blob/main/LICENSE)
-<!-- [![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg) -->
+
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/mmg)](https://pypi.org/project/mmg/)
+[![PyPI Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/projects/mmg)
 
 🌏
 <!-- [en] -->

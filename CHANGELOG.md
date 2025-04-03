@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!--
 알파벳 순서
 Added 새로운 기능
+Fixed 버그 픽스
 Changed 기존 기능의 변경사항
 Deprecated 곧 지워질 기능
-Fixed 버그 픽스
 Improved 기능 개선
 Removed 지금 지워진 기능
 Security 취약점이 있는 경우
@@ -19,6 +19,10 @@ Security 취약점이 있는 경우
 ## [Upcoming Release][unreleased]
 
 Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md) for upcoming release changes.
+
+- **Fixed** - Resolve issue with missing pyyaml package
+- **Changed** - Migrate from Poetry to UV
+- **Security** - Update dependencies; resolve [#29](https://github.com/ryul1206/multilingual-markdown/issues/29) and [#28](https://github.com/ryul1206/multilingual-markdown/issues/28)
 
 ## [2.0.0] - 2023-10-09
 

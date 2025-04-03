@@ -11,7 +11,7 @@ theme:
   icon:
     repo: fontawesome/brands/github-alt
   features:
-    - navigation.instant
+    # - navigation.instant  # Incompatible with mkdocs-static-i18n
     - navigation.tracking
     - navigation.expand
     - toc.follow
