@@ -95,6 +95,7 @@ Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/mu
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
 [unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v2.0.0...develop
+[2.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.1
 [2.0.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.0
 [1.0.3]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.3
 [1.0.2]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.2
