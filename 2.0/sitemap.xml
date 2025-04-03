@@ -2,578 +2,578 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/license/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/license/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/license/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/license/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/license/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/license/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/license/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/license/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/advanced-usage/cli-batch-processing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/advanced-usage/cli-jupyter-notebook/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/advanced-usage/cli-validation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-validation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/basic-usage/cli-html-pdf/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/basic-usage/cli-recursive/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/cli-recursive/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/basic-usage/create-base-file/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/create-base-file/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/getting-started/installation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/installation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/getting-started/quick-start/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/quick-start/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/getting-started/upgrade-and-uninstall/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/upgrade-and-uninstall/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/misc/contributing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/misc/contributing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/misc/troubleshooting/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/misc/troubleshooting/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/programming-guide/advanced-reference/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/advanced-reference/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/programming-guide/api-examples/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/api-examples/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/programming-guide/python-api/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0/programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/python-api/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/license/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/license/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0license/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/license/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/license/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/license/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/license/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-batch-processing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-batch-processing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-jupyter-notebook/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-jupyter-notebook/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-validation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-validation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-validation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-html-pdf/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-html-pdf/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-recursive/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-recursive/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/cli-recursive/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/basic-usage/create-base-file/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/create-base-file/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/create-base-file/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/getting-started/installation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/installation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/installation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/getting-started/quick-start/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/quick-start/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/quick-start/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/getting-started/upgrade-and-uninstall/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/upgrade-and-uninstall/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/upgrade-and-uninstall/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/misc/contributing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/contributing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/misc/contributing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/misc/troubleshooting/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/programming-guide/advanced-reference/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/advanced-reference/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/advanced-reference/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/programming-guide/api-examples/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/api-examples/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/api-examples/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/fr/programming-guide/python-api/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/python-api/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/python-api/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/license/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/license/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0license/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/license/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/license/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/license/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/license/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-batch-processing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-batch-processing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-jupyter-notebook/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-jupyter-notebook/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-validation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-validation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/advanced-usage/cli-validation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-html-pdf/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-html-pdf/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-recursive/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-recursive/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/cli-recursive/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/basic-usage/create-base-file/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/create-base-file/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/basic-usage/create-base-file/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/getting-started/installation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/installation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/installation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/getting-started/quick-start/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/quick-start/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/quick-start/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/getting-started/upgrade-and-uninstall/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/upgrade-and-uninstall/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/getting-started/upgrade-and-uninstall/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/misc/contributing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/contributing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/misc/contributing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/misc/troubleshooting/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/programming-guide/advanced-reference/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/advanced-reference/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/advanced-reference/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/programming-guide/api-examples/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/api-examples/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/api-examples/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ko/programming-guide/python-api/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/python-api/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0ja/programming-guide/python-api/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/license/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/license/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0license/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/license/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/license/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/license/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/license/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-batch-processing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-batch-processing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-batch-processing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-batch-processing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-batch-processing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-jupyter-notebook/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-jupyter-notebook/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-jupyter-notebook/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-jupyter-notebook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-jupyter-notebook/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-validation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/advanced-usage/cli-validation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/advanced-usage/cli-validation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/advanced-usage/cli-validation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/advanced-usage/cli-validation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-html-pdf/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-html-pdf/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-html-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/cli-html-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/cli-html-pdf/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-recursive/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/cli-recursive/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/cli-recursive/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/cli-recursive/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/cli-recursive/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/basic-usage/create-base-file/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/basic-usage/create-base-file/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/basic-usage/create-base-file/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/basic-usage/create-base-file/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/basic-usage/create-base-file/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/getting-started/installation/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/installation/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/installation/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/installation/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/getting-started/quick-start/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/quick-start/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/quick-start/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/quick-start/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/quick-start/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/getting-started/upgrade-and-uninstall/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/getting-started/upgrade-and-uninstall/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/getting-started/upgrade-and-uninstall/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/getting-started/upgrade-and-uninstall/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/getting-started/upgrade-and-uninstall/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/misc/contributing/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/contributing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/misc/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/misc/contributing/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/misc/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/misc/troubleshooting/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/programming-guide/advanced-reference/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/advanced-reference/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/advanced-reference/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/advanced-reference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/advanced-reference/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/programming-guide/api-examples/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/api-examples/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/api-examples/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/api-examples/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/api-examples/"/>
     </url>
     <url>
         <loc>https://mmg.ryul1206.dev/2.0/ja/programming-guide/python-api/</loc>
-        <lastmod>2023-10-08</lastmod>
+        <lastmod>2025-04-03</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ja" href="https://mmg.ryul1206.dev/2.0/ja/programming-guide/python-api/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://mmg.ryul1206.dev/2.0programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0/fr/programming-guide/python-api/"/>
-        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0/ko/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://mmg.ryul1206.dev/2.0fr/programming-guide/python-api/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://mmg.ryul1206.dev/2.0ko/programming-guide/python-api/"/>
     </url>
 </urlset>
