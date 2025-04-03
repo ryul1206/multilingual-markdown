@@ -54,6 +54,9 @@ jobs:
         run: |
           VERSION=$(cat pyproject.toml | grep '^version = ' | cut -d'"' -f2)
           MAJOR_MINOR=$(echo $VERSION | cut -d. -f1,2)
+          echo "Extracted version info:"
+          echo "  Full version: $VERSION"
+          echo "  Major.Minor: $MAJOR_MINOR"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "MAJOR_MINOR=$MAJOR_MINOR" >> $GITHUB_OUTPUT
 

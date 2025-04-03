@@ -100,12 +100,25 @@ brew install weasyprint
 
 ### Windows
 
-1. MMGは[WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows)を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の[GTK3インストーラー](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)をダウンロードして実行します。**PDFを作成することに興味がない場合は、このステップをスキップできます。** GTKがなくても、MMGの他の機能は使用できます。
-2. Pipを使用してMMGをインストールします。
+WindowsにはPythonがデフォルトでインストールされていません。Pythonをインストールした後、PythonパッケージマネージャーpipでMMGをインストールしてください。
 
-    ```sh
-    pip3 install mmg
-    ```
+```powershell
+pip3 install mmg
+```
+
+[Microsoft Store](https://apps.microsoft.com/)からPythonをインストールした場合、MMGのインストール時に次の警告が表示される場合があります。（表示されるパスはユーザーごとに異なる場合があります。）
+
+```powershell
+$ pip3 install mmg
+...
+  WARNING: The script mmg.exe is installed in 'C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed mmg-2.0.1
+```
+
+この警告が表示された場合、ターミナルで`mmg`コマンドが見つからない状態です。警告メッセージに表示されているパスを環境変数`PATH`に追加してください。追加方法は[トラブルシューティング](https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/)ドキュメントに記載されています。
+
+追加的に、MMGは[WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows)を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の[GTK3インストーラー](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)をダウンロードして実行します。**PDFを作成することに興味がない場合は、このステップをスキップできます。** GTKがなくても、MMGの他の機能は使用できます。
 
 ## 使用方法 💡
 

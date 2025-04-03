@@ -1,6 +1,6 @@
 [project]
 name = "mmg"
-version = "2.0.1-rc.1"
+version = "2.0.1"
 description = "Command line interface and Python API to generate i18n documents"
 authors = [
 	{name = "Hong-ryul Jung", email = "jung.hr.1206@gmail.com"},

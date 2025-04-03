@@ -100,12 +100,25 @@ brew install weasyprint
 
 ### Windows
 
-1. MMG uses [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) to create PDFs. WeasyPrint requires the GTK library, so download and run the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **If you are not interested in creating PDFs, you can skip this step.** Other features of MMG are available without GTK.
-2. Install MMG using Pip.
+Python is not installed by default on Windows. Please install Python first, then install MMG using the Python package manager pip.
 
-    ```sh
-    pip3 install mmg
-    ```
+```powershell
+pip3 install mmg
+```
+
+If you installed Python from the [Microsoft Store](https://apps.microsoft.com/), you may see the following warning when installing MMG. (The displayed path may vary for each user.)
+
+```powershell
+$ pip3 install mmg
+...
+  WARNING: The script mmg.exe is installed in 'C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed mmg-2.0.1
+```
+
+If you see this warning, it means the `mmg` command cannot be found in the terminal. Please add the path shown in the warning message to the `PATH` environment variable. Instructions for adding to PATH can be found in the [Troubleshooting](https://mmg.ryul1206.dev/2.0/misc/troubleshooting/) documentation.
+
+Additionally, MMG uses [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) to create PDFs. WeasyPrint requires the GTK library, so download and run the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **If you are not interested in creating PDFs, you can skip this step.** Other features of MMG are available without GTK.
 
 ## How to Use 💡
 

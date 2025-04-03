@@ -46,6 +46,84 @@ Cette page décrit les solutions aux problèmes connus.
 <!-- [common] -->
 
 <!-- [en] -->
+## Cannot find `mmg` command in Windows
+<!-- [fr] -->
+## Impossible de trouver la commande `mmg` sous Windows
+<!-- [ko] -->
+## Windows에서 `mmg` 명령어를 찾지 못하는 문제
+<!-- [ja] -->
+## Windowsで`mmg`コマンドが見つからない問題
+<!-- [common] -->
+
+```powershell
+$ pip3 install mmg
+...
+  WARNING: The script mmg.exe is installed in 'C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed mmg-2.0.1
+```
+
+<!-- [en] -->
+This warning appears because the path to `mmg.exe` installed by pip is not registered in the environment variable `PATH`.
+To resolve this, first press the Windows key to open the search box and search for "advanced system settings" and click it.
+<!-- [fr] -->
+Cet avertissement apparaît car le chemin vers `mmg.exe` installé par pip n'est pas enregistré dans la variable d'environnement `PATH`.
+Pour résoudre ce problème, appuyez d'abord sur la touche Windows pour ouvrir la zone de recherche, recherchez "advanced system settings" et cliquez dessus.
+<!-- [ko] -->
+위와 같은 경고가 나타나는 것은 pip로 설치된 `mmg.exe`의 경로가 환경변수 `PATH`에 등록되지 않아서입니다.
+해결하려면 먼저 윈도우키를 눌러 검색창을 열고 "advanced system settings"를 검색해 클릭해주세요.
+<!-- [ja] -->
+この警告は、pipでインストールされた`mmg.exe`のパスが環境変数`PATH`に登録されていないために表示されます。
+解決するには、まずWindowsキーを押して検索ボックスを開き、"advanced system settings"を検索してクリックしてください。
+<!-- [common] -->
+
+<div align="center">
+   <img src="site:/assets/windows-path-solution1.jpg" width="600" alt="Windows Path Solution 1" />
+</div>
+
+<!-- [en] -->
+Then click the "Environment Variables" button in the bottom right.
+<!-- [fr] -->
+Ensuite, cliquez sur le bouton "Variables d'environnement" en bas à droite.
+<!-- [ko] -->
+그런 다음 오른쪽 아래에 있는 "환경 변수" 버튼을 클릭하세요.
+<!-- [ja] -->
+次に、右下にある「環境変数」ボタンをクリックしてください。
+<!-- [common] -->
+
+<div align="center">
+   <img src="site:/assets/windows-path-solution2.jpg" width="600" alt="Windows Path Solution 2" />
+</div>
+
+<!-- [en] -->
+Select the `PATH` variable as shown in the image below and click the "Edit" button. Click the "New" button to add the path shown in the warning message. **The path may be different for each user, so make sure to add your own path.**
+Click "OK" in all windows to complete the setup.
+<!-- [fr] -->
+Sélectionnez la variable `PATH` comme indiqué dans l'image ci-dessous et cliquez sur le bouton "Modifier". Cliquez sur le bouton "Nouveau" pour ajouter le chemin indiqué dans le message d'avertissement. **Le chemin peut être différent pour chaque utilisateur, assurez-vous donc d'ajouter votre propre chemin.**
+Cliquez sur "OK" dans toutes les fenêtres pour terminer la configuration.
+<!-- [ko] -->
+아래 그림과 같이 `PATH` 변수를 선택하고 "편집" 버튼을 클릭합니다. "새로 만들기" 버튼을 클릭하여 경고 메시지에 나온 경로를 추가해주세요. **경로는 사용자마다 다를 수 있으니 반드시 본인의 경로를 추가하셔야 합니다.**
+모든 창에서 "확인" 버튼을 클릭하여 설정을 완료합니다.
+<!-- [ja] -->
+下の画像のように`PATH`変数を選択し、「編集」ボタンをクリックします。「新規」ボタンをクリックして、警告メッセージに表示されたパスを追加してください。**パスはユーザーごとに異なる場合がありますので、必ず自分のパスを追加してください。**
+すべてのウィンドウで「OK」をクリックして設定を完了します。
+<!-- [common] -->
+
+<div align="center">
+   <img src="site:/assets/windows-path-solution3.jpg" width="600" alt="Windows Path Solution 3" />
+</div>
+
+<!-- [en] -->
+Now that the path has been added to the `PATH` variable, you can open the command prompt and use the `mmg` command.
+<!-- [fr] -->
+Maintenant que le chemin a été ajouté à la variable `PATH`, vous pouvez ouvrir l'invite de commande et utiliser la commande `mmg`.
+<!-- [ko] -->
+이제 `PATH` 변수에 경로가 추가되었으니 명령어 프롬프트를 열어서 `mmg` 명령어를 사용할 수 있습니다.
+<!-- [ja] -->
+これで`PATH`変数にパスが追加されたので、コマンドプロンプトを開いて`mmg`コマンドを使用できます。
+<!-- [common] -->
+
+<!-- [en] -->
 ## WeasyPrint cannot import external libraries
 <!-- [fr] -->
 ## WeasyPrint ne peut pas importer des bibliothèques externes

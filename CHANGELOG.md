@@ -20,6 +20,9 @@ Security 취약점이 있는 경우
 
 Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md) for upcoming release changes.
 
+## [2.0.1] - 2025-04-03
+
+- **Fixed** - Fix incorrect CLI messages [#30](https://github.com/ryul1206/multilingual-markdown/issues/30)
 - **Fixed** - Resolve issue with missing pyyaml package
 - **Changed** - Migrate from Poetry to UV
 - **Security** - Update dependencies; resolve [#29](https://github.com/ryul1206/multilingual-markdown/issues/29) and [#28](https://github.com/ryul1206/multilingual-markdown/issues/28)
