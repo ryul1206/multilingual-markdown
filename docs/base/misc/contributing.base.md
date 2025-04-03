@@ -264,7 +264,7 @@ uvは強力な依存関係管理機能を提供し、仮想環境を管理する
 
 === "Windows"
 
-    ```sh
+    ```powershell
     uv sync --link-mode=copy --group dev --group test
     ```
 
@@ -286,8 +286,8 @@ uvは強力な依存関係管理機能を提供し、仮想環境を管理する
 
 === "Windows"
 
-    ```sh
-    source .venv\Scripts\activate
+    ```powershell
+    .venv\Scripts\activate
     ```
 
 <!-- [en] -->
@@ -320,7 +320,7 @@ Pour appliquer MMG modifié, exécutez la commande suivante :
 
 === "Windows"
 
-    ```sh
+    ```powershell
     uv sync --link-mode=copy --group dev --group test
     ```
 

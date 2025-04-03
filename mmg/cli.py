@@ -127,7 +127,7 @@ def mmgcli(
             \n\tmmg *.base.md\
             \n\tmmg *.base.ipynb\
             \n\tmmg -r\
-            \n\tmmg -j batch.yml\
+            \n\tmmg -b batch.yml\
             \n\tmmg --help\n"
         )
     return

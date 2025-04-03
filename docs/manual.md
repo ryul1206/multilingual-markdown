@@ -10,10 +10,10 @@
    source .venv/bin/activate
    ```
 
-   ```sh
+   ```powershell
    # Windows
    uv sync  --link-mode=copy --group dev --group test
-   source .venv\Scripts\activate
+   .venv\Scripts\activate
    ```
 
 2. Edit the base markdown files in `docs/base/` directory.
