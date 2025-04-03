@@ -1115,14 +1115,18 @@
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>weasyprint
 </code></pre></div>
 <h2 id="windows">Windows</h2>
-<ol>
-<li>MMG는 <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a>를 사용하여 PDF를 생성합니다. WeasyPrint는 GTK 라이브러리가 있어야 작동하므로, 최신 <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3 설치 파일</a>을 다운로드하고 실행하세요. <strong>PDF 생성 기능을 사용하지 않는다면 이 단계을 건너뛰어도 됩니다.</strong> GTK가 없더라도 MMG의 다른 기능들은 정상적으로 쓸 수 있습니다.</li>
-<li>
-<p>Pip를 사용하여 MMG를 설치합니다.</p>
-<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
+<p>윈도우에는 파이썬이 기본으로 설치되어 있지 않습니다. 파이썬을 설치한 후 파이썬 패키지 관리자 pip로 MMG를 설치해주세요.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
 </code></pre></div>
-</li>
-</ol>
+<p><a href="https://apps.microsoft.com/">Microsoft Store</a>에서 파이썬을 설치했다면, MMG 설치 시 다음과 같은 경고가 나타날 수 있습니다. (표시되는 경로는 사용자마다 다를 수 있습니다.)</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>이 경고가 나타나면, 터미널에서 <code>mmg</code> 명령어를 찾지 못하는 상태입니다. 경고 문구에 안내된 경로를 환경변수 <code>PATH</code>에 추가해주세요. 추가하는 방법은 <a href="https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/">문제 해결</a> 문서에 적어두었습니다.</p>
+<p>추가적으로, MMG는 <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a>를 사용하여 PDF를 생성합니다. WeasyPrint는 GTK 라이브러리가 있어야 작동하므로, 최신 <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3 설치 파일</a>을 다운로드하고 실행하세요. <strong>PDF 생성 기능을 사용하지 않는다면 이 단계을 건너뛰어도 됩니다.</strong> GTK가 없더라도 MMG의 다른 기능들은 정상적으로 쓸 수 있습니다.</p>
 <h2 id="unstable-version-dev-branch">Unstable Version (dev branch)</h2>
 <div class="admonition example">
 <p class="admonition-title">dev 브랜치는 불안정하며 제대로 작동하지 않을 수 있습니다.</p>

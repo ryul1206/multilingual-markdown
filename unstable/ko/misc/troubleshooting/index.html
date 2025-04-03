@@ -897,6 +897,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#windows-mmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows에서 mmg 명령어를 찾지 못하는 문제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrint가 외부 라이브러리를 불러오지 못하는 문제
@@ -1035,6 +1044,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#windows-mmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows에서 mmg 명령어를 찾지 못하는 문제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrint가 외부 라이브러리를 불러오지 못하는 문제
@@ -1088,6 +1106,31 @@
 <a href="/unstable/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
 </div>
 <p>이 페이지에서는 알려진 문제들에 대한 해결 방법을 설명합니다.</p>
+<h2 id="windows-mmg">Windows에서 <code>mmg</code> 명령어를 찾지 못하는 문제</h2>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>위와 같은 경고가 나타나는 것은 pip로 설치된 <code>mmg.exe</code>의 경로가 환경변수 <code>PATH</code>에 등록되지 않아서입니다.
+해결하려면 먼저 윈도우키를 눌러 검색창을 열고 "advanced system settings"를 검색해 클릭해주세요.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution1.jpg" width="600" alt="Windows Path Solution 1" />
+</div>
+
+<p>그런 다음 오른쪽 아래에 있는 "환경 변수" 버튼을 클릭하세요.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution2.jpg" width="600" alt="Windows Path Solution 2" />
+</div>
+
+<p>아래 그림과 같이 <code>PATH</code> 변수를 선택하고 "편집" 버튼을 클릭합니다. "새로 만들기" 버튼을 클릭하여 경고 메시지에 나온 경로를 추가해주세요. <strong>경로는 사용자마다 다를 수 있으니 반드시 본인의 경로를 추가하셔야 합니다.</strong>
+모든 창에서 "확인" 버튼을 클릭하여 설정을 완료합니다.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution3.jpg" width="600" alt="Windows Path Solution 3" />
+</div>
+
+<p>이제 <code>PATH</code> 변수에 경로가 추가되었으니 명령어 프롬프트를 열어서 <code>mmg</code> 명령어를 사용할 수 있습니다.</p>
 <h2 id="weasyprint">WeasyPrint가 외부 라이브러리를 불러오지 못하는 문제</h2>
 <p><strong>증상</strong>: Windows PowerShell에서 <code>mmg</code> 명령어를 입력하면 다음과 같은 오류가 발생합니다.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">PS </span><span class="n">D</span><span class="p">:\&gt;</span> <span class="n">mmg</span> <span class="p">-</span><span class="n">-version</span>

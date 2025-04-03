@@ -1111,14 +1111,18 @@
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>weasyprint
 </code></pre></div>
 <h2 id="windows">Windows</h2>
-<ol>
-<li>MMG uses <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a> to create PDFs. WeasyPrint requires the GTK library, so download and run the latest <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3 installer</a>. <strong>If you are not interested in creating PDFs, you can skip this step.</strong> Other features of MMG are available without GTK.</li>
-<li>
-<p>Install MMG using Pip.</p>
-<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
+<p>Python is not installed by default on Windows. Please install Python first, then install MMG using the Python package manager pip.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
 </code></pre></div>
-</li>
-</ol>
+<p>If you installed Python from the <a href="https://apps.microsoft.com/">Microsoft Store</a>, you may see the following warning when installing MMG. (The displayed path may vary for each user.)</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>If you see this warning, it means the <code>mmg</code> command cannot be found in the terminal. Please add the path shown in the warning message to the <code>PATH</code> environment variable. Instructions for adding to PATH can be found in the <a href="https://mmg.ryul1206.dev/2.0/misc/troubleshooting/">Troubleshooting</a> documentation.</p>
+<p>Additionally, MMG uses <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a> to create PDFs. WeasyPrint requires the GTK library, so download and run the latest <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3 installer</a>. <strong>If you are not interested in creating PDFs, you can skip this step.</strong> Other features of MMG are available without GTK.</p>
 <h2 id="unstable-version-dev-branch">Unstable Version (dev branch)</h2>
 <div class="admonition example">
 <p class="admonition-title">The dev branch is unstable and may not work properly.</p>

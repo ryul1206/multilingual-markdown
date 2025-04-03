@@ -1117,14 +1117,18 @@
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>weasyprint
 </code></pre></div>
 <h2 id="windows">Windows</h2>
-<ol>
-<li>MMGは<a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a>を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の<a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3インストーラー</a>をダウンロードして実行します。<strong>PDFを作成することに興味がない場合は、このステップをスキップできます。</strong> GTKがなくても、MMGの他の機能は使用できます。</li>
-<li>
-<p>Pipを使用してMMGをインストールします。</p>
-<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
+<p>WindowsにはPythonがデフォルトでインストールされていません。Pythonをインストールした後、PythonパッケージマネージャーpipでMMGをインストールしてください。</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
 </code></pre></div>
-</li>
-</ol>
+<p><a href="https://apps.microsoft.com/">Microsoft Store</a>からPythonをインストールした場合、MMGのインストール時に次の警告が表示される場合があります。（表示されるパスはユーザーごとに異なる場合があります。）</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>この警告が表示された場合、ターミナルで<code>mmg</code>コマンドが見つからない状態です。警告メッセージに表示されているパスを環境変数<code>PATH</code>に追加してください。追加方法は<a href="https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/">トラブルシューティング</a>ドキュメントに記載されています。</p>
+<p>追加的に、MMGは<a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a>を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の<a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3インストーラー</a>をダウンロードして実行します。<strong>PDFを作成することに興味がない場合は、このステップをスキップできます。</strong> GTKがなくても、MMGの他の機能は使用できます。</p>
 <h2 id="unstable-version-dev-branch">Unstable Version (dev branch)</h2>
 <div class="admonition example">
 <p class="admonition-title">devブランチは不安定で正常に動作しない場合があります。</p>

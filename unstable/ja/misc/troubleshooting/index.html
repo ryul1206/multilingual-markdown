@@ -899,6 +899,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#windowsmmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windowsでmmgコマンドが見つからない問題
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrintは外部ライブラリをインポートできません
@@ -1037,6 +1046,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#windowsmmg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windowsでmmgコマンドが見つからない問題
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrintは外部ライブラリをインポートできません
@@ -1090,6 +1108,31 @@
 日本語</p>
 </div>
 <p>このページでは、既知の問題の解決策について説明します。</p>
+<h2 id="windowsmmg">Windowsで<code>mmg</code>コマンドが見つからない問題</h2>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>この警告は、pipでインストールされた<code>mmg.exe</code>のパスが環境変数<code>PATH</code>に登録されていないために表示されます。
+解決するには、まずWindowsキーを押して検索ボックスを開き、"advanced system settings"を検索してクリックしてください。</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution1.jpg" width="600" alt="Windows Path Solution 1" />
+</div>
+
+<p>次に、右下にある「環境変数」ボタンをクリックしてください。</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution2.jpg" width="600" alt="Windows Path Solution 2" />
+</div>
+
+<p>下の画像のように<code>PATH</code>変数を選択し、「編集」ボタンをクリックします。「新規」ボタンをクリックして、警告メッセージに表示されたパスを追加してください。<strong>パスはユーザーごとに異なる場合がありますので、必ず自分のパスを追加してください。</strong>
+すべてのウィンドウで「OK」をクリックして設定を完了します。</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution3.jpg" width="600" alt="Windows Path Solution 3" />
+</div>
+
+<p>これで<code>PATH</code>変数にパスが追加されたので、コマンドプロンプトを開いて<code>mmg</code>コマンドを使用できます。</p>
 <h2 id="weasyprint">WeasyPrintは外部ライブラリをインポートできません</h2>
 <p><strong>症状</strong>: Windows PowerShellで<code>mmg</code>コマンドを入力すると、次のエラーが発生します。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">PS </span><span class="n">D</span><span class="p">:\&gt;</span> <span class="n">mmg</span> <span class="p">-</span><span class="n">-version</span>

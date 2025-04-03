@@ -893,6 +893,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cannot-find-mmg-command-in-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cannot find mmg command in Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint-cannot-import-external-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrint cannot import external libraries
@@ -1031,6 +1040,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cannot-find-mmg-command-in-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cannot find mmg command in Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint-cannot-import-external-libraries" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrint cannot import external libraries
@@ -1084,6 +1102,31 @@
 <a href="/unstable/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
 </div>
 <p>This page describes solutions to known issues.</p>
+<h2 id="cannot-find-mmg-command-in-windows">Cannot find <code>mmg</code> command in Windows</h2>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>This warning appears because the path to <code>mmg.exe</code> installed by pip is not registered in the environment variable <code>PATH</code>.
+To resolve this, first press the Windows key to open the search box and search for "advanced system settings" and click it.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution1.jpg" width="600" alt="Windows Path Solution 1" />
+</div>
+
+<p>Then click the "Environment Variables" button in the bottom right.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution2.jpg" width="600" alt="Windows Path Solution 2" />
+</div>
+
+<p>Select the <code>PATH</code> variable as shown in the image below and click the "Edit" button. Click the "New" button to add the path shown in the warning message. <strong>The path may be different for each user, so make sure to add your own path.</strong>
+Click "OK" in all windows to complete the setup.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution3.jpg" width="600" alt="Windows Path Solution 3" />
+</div>
+
+<p>Now that the path has been added to the <code>PATH</code> variable, you can open the command prompt and use the <code>mmg</code> command.</p>
 <h2 id="weasyprint-cannot-import-external-libraries">WeasyPrint cannot import external libraries</h2>
 <p><strong>Symptom</strong>: When you enter the <code>mmg</code> command in Windows PowerShell, the following error occurs.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">PS </span><span class="n">D</span><span class="p">:\&gt;</span> <span class="n">mmg</span> <span class="p">-</span><span class="n">-version</span>

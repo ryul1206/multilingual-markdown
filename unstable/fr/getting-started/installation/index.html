@@ -1113,14 +1113,18 @@ Français |
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>weasyprint
 </code></pre></div>
 <h2 id="windows">Windows</h2>
-<ol>
-<li>MMG utilise <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a> pour créer des PDF. WeasyPrint nécessite la bibliothèque GTK, alors téléchargez et exécutez le dernier <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">installateur GTK3</a>. <strong>Si vous n'êtes pas intéressé par la création de PDF, vous pouvez ignorer cette étape.</strong> Les autres fonctionnalités de MMG sont disponibles sans GTK.</li>
-<li>
-<p>Installez MMG à l'aide de Pip.</p>
-<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
+<p>Python n'est pas installé par défaut sur Windows. Veuillez d'abord installer Python, puis installez MMG à l'aide du gestionnaire de paquets Python pip.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
 </code></pre></div>
-</li>
-</ol>
+<p>Si vous avez installé Python depuis le <a href="https://apps.microsoft.com/">Microsoft Store</a>, vous pouvez voir l'avertissement suivant lors de l'installation de MMG. (Le chemin affiché peut varier selon l'utilisateur.)</p>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>Si vous voyez cet avertissement, cela signifie que la commande <code>mmg</code> ne peut pas être trouvée dans le terminal. Veuillez ajouter le chemin indiqué dans le message d'avertissement à la variable d'environnement <code>PATH</code>. Les instructions pour ajouter au PATH se trouvent dans la documentation <a href="https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/">Dépannage</a>.</p>
+<p>En plus, MMG utilise <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a> pour créer des PDF. WeasyPrint nécessite la bibliothèque GTK, alors téléchargez et exécutez le dernier <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">installateur GTK3</a>. <strong>Si vous n'êtes pas intéressé par la création de PDF, vous pouvez ignorer cette étape.</strong> Les autres fonctionnalités de MMG sont disponibles sans GTK.</p>
 <h2 id="unstable-version-dev-branch">Unstable Version (dev branch)</h2>
 <div class="admonition example">
 <p class="admonition-title">La branche dev est instable et peut ne pas fonctionner correctement.</p>

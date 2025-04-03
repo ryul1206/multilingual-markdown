@@ -895,6 +895,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#impossible-de-trouver-la-commande-mmg-sous-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impossible de trouver la commande mmg sous Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint-ne-peut-pas-importer-des-bibliotheques-externes" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrint ne peut pas importer des bibliothèques externes
@@ -1033,6 +1042,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#impossible-de-trouver-la-commande-mmg-sous-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impossible de trouver la commande mmg sous Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weasyprint-ne-peut-pas-importer-des-bibliotheques-externes" class="md-nav__link">
     <span class="md-ellipsis">
       WeasyPrint ne peut pas importer des bibliothèques externes
@@ -1086,6 +1104,31 @@ Français |
 <a href="/unstable/ja/misc/troubleshooting"><strong>日本語</strong></a></p>
 </div>
 <p>Cette page décrit les solutions aux problèmes connus.</p>
+<h2 id="impossible-de-trouver-la-commande-mmg-sous-windows">Impossible de trouver la commande <code>mmg</code> sous Windows</h2>
+<div class="highlight"><pre><span></span><code><span class="p">$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">mmg</span>
+<span class="p">...</span>
+  <span class="n">WARNING</span><span class="p">:</span> <span class="n">The</span> <span class="n">script</span> <span class="n">mmg</span><span class="p">.</span><span class="n">exe</span> <span class="n">is</span> <span class="n">installed</span> <span class="k">in</span> <span class="s1">&#39;C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts&#39;</span> <span class="n">which</span> <span class="n">is</span> <span class="n">not</span> <span class="n">on</span> <span class="n">PATH</span><span class="p">.</span>
+  <span class="n">Consider</span> <span class="n">adding</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">PATH</span> <span class="n">or</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">prefer</span> <span class="n">to</span> <span class="n">suppress</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">use</span> <span class="p">-</span><span class="n">-no-warn-script-location</span><span class="p">.</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>Cet avertissement apparaît car le chemin vers <code>mmg.exe</code> installé par pip n'est pas enregistré dans la variable d'environnement <code>PATH</code>.
+Pour résoudre ce problème, appuyez d'abord sur la touche Windows pour ouvrir la zone de recherche, recherchez "advanced system settings" et cliquez dessus.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution1.jpg" width="600" alt="Windows Path Solution 1" />
+</div>
+
+<p>Ensuite, cliquez sur le bouton "Variables d'environnement" en bas à droite.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution2.jpg" width="600" alt="Windows Path Solution 2" />
+</div>
+
+<p>Sélectionnez la variable <code>PATH</code> comme indiqué dans l'image ci-dessous et cliquez sur le bouton "Modifier". Cliquez sur le bouton "Nouveau" pour ajouter le chemin indiqué dans le message d'avertissement. <strong>Le chemin peut être différent pour chaque utilisateur, assurez-vous donc d'ajouter votre propre chemin.</strong>
+Cliquez sur "OK" dans toutes les fenêtres pour terminer la configuration.</p>
+<div align="center">
+   <img src="/unstable/assets/windows-path-solution3.jpg" width="600" alt="Windows Path Solution 3" />
+</div>
+
+<p>Maintenant que le chemin a été ajouté à la variable <code>PATH</code>, vous pouvez ouvrir l'invite de commande et utiliser la commande <code>mmg</code>.</p>
 <h2 id="weasyprint-ne-peut-pas-importer-des-bibliotheques-externes">WeasyPrint ne peut pas importer des bibliothèques externes</h2>
 <p><strong>Symptôme</strong>: Lorsque vous entrez la commande <code>mmg</code> dans Windows PowerShell, l'erreur suivante se produit.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">PS </span><span class="n">D</span><span class="p">:\&gt;</span> <span class="n">mmg</span> <span class="p">-</span><span class="n">-version</span>
