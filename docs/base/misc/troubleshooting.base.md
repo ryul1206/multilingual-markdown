@@ -92,7 +92,7 @@ Ensuite, cliquez sur le bouton "Variables d'environnement" en bas à droite.
 <!-- [common] -->
 
 <div align="center">
-   <img src="site:/assets/windows-path-solution2.jpg" width="600" alt="Windows Path Solution 2" />
+   <img src="site:/assets/windows-path-solution2.jpg" width="450" alt="Windows Path Solution 2" />
 </div>
 
 <!-- [en] -->
@@ -110,7 +110,7 @@ Cliquez sur "OK" dans toutes les fenêtres pour terminer la configuration.
 <!-- [common] -->
 
 <div align="center">
-   <img src="site:/assets/windows-path-solution3.jpg" width="600" alt="Windows Path Solution 3" />
+   <img src="site:/assets/windows-path-solution3.jpg" width="800" alt="Windows Path Solution 3" />
 </div>
 
 <!-- [en] -->
