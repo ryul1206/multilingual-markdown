@@ -47,7 +47,7 @@ jobs:
         run: uv sync --group docs
 
       - name: Generate multi-language docs
-        run: mmg -b ./mmg.yml
+        run: uv run mmg -b ./mmg.yml
 
       - name: Extract Package Version
         id: mmg_version
