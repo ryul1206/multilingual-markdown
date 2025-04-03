@@ -31,7 +31,9 @@ Ce package fournit une interface de ligne de commande pour gérer les contenus m
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mmg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryul1206/multilingual-markdown)
 [![PyPI - License](https://img.shields.io/pypi/l/mmg)](https://github.com/ryul1206/multilingual-markdown/blob/main/LICENSE)
-<!-- [![Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/project/mmg) -->
+
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/mmg)](https://pypi.org/project/mmg/)
+[![PyPI Downloads](https://static.pepy.tech/badge/mmg)](https://pepy.tech/projects/mmg)
 
 🌏
 <!-- [en] -->
@@ -229,22 +231,56 @@ brew install weasyprint
 ### Windows
 
 <!-- [en] -->
-1. MMG uses [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) to create PDFs. WeasyPrint requires the GTK library, so download and run the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **If you are not interested in creating PDFs, you can skip this step.** Other features of MMG are available without GTK.
-2. Install MMG using Pip.
+Python is not installed by default on Windows. Please install Python first, then install MMG using the Python package manager pip.
 <!-- [fr] -->
-1. MMG utilise [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) pour créer des PDF. WeasyPrint nécessite la bibliothèque GTK, alors téléchargez et exécutez le dernier [installateur GTK3](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **Si vous n'êtes pas intéressé par la création de PDF, vous pouvez ignorer cette étape.** Les autres fonctionnalités de MMG sont disponibles sans GTK.
-2. Installez MMG à l'aide de Pip.
+Python n'est pas installé par défaut sur Windows. Veuillez d'abord installer Python, puis installez MMG à l'aide du gestionnaire de paquets Python pip.
 <!-- [ko] -->
-1. MMG는 [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows)를 사용하여 PDF를 생성합니다. WeasyPrint는 GTK 라이브러리가 있어야 작동하므로, 최신 [GTK3 설치 파일](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)을 다운로드하고 실행하세요. **PDF 생성 기능을 사용하지 않는다면 이 단계을 건너뛰어도 됩니다.** GTK가 없더라도 MMG의 다른 기능들은 정상적으로 쓸 수 있습니다.
-2. Pip를 사용하여 MMG를 설치합니다.
+윈도우에는 파이썬이 기본으로 설치되어 있지 않습니다. 파이썬을 설치한 후 파이썬 패키지 관리자 pip로 MMG를 설치해주세요.
 <!-- [ja] -->
-1. MMGは[WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows)を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の[GTK3インストーラー](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)をダウンロードして実行します。**PDFを作成することに興味がない場合は、このステップをスキップできます。** GTKがなくても、MMGの他の機能は使用できます。
-2. Pipを使用してMMGをインストールします。
+WindowsにはPythonがデフォルトでインストールされていません。Pythonをインストールした後、PythonパッケージマネージャーpipでMMGをインストールしてください。
 <!-- [common] -->
 
-    ```sh
-    pip3 install mmg
-    ```
+```powershell
+pip3 install mmg
+```
+
+<!-- [en] -->
+If you installed Python from the [Microsoft Store](https://apps.microsoft.com/), you may see the following warning when installing MMG. (The displayed path may vary for each user.)
+<!-- [fr] -->
+Si vous avez installé Python depuis le [Microsoft Store](https://apps.microsoft.com/), vous pouvez voir l'avertissement suivant lors de l'installation de MMG. (Le chemin affiché peut varier selon l'utilisateur.)
+<!-- [ko] -->
+[Microsoft Store](https://apps.microsoft.com/)에서 파이썬을 설치했다면, MMG 설치 시 다음과 같은 경고가 나타날 수 있습니다. (표시되는 경로는 사용자마다 다를 수 있습니다.)
+<!-- [ja] -->
+[Microsoft Store](https://apps.microsoft.com/)からPythonをインストールした場合、MMGのインストール時に次の警告が表示される場合があります。（表示されるパスはユーザーごとに異なる場合があります。）
+<!-- [common] -->
+
+```powershell
+$ pip3 install mmg
+...
+  WARNING: The script mmg.exe is installed in 'C:\Users\...\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed mmg-2.0.1
+```
+
+<!-- [en] -->
+If you see this warning, it means the `mmg` command cannot be found in the terminal. Please add the path shown in the warning message to the `PATH` environment variable. Instructions for adding to PATH can be found in the [Troubleshooting](https://mmg.ryul1206.dev/2.0/misc/troubleshooting/) documentation.
+<!-- [fr] -->
+Si vous voyez cet avertissement, cela signifie que la commande `mmg` ne peut pas être trouvée dans le terminal. Veuillez ajouter le chemin indiqué dans le message d'avertissement à la variable d'environnement `PATH`. Les instructions pour ajouter au PATH se trouvent dans la documentation [Dépannage](https://mmg.ryul1206.dev/2.0/fr/misc/troubleshooting/).
+<!-- [ko] -->
+이 경고가 나타나면, 터미널에서 `mmg` 명령어를 찾지 못하는 상태입니다. 경고 문구에 안내된 경로를 환경변수 `PATH`에 추가해주세요. 추가하는 방법은 [문제 해결](https://mmg.ryul1206.dev/2.0/ko/misc/troubleshooting/) 문서에 적어두었습니다.
+<!-- [ja] -->
+この警告が表示された場合、ターミナルで`mmg`コマンドが見つからない状態です。警告メッセージに表示されているパスを環境変数`PATH`に追加してください。追加方法は[トラブルシューティング](https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/)ドキュメントに記載されています。
+<!-- [common] -->
+
+<!-- [en] -->
+Additionally, MMG uses [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) to create PDFs. WeasyPrint requires the GTK library, so download and run the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **If you are not interested in creating PDFs, you can skip this step.** Other features of MMG are available without GTK.
+<!-- [fr] -->
+En plus, MMG utilise [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) pour créer des PDF. WeasyPrint nécessite la bibliothèque GTK, alors téléchargez et exécutez le dernier [installateur GTK3](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **Si vous n'êtes pas intéressé par la création de PDF, vous pouvez ignorer cette étape.** Les autres fonctionnalités de MMG sont disponibles sans GTK.
+<!-- [ko] -->
+추가적으로, MMG는 [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows)를 사용하여 PDF를 생성합니다. WeasyPrint는 GTK 라이브러리가 있어야 작동하므로, 최신 [GTK3 설치 파일](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)을 다운로드하고 실행하세요. **PDF 생성 기능을 사용하지 않는다면 이 단계을 건너뛰어도 됩니다.** GTK가 없더라도 MMG의 다른 기능들은 정상적으로 쓸 수 있습니다.
+<!-- [ja] -->
+追加的に、MMGは[WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows)を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の[GTK3インストーラー](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)をダウンロードして実行します。**PDFを作成することに興味がない場合は、このステップをスキップできます。** GTKがなくても、MMGの他の機能は使用できます。
+<!-- [common] -->
 
 <!-- [en] -->
 ## How to Use 💡

@@ -1,13 +1,13 @@
-[tool.poetry]
+[project]
 name = "mmg"
-version = "2.0.0"
+version = "2.0.1"
 description = "Command line interface and Python API to generate i18n documents"
-authors = ["Hong-ryul Jung <jung.hr.1206@gmail.com>"]
+authors = [
+	{name = "Hong-ryul Jung", email = "jung.hr.1206@gmail.com"},
+]
 license = "MIT"
 readme = "README.md"
-# homepage = "https://python-poetry.org/"
-repository = "https://github.com/ryul1206/multilingual-markdown"
-homepage = "https://mmg.ryul1206.dev/"
+requires-python = ">=3.8, <4"
 keywords = [
 	"i18n",
 	"multilingual",
@@ -31,8 +31,37 @@ classifiers = [
 	"Topic :: Text Processing :: Markup :: Markdown",
 	"Topic :: Text Processing :: Markup :: HTML",
 ]
-packages = [
-	{ include = "mmg" }, # Include the folder
+dependencies = [
+	"click>=8.0.0",
+	"emoji>=0.6.0,<2.0.0",  # The function get_emoji_regexp() was removed in 2.0.0.
+	"markdown>=3.3.0",
+	"weasyprint>=59.0.0",
+	"nbconvert>=7.6.0",
+	"pyyaml>=6.0.2",
+]
+
+[project.urls]
+Homepage = "https://mmg.ryul1206.dev/"
+Repository = "https://github.com/ryul1206/multilingual-markdown"
+Changelog = "https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md"
+
+[project.scripts]
+mmg = "mmg:cli.main"
+
+[tool.hatch.build]
+reproducible = true
+skip-excluded-dirs = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["mmg"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+	"mmg",
+	"README.md",
+	"LICENSE",
+	"CHANGELOG.md",
+	"pyproject.toml"
 ]
 exclude = [
 	".github",
@@ -40,6 +69,7 @@ exclude = [
 	".vscode",
 	"docs",
 	"examples",
+	"logs",
 	"tests",
 ]
 
@@ -61,34 +91,31 @@ ignore = [
 	"READEME.base.md",
 ]
 
-[tool.poetry.scripts]
-mmg = "mmg:cli.main"
-
-[tool.poetry.dependencies]
-python = ">=3.8, <4"
-click = "^8"
-emoji = "^0.6"
-markdown = "^3.3"
-weasyprint = "^59.0"
-nbconvert = "^7.6.0"
-
-[tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-check-manifest = "^0.49"
-
-[tool.poetry.group.test.dependencies]
-pytest = "^7.3.1"
-
-[tool.poetry.group.docs.dependencies]
-mkdocs = "^1.4.3"
-mkdocs-material = "^9.1.17"
-mkdocs-static-i18n = {extras = ["material"], version = "^1.0.2"}
-mkdocs-jupyter = "^0.24.2"
-mkdocstrings-python = "^1.6.0"
-mike = "^1.1.2"
-mkdocs-exclude = "^1.0.2"
-mkdocs-site-urls = "^0.2.0"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+[dependency-groups]
+dev = [
+	"check-manifest>=0.50",
+	"ruff>=0.11.2",
+]
+test = [
+	"pytest>=7.3.1",
+]
+docs = [
+	"mkdocs>=1.4.3",
+	"mkdocs-material>=9.1.17",
+	"mkdocs-static-i18n[material]>=1.0.2",
+	"mkdocs-jupyter>=0.24.8",
+	"mkdocstrings-python>=1.11.1",
+	"mike>=1.1.2",
+	"mkdocs-exclude>=1.0.2",
+	"mkdocs-site-urls>=0.2.0",
+]

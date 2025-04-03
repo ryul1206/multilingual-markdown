@@ -191,53 +191,53 @@ Les cas suivants peuvent être retardés :
 ## How can I build MMG locally for development?
 
 I recommend using a Python virtual environment so as not to conflict with your existing local development environment.
-MMG uses [Poetry](https://python-poetry.org/) to manage the development environment.
-Poetry provides powerful dependency management features and is very convenient for managing virtual environments.
+MMG uses [uv](https://docs.astral.sh/uv/) to manage the development environment.
+uv provides powerful dependency management features and is very convenient for managing virtual environments.
 
 ### Environment Setup
 
 First, set up the development environment as follows:
 
-1. Install Poetry according to the instructions in the [official documentation](https://python-poetry.org/docs/).
+1. Install uv according to the instructions in the [official documentation](https://docs.astral.sh/uv/getting-started/installation/).
 2. Clone the repository and move to the project directory.
 <!-- [fr] -->
 ## Comment puis-je construire MMG localement pour le développement ?
 
 Je recommande d'utiliser un environnement virtuel Python afin de ne pas entrer en conflit avec votre environnement de développement local existant.
-MMG utilise [Poetry](https://python-poetry.org/) pour gérer l'environnement de développement.
-Poetry fournit de puissantes fonctionnalités de gestion des dépendances et est très pratique pour gérer les environnements virtuels.
+MMG utilise [uv](https://docs.astral.sh/uv/) pour gérer l'environnement de développement.
+uv fournit de puissantes fonctionnalités de gestion des dépendances et est très pratique pour gérer les environnements virtuels.
 
 ### Configuration de l'environnement
 
 Tout d'abord, configurez l'environnement de développement comme suit :
 
-1. Installez Poetry selon les instructions de la [documentation officielle](https://python-poetry.org/docs/).
+1. Installez uv selon les instructions de la [documentation officielle](https://docs.astral.sh/uv/getting-started/installation/).
 2. Clonez le dépôt et déplacez-vous dans le répertoire du projet.
 <!-- [ko] -->
 ## MMG를 로컬에서 개발하려면 어떻게 해야 하나요?
 
 기존 로컬의 개발환경과 충돌하지 않도록, 파이썬 가상환경을 사용하는 것을 추천합니다.
-MMG는 [Poetry](https://python-poetry.org/)를 사용하여 개발환경을 관리하고 있습니다.
-Poetry는 강력한 의존성 관리 기능을 제공하며, 가상환경을 관리하는 것이 매우 편리합니다.
+MMG는 [uv](https://docs.astral.sh/uv/)를 사용하여 개발환경을 관리하고 있습니다.
+uv는 강력한 의존성 관리 기능을 제공하며, 가상환경을 관리하는 것이 매우 편리합니다.
 
 ### 환경 설정
 
 먼저 다음과 같이 개발환경을 설정합니다:
 
-1. [공식 문서](https://python-poetry.org/docs/)의 지침에 따라 Poetry를 설치합니다.
+1. [공식 문서](https://docs.astral.sh/uv/getting-started/installation/)의 지침에 따라 uv를 설치합니다.
 2. 저장소를 복제하고 프로젝트 디렉토리로 이동합니다.
 <!-- [ja] -->
 ## 開発のためにローカルでMMGをビルドするにはどうすればよいですか？
 
 既存のローカル開発環境と競合しないように、Pythonの仮想環境を使用することをお勧めします。
-MMGは、開発環境を管理するために[Poetry](https://python-poetry.org/)を使用しています。
-Poetryは強力な依存関係管理機能を提供し、仮想環境を管理するのに非常に便利です。
+MMGは、開発環境を管理するために[uv](https://docs.astral.sh/uv/)を使用しています。
+uvは強力な依存関係管理機能を提供し、仮想環境を管理するのに非常に便利です。
 
 ### 環境の設定
 
 まず、次のように開発環境を設定します。
 
-1. [公式ドキュメント](https://python-poetry.org/docs/)の手順に従ってPoetryをインストールします。
+1. [公式ドキュメント](https://docs.astral.sh/uv/getting-started/installation/)の手順に従ってuvをインストールします。
 2. リポジトリをクローンして、プロジェクトディレクトリに移動します。
 <!-- [common] -->
 
@@ -247,32 +247,25 @@ Poetryは強力な依存関係管理機能を提供し、仮想環境を管理�
     ```
 
 <!-- [en] -->
-3. This step is optional, but I recommend creating a virtual environment in the project directory. To do this, run the following commands:
+3. Create a virtual environment and install the dependencies specified in the `pyproject.toml` file:
 <!-- [fr] -->
-3. Cette étape est facultative, mais je recommande de créer un environnement virtuel dans le répertoire du projet. Pour ce faire, exécutez les commandes suivantes :
+3. Créez un environnement virtuel et installez les dépendances spécifiées dans le fichier `pyproject.toml` :
 <!-- [ko] -->
-3. 필수는 아니지만, 프로젝트 디렉토리 내에 가상환경을 생성하는 것을 추천합니다. 이를 위해 다음과 같이 설정합니다:
+3. 가상환경을 생성하고 `pyproject.toml` 파일에 명시된 의존성을 설치합니다:
 <!-- [ja] -->
-3. このステップはオプションですが、プロジェクトディレクトリに仮想環境を作成することをお勧めします。これを行うには、次のコマンドを実行します。
+3. 仮想環境を作成し、`pyproject.toml`ファイルで指定された依存関係をインストールします。
 <!-- [common] -->
 
+=== "macOS and Linux"
+
     ```sh
-    poetry config virtualenvs.in-project true
-    poetry config virtualenvs.path "./.venv"
+    uv sync --group dev --group test
     ```
 
-<!-- [en] -->
-4. Create a virtual environment and install the dependencies specified in the `pyproject.toml` file:
-<!-- [fr] -->
-4. Créez un environnement virtuel et installez les dépendances spécifiées dans le fichier `pyproject.toml` :
-<!-- [ko] -->
-4. 가상환경을 생성하고 `pyproject.toml` 파일에 명시된 의존성을 설치합니다:
-<!-- [ja] -->
-4. 仮想環境を作成し、`pyproject.toml`ファイルで指定された依存関係をインストールします。
-<!-- [common] -->
+=== "Windows"
 
-    ```sh
-    poetry install --with dev,test,docs
+    ```powershell
+    uv sync --link-mode=copy --group dev --group test
     ```
 
 <!-- [en] -->
@@ -285,8 +278,16 @@ Poetryは強力な依存関係管理機能を提供し、仮想環境を管理�
 5. 仮想環境を有効にするには、次のコマンドを実行します。
 <!-- [common] -->
 
+=== "macOS and Linux"
+
     ```sh
-    poetry shell
+    source .venv/bin/activate
+    ```
+
+=== "Windows"
+
+    ```powershell
+    .venv\Scripts\activate
     ```
 
 <!-- [en] -->
@@ -311,9 +312,17 @@ Pour appliquer MMG modifié, exécutez la commande suivante :
 変更したMMGを適用するには、次のコマンドを実行します。
 <!-- [common] -->
 
-```sh
-poetry install
-```
+=== "macOS and Linux"
+
+    ```sh
+    uv sync --group dev --group test
+    ```
+
+=== "Windows"
+
+    ```powershell
+    uv sync --link-mode=copy --group dev --group test
+    ```
 
 <!-- [en] -->
 For example, if you modify `version` to `9.9.9-beta` in `pyproject.toml`, the result of `mmg --version` will be different as follows:
@@ -326,24 +335,21 @@ Par exemple, si vous modifiez `version` en `9.9.9-beta` dans `pyproject.toml`, l
 <!-- [common] -->
 
 ```sh
-$ poetry shell
+(mmg) $ mmg --version
+Version 2.0.1
 
 ------------------------------------------------------------------------
-(mmg-py3.11) $ mmg --version
-Version 2.0.0
+# Change version in pyproject.toml from 2.0.1 to 9.9.9-beta
+
+(mmg) $ uv sync --group dev --group test
+Resolved 151 packages in 1ms
+   Built mmg @ file:///D:...
+Prepared 1 package in 1.05s
+Uninstalled 1 package in 4ms
+Installed 1 package in 53ms
+ ~ mmg==9.9.9b0 (from file:///D:...)
 
 ------------------------------------------------------------------------
-# Change version in pyproject.toml from 2.0.0 to 9.9.9-beta
-
-------------------------------------------------------------------------
-(mmg-py3.11) $ poetry install
-Installing dependencies from lock file
-
-No dependencies to install or update
-
-Installing the current project: mmg (9.9.9-beta)
-
-------------------------------------------------------------------------
-(mmg-py3.11) $ mmg --version
+(mmg) $ mmg --version
 Version 9.9.9b0
 ```

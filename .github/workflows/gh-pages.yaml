@@ -19,40 +19,53 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      # Configure Git credentials
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      # Poetry
-      - uses: actions/setup-python@v4
+      # Setup Python and uv
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: 3.11
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: false
-          installer-parallel: true
+          version: "0.6.11"
 
-      # MkDocs
+      - name: Set up Python
+        run: uv python install 3.11
+
+      # MkDocs cache setup
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: poetry install --with docs
-      - run: mmg -b ./mmg.yml
 
-      # Set up Git
-      - name: Commit Bot
-        run: |
-          git config --global user.name "GitHub Action[bot]"
-          git config --global user.email "github-action[bot]@users.noreply.github.com"
-      - name: Extract Pakcage Version
+      - name: Install dependencies
+        run: uv sync --group docs
+
+      - name: Generate multi-language docs
+        run: uv run mmg -b ./mmg.yml
+
+      - name: Extract Package Version
         id: mmg_version
-        run: echo "VERSION=$(poetry version | cut -d' ' -f2)" >> $env:GITHUB_OUTPUT
+        run: |
+          VERSION=$(cat pyproject.toml | grep '^version = ' | cut -d'"' -f2)
+          MAJOR_MINOR=$(echo $VERSION | cut -d. -f1,2)
+          echo "Extracted version info:"
+          echo "  Full version: $VERSION"
+          echo "  Major.Minor: $MAJOR_MINOR"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "MAJOR_MINOR=$MAJOR_MINOR" >> $GITHUB_OUTPUT
 
       # Deploy with Mike (when dev branch is pushed)
-      - run: poetry run mike deploy --push --update-aliases unstable
+      - name: Deploy unstable docs
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/dev')
+        run: uv run mike deploy --push --update-aliases unstable
+
       # Deploy with Mike (when docs branch is pushed)
-      - run: poetry run mike deploy --push --update-aliases ${{ steps.mmg_version.outputs.VERSION }} latest
+      - name: Deploy stable docs
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/docs')
+        run: uv run mike deploy ${{ steps.mmg_version.outputs.MAJOR_MINOR }} --push --title ${{ steps.mmg_version.outputs.VERSION }} --update-aliases latest
