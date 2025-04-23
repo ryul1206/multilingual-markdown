@@ -3,6 +3,9 @@ from dataclasses import dataclass
 import os
 import re
 
+# Compile regex pattern once at module level
+BASE_PATTERN = re.compile(r"[.]base[.](md|markdown|mkd|mdx|rmd|mmd|qmd|ipynb)$")
+
 
 @dataclass
 class FileItem:
@@ -41,8 +44,7 @@ def is_base_file(file_name: str) -> bool:
     Returns:
         bool: True if the file is `*.base.md` or `*.base.ipynb`.
     """
-    base = re.compile(r"[.]base[.](md|ipynb)$")
-    return base.search(file_name) is not None
+    return BASE_PATTERN.search(file_name) is not None
 
 
 def base_file_to_item(path: str, file_name: str) -> FileItem:

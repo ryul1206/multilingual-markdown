@@ -18,6 +18,15 @@ Security 취약점이 있는 경우
 
 ## [Upcoming Release][unreleased]
 
+- **Added** - Support for additional markdown extensions (experimental):
+   - .markdown, .mkd (Markdown variants)
+   - .mdx (MDX - Markdown + JSX)
+   - .rmd (R Markdown)
+   - .mmd (MultiMarkdown)
+   - .qmd (Quarto)
+- **Improved** - Update CLI help message to show all supported file extensions
+- **Improved** - Refactor regex pattern compilation for better performance by moving it to module level
+
 Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md) for upcoming release changes.
 
 ## [2.0.1] - 2025-04-03

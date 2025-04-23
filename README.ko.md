@@ -128,21 +128,22 @@ Successfully installed mmg-2.0.1
 $ mmg --help
 Usage: mmg [OPTIONS] [FILE_NAMES]...
 
-  FILE_NAMES: Base file names to convert. `*.base.md` or `*.base.ipynb` are
-  available.
+  FILE_NAMES: Base file names to convert.
+
+  Supported extensions are:
+      .md, .markdown, .mkd (Markdown)
+      .mdx (MDX - Markdown + JSX) [experimental]
+      .rmd (R Markdown) [experimental]
+      .mmd (MultiMarkdown) [experimental]
+      .qmd (Quarto) [experimental]
+      .ipynb (Jupyter Notebook)
 
   Here are some examples:
-
       mmg *.base.md
-
       mmg *.base.ipynb
-
       mmg *.base.md *.base.ipynb -o pdf --css github-dark
-
       mmg --recursive
-
       mmg --recursive --validation-only
-
       mmg --batch mmg.yml
 
 Options:
