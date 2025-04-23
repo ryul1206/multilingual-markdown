@@ -2522,21 +2522,28 @@ https://stackoverflow.com/questions/3041986/apt-command-line-interface-like-yes-
 
     <div class="doc doc-contents ">
 
-        <p>FILE_NAMES: Base file names to convert. <code>*.base.md</code> or <code>*.base.ipynb</code> are available.</p>
-<p>Here are some examples:</p>
-<div class="highlight"><pre><span></span><code>mmg *.base.md
+        <p>FILE_NAMES: Base file names to convert.</p>
 
-mmg *.base.ipynb
 
-mmg *.base.md *.base.ipynb -o pdf --css github-dark
+<details class="supported-extensions-are" open>
+  <summary>Supported extensions are</summary>
+  <p>.md, .markdown, .mkd (Markdown)
+.mdx (MDX - Markdown + JSX) [experimental]
+.rmd (R Markdown) [experimental]
+.mmd (MultiMarkdown) [experimental]
+.qmd (Quarto) [experimental]
+.ipynb (Jupyter Notebook)</p>
+</details>
 
+<details class="here-are-some-examples" open>
+  <summary>Here are some examples</summary>
+  <p>mmg <em>.base.md
+mmg </em>.base.ipynb
+mmg <em>.base.md </em>.base.ipynb -o pdf --css github-dark
 mmg --recursive
-
 mmg --recursive --validation-only
-
-mmg --batch mmg.yml
-</code></pre></div>
-
+mmg --batch mmg.yml</p>
+</details>
 
     </div>
 
