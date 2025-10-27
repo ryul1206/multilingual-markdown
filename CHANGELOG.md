@@ -24,6 +24,14 @@ Security 취약점이 있는 경우
    - .rmd (R Markdown)
    - .mmd (MultiMarkdown)
    - .qmd (Quarto)
+- **Changed** - Move `WeasyPrint` from required dependencies to optional dependencies (Resolves [#33](https://github.com/ryul1206/multilingual-markdown/issues/33))
+   - Now install PDF export support via:
+
+     ```bash
+     pip install mmg[pdf]
+     ```
+
+   - This change reduces unnecessary dependencies for users who don’t need PDF generation.
 - **Improved** - Update CLI help message to show all supported file extensions
 - **Improved** - Refactor regex pattern compilation for better performance by moving it to module level
 

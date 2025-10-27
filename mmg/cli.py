@@ -137,6 +137,11 @@ def mmgcli(
 
 def main():
     assert sys.version_info[0] == 3
+    # Set UTF-8 encoding for Windows console
+    if sys.platform == "win32":
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
     try:
         mmgcli()
     except Exception as e:
