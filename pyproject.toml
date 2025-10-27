@@ -104,6 +104,7 @@ explicit = true
 [dependency-groups]
 dev = [
 	"check-manifest>=0.50",
+	"pre-commit>=3.5.0",
 	"ruff>=0.11.2",
 ]
 test = [
@@ -119,3 +120,7 @@ docs = [
 	"mkdocs-exclude>=1.0.2",
 	"mkdocs-site-urls>=0.2.0",
 ]
+
+[tool.ruff]
+# https://docs.astral.sh/ruff/configuration/
+line-length = 128
