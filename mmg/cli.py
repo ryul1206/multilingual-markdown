@@ -94,20 +94,20 @@ def mmgcli(
     """
     FILE_NAMES: Base file names to convert.
 
-    Supported extensions are:
-        .md, .markdown, .mkd (Markdown)
-        .mdx (MDX - Markdown + JSX) [experimental]
-        .rmd (R Markdown) [experimental]
-        .mmd (MultiMarkdown) [experimental]
-        .qmd (Quarto) [experimental]
-        .ipynb (Jupyter Notebook)
+    Supported extensions are: \n
+        .md, .markdown, .mkd (Markdown) \n
+        .ipynb (Jupyter Notebook) \n
+        [experimental] .mdx (MDX - Markdown + JSX) \n
+        [experimental] .rmd (R Markdown) \n
+        [experimental] .mmd (MultiMarkdown) \n
+        [experimental] .qmd (Quarto) \n
 
-    Here are some examples:
-        mmg *.base.md
-        mmg *.base.ipynb
-        mmg *.base.md *.base.ipynb -o pdf --css github-dark
-        mmg --recursive
-        mmg --recursive --validation-only
+    Here are some examples: \n
+        mmg *.base.md \n
+        mmg *.base.ipynb \n
+        mmg *.base.md *.base.ipynb -o pdf --css github-dark \n
+        mmg --recursive \n
+        mmg --recursive --validation-only \n
         mmg --batch mmg.yml
     """
     if file_names or recursive:
