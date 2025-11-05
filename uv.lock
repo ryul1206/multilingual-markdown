@@ -1767,7 +1767,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = ">=8.0.0" },
-    { name = "emoji", specifier = ">=0.6.0,<2.0.0" },
+    { name = "emoji", specifier = ">=0.6.0" },
     { name = "markdown", specifier = ">=3.3.0" },
     { name = "nbconvert", specifier = ">=7.6.0" },
     { name = "pyyaml", specifier = ">=6.0.2" },

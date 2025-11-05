@@ -27,7 +27,8 @@ def remove_emoji(text: str) -> str:
     """
     Remove all emojis from a given string.
     """
-    return emoji.get_emoji_regexp().sub(r"", text)
+    # return emoji.get_emoji_regexp().sub(r"", text)  # Deprecated in emoji 2.0.0
+    return emoji.replace_emoji(text, replace='')
 
 
 def remove_links(text: str) -> str:

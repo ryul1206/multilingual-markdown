@@ -33,7 +33,7 @@ classifiers = [
 ]
 dependencies = [
 	"click>=8.0.0",
-	"emoji>=0.6.0,<2.0.0",  # The function get_emoji_regexp() was removed in 2.0.0.
+	"emoji>=0.6.0",
 	"markdown>=3.3.0",
 	"nbconvert>=7.6.0",
 	"pyyaml>=6.0.2",

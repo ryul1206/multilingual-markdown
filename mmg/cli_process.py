@@ -84,11 +84,44 @@ def _health_check_on_backlogs(
     return all_healthy
 
 
+def insert_preamble(file_name: str, content: any, preamble_text: str) -> any:
+    """Insert the preamble text into the base document.
+
+    Args:
+        file_name (str): The file name to show in the preamble.
+        content (any): The content to insert the preamble into.
+            - List[str] (for markdown)
+            - Dict (for jupyter notebook)
+        preamble_text (str): The preamble text to insert.
+
+    Returns:
+        any: The content with the preamble inserted.
+    """
+    preamble_text = preamble_text.replace("<FILE_NAME>", file_name)
+    # Markdown
+    if isinstance(content, list):
+        preamble_text = f"<!-- {preamble_text} -->"
+        return [preamble_text] + content
+    # Jupyter notebook
+    elif isinstance(content, dict):
+        preamble_cell = {
+            "attachments": {},
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [preamble_text],
+        }
+        return {**content, "cells": [preamble_cell] + content["cells"]}
+    else:
+        raise ValueError(f"Invalid content type: {type(content)} (Should be List[str] or Dict.)")
+
+
 def _convert_backlogs(
     backlogs: List,
     convert_func: Callable,
     output_format: str,
     css: str,
+    preamble: bool,
+    preamble_text: str,
     source_dir: str = ".",
     output_dir: str = ".",
     tag_as: str = "suffix",
@@ -123,6 +156,11 @@ def _convert_backlogs(
         rel_path = os.path.relpath(base_item.norm_path, source_dir)
 
         for lang, content in target_docs.items():
+
+            # Add preamble
+            if preamble:
+                content = insert_preamble(base_item.file_name, content, preamble_text)
+
             # Get the target directory
             if tag_as == "suffix":
                 target_dir = output_dir
@@ -164,16 +202,18 @@ def convert_cli_args(
     skip_validation: bool,
     validation_only: bool,
     verbose: int,
+    preamble: bool,
+    preamble_text: str,
 ):
     # Get base files
     base_items = collect_bases_from_files(file_names)
     if recursive:
         base_items.update(collect_bases_from_dir(".", True))
     # Convert
-    _convert_items(base_items, output_format, css, yes, skip_validation, validation_only, verbose)
+    _convert_items(base_items, output_format, css, yes, skip_validation, validation_only, verbose, preamble, preamble_text)
 
 
-def convert_batch(batch: str):
+def convert_batch(batch: str, preamble: bool, preamble_text: str):
     # Load batch file (yaml)
     if not os.path.isfile(batch):
         raise click.FileError(batch, hint="File not found.")
@@ -189,10 +229,10 @@ def convert_batch(batch: str):
     if "jobs" not in cfg:
         raise click.UsageError("No jobs found in batch file. Please check your file.")
     for job in cfg["jobs"]:
-        _convert_job(job, yes, verbose)
+        _convert_job(job, yes, verbose, preamble, preamble_text)
 
 
-def _convert_job(job: Dict, yes: bool, verbose: int):
+def _convert_job(job: Dict, yes: bool, verbose: int, preamble: bool, preamble_text: str):
     # The following options cannot be customized in batch file. (not implemented)
     output_format = "as-is"
     css = ""
@@ -243,6 +283,8 @@ def _convert_job(job: Dict, yes: bool, verbose: int):
         skip_validation,
         validation_only,
         verbose,
+        preamble,
+        preamble_text,
         source_dir=source_dir,
         output_dir=output_dir,
         tag_as=tag_as,
@@ -257,6 +299,8 @@ def _convert_items(
     skip_validation: bool,
     validation_only: bool,
     verbose: int,
+    preamble: bool,
+    preamble_text: str,
     source_dir: str = ".",
     output_dir: str = ".",
     tag_as: str = "suffix",
@@ -311,6 +355,8 @@ def _convert_items(
             _convert_func,
             output_format,
             css,
+            preamble,
+            preamble_text,
             source_dir=source_dir,
             output_dir=output_dir,
             tag_as=tag_as,
