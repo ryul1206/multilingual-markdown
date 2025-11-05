@@ -156,7 +156,6 @@ def _convert_backlogs(
         rel_path = os.path.relpath(base_item.norm_path, source_dir)
 
         for lang, content in target_docs.items():
-
             # Add preamble
             if preamble:
                 content = insert_preamble(base_item.file_name, content, preamble_text)
@@ -213,7 +212,16 @@ def convert_cli_args(
     _convert_items(base_items, output_format, css, yes, skip_validation, validation_only, verbose, preamble, preamble_text)
 
 
-def convert_batch(batch: str, preamble: bool, preamble_text: str):
+def convert_batch(batch: str, preamble: bool, preamble_text: str, yes: bool):
+    """Convert batch files.
+
+    Args:
+        batch (str): The path to the batch file.
+        preamble (bool): Whether to add a preamble to the output files.
+        preamble_text (str): The text to add to the output files.
+        yes (bool): Whether to confirm the conversion without asking.
+            If True, overrides the `convert_without_ask` setting in the batch file.
+    """
     # Load batch file (yaml)
     if not os.path.isfile(batch):
         raise click.FileError(batch, hint="File not found.")
@@ -221,7 +229,7 @@ def convert_batch(batch: str, preamble: bool, preamble_text: str):
         cfg = yaml.safe_load(f)
 
     # Configurations
-    yes = cfg.get("convert_without_ask", False)
+    yes_override = True if yes else cfg.get("convert_without_ask", False)
     verbose = cfg.get("verbose", 0)
     log_dir = cfg.get("log_dir", None)
     set_log_dir(log_dir)
@@ -229,7 +237,7 @@ def convert_batch(batch: str, preamble: bool, preamble_text: str):
     if "jobs" not in cfg:
         raise click.UsageError("No jobs found in batch file. Please check your file.")
     for job in cfg["jobs"]:
-        _convert_job(job, yes, verbose, preamble, preamble_text)
+        _convert_job(job, yes_override, verbose, preamble, preamble_text)
 
 
 def _convert_job(job: Dict, yes: bool, verbose: int, preamble: bool, preamble_text: str):

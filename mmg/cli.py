@@ -143,7 +143,7 @@ def mmgcli(
             preamble_text,
         )
     elif batch:
-        convert_batch(batch, preamble, preamble_text)
+        convert_batch(batch, preamble, preamble_text, yes)
     else:
         raise click.UsageError(
             "No arguments found. Try one of the following:\n\

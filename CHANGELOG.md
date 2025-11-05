@@ -18,6 +18,9 @@ Security 취약점이 있는 경우
 
 ## [Upcoming Release][unreleased]
 
+- **Added** - Add support for including a preamble at the top of each generated document via the `--preamble` CLI option ([#34](https://github.com/ryul1206/multilingual-markdown/issues/34))
+   - Users can now add copyright or informational headers. You can include a `<FILE_NAME>` placeholder in the preamble text to automatically insert the file name.
+   - When enabled, the preamble will be added to each output file during conversion.
 - **Added** - Support for additional markdown extensions (experimental):
    - .markdown, .mkd (Markdown variants)
    - .mdx (MDX - Markdown + JSX)
@@ -32,6 +35,7 @@ Security 취약점이 있는 경우
      ```
 
    - This change reduces unnecessary dependencies for users who don’t need PDF generation.
+- **Changed** - Now the `-y` (`--yes`) option can also be used when running in batch mode with the `--batch` flag. ([#31](https://github.com/ryul1206/multilingual-markdown/issues/31))
 - **Improved** - Update CLI help message to show all supported file extensions
 - **Improved** - Refactor regex pattern compilation for better performance by moving it to module level
 
