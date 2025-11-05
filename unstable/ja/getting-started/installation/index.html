@@ -1110,8 +1110,14 @@
 <h2 id="linux">Linux</h2>
 <div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
 </code></pre></div>
+<p>mmgでPDFを生成する場合は、<code>pdf</code>オプションを付けてインストールしてください。</p>
+<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg<span class="o">[</span>pdf<span class="o">]</span>
+</code></pre></div>
 <h2 id="macos">macOS</h2>
 <div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
+</code></pre></div>
+<p>mmgでPDFを生成する場合は、<code>pdf</code>オプションを付けてインストールしてください。</p>
+<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg<span class="o">[</span>pdf<span class="o">]</span>
 </code></pre></div>
 <p><a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#macos">WeasyPrint</a>で問題が発生した場合は、次のコマンドでインストールしてください。WeasyPrintはPDFの作成にのみ使用されます。</p>
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>weasyprint
@@ -1128,6 +1134,9 @@
 <span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
 </code></pre></div>
 <p>この警告が表示された場合、ターミナルで<code>mmg</code>コマンドが見つからない状態です。警告メッセージに表示されているパスを環境変数<code>PATH</code>に追加してください。追加方法は<a href="https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/">トラブルシューティング</a>ドキュメントに記載されています。</p>
+<p>mmgでPDFを生成する場合は、<code>pdf</code>オプションを付けてインストールしてください。</p>
+<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg<span class="o">[</span>pdf<span class="o">]</span>
+</code></pre></div>
 <p>追加的に、MMGは<a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a>を使用してPDFを作成します。WeasyPrintはGTKライブラリが必要なので、最新の<a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3インストーラー</a>をダウンロードして実行します。<strong>PDFを作成することに興味がない場合は、このステップをスキップできます。</strong> GTKがなくても、MMGの他の機能は使用できます。</p>
 <h2 id="unstable-version-dev-branch">Unstable Version (dev branch)</h2>
 <div class="admonition example">

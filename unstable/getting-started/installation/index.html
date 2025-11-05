@@ -1104,8 +1104,14 @@
 <h2 id="linux">Linux</h2>
 <div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
 </code></pre></div>
+<p>If you want to generate PDFs with mmg, make sure to install with the <code>pdf</code> option:</p>
+<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg<span class="o">[</span>pdf<span class="o">]</span>
+</code></pre></div>
 <h2 id="macos">macOS</h2>
 <div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg
+</code></pre></div>
+<p>If you want to generate PDFs with mmg, make sure to install with the <code>pdf</code> option:</p>
+<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg<span class="o">[</span>pdf<span class="o">]</span>
 </code></pre></div>
 <p>If you have any issues with <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#macos">WeasyPrint</a>, install it with the following command. WeasyPrint is only used to create PDFs.</p>
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>weasyprint
@@ -1122,6 +1128,9 @@
 <span class="n">Successfully</span> <span class="n">installed</span> <span class="n">mmg</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
 </code></pre></div>
 <p>If you see this warning, it means the <code>mmg</code> command cannot be found in the terminal. Please add the path shown in the warning message to the <code>PATH</code> environment variable. Instructions for adding to PATH can be found in the <a href="https://mmg.ryul1206.dev/2.0/misc/troubleshooting/">Troubleshooting</a> documentation.</p>
+<p>If you want to generate PDFs with mmg, make sure to install with the <code>pdf</code> option:</p>
+<div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>mmg<span class="o">[</span>pdf<span class="o">]</span>
+</code></pre></div>
 <p>Additionally, MMG uses <a href="https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows">WeasyPrint</a> to create PDFs. WeasyPrint requires the GTK library, so download and run the latest <a href="https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases">GTK3 installer</a>. <strong>If you are not interested in creating PDFs, you can skip this step.</strong> Other features of MMG are available without GTK.</p>
 <h2 id="unstable-version-dev-branch">Unstable Version (dev branch)</h2>
 <div class="admonition example">

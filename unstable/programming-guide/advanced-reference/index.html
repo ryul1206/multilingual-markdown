@@ -968,6 +968,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#mmg.cli_process.convert_batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      convert_batch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmg.cli_process.insert_preamble" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert_preamble
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mmg.cli_process.query_yes_no" class="md-nav__link">
     <span class="md-ellipsis">
       query_yes_no
@@ -1378,6 +1396,24 @@
   
     <nav class="md-nav" aria-label="cli_process">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mmg.cli_process.convert_batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      convert_batch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmg.cli_process.insert_preamble" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert_preamble
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#mmg.cli_process.query_yes_no" class="md-nav__link">
@@ -2432,6 +2468,221 @@ https://stackoverflow.com/questions/74300488/pretty-printing-of-paths-in-python<
 <div class="doc doc-object doc-function">
 
 
+<h3 id="mmg.cli_process.convert_batch" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">convert_batch</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">convert_batch</span><span class="p">(</span>
+    <span class="n">batch</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">preamble</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">preamble_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">yes</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Convert batch files.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>batch</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The path to the batch file.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>preamble</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to add a preamble to the output files.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>preamble_text</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The text to add to the output files.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>yes</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to confirm the conversion without asking.
+If True, overrides the <code>convert_without_ask</code> setting in the batch file.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mmg.cli_process.insert_preamble" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">insert_preamble</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">insert_preamble</span><span class="p">(</span>
+    <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">preamble_text</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">any</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Insert the preamble text into the base document.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>file_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The file name to show in the preamble.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>content</code>
+            </td>
+            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The content to insert the preamble into.
+- List[str] (for markdown)
+- Dict (for jupyter notebook)</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>preamble_text</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The preamble text to insert.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>any</code></td>            <td>
+                  <code><span title="any">any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The content with the preamble inserted.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="mmg.cli_process.query_yes_no" class="doc doc-heading">
             <span class="doc doc-object-name doc-function-name">query_yes_no</span>
 
@@ -2511,33 +2762,41 @@ https://stackoverflow.com/questions/3041986/apt-command-line-interface-like-yes-
     <span class="n">skip_validation</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">validation_only</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">verbose</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">preamble</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">preamble_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
 
         <p>FILE_NAMES: Base file names to convert.</p>
+<p>Supported extensions are: </p>
+<div class="highlight"><pre><span></span><code>.md, .markdown, .mkd (Markdown)
 
+.ipynb (Jupyter Notebook)
 
-<details class="supported-extensions-are" open>
-  <summary>Supported extensions are</summary>
-  <p>.md, .markdown, .mkd (Markdown)
-.mdx (MDX - Markdown + JSX) [experimental]
-.rmd (R Markdown) [experimental]
-.mmd (MultiMarkdown) [experimental]
-.qmd (Quarto) [experimental]
-.ipynb (Jupyter Notebook)</p>
-</details>
+[experimental] .mdx (MDX - Markdown + JSX)
 
-<details class="here-are-some-examples" open>
-  <summary>Here are some examples</summary>
-  <p>mmg <em>.base.md
-mmg </em>.base.ipynb
-mmg <em>.base.md </em>.base.ipynb -o pdf --css github-dark
+[experimental] .rmd (R Markdown)
+
+[experimental] .mmd (MultiMarkdown)
+
+[experimental] .qmd (Quarto)
+</code></pre></div>
+<p>Here are some examples: </p>
+<div class="highlight"><pre><span></span><code>mmg *.base.md
+
+mmg *.base.ipynb
+
+mmg *.base.md *.base.ipynb -o pdf --css github-dark
+
 mmg --recursive
+
 mmg --recursive --validation-only
-mmg --batch mmg.yml</p>
-</details>
+
+mmg --batch mmg.yml
+</code></pre></div>
+
 
     </div>
 
