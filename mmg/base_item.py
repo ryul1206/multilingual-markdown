@@ -21,6 +21,10 @@ class FileItem:
     extension: str
 
     @property
+    def file_name(self) -> str:
+        return os.path.basename(self._path)
+
+    @property
     def norm_path(self) -> str:
         return os.path.normpath(self._path)
 
