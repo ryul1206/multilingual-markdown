@@ -18,6 +18,29 @@ Security 취약점이 있는 경우
 
 ## [Upcoming Release][unreleased]
 
+## [2.1.0] - 2025-11-06
+
+- **Added** - Add support for including a preamble at the top of each generated document via the `--preamble` CLI option ([#34](https://github.com/ryul1206/multilingual-markdown/issues/34))
+   - Users can now add copyright or informational headers. You can include a `<FILE_NAME>` placeholder in the preamble text to automatically insert the file name.
+   - When enabled, the preamble will be added to each output file during conversion.
+- **Added** - Support for additional markdown extensions (experimental):
+   - .markdown, .mkd (Markdown variants)
+   - .mdx (MDX - Markdown + JSX)
+   - .rmd (R Markdown)
+   - .mmd (MultiMarkdown)
+   - .qmd (Quarto)
+- **Changed** - Move `WeasyPrint` from required dependencies to optional dependencies (Resolves [#33](https://github.com/ryul1206/multilingual-markdown/issues/33))
+   - Now install PDF export support via:
+
+     ```bash
+     pip install mmg[pdf]
+     ```
+
+   - This change reduces unnecessary dependencies for users who don’t need PDF generation.
+- **Changed** - Now the `-y` (`--yes`) option can also be used when running in batch mode with the `--batch` flag. ([#31](https://github.com/ryul1206/multilingual-markdown/issues/31))
+- **Improved** - Update CLI help message to show all supported file extensions
+- **Improved** - Refactor regex pattern compilation for better performance by moving it to module level
+
 Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/multilingual-markdown/blob/dev/CHANGELOG.md) for upcoming release changes.
 
 ## [2.0.1] - 2025-04-03
@@ -94,7 +117,8 @@ Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/mu
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v2.0.0...develop
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v2.1.0...develop
+[2.1.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.1.0
 [2.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.1
 [2.0.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.0
 [1.0.3]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v1.0.3

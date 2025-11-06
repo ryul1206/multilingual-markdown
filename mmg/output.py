@@ -6,15 +6,6 @@ import nbconvert  # Jupyter Notebook to HTML
 import nbformat  # Dict to Jupyter Notebook
 from mmg.base_item import FileItem
 
-# For Windows, import weasyprint only when GTK is available.
-# Please refer to the following link for more information:
-#   - https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows
-#   - https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#troubleshooting
-try:
-    import weasyprint  # HTML to PDF
-except OSError:
-    pass
-
 
 def save_md(path, md_doc: List[str]):
     with open(path, "w", encoding="utf-8") as f:
@@ -32,10 +23,26 @@ def save_html(path, html: str):
 
 
 def save_pdf(path, html: str):
-    # Raise error when weasyprint is not imported (Windows)
-    # If GTK is not available, weasyprint cannot be imported.
-    if "weasyprint" not in globals():
-        raise ImportError("GTK is not available. Please refer to the documentation for more information.")
+    # For Windows, import weasyprint only when GTK is available.
+    # Please refer to the following link for more information:
+    #   - https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows
+    #   - https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#troubleshooting
+    try:
+        import weasyprint  # HTML to PDF
+    except ModuleNotFoundError:
+        raise ImportError(
+            "WeasyPrint is not installed. Try `pip install mmg[pdf]` to install it.\n"
+            "If you are a Windows user, you also need to install GTK3. "
+            "Please refer to the following link for more information:\n"
+            "* https://mmg.ryul1206.dev/unstable/misc/troubleshooting/#weasyprint-cannot-import-external-libraries"
+        )
+    except OSError:
+        raise ImportError(
+            "GTK3 is not available. If you are a Windows user, please install GTK3 and try again.\n"
+            "Please refer to the following link for more information:\n"
+            "* https://mmg.ryul1206.dev/unstable/misc/troubleshooting/#weasyprint-cannot-import-external-libraries"
+        )
+    # Save PDF
     html = weasyprint.HTML(string=html)
     html.write_pdf(path)
 

@@ -68,4 +68,4 @@ jobs:
       # Deploy with Mike (when docs branch is pushed)
       - name: Deploy stable docs
         if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/docs')
-        run: uv run mike deploy ${{ steps.mmg_version.outputs.MAJOR_MINOR }} --push --title ${{ steps.mmg_version.outputs.VERSION }} --update-aliases latest
+        run: uv run mike deploy -t ${{ steps.mmg_version.outputs.VERSION }} -u -p ${{ steps.mmg_version.outputs.MAJOR_MINOR }} latest

@@ -1,6 +1,6 @@
 [project]
 name = "mmg"
-version = "2.0.1"
+version = "2.1.0"
 description = "Command line interface and Python API to generate i18n documents"
 authors = [
 	{name = "Hong-ryul Jung", email = "jung.hr.1206@gmail.com"},
@@ -33,11 +33,15 @@ classifiers = [
 ]
 dependencies = [
 	"click>=8.0.0",
-	"emoji>=0.6.0,<2.0.0",  # The function get_emoji_regexp() was removed in 2.0.0.
+	"emoji>=0.6.0",
 	"markdown>=3.3.0",
-	"weasyprint>=59.0.0",
 	"nbconvert>=7.6.0",
 	"pyyaml>=6.0.2",
+]
+
+[project.optional-dependencies]
+pdf = [
+	"weasyprint>=59.0.0",
 ]
 
 [project.urls]
@@ -104,6 +108,7 @@ explicit = true
 [dependency-groups]
 dev = [
 	"check-manifest>=0.50",
+	"pre-commit>=3.5.0",
 	"ruff>=0.11.2",
 ]
 test = [
@@ -119,3 +124,7 @@ docs = [
 	"mkdocs-exclude>=1.0.2",
 	"mkdocs-site-urls>=0.2.0",
 ]
+
+[tool.ruff]
+# https://docs.astral.sh/ruff/configuration/
+line-length = 128

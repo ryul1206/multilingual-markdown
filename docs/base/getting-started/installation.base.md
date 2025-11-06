@@ -41,10 +41,38 @@
 pip3 install mmg
 ```
 
+<!-- [en] -->
+If you want to generate PDFs with mmg, make sure to install with the `pdf` option:
+<!-- [fr] -->
+Si vous souhaitez générer des PDF avec mmg, installez-le avec l’option `pdf` :
+<!-- [ko] -->
+만약 mmg로 PDF를 생성할 거라면 `pdf` 옵션을 줘서 설치해야 합니다.
+<!-- [ja] -->
+mmgでPDFを生成する場合は、`pdf`オプションを付けてインストールしてください。
+<!-- [common] -->
+
+```sh
+pip3 install mmg[pdf]
+```
+
 ## macOS
 
 ```sh
 pip3 install mmg
+```
+
+<!-- [en] -->
+If you want to generate PDFs with mmg, make sure to install with the `pdf` option:
+<!-- [fr] -->
+Si vous souhaitez générer des PDF avec mmg, installez-le avec l’option `pdf` :
+<!-- [ko] -->
+만약 mmg로 PDF를 생성할 거라면 `pdf` 옵션을 줘서 설치해야 합니다.
+<!-- [ja] -->
+mmgでPDFを生成する場合は、`pdf`オプションを付けてインストールしてください。
+<!-- [common] -->
+
+```sh
+pip3 install mmg[pdf]
 ```
 
 <!-- [en] -->
@@ -104,6 +132,20 @@ Si vous voyez cet avertissement, cela signifie que la commande `mmg` ne peut pas
 <!-- [ja] -->
 この警告が表示された場合、ターミナルで`mmg`コマンドが見つからない状態です。警告メッセージに表示されているパスを環境変数`PATH`に追加してください。追加方法は[トラブルシューティング](https://mmg.ryul1206.dev/2.0/ja/misc/troubleshooting/)ドキュメントに記載されています。
 <!-- [common] -->
+
+<!-- [en] -->
+If you want to generate PDFs with mmg, make sure to install with the `pdf` option:
+<!-- [fr] -->
+Si vous souhaitez générer des PDF avec mmg, installez-le avec l’option `pdf` :
+<!-- [ko] -->
+만약 mmg로 PDF를 생성할 거라면 `pdf` 옵션을 줘서 설치해야 합니다.
+<!-- [ja] -->
+mmgでPDFを生成する場合は、`pdf`オプションを付けてインストールしてください。
+<!-- [common] -->
+
+```sh
+pip3 install mmg[pdf]
+```
 
 <!-- [en] -->
 Additionally, MMG uses [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) to create PDFs. WeasyPrint requires the GTK library, so download and run the latest [GTK3 installer](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases). **If you are not interested in creating PDFs, you can skip this step.** Other features of MMG are available without GTK.

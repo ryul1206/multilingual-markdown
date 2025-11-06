@@ -259,13 +259,15 @@ uvは強力な依存関係管理機能を提供し、仮想環境を管理する
 === "macOS and Linux"
 
     ```sh
-    uv sync --group dev --group test
+    uv sync --group dev --group test --frozen
+    uv run pre-commit install
     ```
 
 === "Windows"
 
     ```powershell
-    uv sync --link-mode=copy --group dev --group test
+    uv sync --link-mode=copy --group dev --group test --frozen
+    uv run pre-commit install
     ```
 
 <!-- [en] -->
