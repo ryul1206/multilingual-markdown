@@ -38,7 +38,9 @@ dependencies = [
 	"emoji>=0.6.0",
 	"markdown>=3.3.0",
 	"nbconvert>=7.6.0",
-	"pyyaml>=6.0.2",
+	# For Python <3.14, allow PyYAML >=6.0.2. For Python >=3.14, require PyYAML >=6.0.3 due to compatibility.
+	"pyyaml>=6.0.2; python_version < '3.14'",
+	"pyyaml>=6.0.3; python_version >= '3.14'",
 ]
 
 [project.optional-dependencies]
