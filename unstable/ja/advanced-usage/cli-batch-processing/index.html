@@ -730,6 +730,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      オプションの強制適用
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1045,6 +1054,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      オプションの強制適用
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1086,6 +1104,7 @@
 <div class="highlight"><pre><span></span><code>mmg<span class="w"> </span>-b<span class="w"> </span>my_first_job.yaml
 </code></pre></div>
 <h2 id="yaml_1">YAML ファイルの例</h2>
+<p><code>my_first_job.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">convert_without_ask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="c1"># If false (default), ask for confirmation before converting.</span>
 <span class="c1"># If true, it is same as `mmg ** --yes`.`</span>
@@ -1115,6 +1134,13 @@
 <span class="w">    </span><span class="nt">tag_as</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;suffix&quot;</span><span class="w">            </span><span class="c1"># &quot;folder&quot; or &quot;suffix&quot; (required)</span>
 <span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;README.base.md&quot;</span><span class="w">    </span><span class="c1"># Source file to convert (required)</span>
 <span class="w">    </span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;./&quot;</span><span class="w">            </span><span class="c1"># Generated file will be placed in this folder (required)</span>
+</code></pre></div>
+<h2 id="_2">オプションの強制適用</h2>
+<div class="admonition quote">
+<p>v2.1.0 から使える機能です。</p>
+</div>
+<p>コマンド実行時に <code>--yes</code> オプションを追加すると、YAML ファイルで <code>convert_without_ask</code> が <code>false</code> に設定されていても、実質的に <code>true</code> として動作します。</p>
+<div class="highlight"><pre><span></span><code>mmg<span class="w"> </span>-b<span class="w"> </span>my_first_job.yaml<span class="w"> </span>--yes
 </code></pre></div>
 
 

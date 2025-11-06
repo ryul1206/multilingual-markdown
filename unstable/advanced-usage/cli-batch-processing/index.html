@@ -724,6 +724,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#force-option-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force Option Override
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1039,6 +1048,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#force-option-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force Option Override
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1080,6 +1098,7 @@
 <div class="highlight"><pre><span></span><code>mmg<span class="w"> </span>-b<span class="w"> </span>my_first_job.yaml
 </code></pre></div>
 <h2 id="yaml-file-example">YAML File Example</h2>
+<p><code>my_first_job.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">convert_without_ask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="c1"># If false (default), ask for confirmation before converting.</span>
 <span class="c1"># If true, it is same as `mmg ** --yes`.`</span>
@@ -1109,6 +1128,13 @@
 <span class="w">    </span><span class="nt">tag_as</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;suffix&quot;</span><span class="w">            </span><span class="c1"># &quot;folder&quot; or &quot;suffix&quot; (required)</span>
 <span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;README.base.md&quot;</span><span class="w">    </span><span class="c1"># Source file to convert (required)</span>
 <span class="w">    </span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;./&quot;</span><span class="w">            </span><span class="c1"># Generated file will be placed in this folder (required)</span>
+</code></pre></div>
+<h2 id="force-option-override">Force Option Override</h2>
+<div class="admonition quote">
+<p>This feature is available from v2.1.0.</p>
+</div>
+<p>When you add the <code>--yes</code> option at the command line, the tool always behaves as if <code>convert_without_ask</code> is set to <code>true</code> in the YAML file, even when it is set to <code>false</code>.</p>
+<div class="highlight"><pre><span></span><code>mmg<span class="w"> </span>-b<span class="w"> </span>my_first_job.yaml<span class="w"> </span>--yes
 </code></pre></div>
 
 

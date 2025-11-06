@@ -728,6 +728,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      옵션 무시 및 강제 적용
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1043,6 +1052,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      옵션 무시 및 강제 적용
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1084,6 +1102,7 @@
 <div class="highlight"><pre><span></span><code>mmg<span class="w"> </span>-b<span class="w"> </span>my_first_job.yaml
 </code></pre></div>
 <h2 id="yaml_1">YAML 파일 예제</h2>
+<p><code>my_first_job.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">convert_without_ask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="c1"># If false (default), ask for confirmation before converting.</span>
 <span class="c1"># If true, it is same as `mmg ** --yes`.`</span>
@@ -1113,6 +1132,13 @@
 <span class="w">    </span><span class="nt">tag_as</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;suffix&quot;</span><span class="w">            </span><span class="c1"># &quot;folder&quot; or &quot;suffix&quot; (required)</span>
 <span class="w">    </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;README.base.md&quot;</span><span class="w">    </span><span class="c1"># Source file to convert (required)</span>
 <span class="w">    </span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;./&quot;</span><span class="w">            </span><span class="c1"># Generated file will be placed in this folder (required)</span>
+</code></pre></div>
+<h2 id="_2">옵션 무시 및 강제 적용</h2>
+<div class="admonition quote">
+<p>v2.1.0부터 추가된 기능입니다.</p>
+</div>
+<p>명령어 실행 시 <code>--yes</code> 옵션을 추가하면, YAML 파일에서 <code>convert_without_ask</code>가 <code>false</code>로 설정되어 있어도 실제로는 <code>true</code>인 것처럼 동작합니다.</p>
+<div class="highlight"><pre><span></span><code>mmg<span class="w"> </span>-b<span class="w"> </span>my_first_job.yaml<span class="w"> </span>--yes
 </code></pre></div>
 
 
