@@ -119,6 +119,8 @@ mmg -b my_first_job.yaml
 ## Exemple de fichier YAML
 <!-- [common] -->
 
+`my_first_job.yaml`:
+
 ```yaml
 convert_without_ask: true
 # If false (default), ask for confirmation before converting.
@@ -149,4 +151,40 @@ jobs:
     tag_as: "suffix"            # "folder" or "suffix" (required)
     source: "README.base.md"    # Source file to convert (required)
     output_dir: "./"            # Generated file will be placed in this folder (required)
+```
+
+<!-- [ko] -->
+## 옵션 무시 및 강제 적용
+<!-- [ja] -->
+## オプションの強制適用
+<!-- [en] -->
+## Force Option Override
+<!-- [fr] -->
+## Forcer la substitution d’option
+<!-- [common] -->
+
+!!! quote ""
+
+<!-- [en] -->
+    This feature is available from v2.1.0.
+<!-- [fr] -->
+    Cette fonctionnalité est disponible à partir de la v2.1.0.
+<!-- [ko] -->
+    v2.1.0부터 추가된 기능입니다.
+<!-- [ja] -->
+    v2.1.0 から使える機能です。
+<!-- [common] -->
+
+<!-- [ko] -->
+명령어 실행 시 `--yes` 옵션을 추가하면, YAML 파일에서 `convert_without_ask`가 `false`로 설정되어 있어도 실제로는 `true`인 것처럼 동작합니다.
+<!-- [ja] -->
+コマンド実行時に `--yes` オプションを追加すると、YAML ファイルで `convert_without_ask` が `false` に設定されていても、実質的に `true` として動作します。
+<!-- [en] -->
+When you add the `--yes` option at the command line, the tool always behaves as if `convert_without_ask` is set to `true` in the YAML file, even when it is set to `false`.
+<!-- [fr] -->
+Lorsque vous exécutez la commande avec l’option `--yes`, l’outil se comporte toujours comme si `convert_without_ask` était défini sur `true` dans le fichier YAML, même si sa valeur est `false`.
+<!-- [common] -->
+
+```sh
+mmg -b my_first_job.yaml --yes
 ```
