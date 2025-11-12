@@ -18,7 +18,9 @@ Security 취약점이 있는 경우
 
 ## [Upcoming Release][unreleased]
 
-## [2.1.0] - 2025-11-06
+## [2.1.0] - 2025-11-12
+
+Temporarily marked Python 3.14 as unsupported until upstream dependencies add compatibility.
 
 - **Added** - Add support for including a preamble at the top of each generated document via the `--preamble` CLI option ([#34](https://github.com/ryul1206/multilingual-markdown/issues/34))
    - Users can now add copyright or informational headers. You can include a `<FILE_NAME>` placeholder in the preamble text to automatically insert the file name.
