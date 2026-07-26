@@ -1,7 +1,53 @@
 name: CI
-on: pull_request
+on:
+  pull_request:
+  # Work lands on `dev` by direct push rather than through a pull request, so `dev` has
+  # to be listed here or that work would go untested until release time. The cost is
+  # that pushing to `dev` while a dev -> main pull request is open runs the matrix twice;
+  # that window is short and the runners are free for a public repository.
+  push:
+    branches:
+      - main
+      - dev
+      - rc
+
+# A newer push to the same branch or pull request makes the running matrix obsolete.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
+  # Fast feedback: lint and base file validation do not need the whole matrix.
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.6.11"
+          python-version: "3.11"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install the project
+        run: uv sync --all-extras --group dev --group test
+
+      - name: Ruff (lint)
+        run: uv run ruff check
+
+      - name: Ruff (format)
+        run: uv run ruff format --check .
+
+      # The same gate as the pre-commit hook, so a broken base file cannot reach a
+      # branch just because the author had no hook installed.
+      - name: Validate every base file
+        run: uv run pre-commit run mmg-validation --all-files --show-diff-on-failure
+
   ci:
     strategy:
       fail-fast: false
@@ -13,6 +59,7 @@ jobs:
           - "3.11"
           - "3.12"
           - "3.13"
+          - "3.14"
         os: [ubuntu-latest, macos-latest, windows-latest]
 
     runs-on: ${{ matrix.os }}
