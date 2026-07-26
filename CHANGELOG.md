@@ -26,7 +26,7 @@ Marked Python 3.14 as supported again, now that the upstream dependencies have c
 
 - **Added** - `anchor` option for the table of contents macro ([#36](https://github.com/ryul1206/multilingual-markdown/issues/36))
    - `<!-- [[ multilingual toc: level=1~3, anchor=jupyter ]] -->` reproduces how Jupyter, nbconvert and Colab derive heading IDs: the case, the punctuation and the emojis of the heading are kept, blanks become `-`, and anything `encodeURI()` would escape is percent-encoded. Every rule was measured against `jupyter nbconvert --to html`.
-   - The default stays `anchor=github`, so anchors in existing documents are unchanged. Pick `jupyter` only when the output is read in a Jupyter-family viewer.
+   - The default stays `anchor=github`, so no document has to opt in to anything. Pick `jupyter` only when the output is read in a Jupyter-family viewer. This does not mean existing anchors are untouched: the GitHub rules themselves were corrected in this release, see the entry below.
 - **Fixed** - A repeated heading no longer produces a table of contents entry that links to the wrong section
    - GitHub disambiguates a repeated heading ID by appending `-1`, `-2` and so on, but MMG emitted the same anchor for each of them, so every link jumped to the first occurrence. The suffix is now assigned exactly as GitHub does, including retrying when the suffixed form is itself already taken.
    - The count runs over every heading of the document, not only over the entries this table of contents shows, because a renderer also gives an ID to the headings filtered out by `level`.
