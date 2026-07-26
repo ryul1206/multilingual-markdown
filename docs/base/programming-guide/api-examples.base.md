@@ -300,6 +300,10 @@ Here are some examples of the table of contents.
 
 <!-- [[ multilingual toc: level=2~3 no-emoji ]] -->
 
+**Table of Contents with Jupyter anchors**
+
+<!-- [[ multilingual toc: level=2~3, anchor=jupyter ]] -->
+
 ## 📝 Header 2
 
 Foo
@@ -317,7 +321,9 @@ def main():
             toc_options = parse_toc_options(line)
             toc: List[str] = create_toc(toc_options, doc)
             toc: str = "\n".join(toc)
-            print(f">> Toc (no-emoji: {toc_options[2]}):\n{toc}\n")
+            # `parse_toc_options` returns a `TocOptions` named tuple, so the options
+            # can be read by name instead of by position.
+            print(f">> Toc (no-emoji: {toc_options.no_emoji}, anchor: {toc_options.anchor}):\n{toc}\n")
 
 
 if __name__ == "__main__":
@@ -327,13 +333,17 @@ if __name__ == "__main__":
 ??? success "Output Text"
 
     ```txt
-    >> Toc (no-emoji: False):
+    >> Toc (no-emoji: False, anchor: github):
     1. [📝 Header 2](#-header-2)
         1. [🌈 Header 3](#-header-3)
 
-    >> Toc (no-emoji: True):
+    >> Toc (no-emoji: True, anchor: github):
     1. [Header 2](#-header-2)
         1. [Header 3](#-header-3)
+
+    >> Toc (no-emoji: False, anchor: jupyter):
+    1. [📝 Header 2](#%F0%9F%93%9D-Header-2)
+        1. [🌈 Header 3](#%F0%9F%8C%88-Header-3)
     ```
 
 ## api_example_health_check.py

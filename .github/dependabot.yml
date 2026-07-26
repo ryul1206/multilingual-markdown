@@ -4,8 +4,18 @@ updates:
   # moves unless Dependabot opens a pull request for it.
   - package-ecosystem: "github-actions"
     directory: "/"
+    # Work is integrated on `dev` and only reaches `main` through a release pull
+    # request, so updates have to arrive on `dev` as well. Without this they open
+    # against the default branch and bypass the integration branch entirely.
+    target-branch: "dev"
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 5
     commit-message:
       prefix: "ci"
+    # One pull request for all of the actions rather than one per action. Bumping
+    # them separately means several runs of the whole matrix for changes that are
+    # reviewed together anyway.
+    groups:
+      actions:
+        patterns: ["*"]
