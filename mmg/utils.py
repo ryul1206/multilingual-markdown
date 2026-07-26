@@ -1,11 +1,13 @@
 import re
 import emoji
-from typing import Final, Dict, List
+from typing import Final, Dict, List, Union
 
 
 REGEX_PATTERN: Final[Dict[str, re.Pattern]] = {
     "comment": re.compile(r"<!--.*-->"),
-    "header": re.compile(r"^#+\s+"),
+    # Group 1 is the `#` marks alone: the heading level must not count the blanks
+    # that follow them, or `#  Title` would be read as an h2.
+    "header": re.compile(r"^(#+)\s+"),
     # Config
     "lang_tags": re.compile(r"(<!-- multilingual suffix:)\s*([\w\s,-]+)(?=\s--)"),
     "no_suffix": re.compile(r"<!-- no suffix:\s*([\w-]+)"),
@@ -15,6 +17,9 @@ REGEX_PATTERN: Final[Dict[str, re.Pattern]] = {
     "auto_toc": re.compile(r"<!--\s*\[\[\s*multilingual toc:[^\]]*\s*]]\s*-->"),
     "toc_level": re.compile(r"level\s*=\s*([1-9]\s*~\s*[1-9]|~\s*[1-9]+|[1-9]+\s*~?)"),
     "toc_no_emoji": re.compile("no-emoji"),
+    # `*` (not `+`) so that a written-but-empty `anchor=` is reported instead of
+    # silently falling back to the default style.
+    "toc_anchor": re.compile(r"anchor\s*=\s*([\w-]*)"),
     # Code block (backtick)
     "inline_code": re.compile(r"`+"),
     "cb_begin": re.compile(r"^[ \t]*```[`]*[\w]*$"),
@@ -28,7 +33,7 @@ def remove_emoji(text: str) -> str:
     Remove all emojis from a given string.
     """
     # return emoji.get_emoji_regexp().sub(r"", text)  # Deprecated in emoji 2.0.0
-    return emoji.replace_emoji(text, replace='')
+    return emoji.replace_emoji(text, replace="")
 
 
 def remove_links(text: str) -> str:
@@ -43,6 +48,32 @@ def remove_links(text: str) -> str:
     mdurl_pattern = r"\[(?P<TEXT>((?!\]\(.*\]\().)*)\]\(((?!\).*\)).)*\)"
     text = re.sub(mdurl_pattern, lambda m: m.group("TEXT"), text)
     return text
+
+
+def normalize_source_lines(source: Union[str, List[str]]) -> List[str]:
+    """Normalize the `source` field of a Jupyter cell into one line per element.
+
+    The `nbformat` spec allows `source` to be either a single string or a list of
+    strings, and it does not require each list element to hold exactly one line.
+    MMG parses documents line by line, so every Jupyter entry point must funnel the
+    raw `source` through this function first. (Resolves the issue #35)
+
+    Line endings are preserved, so `"".join()` of the result reproduces the input.
+
+    Args:
+        source (Union[str, List[str]]): The raw `source` field of a cell.
+
+    Returns:
+        List[str]: A list in which each element holds exactly one line.
+    """
+    if isinstance(source, str):
+        source = [source]
+    lines: List[str] = []
+    for chunk in source:
+        # An empty chunk has no line to split out. Keeping it as-is is what
+        # preserves the content, because dropping it would delete a line.
+        lines.extend(chunk.splitlines(keepends=True) or [chunk])
+    return lines
 
 
 def get_size_of_code_block_backtick(line: str) -> int:

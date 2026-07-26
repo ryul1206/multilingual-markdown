@@ -1,6 +1,6 @@
 from typing import List, Dict, Tuple
 from enum import Enum, auto
-from mmg.utils import flag_code_block_lines, REGEX_PATTERN
+from mmg.utils import flag_code_block_lines, REGEX_PATTERN, normalize_source_lines
 from mmg.config import Config, extract_config_from_md, extract_config_from_jupyter, RESERVED_KEYWORDS
 from mmg.toc import parse_toc_options
 from mmg.exceptions import BadConfigError
@@ -122,6 +122,9 @@ class HealthChecker:
         self._tag_count = dc.tag_count
         self._error.extend([f"Line {line_num}: {message}" for line_num, message in dc.error_messages])
         self._warning.extend([f"Line {line_num}: {message}" for line_num, message in dc.warning_messages])
+        # Any error found in the doc makes the file unhealthy.
+        if dc.error_messages:
+            self._status = HealthStatus.UNHEALTHY
 
     def _health_check_jupyter(self, base_jn: Dict, cfg: Config = None):
         # Check the config
@@ -136,8 +139,9 @@ class HealthChecker:
             cell_num = i + 1
             # "markdown" cell
             if cell["cell_type"] == "markdown":
-                indexing.extend([(cell_num, j + 1) for j, _ in enumerate(cell["source"])])
-                doc.extend(cell["source"])
+                source: List[str] = normalize_source_lines(cell["source"])
+                indexing.extend([(cell_num, j + 1) for j, _ in enumerate(source)])
+                doc.extend(source)
             # "code" cell
             else:
                 indexing.append((cell_num, 0))
@@ -153,6 +157,9 @@ class HealthChecker:
 
         self._error.extend([_header(indexing[line_num - 1]) + message for line_num, message in dc.error_messages])
         self._warning.extend([_header(indexing[line_num - 1]) + message for line_num, message in dc.warning_messages])
+        # Any error found in the doc makes the file unhealthy.
+        if dc.error_messages:
+            self._status = HealthStatus.UNHEALTHY
 
 
 class DocChecker:
@@ -199,16 +206,18 @@ class DocChecker:
             if detected_tag:
                 # Find "<!-- [A] -->" or "<!--[A]-->" and extract the tag "A".
                 tag = detected_tag.group(1)
-                looks_good = self._push(tag, line_num + 1)  # The line number starts from 1.
-                if not looks_good:
-                    self._status = HealthStatus.UNHEALTHY
+                # `_push` records an unbalanced tag as a warning and an unknown tag as
+                # an error. The HealthChecker escalates only the errors to UNHEALTHY,
+                # so a warning still keeps the file convertible.
+                self._push(tag, line_num + 1)  # The line number starts from 1.
             # ToC tags
             elif REGEX_PATTERN["auto_toc"].search(line):
                 try:
                     parse_toc_options(line)
                 except BadConfigError as e:
-                    self._error.append((line_num, e))
-                    self._status = HealthStatus.UNHEALTHY
+                    # Store the message, not the exception: the Jupyter reporter
+                    # concatenates it onto a str prefix.
+                    self._error.append((line_num + 1, str(e)))  # The line number starts from 1.
 
     def _push(self, tag: str, line_num: int) -> bool:
         """Push a tag to check the balance.

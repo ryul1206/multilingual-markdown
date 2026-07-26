@@ -26,7 +26,6 @@ Thank you for using mmg!
 
 
 def main(fake: bool = True):
-
     converted_mds: Dict[str, str] = mmg.convert(base_md)
 
     base_doc: List[str] = base_md.splitlines()

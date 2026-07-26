@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List, Optional, Final, Dict
 from mmg.exceptions import BadConfigError
-from mmg.utils import REGEX_PATTERN, flag_code_block_lines
+from mmg.utils import REGEX_PATTERN, flag_code_block_lines, normalize_source_lines
 
 
 RESERVED_KEYWORDS: Final[List] = ["common", "ignore", "<Unknown>"]
@@ -75,7 +75,9 @@ def extract_config_from_md(base_doc: List[str]) -> Config:
 
 
 def extract_config_from_jupyter(base_jn: Dict) -> Config:
-    md_cells: List[str] = [cell["source"] for cell in base_jn["cells"] if cell["cell_type"] == "markdown"]
-    md_cells = [line for cell in md_cells for line in cell]  # flatten
-    cfg: Config = extract_config_from_md(md_cells)
+    md_cells: List[List[str]] = [
+        normalize_source_lines(cell["source"]) for cell in base_jn["cells"] if cell["cell_type"] == "markdown"
+    ]
+    md_doc: List[str] = [line for cell in md_cells for line in cell]  # flatten
+    cfg: Config = extract_config_from_md(md_doc)
     return cfg

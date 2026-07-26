@@ -1,6 +1,6 @@
 [project]
 name = "mmg"
-version = "2.1.0"
+version = "2.2.0"
 description = "Command line interface and Python API to generate i18n documents"
 authors = [
 	{name = "Hong-ryul Jung", email = "jung.hr.1206@gmail.com"},
@@ -24,6 +24,7 @@ classifiers = [
 	"Programming Language :: Python :: 3.11",
 	"Programming Language :: Python :: 3.12",
 	"Programming Language :: Python :: 3.13",
+	"Programming Language :: Python :: 3.14",
 	"Operating System :: POSIX :: Linux",
 	"Operating System :: Microsoft :: Windows",
 	"Operating System :: MacOS",
@@ -37,10 +38,12 @@ dependencies = [
 	"emoji>=0.6.0",
 	"markdown>=3.3.0",
 	"nbconvert>=7.6.0",
-	# For Python <3.14, allow PyYAML >=6.0.2. For Python >=3.14, require PyYAML >=6.0.3 due to compatibility.
+	# Python 3.14 needs PyYAML >=6.0.3. A resolver picks it on its own for a fresh
+	# install, so the floor is left alone; add the marker below if an already installed
+	# 6.0.2 ever has to be forced up.
+	#   "pyyaml>=6.0.2; python_version < '3.14'",
+	#   "pyyaml>=6.0.3; python_version >= '3.14'",
 	"pyyaml>=6.0.2",
-	# "pyyaml>=6.0.2; python_version < '3.14'",
-	# "pyyaml>=6.0.3; python_version >= '3.14'",
 	# PyWIN32
 	# "pywin32>=311; sys_platform == 'win32'",
 ]

@@ -1,0 +1,11 @@
+version: 2
+updates:
+  # The workflows pin both the action versions and the uv version, so nothing here
+  # moves unless Dependabot opens a pull request for it.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"

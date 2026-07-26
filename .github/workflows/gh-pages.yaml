@@ -8,6 +8,12 @@ on:
 permissions:
   contents: write
 
+# `mike deploy --push` writes to the gh-pages branch. Two runs at once race on that
+# push, so a queued run must wait instead of being cancelled.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     if: ${{ endsWith(github.ref, 'refs/heads/dev') || endsWith(github.ref, 'refs/heads/docs') }}
