@@ -1,7 +1,6 @@
 from typing import Dict, List
 import copy
-from mmg.config import Config
-from mmg.utils import REGEX_PATTERN, flag_code_block_lines
+from mmg.utils import REGEX_PATTERN, flag_code_block_lines, normalize_source_lines
 from mmg.toc import create_toc, parse_toc_options
 
 
@@ -87,7 +86,7 @@ class JupyterClassifier:
         # Push
         if cell["cell_type"] == "markdown":
             # Split the markdown cell into each language
-            doc = cell["source"]
+            doc = normalize_source_lines(cell["source"])
             target_sources = MarkdownClassifier(self.docs.keys())
             target_sources.classify(doc)
             # Push when the source is not empty
@@ -110,17 +109,31 @@ class JupyterClassifier:
             md_cells = [cell for cell in nb["cells"] if cell["cell_type"] == "markdown"]
             md_doc = [line for cell in md_cells for line in cell["source"]]  # flatten
             # Put ToC
+            # > A notebook keeps the line endings inside `source`, so the generated ToC
+            # > lines need them too. Without it the whole ToC collapses into one line.
             for md_cell in md_cells:
-                md_cell["source"] = replace_toc(md_cell["source"], md_doc)
+                md_cell["source"] = replace_toc(md_cell["source"], md_doc, line_ending="\n")
 
 
-def replace_toc(source: List[str], entire_doc: List[str]) -> List[str]:
+def replace_toc(source: List[str], entire_doc: List[str], line_ending: str = "") -> List[str]:
+    """Expand every ToC marker in `source` into a generated table of contents.
+
+    Args:
+        source (List[str]): The lines to scan for a ToC marker.
+        entire_doc (List[str]): The whole document that the ToC is built from.
+        line_ending (str, optional): Appended to each generated ToC line. The markdown
+            path joins its lines with a newline afterwards and needs "", while a Jupyter
+            cell stores the line endings inside `source` and needs "\\n". Defaults to "".
+
+    Returns:
+        List[str]: The lines with every ToC marker replaced.
+    """
     new_source = []  # partial doc
     codeblock = flag_code_block_lines(source)
     for i, line in enumerate(source):
         if REGEX_PATTERN["auto_toc"].match(line) and (not codeblock[i]):
             toc_options = parse_toc_options(line)
-            new_source.extend(create_toc(toc_options, entire_doc))
+            new_source.extend(f"{toc_line}{line_ending}" for toc_line in create_toc(toc_options, entire_doc))
         else:
             new_source.append(line)
     return new_source
