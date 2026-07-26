@@ -18,6 +18,36 @@ Security 취약점이 있는 경우
 
 ## [Upcoming Release][unreleased]
 
+## [2.2.0] - 2026-07-26
+
+Marked Python 3.14 as supported again, now that the upstream dependencies have caught up.
+
+**Upgrade note.** `mmg --validation-only` now exits non-zero whenever it reports an error, which it did not do before. The usual case is a typo in a language tag: under `<!-- multilingual suffix: en, ko -->`, a section opened with `<!-- [em] -->` printed `Unknown tag 'em' detected.` and still exited 0, so CI and the pre-commit hook let the file through. Since `em` was never declared, everything written under that tag was dropped from every generated file. A malformed table of contents option now fails for the same reason. So if validation starts failing right after this upgrade, read the error it prints rather than working around it: the content it points at has not been reaching your output. Warnings are unchanged — an unbalanced tag is still reported without failing the gate.
+
+- **Added** - `anchor` option for the table of contents macro ([#36](https://github.com/ryul1206/multilingual-markdown/issues/36))
+   - `<!-- [[ multilingual toc: level=1~3, anchor=jupyter ]] -->` reproduces how Jupyter, nbconvert and Colab derive heading IDs: the case, the punctuation and the emojis of the heading are kept, blanks become `-`, and anything `encodeURI()` would escape is percent-encoded. Every rule was measured against `jupyter nbconvert --to html`.
+   - The default stays `anchor=github`, so anchors in existing documents are unchanged. Pick `jupyter` only when the output is read in a Jupyter-family viewer.
+- **Fixed** - A repeated heading no longer produces a table of contents entry that links to the wrong section
+   - GitHub disambiguates a repeated heading ID by appending `-1`, `-2` and so on, but MMG emitted the same anchor for each of them, so every link jumped to the first occurrence. The suffix is now assigned exactly as GitHub does, including retrying when the suffixed form is itself already taken.
+   - The count runs over every heading of the document, not only over the entries this table of contents shows, because a renderer also gives an ID to the headings filtered out by `level`.
+   - `anchor=jupyter` is deliberately left alone here: nbconvert emits the very same ID for each repetition.
+- **Fixed** - The default anchors now match what GitHub actually generates
+   - Checked case by case against `github-slugger`, the reference implementation of the GitHub rules. Four of them were wrong: `_` was stripped, so `# snake_case_name` linked to `#snakecasename` instead of `#snake_case_name`; repeated blanks were collapsed, so `# A  B` gave `#a-b` instead of `#a--b`; a tab survived inside the anchor instead of being dropped; and a dash such as an em dash was kept instead of being dropped.
+   - Headings and anchors are both derived from the same base file, so a document that navigates through its generated table of contents keeps working either way. What changes is that those links now point at the section ID GitHub really assigns.
+- **Fixed** - Two long-standing defects in how a heading line is read
+   - The heading level counted the blanks after the `#` marks, so `#  Title` (two blanks) was rendered as a second-level entry.
+   - The marks were stripped with `str.replace`, which also deleted any later occurrence of the same text: `# A # B` was listed as `A B`.
+- **Fixed** - Markdown cells no longer vanish from a converted notebook ([#35](https://github.com/ryul1206/multilingual-markdown/issues/35))
+   - The `nbformat` spec lets a cell `source` be a bare string, and lets a list element hold several lines. MMG assumed one line per element, so a cell saved as a single multi-line chunk was consumed as one tag line and all of its text disappeared from every generated file. Whether a notebook was affected depended on how it had been serialized on disk, not on its content.
+   - Every Jupyter entry point (config extraction, health check, classification) now normalizes `source` through `mmg.utils.normalize_source_lines` first.
+- **Fixed** - The table of contents generated inside a notebook is no longer malformed
+   - A line ending leaked into the link text and the anchor, e.g. `1. [Title\n](#title\n)`.
+   - The generated entries carried no line ending of their own, so the whole table of contents collapsed into a single rendered line.
+- **Fixed** - The validation gate no longer passes a file after reporting an error on it
+   - `DocChecker` recorded its verdict on an attribute that nothing read, so `mmg --validation-only` exited 0 even when it had just printed an error such as an unknown language tag, which silently drops the tagged content in CI and in the pre-commit hook. Unbalanced-tag warnings keep their previous meaning and still pass.
+   - A malformed table of contents option inside a notebook raised `TypeError` instead of being reported, and its line number was off by one.
+- **Changed** - `mmg.toc.parse_toc_options` returns a `TocOptions` named tuple that carries the new `anchor` field. `mmg.toc.create_toc` still accepts a plain 3-tuple.
+
 ## [2.1.0] - 2025-11-12
 
 Temporarily marked Python 3.14 as unsupported until upstream dependencies add compatibility.
@@ -119,7 +149,8 @@ Please refer to the [CHANGELOG in the dev branch](https://github.com/ryul1206/mu
 - **Added** - Initial python module. (`multilang_md,py`)
 - **Added** - Added french translation to README and example. [PR #1](https://github.com/ryul1206/multilingual-markdown/pull/1) by [**@bkg2018**](https://github.com/bkg2018)
 
-[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v2.1.0...develop
+[unreleased]: https://github.com/ryul1206/multilingual-markdown/compare/v2.2.0...develop
+[2.2.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.2.0
 [2.1.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.1.0
 [2.0.1]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.1
 [2.0.0]: https://github.com/ryul1206/multilingual-markdown/releases/tag/v2.0.0
