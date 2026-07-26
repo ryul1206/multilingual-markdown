@@ -1,5 +1,7 @@
 name: CI
 on:
+  # Run from the Actions tab against any branch, for a re-check without a new commit.
+  workflow_dispatch:
   pull_request:
   # Work lands on `dev` by direct push rather than through a pull request, so `dev` has
   # to be listed here or that work would go untested until release time. The cost is

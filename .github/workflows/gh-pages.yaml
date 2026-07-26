@@ -1,5 +1,9 @@
 name: GitHub Pages
 on:
+  # Run from the Actions tab to redeploy without pushing anything. Pick `dev` to
+  # refresh `unstable` or `docs` to refresh the released version; any other branch
+  # is filtered out by the job condition below.
+  workflow_dispatch:
   push:
     branches:
       - dev   # Unreleased branch (unstable)
@@ -66,12 +70,14 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "MAJOR_MINOR=$MAJOR_MINOR" >> $GITHUB_OUTPUT
 
-      # Deploy with Mike (when dev branch is pushed)
+      # Deploy with Mike (dev branch). The event is not checked here: the job only
+      # runs on `dev` or `docs` anyway, and requiring a push would make a manual
+      # run go through every step without deploying anything.
       - name: Deploy unstable docs
-        if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/dev')
+        if: endsWith(github.ref, 'refs/heads/dev')
         run: uv run mike deploy --push --update-aliases unstable
 
-      # Deploy with Mike (when docs branch is pushed)
+      # Deploy with Mike (docs branch)
       - name: Deploy stable docs
-        if: github.event_name == 'push' && endsWith(github.ref, 'refs/heads/docs')
+        if: endsWith(github.ref, 'refs/heads/docs')
         run: uv run mike deploy -t ${{ steps.mmg_version.outputs.VERSION }} -u -p ${{ steps.mmg_version.outputs.MAJOR_MINOR }} latest
