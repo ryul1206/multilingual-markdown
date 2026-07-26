@@ -22,7 +22,7 @@ jobs:
     steps:
       # Git pull (to prevent the fallowing error)
       # "Updates were rejected because the remote contains work that you do not have locally."
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       # Configure Git credentials
