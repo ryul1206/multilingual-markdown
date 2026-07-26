@@ -390,6 +390,78 @@ Si `no-emoji` est appliqué, seuls les titres sans émojis seront affichés dans
     ```
 
 <!-- [en] -->
+#### Anchor Option
+<!-- [fr] -->
+#### Option d'ancrage
+<!-- [ko] -->
+#### 앵커 옵션
+<!-- [ja] -->
+#### アンカーオプション
+<!-- [common] -->
+
+<!-- [en] -->
+Heading anchors are not standardized: every renderer derives its own heading IDs.
+By default MMG writes GitHub-flavored anchors, which are correct on GitHub for both `.md` and `.ipynb` files.
+Jupyter, nbconvert and Colab keep the case and the punctuation of a heading instead, so a table of contents built for GitHub does not jump when the same file is opened there.
+Use the `anchor` option to pick the renderer you are targeting.
+<!-- [fr] -->
+Les ancres de titre ne sont pas normalisées : chaque moteur de rendu génère ses propres identifiants de titre.
+Par défaut, MMG produit des ancres au format GitHub, correctes sur GitHub aussi bien pour les fichiers `.md` que `.ipynb`.
+Jupyter, nbconvert et Colab conservent au contraire la casse et la ponctuation du titre, si bien qu'une table des matières conçue pour GitHub ne fonctionne pas dans ces visionneuses.
+L'option `anchor` permet de choisir le moteur de rendu visé.
+<!-- [ko] -->
+제목 앵커에는 표준이 없어서, 렌더러마다 제목 ID를 만드는 규칙이 다릅니다.
+MMG는 기본적으로 GitHub 방식의 앵커를 생성하며, 이는 `.md`와 `.ipynb` 모두 GitHub에서 정확히 동작합니다.
+반면 Jupyter, nbconvert, Colab은 제목의 대소문자와 구두점을 그대로 유지하기 때문에, GitHub 기준으로 만든 목차는 이들 뷰어에서 링크가 이동하지 않습니다.
+`anchor` 옵션으로 어떤 렌더러를 기준으로 삼을지 선택할 수 있습니다.
+<!-- [ja] -->
+見出しアンカーは標準化されておらず、レンダラーごとに見出しIDの生成規則が異なります。
+MMGは既定でGitHub形式のアンカーを生成し、これは`.md`でも`.ipynb`でもGitHub上で正しく動作します。
+一方、Jupyter・nbconvert・Colabは見出しの大文字小文字と句読点をそのまま保持するため、GitHub向けに生成した目次はこれらのビューアーではリンクが移動しません。
+`anchor`オプションで、どのレンダラーを対象にするかを選べます。
+<!-- [common] -->
+
+```markdown
+<!-- [[ multilingual toc: level=2~3, anchor=jupyter ]] -->
+```
+
+<!-- [en] -->
+- `anchor=github` (default): `# Nombre d'étoiles` becomes `#nombre-détoiles`. Lowercased, punctuation and emojis removed, and a repeated heading gets `-1`, `-2` and so on.
+- `anchor=jupyter`: `# Nombre d'étoiles` becomes `#Nombre-d'%C3%A9toiles`. Case, punctuation and emojis are kept, anything outside ASCII is percent-encoded, and a repeated heading keeps the very same anchor — which is what Jupyter itself does.
+<!-- [fr] -->
+- `anchor=github` (par défaut) : `# Nombre d'étoiles` devient `#nombre-détoiles`. Casse réduite, ponctuation et émojis supprimés, et un titre répété reçoit `-1`, `-2`, etc.
+- `anchor=jupyter` : `# Nombre d'étoiles` devient `#Nombre-d'%C3%A9toiles`. Casse, ponctuation et émojis conservés, tout caractère non ASCII est encodé en pourcentage, et un titre répété garde exactement la même ancre — c'est ce que fait Jupyter lui-même.
+<!-- [ko] -->
+- `anchor=github` (기본값): `# Nombre d'étoiles`가 `#nombre-détoiles`가 됩니다. 소문자로 바꾸고 구두점과 이모지를 제거하며, 제목이 반복되면 `-1`, `-2`처럼 번호가 붙습니다.
+- `anchor=jupyter`: `# Nombre d'étoiles`가 `#Nombre-d'%C3%A9toiles`가 됩니다. 대소문자·구두점·이모지를 그대로 두고, ASCII를 벗어나는 문자는 퍼센트 인코딩하며, 제목이 반복되면 앵커도 똑같이 반복됩니다. Jupyter 자체가 그렇게 동작하기 때문입니다.
+<!-- [ja] -->
+- `anchor=github`（既定値）: `# Nombre d'étoiles` は `#nombre-détoiles` になります。小文字化し、句読点と絵文字を削除し、見出しが重複すると `-1`、`-2` のように番号が付きます。
+- `anchor=jupyter`: `# Nombre d'étoiles` は `#Nombre-d'%C3%A9toiles` になります。大文字小文字・句読点・絵文字をそのまま保持し、ASCII 以外の文字はパーセントエンコードされ、見出しが重複してもアンカーは同じままです。Jupyter 自体がそう動作するためです。
+<!-- [common] -->
+
+<!-- [en] -->
+!!! warning "Cautions"
+
+    - The default is `github`. Choose `anchor=jupyter` only when the generated file is read in a Jupyter-family viewer, because the very same anchor will not jump on GitHub.
+    - An unknown value is rejected by the validation. Only `github` and `jupyter` are accepted, in lower case.
+<!-- [fr] -->
+!!! warning "Précautions"
+
+    - La valeur par défaut est `github`. Ne choisissez `anchor=jupyter` que si le fichier généré est lu dans une visionneuse de la famille Jupyter, car la même ancre ne fonctionnera pas sur GitHub.
+    - Une valeur inconnue est rejetée lors de la validation. Seuls `github` et `jupyter` sont acceptés, en minuscules.
+<!-- [ko] -->
+!!! warning "주의 사항"
+
+    - 기본값은 `github`입니다. 생성된 파일을 Jupyter 계열 뷰어에서 읽을 때만 `anchor=jupyter`를 선택하세요. 똑같은 앵커가 GitHub에서는 이동하지 않습니다.
+    - 알 수 없는 값은 검증 단계에서 거부됩니다. `github`과 `jupyter`만, 소문자로 쓸 수 있습니다.
+<!-- [ja] -->
+!!! warning "注意事項"
+
+    - 既定値は`github`です。生成したファイルをJupyter系のビューアーで読む場合にのみ`anchor=jupyter`を選んでください。同じアンカーはGitHubでは移動しません。
+    - 不明な値は検証時に拒否されます。`github`と`jupyter`のみ、小文字で指定できます。
+<!-- [common] -->
+
+<!-- [en] -->
 ## Body
 <!-- [fr] -->
 ## Corps
