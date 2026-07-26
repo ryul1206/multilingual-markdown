@@ -1389,6 +1389,10 @@ Thank you for using mmg!
 
 <span class="s2">&lt;!-- [[ multilingual toc: level=2~3 no-emoji ]] --&gt;</span>
 
+<span class="s2">**Table of Contents with Jupyter anchors**</span>
+
+<span class="s2">&lt;!-- [[ multilingual toc: level=2~3, anchor=jupyter ]] --&gt;</span>
+
 <span class="s2">## 📝 Header 2</span>
 
 <span class="s2">Foo</span>
@@ -1406,7 +1410,9 @@ Thank you for using mmg!
             <span class="n">toc_options</span> <span class="o">=</span> <span class="n">parse_toc_options</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
             <span class="n">toc</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_toc</span><span class="p">(</span><span class="n">toc_options</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
             <span class="n">toc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">toc</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt;&gt; Toc (no-emoji: </span><span class="si">{</span><span class="n">toc_options</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">):</span><span class="se">\n</span><span class="si">{</span><span class="n">toc</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># `parse_toc_options` returns a `TocOptions` named tuple, so the options</span>
+            <span class="c1"># can be read by name instead of by position.</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt;&gt; Toc (no-emoji: </span><span class="si">{</span><span class="n">toc_options</span><span class="o">.</span><span class="n">no_emoji</span><span class="si">}</span><span class="s2">, anchor: </span><span class="si">{</span><span class="n">toc_options</span><span class="o">.</span><span class="n">anchor</span><span class="si">}</span><span class="s2">):</span><span class="se">\n</span><span class="si">{</span><span class="n">toc</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -1414,13 +1420,17 @@ Thank you for using mmg!
 </code></pre></div>
 <details class="success">
 <summary>Output Text</summary>
-<div class="highlight"><pre><span></span><code>&gt;&gt; Toc (no-emoji: False):
+<div class="highlight"><pre><span></span><code>&gt;&gt; Toc (no-emoji: False, anchor: github):
 1. [📝 Header 2](#-header-2)
     1. [🌈 Header 3](#-header-3)
 
-&gt;&gt; Toc (no-emoji: True):
+&gt;&gt; Toc (no-emoji: True, anchor: github):
 1. [Header 2](#-header-2)
     1. [Header 3](#-header-3)
+
+&gt;&gt; Toc (no-emoji: False, anchor: jupyter):
+1. [📝 Header 2](#%F0%9F%93%9D-Header-2)
+    1. [🌈 Header 3](#%F0%9F%8C%88-Header-3)
 </code></pre></div>
 </details>
 <h2 id="api_example_health_checkpy">api_example_health_check.py</h2>
