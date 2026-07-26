@@ -628,6 +628,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      앵커 옵션
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -639,7 +648,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       본문
     </span>
@@ -649,7 +658,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       사용자 정의 키워드
     </span>
@@ -658,7 +667,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       공통 영역
     </span>
@@ -667,7 +676,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       무시할 영역
     </span>
@@ -1219,6 +1228,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      앵커 옵션
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1230,7 +1248,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       본문
     </span>
@@ -1240,7 +1258,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       사용자 정의 키워드
     </span>
@@ -1249,7 +1267,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       공통 영역
     </span>
@@ -1258,7 +1276,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       무시할 영역
     </span>
@@ -1391,9 +1409,27 @@
 </div>
 </div>
 </div>
-<h2 id="_8">본문</h2>
+<h4 id="_8">앵커 옵션</h4>
+<p>제목 앵커에는 표준이 없어서, 렌더러마다 제목 ID를 만드는 규칙이 다릅니다.
+MMG는 기본적으로 GitHub 방식의 앵커를 생성하며, 이는 <code>.md</code>와 <code>.ipynb</code> 모두 GitHub에서 정확히 동작합니다.
+반면 Jupyter, nbconvert, Colab은 제목의 대소문자와 구두점을 그대로 유지하기 때문에, GitHub 기준으로 만든 목차는 이들 뷰어에서 링크가 이동하지 않습니다.
+<code>anchor</code> 옵션으로 어떤 렌더러를 기준으로 삼을지 선택할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- [[ multilingual toc: level=2~3, anchor=jupyter ]] --&gt;
+</code></pre></div>
+<ul>
+<li><code>anchor=github</code> (기본값): <code># Nombre d'étoiles</code>가 <code>#nombre-détoiles</code>가 됩니다. 소문자로 바꾸고 구두점과 이모지를 제거하며, 제목이 반복되면 <code>-1</code>, <code>-2</code>처럼 번호가 붙습니다.</li>
+<li><code>anchor=jupyter</code>: <code># Nombre d'étoiles</code>가 <code>#Nombre-d'%C3%A9toiles</code>가 됩니다. 대소문자·구두점·이모지를 그대로 두고, ASCII를 벗어나는 문자는 퍼센트 인코딩하며, 제목이 반복되면 앵커도 똑같이 반복됩니다. Jupyter 자체가 그렇게 동작하기 때문입니다.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">주의 사항</p>
+<ul>
+<li>기본값은 <code>github</code>입니다. 생성된 파일을 Jupyter 계열 뷰어에서 읽을 때만 <code>anchor=jupyter</code>를 선택하세요. 똑같은 앵커가 GitHub에서는 이동하지 않습니다.</li>
+<li>알 수 없는 값은 검증 단계에서 거부됩니다. <code>github</code>과 <code>jupyter</code>만, 소문자로 쓸 수 있습니다.</li>
+</ul>
+</div>
+<h2 id="_9">본문</h2>
 <p>하나의 키워드가 인식되면, 뛰따르는 내용들은 다른 키워드가 나타날 때까지 해당 키워드로 인식됩니다.</p>
-<h3 id="_9">사용자 정의 키워드</h3>
+<h3 id="_10">사용자 정의 키워드</h3>
 <p>앞서 <a href="/unstable//ko/basic-usage/create-base-file/#_3">헤더</a>에서 선언한 키워드를 사용하여, 해당 섹션이 어떤 키워드에 속하는지 선언할 수 있습니다.
 만약 실수로 정의되지 않은 키워드를 사용하거나 키워드 간의 개수가 맞지 않는다면, MMG는 <a href="/unstable//ko/advanced-usage/cli-validation">유효성 검사 기능</a>을 통해 오류를 알려줍니다.</p>
 <div class="highlight"><pre><span></span><code>&lt;!-- [en] --&gt;
@@ -1404,12 +1440,12 @@
 &lt;!-- [cn] --&gt;
 ...
 </code></pre></div>
-<h3 id="_10">공통 영역</h3>
+<h3 id="_11">공통 영역</h3>
 <p>생성될 모든 파일에 공통적으로 들어갈 내용은 <code>common</code> 키워드를 사용하여 작성하면 됩니다.</p>
 <div class="highlight"><pre><span></span><code>&lt;!-- [common] --&gt;
 이 영역에 작성된 내용은 생성될 모든 파일에 공통적으로 들어갑니다.
 </code></pre></div>
-<h3 id="_11">무시할 영역</h3>
+<h3 id="_12">무시할 영역</h3>
 <p>주석이나 사소한 메모와 같은 것들은 생성될 파일에 포함하고 싶지 않는 경우가 있습니다.
 그런 경우 <code>ignore</code> 키워드를 사용하세요.</p>
 <div class="highlight"><pre><span></span><code>&lt;!-- [ignore] --&gt;

@@ -624,6 +624,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#anchor-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchor Option
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1215,6 +1224,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#anchor-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchor Option
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1384,6 +1402,24 @@ If you are in this situation, apply the <code>no-emoji</code> option as shown be
 </code></pre></div>
 </div>
 </div>
+</div>
+<h4 id="anchor-option">Anchor Option</h4>
+<p>Heading anchors are not standardized: every renderer derives its own heading IDs.
+By default MMG writes GitHub-flavored anchors, which are correct on GitHub for both <code>.md</code> and <code>.ipynb</code> files.
+Jupyter, nbconvert and Colab keep the case and the punctuation of a heading instead, so a table of contents built for GitHub does not jump when the same file is opened there.
+Use the <code>anchor</code> option to pick the renderer you are targeting.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- [[ multilingual toc: level=2~3, anchor=jupyter ]] --&gt;
+</code></pre></div>
+<ul>
+<li><code>anchor=github</code> (default): <code># Nombre d'étoiles</code> becomes <code>#nombre-détoiles</code>. Lowercased, punctuation and emojis removed, and a repeated heading gets <code>-1</code>, <code>-2</code> and so on.</li>
+<li><code>anchor=jupyter</code>: <code># Nombre d'étoiles</code> becomes <code>#Nombre-d'%C3%A9toiles</code>. Case, punctuation and emojis are kept, anything outside ASCII is percent-encoded, and a repeated heading keeps the very same anchor — which is what Jupyter itself does.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Cautions</p>
+<ul>
+<li>The default is <code>github</code>. Choose <code>anchor=jupyter</code> only when the generated file is read in a Jupyter-family viewer, because the very same anchor will not jump on GitHub.</li>
+<li>An unknown value is rejected by the validation. Only <code>github</code> and <code>jupyter</code> are accepted, in lower case.</li>
+</ul>
 </div>
 <h2 id="body">Body</h2>
 <p>Once a keyword is recognized, subsequent content will be recognized with that keyword until another keyword appears.</p>

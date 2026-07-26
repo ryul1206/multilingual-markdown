@@ -945,6 +945,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mmg.classifier.replace_toc" class="md-nav__link">
+    <span class="md-ellipsis">
+      replace_toc
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1372,6 +1381,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmg.classifier.replace_toc" class="md-nav__link">
+    <span class="md-ellipsis">
+      replace_toc
+    </span>
+  </a>
   
 </li>
         
@@ -2402,6 +2420,118 @@ https://stackoverflow.com/questions/74300488/pretty-printing-of-paths-in-python<
 
 </div>
 
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mmg.classifier.replace_toc" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">replace_toc</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">replace_toc</span><span class="p">(</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">entire_doc</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">line_ending</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Expand every ToC marker in <code>source</code> into a generated table of contents.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>source</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The lines to scan for a ToC marker.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>entire_doc</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The whole document that the ToC is built from.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>line_ending</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Appended to each generated ToC line. The markdown
+path joins its lines with a newline afterwards and needs "", while a Jupyter
+cell stores the line endings inside <code>source</code> and needs "\n". Defaults to "".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List[str]: The lines with every ToC marker replaced.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
 
 
 

@@ -919,6 +919,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#mmg.toc.TocOptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      TocOptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mmg.toc.create_toc" class="md-nav__link">
     <span class="md-ellipsis">
       create_toc
@@ -973,6 +982,15 @@
   <a href="#mmg.utils.get_size_of_code_block_backtick" class="md-nav__link">
     <span class="md-ellipsis">
       get_size_of_code_block_backtick
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmg.utils.normalize_source_lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      normalize_source_lines
     </span>
   </a>
   
@@ -1371,6 +1389,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#mmg.toc.TocOptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      TocOptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mmg.toc.create_toc" class="md-nav__link">
     <span class="md-ellipsis">
       create_toc
@@ -1425,6 +1452,15 @@
   <a href="#mmg.utils.get_size_of_code_block_backtick" class="md-nav__link">
     <span class="md-ellipsis">
       get_size_of_code_block_backtick
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmg.utils.normalize_source_lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      normalize_source_lines
     </span>
   </a>
   
@@ -2739,6 +2775,53 @@ This option is useful for a README file on GitHub.</p>
 
 
 
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="mmg.toc.TocOptions" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">TocOptions</span>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="typing.NamedTuple">NamedTuple</span></code></p>
+
+
+        <p>Options parsed from a <code>multilingual toc</code> marker.</p>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2749,7 +2832,7 @@ This option is useful for a README file on GitHub.</p>
 
 </h3>
 <div class="doc-signature highlight"><pre><span></span><code><span class="nf">create_toc</span><span class="p">(</span>
-    <span class="n">toc_options</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">doc</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">toc_options</span><span class="p">:</span> <span class="n">TocOptions</span><span class="p">,</span> <span class="n">doc</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </code></pre></div>
 
@@ -2774,11 +2857,12 @@ This option is useful for a README file on GitHub.</p>
                 <code>toc_options</code>
             </td>
             <td>
-                  <code><span title="typing.Tuple">Tuple</span>[<span title="int">int</span>, <span title="int">int</span>, <span title="bool">bool</span>]</code>
+                  <code><a class="autorefs autorefs-internal" title="TocOptions (mmg.toc.TocOptions)" href="#mmg.toc.TocOptions">TocOptions</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>(min_level, max_level, no_emoji)</p>
+                <p>(min_level, max_level, no_emoji, anchor).
+A plain 3-tuple is also accepted; <code>anchor</code> then falls back to the default.</p>
               </div>
             </td>
             <td>
@@ -2820,7 +2904,7 @@ This option is useful for a README file on GitHub.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>List[str]: The table of contents.</p>
+                <p>List[str]: The table of contents. The lines carry no line ending.</p>
               </div>
             </td>
           </tr>
@@ -2840,7 +2924,7 @@ This option is useful for a README file on GitHub.</p>
 
 
 </h3>
-<div class="doc-signature highlight"><pre><span></span><code><span class="nf">parse_toc_options</span><span class="p">(</span><span class="n">toc_line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">parse_toc_options</span><span class="p">(</span><span class="n">toc_line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TocOptions</span>
 </code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2894,7 +2978,8 @@ This option is useful for a README file on GitHub.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If the level option is not specified. or If the level option is invalid.</p>
+                <p>If the level option is not specified, if the level option is
+invalid, or if the anchor option is not a known style.</p>
               </div>
             </td>
           </tr>
@@ -2906,18 +2991,18 @@ This option is useful for a README file on GitHub.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
-                  <code><span title="typing.Tuple">Tuple</span>[<span title="int">int</span>, <span title="int">int</span>, <span title="bool">bool</span>]</code>
+<td><code>TocOptions</code></td>            <td>
+                  <code><a class="autorefs autorefs-internal" title="TocOptions (mmg.toc.TocOptions)" href="#mmg.toc.TocOptions">TocOptions</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Tuple[int, int, bool]: (min_level, max_level, no_emoji)</p>
+                <p>(min_level, max_level, no_emoji, anchor)</p>
               </div>
             </td>
           </tr>
@@ -3182,6 +3267,87 @@ Marked lines will be skipped when parsing the MMG tags.</p>
             <td>
               <div class="doc-md-description">
                 <p>The size of the backtick. If the line is not a code block, return 0.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="mmg.utils.normalize_source_lines" class="doc doc-heading">
+            <span class="doc doc-object-name doc-function-name">normalize_source_lines</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span class="nf">normalize_source_lines</span><span class="p">(</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Normalize the <code>source</code> field of a Jupyter cell into one line per element.</p>
+<p>The <code>nbformat</code> spec allows <code>source</code> to be either a single string or a list of
+strings, and it does not require each list element to hold exactly one line.
+MMG parses documents line by line, so every Jupyter entry point must funnel the
+raw <code>source</code> through this function first. (Resolves the issue #35)</p>
+<p>Line endings are preserved, so <code>"".join()</code> of the result reproduces the input.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>source</code>
+            </td>
+            <td>
+                  <code><span title="typing.Union">Union</span>[<span title="str">str</span>, <span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The raw <code>source</code> field of a cell.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List[str]: A list in which each element holds exactly one line.</p>
               </div>
             </td>
           </tr>

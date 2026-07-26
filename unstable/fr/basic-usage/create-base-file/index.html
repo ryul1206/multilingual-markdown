@@ -626,6 +626,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#option-dancrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option d'ancrage
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1217,6 +1226,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#option-dancrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option d'ancrage
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1386,6 +1404,24 @@ Si vous êtes dans cette situation, appliquez l'option <code>no-emoji</code> com
 </code></pre></div>
 </div>
 </div>
+</div>
+<h4 id="option-dancrage">Option d'ancrage</h4>
+<p>Les ancres de titre ne sont pas normalisées : chaque moteur de rendu génère ses propres identifiants de titre.
+Par défaut, MMG produit des ancres au format GitHub, correctes sur GitHub aussi bien pour les fichiers <code>.md</code> que <code>.ipynb</code>.
+Jupyter, nbconvert et Colab conservent au contraire la casse et la ponctuation du titre, si bien qu'une table des matières conçue pour GitHub ne fonctionne pas dans ces visionneuses.
+L'option <code>anchor</code> permet de choisir le moteur de rendu visé.</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- [[ multilingual toc: level=2~3, anchor=jupyter ]] --&gt;
+</code></pre></div>
+<ul>
+<li><code>anchor=github</code> (par défaut) : <code># Nombre d'étoiles</code> devient <code>#nombre-détoiles</code>. Casse réduite, ponctuation et émojis supprimés, et un titre répété reçoit <code>-1</code>, <code>-2</code>, etc.</li>
+<li><code>anchor=jupyter</code> : <code># Nombre d'étoiles</code> devient <code>#Nombre-d'%C3%A9toiles</code>. Casse, ponctuation et émojis conservés, tout caractère non ASCII est encodé en pourcentage, et un titre répété garde exactement la même ancre — c'est ce que fait Jupyter lui-même.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Précautions</p>
+<ul>
+<li>La valeur par défaut est <code>github</code>. Ne choisissez <code>anchor=jupyter</code> que si le fichier généré est lu dans une visionneuse de la famille Jupyter, car la même ancre ne fonctionnera pas sur GitHub.</li>
+<li>Une valeur inconnue est rejetée lors de la validation. Seuls <code>github</code> et <code>jupyter</code> sont acceptés, en minuscules.</li>
+</ul>
 </div>
 <h2 id="corps">Corps</h2>
 <p>Une fois qu'un mot-clé est reconnu, le contenu suivant sera reconnu avec ce mot-clé jusqu'à ce qu'un autre mot-clé apparaisse.</p>
