@@ -86,5 +86,24 @@ def test_parse_toc_options_rejects_unknown_anchor(toc_line):
         parse_toc_options(toc_line)
 
 
+bad_level_cases = [
+    "<!-- [[ multilingual toc: level=10 ]] -->",  # silently became h1-only
+    "<!-- [[ multilingual toc: level=12 ]] -->",  # silently became the full range
+    "<!-- [[ multilingual toc: level=123 ]] -->",  # crashed with IndexError
+    "<!-- [[ multilingual toc: level=~10 ]] -->",  # silently became h1-only
+    "<!-- [[ multilingual toc: level=~12 ]] -->",  # crashed with ValueError
+    "<!-- [[ multilingual toc: level=10~ ]] -->",  # silently became h1-only
+    "<!-- [[ multilingual toc: level=2~10 ]] -->",  # silently became min=2, max=1
+    "<!-- [[ multilingual toc: level=3~2 ]] -->",  # reversed range, silently empty ToC
+]
+
+
+@pytest.mark.parametrize("toc_line", bad_level_cases)
+def test_parse_toc_options_rejects_invalid_level(toc_line):
+    """An invalid level must be reported instead of crashing or silently misparsing."""
+    with pytest.raises(BadConfigError):
+        parse_toc_options(toc_line)
+
+
 if __name__ == "__main__":
     pytest.main()

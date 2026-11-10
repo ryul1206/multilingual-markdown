@@ -1,3 +1,4 @@
+import re
 import unicodedata
 from typing import Dict, Final, List, NamedTuple, Tuple
 from urllib.parse import quote
@@ -48,7 +49,16 @@ def parse_toc_options(toc_line: str) -> TocOptions:
     level_option = REGEX_PATTERN["toc_level"].search(toc_line)
     if level_option is None:
         raise BadConfigError("You must specify the level option in the table of contents.")
+    # A digit right after the match means the level token continues past it
+    # (e.g. "10" matched as "1"). Levels only run 1-9, so a continuing token
+    # is an invalid option, not a prefix of a valid one.
+    if level_option.end(1) < len(toc_line) and toc_line[level_option.end(1)].isdigit():
+        raise BadConfigError(f"Cannot parse the level option in ToC line: {toc_line}")
     level_option = level_option.group(1).replace(" ", "")
+    # The search above can still match a multi-digit token whole (e.g. "12"),
+    # so only the documented single-digit shapes are accepted here.
+    if re.fullmatch(r"[1-9](~[1-9]?)?|~[1-9]", level_option) is None:
+        raise BadConfigError(f"Cannot parse the level option: {level_option}\nToC line: {toc_line}")
 
     min_level = 1
     max_level = 9
@@ -64,7 +74,12 @@ def parse_toc_options(toc_line: str) -> TocOptions:
         min_level = int(s[0])
         max_level = int(s[1])
     else:
-        raise BadConfigError(f"Cannnot parse the level option: {level_option}\nToC line: {toc_line}")
+        raise BadConfigError(f"Cannot parse the level option: {level_option}\nToC line: {toc_line}")
+
+    if min_level > max_level:
+        raise BadConfigError(
+            f"Cannot parse the level option: min level {min_level} is greater than max level {max_level}\nToC line: {toc_line}"
+        )
 
     # Emoji option
     no_emoji = True if REGEX_PATTERN["toc_no_emoji"].search(toc_line) else False
